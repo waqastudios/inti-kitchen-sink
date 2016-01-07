@@ -1,0 +1,18 @@
+/******************************************************************
+
+Stylesheet: Front Page Blocks
+
+Styles for blocks that are placed on the home page
+
+******************************************************************/
+
+
+section.block {
+	margin: $global-margin 0;
+
+		&:first-of-type { margin-top: 0; }
+		&:last-of-type { margin-bottom: 0; }
+
+		&.page-content {}
+		&.front-page-loop {}
+}
