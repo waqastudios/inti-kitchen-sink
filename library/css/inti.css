@@ -4064,6 +4064,9 @@ off canvas menu, and hides the main navigation menu
 .top-bar ul.dropdown.menu li.current-menu-parent > a {
   font-weight: bold; }
 
+.top-bar ul.dropdown.menu ul {
+  display: none; }
+
 .top-bar ul.dropdown.menu .is-dropdown-submenu-parent.is-down-arrow > a::after {
   border-color: #fefefe transparent transparent; }
 
@@ -4340,6 +4343,8 @@ footer can be wide or contained.
 
 .footer-menu {
   background-color: #0a0a0a; }
+  .footer-menu ul.menu a {
+    color: #fefefe; }
   .footer-menu ul.menu li {
     display: inline-block; }
 
