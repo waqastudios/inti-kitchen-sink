@@ -34,15 +34,12 @@ add_action('child_hook_front_page_blocks', 'child_block_page_content', 1);
  * By default, Inti Foundation displays a list of posts on the from page, 
  * from a category defined in the theme options
  * 
- * @since 1.0.0
+ * @since 1.0.2
  */
-function child_block_front_page_loop() { ?>
-	<section class="block front-page-loop">
-		<?php get_template_part('loops/loop', 'frontpage'); ?>
-	</section>
-<?php
+function child_block_blog_posts() { 
+	get_template_part('template-parts/part-block', 'blog-posts');
+	// get_template_part('template-parts/part-block', 'blog-posts-variant-1');
 }
-add_action('child_hook_front_page_blocks', 'child_block_front_page_loop', 2);
-
+add_action('child_hook_front_page_blocks', 'child_block_blog_posts', 2);
 
 ?>

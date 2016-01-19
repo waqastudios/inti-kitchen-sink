@@ -107,6 +107,7 @@ function childtheme_override_setup() {
 	// require_once locate_template('/framework/content/child-content-footer.php');
 
 	require_once locate_template('/framework/content/content-front-page-blocks.php');
+	require_once locate_template('/framework/functions/child-helpers.php');
 }
 add_action('after_setup_theme', 'childtheme_override_setup', 11);
 

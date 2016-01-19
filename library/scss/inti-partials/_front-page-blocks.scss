@@ -13,6 +13,23 @@ section.block {
 		&:first-of-type { margin-top: 0; }
 		&:last-of-type { margin-bottom: 0; }
 
+		/** 
+		 * Different page block styles
+		 */
+
+		// Shows the content from the page set as Front Page
 		&.page-content {}
+
+		// Shows the front page loop from Inti Foundation parent theme
 		&.front-page-loop {}
+
+		// Shows Blog posts in columns, normally one row of three
+		&.blog-posts {
+			article { margin: $global-margin 0; }
+		}
+
+		// Shows Blog posts as above, but in one column with featured images floated left/right/left interchangeably
+		&.blog-posts.variant-1 {
+			article { margin: $global-margin 0; }
+		}
 }

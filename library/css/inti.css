@@ -4138,11 +4138,18 @@ Styles for blocks that are placed on the home page
 
 ******************************************************************/
 section.block {
-  margin: 1rem 0; }
+  margin: 1rem 0;
+  /** 
+		 * Different page block styles
+		 */ }
   section.block:first-of-type {
     margin-top: 0; }
   section.block:last-of-type {
     margin-bottom: 0; }
+  section.block.blog-posts article {
+    margin: 1rem 0; }
+  section.block.blog-posts.variant-1 article {
+    margin: 1rem 0; }
 
 /******************************************************************
 
