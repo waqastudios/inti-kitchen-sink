@@ -42,4 +42,18 @@ function child_block_blog_posts() {
 }
 add_action('child_hook_front_page_blocks', 'child_block_blog_posts', 2);
 
+
+/**
+ * Featured in/As Seen in carousel
+ * This block would show logos from media companies where the client's business was
+ * featured in a report or article
+ * 
+ * @since 1.0.2
+ */
+function child_block_featured_in() { 
+	get_template_part('template-parts/part-block', 'featured-in');
+}
+add_action('child_hook_front_page_blocks', 'child_block_featured_in', 3);
+
+
 ?>

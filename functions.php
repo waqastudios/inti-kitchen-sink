@@ -41,7 +41,7 @@ function childtheme_override_setup() {
 	
 	add_theme_support(
 		'inti-post-types',
-		array('feature')
+		array('brand, project, service, staff')
 	);
 	
 	add_theme_support(
@@ -87,6 +87,9 @@ function childtheme_override_setup() {
 	
 	add_image_size('thumb-300', 300, 250, true);
 	add_image_size('thumb-200', 200, 150, true);
+
+	add_image_size('blog-thumbnail', 800, 600, true);
+	add_image_size('brand-thumbnail', 200, 150, true);
 	
 	
 	// RSS feed links to header.php for posts and comments.
@@ -108,6 +111,7 @@ function childtheme_override_setup() {
 
 	require_once locate_template('/framework/content/content-front-page-blocks.php');
 	require_once locate_template('/framework/functions/child-helpers.php');
+	require_once locate_template('/framework/metaboxes/child-metaboxes.php');
 }
 add_action('after_setup_theme', 'childtheme_override_setup', 11);
 
@@ -119,43 +123,6 @@ add_action('after_setup_theme', 'childtheme_override_setup', 11);
  */
 
 
-
-
-
-/**
- * By Default, front pages have a sidebar. Let's add our standard meta box options for layouts,
- * making sure to comment out the 'show_on_cb' with 'inti_hide_if_front_page'
- * See inti-foundation/framework/metaboxes/metabox.php
- */
-function child_register_layout_metabox() {
-	// Start with an underscore to hide fields from custom fields list
-	$prefix = '_inti_layout_';
-
-	$cmb_layout = new_cmb2_box( array(
-		'id'            => $prefix . 'metabox',
-		'title'         => __( 'Layout', 'inti' ),
-		'object_types'  => array( 'page', 'post' ), // Post type
-		// 'show_on_cb' => 'inti_hide_if_front_page', // function should return a bool value
-		'context'    => 'side',
-		'priority'   => 'core',
-	) );	
-
-	$cmb_layout->add_field( array(
-		'name'    => __( 'Page Layout', 'inti' ),
-		'desc'    => __( 'Decide whether to show or hide a sidebar and where to place it.', 'inti' ),
-		'id'      => $prefix . 'radio',
-		'type'    => 'radio',
-		'options' => array(
-			'default' => __( 'As Set In Customize', 'inti' ),
-			'1c' => __( 'One Column', 'inti' ),
-			'2c-l' => __( 'Two Columns, Left', 'inti' ),
-			'2c-r' => __( 'Two Columns, Right', 'inti' ),
-			'1c-thin' => __( 'One Column, Thin', 'inti' ),
-		),
-	) );
-
-} 
-add_action( 'cmb2_init', 'child_register_layout_metabox' );
 
 
 /*

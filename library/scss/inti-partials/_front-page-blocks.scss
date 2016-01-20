@@ -24,12 +24,25 @@ section.block {
 		&.front-page-loop {}
 
 		// Shows Blog posts in columns, normally one row of three
-		&.blog-posts {
-			article { margin: $global-margin 0; }
-		}
+		&.blog-posts {}
 
 		// Shows Blog posts as above, but in one column with featured images floated left/right/left interchangeably
 		&.blog-posts.variant-1 {
 			article { margin: $global-margin 0; }
+		}
+
+		// Shows logos that a Featured Images of the Brand custom type
+		&.featured-in {
+			.inti-brand {
+				position: relative;
+	
+					.arrows { z-index: 1; opacity: 0.25; padding: 1rem; font-size: 2rem; }
+					.arrows:hover { z-index: 1; opacity: 1; }
+					
+					.slick-prev { position: absolute; top: 30%; left: 0; }
+					[dir="rtl"] .slick-prev {}
+					.slick-next { position: absolute; top: 30%; right: 0; }
+					[dir="rtl"] .slick-next {}
+			}
 		}
 }

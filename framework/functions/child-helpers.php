@@ -11,6 +11,6 @@
  * read more buttons manually outside of the the_excerpt()s HTML tags
  */
 function new_excerpt_more( $more ) {
-	return '';
+	return '…';
 }
 add_filter('excerpt_more', 'new_excerpt_more',9999);
