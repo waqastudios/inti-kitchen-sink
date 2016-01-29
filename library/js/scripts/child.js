@@ -16,13 +16,29 @@
 		initialSlide: 0,
 		pauseOnHover: true,
 		pauseOnDotsHover: false,
-  		variableWidth: true,
-		slidesToShow: 1, 
+  		variableWidth: false,
+		slidesToShow: 5, 
 		slidesToScroll: 1,
 		speed: 600,
 		swipe: true,
 		prevArrow: '<button type="button" class="slick-prev arrows"><i class="fa fa-chevron-left"></i></button>',
-		nextArrow: '<button type="button" class="slick-next arrows"><i class="fa fa-chevron-right"></i></button>'
+		nextArrow: '<button type="button" class="slick-next arrows"><i class="fa fa-chevron-right"></i></button>',
+		responsive: [
+			{
+				breakpoint: 768,
+				settings: {
+					arrows: false,
+					slidesToShow: 3, 
+				}
+			},
+			{
+				breakpoint: 512,
+				settings: {
+					arrows: false,
+					slidesToShow: 2, 
+				}
+			}
+		],
 	});
 	
 	

@@ -14,6 +14,10 @@
  * @subpackage blocks
  * @since 1.0.2
  */
+ 	// get the options
+	$title = get_inti_option('featuredinblock_title', 'inti_frontpage_options');
+	$description = get_inti_option('featuredinblock_description', 'inti_frontpage_options');
+
 
 	$brands = new WP_Query(array(
 		'post_type' => 'inti-brand',
@@ -25,7 +29,14 @@
 ?>
 	<section class="block featured-in">
 		<div class="row">
-			<div class="inti-carousel inti-brand clearfix">
+			<div class="column">
+				<?php if ($title || $description) : ?>
+				<header>
+					<?php if ($title) : ?><h3><?php echo $title; ?></h3><?php endif; ?>
+					<?php if ($description) : ?><p><?php echo $description; ?></p><?php endif; ?>
+				</header>
+				<?php endif; ?>
+				<div class="inti-carousel inti-brand clearfix">
 				<?php while ( $brands->have_posts() ) : $brands->the_post(); global $post; ?>
 
 					<div class="slide">
@@ -45,6 +56,7 @@
 					</div>
 
 				<?php endwhile; wp_reset_query(); ?>
+				</div>				
 			</div>
 		</div>
 	</section>

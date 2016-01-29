@@ -33,6 +33,10 @@ section.block {
 
 		// Shows logos that a Featured Images of the Brand custom type
 		&.featured-in {
+			header {
+				h3 {}
+				p {}
+			}
 			.inti-brand {
 				position: relative;
 	

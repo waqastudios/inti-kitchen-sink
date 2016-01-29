@@ -6,12 +6,12 @@
  * @subpackage blocks
  * @since 1.0.2
  */
-?>
-	<?php // get the options
-		$post_category = get_inti_option('frontpage_post_category', 'inti_general_options', -1);
-		$number_posts = get_inti_option('frontpage_number_posts', 'inti_general_options', 3);
+		
+	// get the options
+	$post_category = get_inti_option('frontpage_post_category', 'inti_frontpage_options', -1);
+	$number_posts = get_inti_option('frontpage_number_posts', 'inti_frontpage_options', 3);
 
-	?>
+?>
 	<section class="block blog-posts variant-1">
 	<?php // start the loop
 		$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
