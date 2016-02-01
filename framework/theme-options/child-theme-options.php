@@ -427,6 +427,30 @@ function inti_initialize_frontpage_options() {
 			'frontpage_settings_section_2'
 		);
 
+
+	add_settings_section(
+		'frontpage_settings_section_3',         // ID used to identify this section and with which to register options
+		__( 'Testimonial Block', 'inti' ),     // Title to be displayed on the administration page
+		'inti_testimonialblock_callback', // Callback used to render the description of the section
+		'inti_frontpage_options'     // Page on which to add this section of options
+	);
+	
+		add_settings_field( 
+			'testimonialblock_title',                      // ID used to identify the field throughout the theme
+			__( 'Title (Optional)', 'inti' ),                          // The label to the left of the option interface element
+			'inti_testimonialblock_title_callback',   // The name of the function responsible for rendering the option interface
+			'inti_frontpage_options',    // The page on which this option will be displayed
+			'frontpage_settings_section_3'
+		);
+	
+		add_settings_field( 
+			'testimonialblock_description',                      // ID used to identify the field throughout the theme
+			__( 'Description (Optional)', 'inti' ),                          // The label to the left of the option interface element
+			'inti_testimonialblock_description_callback',   // The name of the function responsible for rendering the option interface
+			'inti_frontpage_options',    // The page on which this option will be displayed
+			'frontpage_settings_section_3'
+		);
+
 		
 	
 	// Finally, we register the fields with WordPress
@@ -457,6 +481,10 @@ function inti_blogblock_callback() {
 // end inti_blogblock_callback
 
 function inti_featuredinblock_callback() {
+	echo '<p>' . __( 'Options for the Featured In carousel.', 'inti' ) . '</p>';
+} 
+
+function inti_testimonialblock_callback() {
 	echo '<p>' . __( 'Options for the Featured In carousel.', 'inti' ) . '</p>';
 } 
 // end inti_blogblock_callback
@@ -565,6 +593,40 @@ function inti_featuredinblock_description_callback($args) {
 
 
 	$html = '<textarea id="featuredinblock_description" name="inti_frontpage_options[featuredinblock_description]" class="widefat" rows="2">' . $data . '</textarea>'; 
+	
+	
+	echo $html;
+}
+
+
+
+function inti_testimonialblock_title_callback($args) {
+	
+	$options = get_option('inti_frontpage_options');
+	
+	$data = "";
+	if( isset( $options['testimonialblock_title'] ) ) {
+		$data = $options['testimonialblock_title'];
+	} // end if
+
+
+	$html = '<input type="text" id="testimonialblock_title" name="inti_frontpage_options[testimonialblock_title]" value="' . $data . '" class="widefat" />'; 
+	
+	
+	echo $html;
+}
+
+function inti_testimonialblock_description_callback($args) {
+	
+	$options = get_option('inti_frontpage_options');
+	
+	$data = "";
+	if( isset( $options['testimonialblock_description'] ) ) {
+		$data = $options['testimonialblock_description'];
+	} // end if
+
+
+	$html = '<textarea id="testimonialblock_description" name="inti_frontpage_options[testimonialblock_description]" class="widefat" rows="2">' . $data . '</textarea>'; 
 	
 	
 	echo $html;
