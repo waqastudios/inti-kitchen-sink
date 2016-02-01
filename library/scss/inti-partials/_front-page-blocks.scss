@@ -37,15 +37,33 @@ section.block {
 				h3 {}
 				p {}
 			}
-			.inti-brand {
+			.inti-brand-carousel {
 				position: relative;
 	
 					.arrows { z-index: 1; opacity: 0.25; padding: 1rem; font-size: 2rem; }
 					.arrows:hover { z-index: 1; opacity: 1; }
 					
-					.slick-prev { position: absolute; top: 30%; left: 0; }
+					.slick-prev { position: absolute; top: 35%; left: 0; }
 					[dir="rtl"] .slick-prev {}
-					.slick-next { position: absolute; top: 30%; right: 0; }
+					.slick-next { position: absolute; top: 35%; right: 0; }
+					[dir="rtl"] .slick-next {}
+			}
+		}
+
+		&.testimonials {
+			header {
+				h3 {}
+				p {}
+			}
+			.inti-testimonial-slider {
+				position: relative;
+	
+					.arrows { z-index: 1; opacity: 0.25; padding: 1rem; font-size: 2rem; }
+					.arrows:hover { z-index: 1; opacity: 1; }
+					
+					.slick-prev { position: absolute; top: 40%; left: -2rem; }
+					[dir="rtl"] .slick-prev {}
+					.slick-next { position: absolute; top: 40%; right: -2rem; }
 					[dir="rtl"] .slick-next {}
 			}
 		}

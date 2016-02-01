@@ -43,3 +43,42 @@
 	
 	
 })(jQuery);	
+
+
+(function($) {
+	$('.inti-slider').slick({
+		accessibility: true,
+		adaptiveHeight: false,
+		autoplay: true,
+		autoplaySpeed: 9000,
+		arrows: true,
+		asNavFor: null,
+		centerMode: true,
+		centerPadding: '0px',
+		cssEase: 'ease',
+		dots: false,
+		draggable: true,
+		fade: true,
+		infinite: true,
+		initialSlide: 0,
+		pauseOnHover: true,
+		pauseOnDotsHover: false,
+  		variableWidth: false,
+		slidesToShow: 1, 
+		slidesToScroll: 1,
+		speed: 600,
+		swipe: true,
+		prevArrow: '<button type="button" class="slick-prev arrows"><i class="fa fa-chevron-left"></i></button>',
+		nextArrow: '<button type="button" class="slick-next arrows"><i class="fa fa-chevron-right"></i></button>',
+		responsive: [
+			{
+				breakpoint: 1024,
+				settings: {
+					arrows: false,
+				}
+			}
+		],
+	});
+	
+	
+})(jQuery);	

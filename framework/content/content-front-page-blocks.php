@@ -56,4 +56,16 @@ function child_block_featured_in() {
 add_action('child_hook_front_page_blocks', 'child_block_featured_in', 3);
 
 
+/**
+ * Testimonials carousel
+ * This block displays testimonials in a slider
+ * 
+ * @since 1.0.3
+ */
+function child_block_testimonials() { 
+	get_template_part('template-parts/part-block', 'testimonials');
+}
+add_action('child_hook_front_page_blocks', 'child_block_testimonials', 3);
+
+
 ?>
