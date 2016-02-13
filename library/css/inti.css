@@ -4330,6 +4330,14 @@ section.block {
       position: absolute;
       top: 40%;
       right: -2rem; }
+  section.block.services.variant-1 article {
+    position: relative;
+    padding: 0 0 2rem; }
+    section.block.services.variant-1 article a.read-more {
+      display: block;
+      position: absolute;
+      bottom: 1rem;
+      right: 0; }
 
 /******************************************************************
 

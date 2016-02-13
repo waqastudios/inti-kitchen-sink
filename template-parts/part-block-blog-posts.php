@@ -8,9 +8,9 @@
  */
 
 	// get the options
-	$post_category = get_inti_option('frontpage_post_category', 'inti_frontpage_options', -1);
-	$number_posts = get_inti_option('frontpage_number_posts', 'inti_frontpage_options', 3);
-	$post_columns = get_inti_option('frontpage_post_columns', 'inti_frontpage_options', 3);
+	$post_category = get_inti_option('fpb_post_category', 'inti_customizer_options', -1);
+	$number_posts = get_inti_option('fpb_post_number', 'inti_customizer_options', 3);
+	$post_columns = get_inti_option('fpb_post_columns', 'inti_customizer_options', 3);
 
 ?>
 	<section class="block blog-posts">

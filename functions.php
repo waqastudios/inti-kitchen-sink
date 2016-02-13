@@ -91,6 +91,7 @@ function childtheme_override_setup() {
 	add_image_size('blog-thumbnail', 800, 600, true);
 	add_image_size('brand-thumbnail', 200, 150, true);
 	add_image_size('testimonial-thumbnail', 800, 800, true);
+	add_image_size('service-thumbnail', 800, 800, true);
 	
 	
 	// RSS feed links to header.php for posts and comments.
@@ -113,6 +114,7 @@ function childtheme_override_setup() {
 	require_once locate_template('/framework/content/content-front-page-blocks.php');
 	require_once locate_template('/framework/functions/child-helpers.php');
 	require_once locate_template('/framework/metaboxes/child-metaboxes.php');
+	require_once locate_template('/framework/customizer/child-customize.php');
 	require_once locate_template('/framework/theme-options/child-theme-options.php');
 
 	require_once locate_template('/framework/post-types/taxonomies.php');

@@ -15,8 +15,8 @@
  * @since 1.0.2
  */
  	// get the options
-	$title = get_inti_option('featuredinblock_title', 'inti_frontpage_options');
-	$description = get_inti_option('featuredinblock_description', 'inti_frontpage_options');
+	$title = get_inti_option('fpb_featuredinblock_title', 'inti_customizer_options');
+	$description = get_inti_option('fpb_featuredinblock_description', 'inti_customizer_options');
 
 
 	$brands = new WP_Query(array(

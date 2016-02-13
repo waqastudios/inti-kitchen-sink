@@ -122,4 +122,47 @@ function testimonial_post_type_init() {
 }
 
 
-
+/**
+ * Post Type - Service
+ * @since 1.0.3
+ * Related Taxonomy: inti-service-category
+ * Related Metaboxes: inti_register_service_metabox
+ */
+add_action('init', 'service_post_type_init');
+function service_post_type_init() {
+	$labels = array(
+		'name' => _x('Services', 'post type general name', inti),
+		'singular_name' => _x('Service', 'post type singular name', inti),
+		'add_new' => __('Add New', 'Service', inti),
+		'add_new_item' => __('Add New Service', inti),
+		'edit_item' => __('Edit Service', inti),
+		'new_item' => __('New Service', inti),
+		'view_item' => __('View Service', inti),
+		'search_items' => __('Search Services', inti),
+		'not_found' =>  __('No Service found', inti),
+		'not_found_in_trash' => __('No Service found in Trash', inti), 
+		'parent_item_colon' => '',
+		'menu_name' => _x('Services', '', inti)
+	);
+	$args = array(
+		'labels' => $labels,
+		'public' => true,
+		'publicly_queryable' => true,
+		'show_ui' => true, 
+		'rewrite' => array( 'slug' => 'services' ),
+		'has_archive' => true,
+		'query_var' => true,
+		'capability_type' => 'page',
+		'hierarchical' => true,
+		'show_in_nav_menus' => true,
+		'menu_position' => 35,
+		'menu_icon' => 'dashicons-lightbulb', 
+		'taxonomies' => array('inti-service-category'),
+		'supports' => array(
+			'title',
+			'thumbnail',
+			'editor'
+		)
+	);
+	register_post_type('inti-service',$args);
+}

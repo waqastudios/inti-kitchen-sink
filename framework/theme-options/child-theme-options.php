@@ -6,23 +6,24 @@
  * But, we're going to do a few things to customize and expand on them.
  *
  * 1) We're going to override the pluggable function called inti_options_setup() with a new one
- *    that is almost identical. We do this so we can add a new submenu page in a specific location
+ *    that is almost identical. We do this so we can add a new example submenu page in a specific location
  *    to achieve a specific order. If we created a function to add it separated, we could only be able
  *    to add it at the start or the end. The new submenu page is for options relevant to the blocks or
  *    components we add to the front page.
  *
- * 2) We create a function called child_options_interface() for the inti_options_interface_filter_tabs
- *    filter. This let's us add a new tab for the front page options.
+ *    We could just stop here.
+ *
+ * 2) But we then create a function called child_options_interface() for the inti_options_interface_filter_tabs
+ *    filter. This lets us add a new tab for the example options.
  *
  * 3) We override another pluggable function called inti_initialize_general_options() which is one of
  *    many that set up an array for options. Here we remove, or comment out, a group of options for
  *    a grid of blog posts that appear on the front page of the parent theme. These blog posts now
  *    become one of our component blocks in this child theme, with the same options removed from General
- *    and placed into the new tab "Front Page".
+ *    and added to Customizer
  *
- * @author Tom McFarlin (http://tommcfarlin.com)
  * @author Waqa Studios
- * @license GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
+ * @since 1.0.3
  */
 
 
@@ -62,8 +63,8 @@ function inti_options_setup() {
 		__( 'Front Page', 'inti' ),
 		__( 'Front Page', 'inti' ),
 		'manage_options',
-		'inti_theme_options&tab=frontpage_options',
-		create_function( null, 'inti_options_interface( "frontpage_options" );' )
+		'inti_theme_options&tab=childexample_options',
+		create_function( null, 'inti_options_interface( "childexample_options" );' )
 	);	
 
 	add_submenu_page(
@@ -111,7 +112,7 @@ add_action( 'admin_menu', 'inti_options_setup' );
 function child_options_interface( $tabs ) {
 	$tabs = array(
 		'general_options' => __('General', 'inti'),
-		'frontpage_options' => __('Front Page', 'inti'),
+		'childexample_options' => __('Child Example', 'inti'),
 		'headernav_options' => __('Header/Navigation', 'inti'),
 		'footer_options' => __('Footer/Analytics', 'inti'),
 		'social_options' => __('Social Media Profiles', 'inti'),
@@ -125,18 +126,18 @@ add_filter('inti_options_interface_filter_tabs', 'child_options_interface');
 /**
  * Provides default values for the Front Page Options.
  */
-function inti_default_frontpage_options() {
+function inti_default_childexample_options() {
 	
 	$defaults = array(
-		'blogblock_post_category' => '-1',
-		'blogblock_post_number' => '3',
-		'blogblock_post_columns' => '1',
-		'blogblock_exclude_category'  =>  '1'
+		'examplesection_post_category' => '-1',
+		'examplesection_post_number' => '3',
+		'examplesection_post_columns' => '1',
+		'examplesection_post_show'  =>  '1'
 	);
 	
-	return apply_filters( 'inti_default_frontpage_options', $defaults );
+	return apply_filters( 'inti_default_childexample_options', $defaults );
 	
-} // end inti_default_frontpage_options
+} // end inti_default_childexample_options
 
 
 /**
@@ -230,7 +231,8 @@ function inti_initialize_general_options() {
 
 
 /**
- * We're removing the front page options from general, because they'll now go in their own page especially for front page options
+ * We're removing the front page options from general, because they'll now go in Customizer along with all the other front page blocks
+ * @see framework/custimizer/child-customize.php
  */
 	// add_settings_section(
 	// 	'general_settings_section_2',         // ID used to identify this section and with which to register options
@@ -353,11 +355,11 @@ add_action( 'admin_init', 'inti_initialize_general_options' );
  * Initializes the child theme's front page options page by registering the Sections,
  * Fields, and Settings.
  */
-function inti_initialize_frontpage_options() {
+function inti_initialize_childexample_options() {
 
 	// If the theme options don't exist, create them.
-	if( false == get_option( 'inti_frontpage_options' ) ) {  
-		add_option( 'inti_frontpage_options', apply_filters( 'inti_default_frontpage_options', inti_default_frontpage_options() ) );
+	if( false == get_option( 'inti_childexample_options' ) ) {  
+		add_option( 'inti_childexample_options', apply_filters( 'inti_default_childexample_options', inti_default_childexample_options() ) );
 	} // end if
 
 
@@ -366,102 +368,53 @@ function inti_initialize_frontpage_options() {
  */
 	add_settings_section(
 		'frontpage_settings_section_1',         // ID used to identify this section and with which to register options
-		__( 'Blog Block', 'inti' ),     // Title to be displayed on the administration page
-		'inti_blogblock_callback', // Callback used to render the description of the section
-		'inti_frontpage_options'     // Page on which to add this section of options
+		__( 'Example Child Options', 'inti' ),     // Title to be displayed on the administration page
+		'inti_examplesection_callback', // Callback used to render the description of the section
+		'inti_childexample_options'     // Page on which to add this section of options
 	);
 	
 		add_settings_field( 
-			'blogblock_post_category',                      // ID used to identify the field throughout the theme
-			__( 'Post Category to display', 'inti' ),                          // The label to the left of the option interface element
-			'inti_blogblock_post_category_callback',   // The name of the function responsible for rendering the option interface
-			'inti_frontpage_options',    // The page on which this option will be displayed
+			'examplesection_post_category',                      // ID used to identify the field throughout the theme
+			__( 'Blog post categories', 'inti' ),                          // The label to the left of the option interface element
+			'inti_examplesection_post_category_callback',   // The name of the function responsible for rendering the option interface
+			'inti_childexample_options',    // The page on which this option will be displayed
 			'frontpage_settings_section_1'
 		);
 	
 		add_settings_field( 
-			'blogblock_post_number',                      // ID used to identify the field throughout the theme
-			__( 'Number of posts to display', 'inti' ),                          // The label to the left of the option interface element
-			'inti_blogblock_post_number_callback',   // The name of the function responsible for rendering the option interface
-			'inti_frontpage_options',    // The page on which this option will be displayed
+			'examplesection_post_number',                      // ID used to identify the field throughout the theme
+			__( 'Number of posts', 'inti' ),                          // The label to the left of the option interface element
+			'inti_examplesection_post_number_callback',   // The name of the function responsible for rendering the option interface
+			'inti_childexample_options',    // The page on which this option will be displayed
 			'frontpage_settings_section_1'
 		);
 
 		add_settings_field( 
-			'blogblock_post_columns',                      // ID used to identify the field throughout the theme
+			'examplesection_post_columns',                      // ID used to identify the field throughout the theme
 			__( 'Number of columns', 'inti' ),                          // The label to the left of the option interface element
-			'inti_blogblock_post_columns_callback',   // The name of the function responsible for rendering the option interface
-			'inti_frontpage_options',    // The page on which this option will be displayed
+			'inti_examplesection_post_columns_callback',   // The name of the function responsible for rendering the option interface
+			'inti_childexample_options',    // The page on which this option will be displayed
 			'frontpage_settings_section_1'
 		);
 
 		add_settings_field( 
-			'blogblock_exclude_category',                      // ID used to identify the field throughout the theme
-			__( 'Exclude front page category', 'inti' ),                          // The label to the left of the option interface element
-			'inti_blogblock_exclude_category_callback',   // The name of the function responsible for rendering the option interface
-			'inti_frontpage_options',    // The page on which this option will be displayed
+			'examplesection_post_show',                      // ID used to identify the field throughout the theme
+			__( 'Checkbox', 'inti' ),                          // The label to the left of the option interface element
+			'inti_examplesection_post_show_callback',   // The name of the function responsible for rendering the option interface
+			'inti_childexample_options',    // The page on which this option will be displayed
 			'frontpage_settings_section_1'
 		);
 
-
-	add_settings_section(
-		'frontpage_settings_section_2',         // ID used to identify this section and with which to register options
-		__( 'Featured In Block', 'inti' ),     // Title to be displayed on the administration page
-		'inti_featuredinblock_callback', // Callback used to render the description of the section
-		'inti_frontpage_options'     // Page on which to add this section of options
-	);
-	
-		add_settings_field( 
-			'featuredinblock_title',                      // ID used to identify the field throughout the theme
-			__( 'Title (Optional)', 'inti' ),                          // The label to the left of the option interface element
-			'inti_featuredinblock_title_callback',   // The name of the function responsible for rendering the option interface
-			'inti_frontpage_options',    // The page on which this option will be displayed
-			'frontpage_settings_section_2'
-		);
-	
-		add_settings_field( 
-			'featuredinblock_description',                      // ID used to identify the field throughout the theme
-			__( 'Description (Optional)', 'inti' ),                          // The label to the left of the option interface element
-			'inti_featuredinblock_description_callback',   // The name of the function responsible for rendering the option interface
-			'inti_frontpage_options',    // The page on which this option will be displayed
-			'frontpage_settings_section_2'
-		);
-
-
-	add_settings_section(
-		'frontpage_settings_section_3',         // ID used to identify this section and with which to register options
-		__( 'Testimonial Block', 'inti' ),     // Title to be displayed on the administration page
-		'inti_testimonialblock_callback', // Callback used to render the description of the section
-		'inti_frontpage_options'     // Page on which to add this section of options
-	);
-	
-		add_settings_field( 
-			'testimonialblock_title',                      // ID used to identify the field throughout the theme
-			__( 'Title (Optional)', 'inti' ),                          // The label to the left of the option interface element
-			'inti_testimonialblock_title_callback',   // The name of the function responsible for rendering the option interface
-			'inti_frontpage_options',    // The page on which this option will be displayed
-			'frontpage_settings_section_3'
-		);
-	
-		add_settings_field( 
-			'testimonialblock_description',                      // ID used to identify the field throughout the theme
-			__( 'Description (Optional)', 'inti' ),                          // The label to the left of the option interface element
-			'inti_testimonialblock_description_callback',   // The name of the function responsible for rendering the option interface
-			'inti_frontpage_options',    // The page on which this option will be displayed
-			'frontpage_settings_section_3'
-		);
-
-		
 	
 	// Finally, we register the fields with WordPress
 	register_setting(
-		'inti_frontpage_options',
-		'inti_frontpage_options'
+		'inti_childexample_options',
+		'inti_childexample_options'
 	);
 
 	
 } // end inti_initialize_general_options
-add_action( 'admin_init', 'inti_initialize_frontpage_options' );
+add_action( 'admin_init', 'inti_initialize_childexample_options' );
 
 
 /* ------------------------------------------------------------------------ *
@@ -471,80 +424,72 @@ add_action( 'admin_init', 'inti_initialize_frontpage_options' );
 /**
  * This function provides a simple description for the General Options page. 
  *
- * It's called from the 'inti_initialize_frontpage_options' function by being passed as a parameter
+ * It's called from the 'inti_initialize_childexample_options' function by being passed as a parameter
  * in the add_settings_section function.
  */
 
-function inti_blogblock_callback() {
-	echo '<p>' . __( 'Options for the Blog Blog.', 'inti' ) . '</p>';
+function inti_examplesection_callback() {
+	echo '<p>' . __( 'Doesn\'t really do anything, this is just an example of how you\'d expand the theme options in a child theme', 'inti' ) . '</p>';
 } 
-// end inti_blogblock_callback
+// end inti_examplesection_callback
 
-function inti_featuredinblock_callback() {
-	echo '<p>' . __( 'Options for the Featured In carousel.', 'inti' ) . '</p>';
-} 
-
-function inti_testimonialblock_callback() {
-	echo '<p>' . __( 'Options for the Featured In carousel.', 'inti' ) . '</p>';
-} 
-// end inti_blogblock_callback
 
 /* ------------------------------------------------------------------------ *
  * Field Callbacks
  * ------------------------------------------------------------------------ */ 
-function inti_blogblock_post_category_callback($args) {
+function inti_examplesection_post_category_callback($args) {
 	
-	$options = get_option('inti_frontpage_options');
+	$options = get_option('inti_childexample_options');
 	
 	wp_dropdown_categories(array(
 		'show_option_none' => __("All Categories", 'inti'),
 		'show_count' => true,
 		'taxonomy' => 'category',
-		'name' => 'inti_frontpage_options[blogblock_post_category]',
-		'id' => 'blogblock_post_category',
+		'name' => 'inti_childexample_options[examplesection_post_category]',
+		'id' => 'examplesection_post_category',
 		'selected' => $options['frontpage_post_category']
 	)); 
 }
 
-function inti_blogblock_post_number_callback($args) {
+function inti_examplesection_post_number_callback($args) {
 	
-	$options = get_option('inti_frontpage_options');
+	$options = get_option('inti_childexample_options');
 	
 	$data = "";
-	if( isset( $options['blogblock_post_number'] ) ) {
-		$data = $options['blogblock_post_number'];
+	if( isset( $options['examplesection_post_number'] ) ) {
+		$data = $options['examplesection_post_number'];
 	} // end if
 
 
-	$html = '<input type="text" id="blogblock_post_number" name="inti_frontpage_options[blogblock_post_number]" value="' . $data . '" />'; 
+	$html = '<input type="text" id="examplesection_post_number" name="inti_childexample_options[examplesection_post_number]" value="' . $data . '" />'; 
 	
 	
 	echo $html;
 }
 
-function inti_blogblock_post_columns_callback($args) {
+function inti_examplesection_post_columns_callback($args) {
 	
-	$options = get_option('inti_frontpage_options');
+	$options = get_option('inti_childexample_options');
 
-	$html = '<p><input type="radio" id="blogblock-post-columns-1" name="inti_frontpage_options[blogblock_post_columns]" value="1"' . checked( "1", $options['blogblock_post_columns'], false ) . '/>';
+	$html = '<p><input type="radio" id="examplesection-post-columns-1" name="inti_childexample_options[examplesection_post_columns]" value="1"' . checked( "1", $options['examplesection_post_columns'], false ) . '/>';
 	$html .= '&nbsp;';
-	$html .= '<label for="blogblock-post-columns-1">1</label>';
+	$html .= '<label for="examplesection-post-columns-1">1</label>';
 
 	$html .= '&nbsp;&nbsp;&nbsp;&nbsp;';
 
-	$html .= '<input type="radio" id="blogblock-post-columns-2" name="inti_frontpage_options[blogblock_post_columns]" value="2"' . checked( "2", $options['blogblock_post_columns'], false ) . '/>';
+	$html .= '<input type="radio" id="examplesection-post-columns-2" name="inti_childexample_options[examplesection_post_columns]" value="2"' . checked( "2", $options['examplesection_post_columns'], false ) . '/>';
 	$html .= '&nbsp;';
-	$html .= '<label for="blogblock-post-columns-2">2</label>';
+	$html .= '<label for="examplesection-post-columns-2">2</label>';
 
 	$html .= '&nbsp;&nbsp;&nbsp;&nbsp;';
 
-	$html .= '<input type="radio" id="frontpage-post-columns-3" name="inti_frontpage_options[frontpage_post_columns]" value="3"' . checked( "3", $options['frontpage_post_columns'], false ) . '/>';
+	$html .= '<input type="radio" id="frontpage-post-columns-3" name="inti_childexample_options[frontpage_post_columns]" value="3"' . checked( "3", $options['frontpage_post_columns'], false ) . '/>';
 	$html .= '&nbsp;';
 	$html .= '<label for="frontpage-post-columns-3">3</label>';
 
 	$html .= '&nbsp;&nbsp;&nbsp;&nbsp;';
 
-	$html .= '<input type="radio" id="frontpage-post-columns-4" name="inti_frontpage_options[frontpage_post_columns]" value="4"' . checked( "4", $options['frontpage_post_columns'], false ) . '/>';
+	$html .= '<input type="radio" id="frontpage-post-columns-4" name="inti_childexample_options[frontpage_post_columns]" value="4"' . checked( "4", $options['frontpage_post_columns'], false ) . '/>';
 	$html .= '&nbsp;';
 	$html .= '<label for="frontpage-post-columns-3">4</label></p>';
 	
@@ -552,82 +497,14 @@ function inti_blogblock_post_columns_callback($args) {
 	
 }
 
-function inti_blogblock_exclude_category_callback() {
+function inti_examplesection_post_show_callback() {
 
-	$options = get_option( 'inti_frontpage_options' );
+	$options = get_option( 'inti_childexample_options' );
 	
-	$html = '<input type="checkbox" id="frontpage_exclude_category" name="inti_frontpage_options[frontpage_exclude_category]" value="1"' . checked( 1, $options['frontpage_exclude_category'], false ) . '/>';
+	$html = '<input type="checkbox" id="frontpage_post_show" name="inti_childexample_options[frontpage_post_show]" value="1"' . checked( 1, $options['frontpage_post_show'], false ) . '/>';
 	$html .= '&nbsp;';
-	$html .= '<label for="frontpage_exclude_category">Exclude the front page post category from the rest of the blog</label><p></p><br><br>';
+	$html .= '<label for="frontpage_post_show">Exclude the front page post category from the rest of the blog</label><p></p><br><br>';
 	
 	echo $html;
 
-}
-
-
-
-function inti_featuredinblock_title_callback($args) {
-	
-	$options = get_option('inti_frontpage_options');
-	
-	$data = "";
-	if( isset( $options['featuredinblock_title'] ) ) {
-		$data = $options['featuredinblock_title'];
-	} // end if
-
-
-	$html = '<input type="text" id="featuredinblock_title" name="inti_frontpage_options[featuredinblock_title]" value="' . $data . '" class="widefat" />'; 
-	
-	
-	echo $html;
-}
-
-function inti_featuredinblock_description_callback($args) {
-	
-	$options = get_option('inti_frontpage_options');
-	
-	$data = "";
-	if( isset( $options['featuredinblock_description'] ) ) {
-		$data = $options['featuredinblock_description'];
-	} // end if
-
-
-	$html = '<textarea id="featuredinblock_description" name="inti_frontpage_options[featuredinblock_description]" class="widefat" rows="2">' . $data . '</textarea>'; 
-	
-	
-	echo $html;
-}
-
-
-
-function inti_testimonialblock_title_callback($args) {
-	
-	$options = get_option('inti_frontpage_options');
-	
-	$data = "";
-	if( isset( $options['testimonialblock_title'] ) ) {
-		$data = $options['testimonialblock_title'];
-	} // end if
-
-
-	$html = '<input type="text" id="testimonialblock_title" name="inti_frontpage_options[testimonialblock_title]" value="' . $data . '" class="widefat" />'; 
-	
-	
-	echo $html;
-}
-
-function inti_testimonialblock_description_callback($args) {
-	
-	$options = get_option('inti_frontpage_options');
-	
-	$data = "";
-	if( isset( $options['testimonialblock_description'] ) ) {
-		$data = $options['testimonialblock_description'];
-	} // end if
-
-
-	$html = '<textarea id="testimonialblock_description" name="inti_frontpage_options[testimonialblock_description]" class="widefat" rows="2">' . $data . '</textarea>'; 
-	
-	
-	echo $html;
 }

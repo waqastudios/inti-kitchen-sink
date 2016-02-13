@@ -2,10 +2,10 @@
 /**
  * Display Testimonials slider
  *
- * This block requires a accompanying post type to be created,
+ * This block requires an accompanying post type to be created,
  * which by default would be called "inti-testimonial"
  *
- * "inti-testimonial" also has a custom taxonomy called "inti-testimonial-group"
+ * "inti-testimonial" also has a custom taxonomy called "inti-testimonial-category"
  *
  * Helper functions have been created and added to child-helpers.php that return a formatted
  * string of the name of the person who gave the testimonail and the business they
@@ -18,8 +18,8 @@
 
 
 // get the options
-$title = get_inti_option('testimonialblock_title', 'inti_frontpage_options');
-$description = get_inti_option('testimonialblock_description', 'inti_frontpage_options');
+$title = get_inti_option('fpb_testimonialblock_title', 'inti_customizer_options');
+$description = get_inti_option('fpb_testimonialblock_description', 'inti_customizer_options');
 
 
 $testimonials = new WP_Query(array(
@@ -34,7 +34,7 @@ $testimonials = new WP_Query(array(
 		<div class="row">
 			<div class="column">
 				<?php if ($title || $description) : ?>
-				<header>
+				<header class="block-header">
 					<?php if ($title) : ?><h3><?php echo $title; ?></h3><?php endif; ?>
 					<?php if ($description) : ?><p><?php echo $description; ?></p><?php endif; ?>
 				</header>

@@ -65,7 +65,33 @@ add_action('child_hook_front_page_blocks', 'child_block_featured_in', 3);
 function child_block_testimonials() { 
 	get_template_part('template-parts/part-block', 'testimonials');
 }
-add_action('child_hook_front_page_blocks', 'child_block_testimonials', 3);
+add_action('child_hook_front_page_blocks', 'child_block_testimonials', 4);
+
+
+/**
+ * Personal bio
+ * This block displays bio options from the sidebar
+ * 
+ * @since 1.0.3
+ */
+function child_block_personal_bio() { 
+	get_template_part('template-parts/part-block', 'personal-bio');
+}
+add_action('child_hook_front_page_blocks', 'child_block_personal_bio', 5);
+
+
+/**
+ * Services
+ * This block displays services
+ * 
+ * @since 1.0.3
+ */
+function child_block_services() { 
+	get_template_part('template-parts/part-block', 'services');
+	// get_template_part('template-parts/part-block', 'services-variant-1');
+}
+add_action('child_hook_front_page_blocks', 'child_block_services', 6);
+
 
 
 ?>
