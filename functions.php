@@ -112,6 +112,7 @@ function childtheme_override_setup() {
 	// require_once locate_template('/framework/content/child-content-footer.php');
 
 	require_once locate_template('/framework/content/content-front-page-blocks.php');
+	require_once locate_template('/framework/content/child-content-header.php');
 	require_once locate_template('/framework/functions/child-helpers.php');
 	require_once locate_template('/framework/metaboxes/child-metaboxes.php');
 	require_once locate_template('/framework/customizer/child-customize.php');

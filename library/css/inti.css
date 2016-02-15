@@ -4179,6 +4179,23 @@ normally includes a logo, or a full width hero image.
 .site-banner {
   overflow: auto; }
 
+/**
+ * Business Hero header
+ */
+.site-banner.business-hero {
+  padding: 1rem 0; }
+  .site-banner.business-hero .contact-area .contact-icon {
+    display: inline-block;
+    vertical-align: top; }
+  .site-banner.business-hero .contact-area .contact-text {
+    display: inline-block; }
+  .site-banner.business-hero .contact-area p {
+    margin: 0; }
+
+.site-hero.business-hero {
+  padding: 6rem 0;
+  background-color: #e6e6e6; }
+
 /******************************************************************
 
 Stylesheet: Top Bar

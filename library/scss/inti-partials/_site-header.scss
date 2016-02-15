@@ -12,11 +12,36 @@ normally includes a logo, or a full width hero image.
 
 		.row {}
 
-		.site-logo {}
-		img {}
+		.site-logo {
+			img {}
+		}
 
 		.title-area { // may be set to display: none in the customizer options
 			h1.site-title {}
 			p.site-description {}
 		} 
+}
+
+
+/**
+ * Business Hero header
+ */
+.site-banner.business-hero {
+	padding: $global-padding 0;
+
+		.site-logo {}
+		.title-area {}
+
+		.contact-area {
+			.contact-method {}
+			.contact-icon { display: inline-block; vertical-align: top; }
+			.contact-text { display: inline-block; }
+
+			p { margin: 0; }
+		}
+}
+
+.site-hero.business-hero {
+	padding: ($global-padding * 6) 0;
+	background-color: $light-gray; 
 }
