@@ -14,6 +14,7 @@
  * @package Inti
  * @subpackage blocks
  * @since 1.0.3
+ * @version 1.0,4
  */
 		
 	// get the options
