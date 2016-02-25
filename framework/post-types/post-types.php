@@ -161,7 +161,8 @@ function service_post_type_init() {
 		'supports' => array(
 			'title',
 			'thumbnail',
-			'editor'
+			'editor',
+			'page-attributes'
 		)
 	);
 	register_post_type('inti-service',$args);

@@ -20,9 +20,10 @@
 	$title = get_inti_option('fpb_servicesblock_title', 'inti_customizer_options');
 	$description = get_inti_option('fpb_servicesblock_description', 'inti_customizer_options');
 
-	$service_category = get_inti_option('fpb_service_category', 'inti_customizer_options', -1);
+	$service_category = get_inti_option('fpb_service_category', 'inti_customizer_options', 0);
 	$number_posts = get_inti_option('fpb_service_post_number', 'inti_customizer_options', 3);
 	$post_columns = get_inti_option('fpb_service_post_columns', 'inti_customizer_options', 3);
+	$order = get_inti_option('fpb_service_order', 'inti_customizer_options', 'ASC');
 	$default_action_text = get_inti_option('read_more_text', 'inti_general_options', 'Read more &raquo;');
 ?>
 	<section class="block services variant-1">
@@ -38,7 +39,17 @@
 		</div>
 	<?php // start the loop
 		$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
-		$args = array( 
+		$args = "";
+		if ($service_category == 0) {
+			$args = array( 
+			'post_type'           => 'inti-service',
+			'posts_per_page'      => $number_posts,
+			'order'               => $order,
+			'orderby'             => 'menu_order',
+			'ignore_sticky_posts' => 1,
+			'paged'               => $paged );
+		} else {
+			$args = array( 
 			'post_type'           => 'inti-service',
 			'tax_query'           => array(
 										array(
@@ -47,8 +58,11 @@
 											'terms' => $service_category)
 									 ),
 			'posts_per_page'      => $number_posts,
+			'order'               => $order,
+			'orderby'             => 'menu_order',
 			'ignore_sticky_posts' => 1,
 			'paged'               => $paged );
+		}
 		
 		global $services_query;
 		$services_query = new WP_Query( $args ); ?>

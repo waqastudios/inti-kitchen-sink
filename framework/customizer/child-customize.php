@@ -123,7 +123,7 @@ function child_new_section($wp_customize) {
 					'name'             => '_customize-dropdown-services-categories-' . $this->id,
 					'echo'             => 0,
 					'hide_empty'       => false,
-					'show_option_none' => __("All Categories", 'inti'),
+					'show_option_all'  => __("All Categories", 'inti'),
 					'show_count'       => true,
 					'taxonomy'         => 'inti-service-category',
 					'hide_if_empty'    => false,
@@ -417,7 +417,6 @@ function child_new_section($wp_customize) {
 			'default'    => 1,
 			'type'       => 'option',
 			'capability' => 'manage_options',
-			'transport'  => 'postMessage',
 		 ) );	
 			$wp_customize->add_control(
 				new WP_Customize_Dropdown_Services_Categories_Control(
@@ -435,7 +434,6 @@ function child_new_section($wp_customize) {
 			'default'        => '',
 			'type'           => 'option',
 			'capability'     => 'manage_options',
-			'transport'		 => 'postMessage',
 		 ) );
 			$wp_customize->add_control('inti_customizer_options[fpb_service_post_number]', array( 
 				'label'    => __('Number of Services to display', 'inti'),
@@ -460,6 +458,22 @@ function child_new_section($wp_customize) {
 					'4' => '4',
 				),
 				'priority' => 5,
+			 ) );	
+
+		$wp_customize->add_setting('inti_customizer_options[fpb_service_order]', array( 
+			'default'        => 'ASC',
+			'type'           => 'option',
+			'capability'     => 'manage_options',
+		 ) );
+			$wp_customize->add_control('inti_customizer_options[fpb_service_order]', array( 
+				'label'    => __('Order', 'inti'),
+				'section'  => 'inti_customizer_front_page_block_services',
+				'type'     => 'select',
+				'choices'  => array( 
+					'ASC' => __('Ascending', 'inti'),
+					'DESC' => __('Descending', 'inti')
+				),
+				'priority' => 6,
 			 ) );	
 
 
