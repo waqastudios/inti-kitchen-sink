@@ -422,7 +422,7 @@ function child_new_section($wp_customize) {
 			$wp_customize->add_control('inti_customizer_options[fpb_personal_bio_link]', array( 
 				'label'    => __('URL for Image or Button (Optional)', 'inti'),
 				'section'  => 'inti_customizer_front_page_block_personal_bio',
-				'description' => __('Adding a URL here will link the bio image to that URL and/or any button your theme mau incorporate.', 'inti'),
+				'description' => __('Adding a URL here will link the bio image to that URL and/or a button if your template has one.', 'inti'),
 				'type'     => 'text',
 				'priority' => 5,
 			 ) );
@@ -434,29 +434,29 @@ function child_new_section($wp_customize) {
 		'description' => __('Configure the settings for the services block', 'inti'),
 		'priority' => 1,
 	 ) );
-		$wp_customize->add_setting('inti_customizer_options[fpb_servicesblock_title]', array( 
+		$wp_customize->add_setting('inti_customizer_options[fpb_services_title]', array( 
 			'default'        => '',
 			'type'           => 'option',
 			'capability'     => 'manage_options',
 		 ) );
-			$wp_customize->add_control('inti_customizer_options[fpb_servicesblock_title]', array( 
+			$wp_customize->add_control('inti_customizer_options[fpb_services_title]', array( 
 				'label'    => __('Title (Optional)', 'inti'),
 				'section'  => 'inti_customizer_front_page_block_services',
 				'type'     => 'text',
 				'priority' => 2,
 			 ) );
-		$wp_customize->add_setting('inti_customizer_options[fpb_servicesblock_description]', array( 
+		$wp_customize->add_setting('inti_customizer_options[fpb_services_description]', array( 
 			'default'        => '',
 			'type'           => 'option',
 			'capability'     => 'manage_options',
 		 ) );
-			$wp_customize->add_control('inti_customizer_options[fpb_servicesblock_description]', array( 
+			$wp_customize->add_control('inti_customizer_options[fpb_services_description]', array( 
 				'label'    => __('Description (Optional)', 'inti'),
 				'section'  => 'inti_customizer_front_page_block_services',
 				'type'     => 'textarea',
 				'priority' => 2,
 			 ) );
-		$wp_customize->add_setting('inti_customizer_options[fpb_service_category]', array( 
+		$wp_customize->add_setting('inti_customizer_options[fpb_services_category]', array( 
 			'default'    => 1,
 			'type'       => 'option',
 			'capability' => 'manage_options',
@@ -464,33 +464,33 @@ function child_new_section($wp_customize) {
 			$wp_customize->add_control(
 				new WP_Customize_Dropdown_Services_Categories_Control(
 					$wp_customize,
-					'inti_customizer_options[fpb_service_category]',
+					'inti_customizer_options[fpb_services_category]',
 					array(
 						'label'    => __('Service Category to display', 'inti'),
-						'settings' => 'inti_customizer_options[fpb_service_category]',
+						'settings' => 'inti_customizer_options[fpb_services_category]',
 						'section'  => 'inti_customizer_front_page_block_services',
 						'priority' => 3,
 					)
 				)
 			);
-		$wp_customize->add_setting('inti_customizer_options[fpb_service_post_number]', array( 
+		$wp_customize->add_setting('inti_customizer_options[fpb_services_post_number]', array( 
 			'default'        => '',
 			'type'           => 'option',
 			'capability'     => 'manage_options',
 		 ) );
-			$wp_customize->add_control('inti_customizer_options[fpb_service_post_number]', array( 
+			$wp_customize->add_control('inti_customizer_options[fpb_services_post_number]', array( 
 				'label'    => __('Number of Services to display', 'inti'),
 				'section'  => 'inti_customizer_front_page_block_services',
 				'type'     => 'text',
 				'priority' => 4,
 			 ) );
 
-		$wp_customize->add_setting('inti_customizer_options[fpb_service_post_columns]', array( 
+		$wp_customize->add_setting('inti_customizer_options[fpb_services_post_columns]', array( 
 			'default'        => 'numbered',
 			'type'           => 'option',
 			'capability'     => 'manage_options',
 		 ) );
-			$wp_customize->add_control('inti_customizer_options[fpb_service_post_columns]', array( 
+			$wp_customize->add_control('inti_customizer_options[fpb_services_post_columns]', array( 
 				'label'    => __('Number of columns', 'inti'),
 				'section'  => 'inti_customizer_front_page_block_services',
 				'type'     => 'select',
@@ -503,12 +503,12 @@ function child_new_section($wp_customize) {
 				'priority' => 5,
 			 ) );	
 
-		$wp_customize->add_setting('inti_customizer_options[fpb_service_order]', array( 
+		$wp_customize->add_setting('inti_customizer_options[fpb_services_order]', array( 
 			'default'        => 'ASC',
 			'type'           => 'option',
 			'capability'     => 'manage_options',
 		 ) );
-			$wp_customize->add_control('inti_customizer_options[fpb_service_order]', array( 
+			$wp_customize->add_control('inti_customizer_options[fpb_services_order]', array( 
 				'label'    => __('Order', 'inti'),
 				'section'  => 'inti_customizer_front_page_block_services',
 				'type'     => 'select',
