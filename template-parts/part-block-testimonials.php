@@ -18,16 +18,37 @@
 
 
 // get the options
-$title = get_inti_option('fpb_testimonialblock_title', 'inti_customizer_options');
-$description = get_inti_option('fpb_testimonialblock_description', 'inti_customizer_options');
+$title = get_inti_option('fpb_testimonials_title', 'inti_customizer_options');
+$description = get_inti_option('fpb_testimonials_description', 'inti_customizer_options');
 
+$testimonial_category = get_inti_option('fpb_testimonials_category', 'inti_customizer_options', 0);
+$number_posts = get_inti_option('fpb_testimonials_post_number', 'inti_customizer_options', -1);
+$order = get_inti_option('fpb_testimonials_order', 'inti_customizer_options', 'ASC');
 
-$testimonials = new WP_Query(array(
-	'post_type' => 'inti-testimonial',
-	'order' => 'ASC',
-	'orderby' => 'menu_order',
-	'posts_per_page' => -1
-)); 
+$args = "";
+if ($testimonial_category == 0) {
+	$args = array( 
+	'post_type'           => 'inti-testimonial',
+	'posts_per_page'      => $number_posts,
+	'order'               => $order,
+	'orderby'             => 'date',
+	'ignore_sticky_posts' => 1 );
+} else {
+	$args = array( 
+	'post_type'           => 'inti-testimonial',
+	'tax_query'           => array(
+								array(
+									'taxonomy' => 'inti-testimonial-category', 
+									'field' => 'id', 
+									'terms' => $testimonial_category)
+							 ),
+	'posts_per_page'      => $number_posts,
+	'order'               => $order,
+	'orderby'             => 'date',
+	'ignore_sticky_posts' => 1 );
+}
+
+$testimonials = new WP_Query($args); 
 
 ?>
 	<section class="block testimonials">

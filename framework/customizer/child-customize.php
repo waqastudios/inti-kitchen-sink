@@ -61,20 +61,20 @@ function child_new_section($wp_customize) {
 	/**
 	 * 1) Defines classes for custom controls
 	 */	
-	class WP_Customize_Dropdown_Testimonial_Categories_Control extends WP_Customize_Control {
-		public $type = 'dropdown-testimonial-categories';	
-	
+	class WP_Customize_Dropdown_Testimonials_Categories_Control extends WP_Customize_Control {
+		public $type = 'dropdown-testimonials-categories';	
+		
 		public function render_content() {
 			$dropdown = wp_dropdown_categories( 
 				array( 
-					'name'              => '_customize-dropdown-testimonial-categories-' . $this->id,
-					'echo'              => 0,
-					'hide_empty'        => false,
-					'show_option_none'  => '&mdash; ' . __('Select', 'inti') . ' &mdash;',
-					'hide_if_empty'     => false,
-					'name'              => 'inti-testimonial-group',
-					'taxonomy'          => 'inti-testimonial-group',
-					'selected'          => $this->value(),
+					'name'             => '_customize-dropdown-testimonials-categories-' . $this->id,
+					'echo'             => 0,
+					'hide_empty'       => false,
+					'show_option_all'  => __("All Categories", 'inti'),
+					'show_count'       => true,
+					'taxonomy'         => 'inti-testimonial-category',
+					'hide_if_empty'    => false,
+					'selected'         => $this->value(),
 				 )
 			 );
 
@@ -86,7 +86,7 @@ function child_new_section($wp_customize) {
 				$dropdown
 			 );
 		}
-	}	
+	}
 
 	class WP_Customize_Dropdown_Categories_Control extends WP_Customize_Control {
 		public $type = 'dropdown-categories';	
@@ -289,29 +289,72 @@ function child_new_section($wp_customize) {
 		'description' => __('Configure the settings for the testimonial block', 'inti'),
 		'priority' => 1,
 	 ) );
-		$wp_customize->add_setting('inti_customizer_options[fpb_testimonialblock_title]', array( 
+		$wp_customize->add_setting('inti_customizer_options[fpb_testimonials_title]', array( 
 			'default'        => '',
 			'type'           => 'option',
 			'capability'     => 'manage_options',
 		 ) );
-			$wp_customize->add_control('inti_customizer_options[fpb_testimonialblock_title]', array( 
+			$wp_customize->add_control('inti_customizer_options[fpb_testimonials_title]', array( 
 				'label'    => __('Title (Optional)', 'inti'),
 				'section'  => 'inti_customizer_front_page_block_testimonials',
 				'type'     => 'text',
 				'priority' => 2,
 			 ) );
-		$wp_customize->add_setting('inti_customizer_options[fpb_testimonialblock_description]', array( 
+		$wp_customize->add_setting('inti_customizer_options[fpb_testimonials_description]', array( 
 			'default'        => '',
 			'type'           => 'option',
 			'capability'     => 'manage_options',
 		 ) );
-			$wp_customize->add_control('inti_customizer_options[fpb_testimonialblock_description]', array( 
+			$wp_customize->add_control('inti_customizer_options[fpb_testimonials_description]', array( 
 				'label'    => __('Description (Optional)', 'inti'),
 				'section'  => 'inti_customizer_front_page_block_testimonials',
 				'type'     => 'textarea',
-				'priority' => 2,
+				'priority' => 3,
+			 ) );
+		$wp_customize->add_setting('inti_customizer_options[fpb_testimonials_category]', array( 
+			'default'    => 0,
+			'type'       => 'option',
+			'capability' => 'manage_options',
+		 ) );	
+			$wp_customize->add_control(
+				new WP_Customize_Dropdown_Testimonials_Categories_Control(
+					$wp_customize,
+					'inti_customizer_options[fpb_testimonials_category]',
+					array(
+						'label'    => __('Service Category to display', 'inti'),
+						'settings' => 'inti_customizer_options[fpb_testimonials_category]',
+						'section'  => 'inti_customizer_front_page_block_testimonials',
+						'priority' => 4,
+					)
+				)
+			);
+		$wp_customize->add_setting('inti_customizer_options[fpb_testimonials_post_number]', array( 
+			'default'        => '',
+			'type'           => 'option',
+			'capability'     => 'manage_options',
+		 ) );
+			$wp_customize->add_control('inti_customizer_options[fpb_testimonials_post_number]', array( 
+				'label'    => __('Number of Testimonials to display', 'inti'),
+				'section'  => 'inti_customizer_front_page_block_testimonials',
+				'type'     => 'text',
+				'priority' => 5,
 			 ) );
 
+		$wp_customize->add_setting('inti_customizer_options[fpb_testimonials_order]', array( 
+			'default'        => 'ASC',
+			'type'           => 'option',
+			'capability'     => 'manage_options',
+		 ) );
+			$wp_customize->add_control('inti_customizer_options[fpb_testimonials_order]', array( 
+				'label'    => __('Order', 'inti'),
+				'section'  => 'inti_customizer_front_page_block_testimonials',
+				'type'     => 'select',
+				'choices'  => array( 
+					'ASC' => __('Ascending', 'inti'),
+					'DESC' => __('Descending', 'inti')
+				),
+				'priority' => 6,
+			 ) );	
 
 
 	// Personal Bio Block
