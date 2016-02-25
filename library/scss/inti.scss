@@ -75,6 +75,9 @@ new styles, or the minimized inti-min.css file can be unqueued
 ******************************************************************/
 
 
+// Import mixins
+@import "mixins";
+
 // Import components
 @import "inti-partials/wp-classes";
 @import "inti-partials/formatting";
@@ -97,9 +100,6 @@ new styles, or the minimized inti-min.css file can be unqueued
 
 // Import slick slider
 @import "slick";
-
-// Import mixins
-@import "mixins";
 
 /* General Inti Styles - fix this */
 body { }
