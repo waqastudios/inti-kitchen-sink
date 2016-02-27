@@ -22,8 +22,31 @@
 function childtheme_override_setup() {
 
 	/**
-	 * Inti features
+	 * Features to expand on Inti Foundation
 	 */ 
+	add_theme_support(
+		'inti-front-page-blocks',
+		array('page', 'posts', 'services', 'testimonials', 'brands', 'bio')
+	);
+	
+	add_theme_support(
+		'inti-post-types',
+		array('service', 'testimonial', 'brand')
+	);
+	
+	add_theme_support(
+		'inti-page-templates',
+		array('front-page', 'news-page', 'portfolio', 'contact') //examples
+	);
+
+	/**
+	 * Basic Inti Foundation Features to be support in this child theme
+	 */ 
+	add_theme_support(
+		'inti-layouts',
+		array('1c', '2c-l', '2c-r', '1c-thin')
+	);
+
 	add_theme_support(
 		'inti-menus',
 		array('dropdown-menu', 'off-canvas-menu', 'footer-menu')
@@ -32,21 +55,6 @@ function childtheme_override_setup() {
 	add_theme_support(
 		'inti-sidebars',
 		array('primary', 'frontpage', 'footer')
-	);
-	
-	add_theme_support(
-		'inti-layouts',
-		array('1c', '2c-l', '2c-r', '1c-thin')
-	);
-	
-	add_theme_support(
-		'inti-post-types',
-		array('brand, project, service, staff')
-	);
-	
-	add_theme_support(
-		'inti-page-templates',
-		array('front-page', 'news-page', 'portfolio', 'contact')
 	);
 
 	add_theme_support('inti-customizer');
@@ -114,6 +122,7 @@ function childtheme_override_setup() {
 	require_once locate_template('/framework/content/child-content-front-page-blocks.php');
 	require_once locate_template('/framework/content/child-content-header.php');
 	require_once locate_template('/framework/functions/child-helpers.php');
+	require_once locate_template('/framework/functions/theme-supports.php');
 	require_once locate_template('/framework/metaboxes/child-metaboxes.php');
 	require_once locate_template('/framework/customizer/child-customize.php');
 	require_once locate_template('/framework/theme-options/child-theme-options.php');

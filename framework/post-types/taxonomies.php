@@ -17,32 +17,35 @@
  * devide them by service offered, product purchased, or page they appear on etc. 
  * @since 1.0.3
  */
-add_action( 'init', 'testimonial_taxonomies', 0 );  
-function testimonial_taxonomies() {  
-	$labels = array(
-		'name'              => _x( 'Categories', 'taxonomy general name', WAQA_DOMAIN),
-		'singular_name'     => _x( 'Category', 'taxonomy singular name', WAQA_DOMAIN),
-		'search_items'      => __( 'Search Testimonial Categories', WAQA_DOMAIN),
-		'all_items'         => __( 'All Testimonial Categories', WAQA_DOMAIN),
-		'parent_item'       => __( 'Parent Category', WAQA_DOMAIN),
-		'parent_item_colon' => __( 'Parent Category:', WAQA_DOMAIN),
-		'edit_item'         => __( 'Edit Category', WAQA_DOMAIN),
-		'update_item'       => __( 'Update Category', WAQA_DOMAIN),
-		'add_new_item'      => __( 'Add New Testimonial Category', WAQA_DOMAIN),
-		'new_item_name'     => __( 'New Category Name', WAQA_DOMAIN),
-		'menu_name'         => __( 'Categories', WAQA_DOMAIN),
-	);
 
-	$args = array(
-		'hierarchical'      => true,
-		'labels'            => $labels,
-		'show_ui'           => true,
-		'show_admin_column' => true,
-		'query_var'         => true,
-		'rewrite'           => array( 'slug' => 'testimonial-category' ),
-	);
+if (inti_current_theme_supports('inti-post-types', 'testimonial') ) {
+	add_action( 'init', 'testimonial_taxonomies', 0 );  
+	function testimonial_taxonomies() {  
+		$labels = array(
+			'name'              => _x( 'Categories', 'taxonomy general name', 'inti'),
+			'singular_name'     => _x( 'Category', 'taxonomy singular name', 'inti'),
+			'search_items'      => __( 'Search Testimonial Categories', 'inti'),
+			'all_items'         => __( 'All Testimonial Categories', 'inti'),
+			'parent_item'       => __( 'Parent Category', 'inti'),
+			'parent_item_colon' => __( 'Parent Category:', 'inti'),
+			'edit_item'         => __( 'Edit Category', 'inti'),
+			'update_item'       => __( 'Update Category', 'inti'),
+			'add_new_item'      => __( 'Add New Testimonial Category', 'inti'),
+			'new_item_name'     => __( 'New Category Name', 'inti'),
+			'menu_name'         => __( 'Categories', 'inti'),
+		);
 
-    register_taxonomy( 'inti-testimonial-category', 'inti-testimonial', $args);
+		$args = array(
+			'hierarchical'      => true,
+			'labels'            => $labels,
+			'show_ui'           => true,
+			'show_admin_column' => true,
+			'query_var'         => true,
+			'rewrite'           => array( 'slug' => 'testimonial-category' ),
+		);
+
+	    register_taxonomy( 'inti-testimonial-category', 'inti-testimonial', $args);
+	}
 }
 
 
@@ -53,30 +56,33 @@ function testimonial_taxonomies() {
  * devide them by service offered, product purchased, or page they appear on etc. 
  * @since 1.0.3
  */
-add_action( 'init', 'service_taxonomies', 0 );  
-function service_taxonomies() {  
-	$labels = array(
-		'name'              => _x( 'Categories', 'taxonomy general name', WAQA_DOMAIN),
-		'singular_name'     => _x( 'Category', 'taxonomy singular name', WAQA_DOMAIN),
-		'search_items'      => __( 'Search Service Categories', WAQA_DOMAIN),
-		'all_items'         => __( 'All Service Categories', WAQA_DOMAIN),
-		'parent_item'       => __( 'Parent Category', WAQA_DOMAIN),
-		'parent_item_colon' => __( 'Parent Category:', WAQA_DOMAIN),
-		'edit_item'         => __( 'Edit Category', WAQA_DOMAIN),
-		'update_item'       => __( 'Update Category', WAQA_DOMAIN),
-		'add_new_item'      => __( 'Add New Service Category', WAQA_DOMAIN),
-		'new_item_name'     => __( 'New Category Name', WAQA_DOMAIN),
-		'menu_name'         => __( 'Categories', WAQA_DOMAIN),
-	);
 
-	$args = array(
-		'hierarchical'      => true,
-		'labels'            => $labels,
-		'show_ui'           => true,
-		'show_admin_column' => true,
-		'query_var'         => true,
-		'rewrite'           => array( 'slug' => 'service-category' ),
-	);
+if (inti_current_theme_supports('inti-post-types', 'service') ) {
+	add_action( 'init', 'service_taxonomies', 0 );  
+	function service_taxonomies() {  
+		$labels = array(
+			'name'              => _x( 'Categories', 'taxonomy general name', 'inti'),
+			'singular_name'     => _x( 'Category', 'taxonomy singular name', 'inti'),
+			'search_items'      => __( 'Search Service Categories', 'inti'),
+			'all_items'         => __( 'All Service Categories', 'inti'),
+			'parent_item'       => __( 'Parent Category', 'inti'),
+			'parent_item_colon' => __( 'Parent Category:', 'inti'),
+			'edit_item'         => __( 'Edit Category', 'inti'),
+			'update_item'       => __( 'Update Category', 'inti'),
+			'add_new_item'      => __( 'Add New Service Category', 'inti'),
+			'new_item_name'     => __( 'New Category Name', 'inti'),
+			'menu_name'         => __( 'Categories', 'inti'),
+		);
 
-    register_taxonomy( 'inti-service-category', 'inti-service', $args);
+		$args = array(
+			'hierarchical'      => true,
+			'labels'            => $labels,
+			'show_ui'           => true,
+			'show_admin_column' => true,
+			'query_var'         => true,
+			'rewrite'           => array( 'slug' => 'service-category' ),
+		);
+
+	    register_taxonomy( 'inti-service-category', 'inti-service', $args);
+	}
 }

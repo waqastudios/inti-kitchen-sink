@@ -3,6 +3,12 @@
  * Content - Front Page Blocks
  * Adds blocks (mostly from template-parts) to the front page template
  *
+ * You can easily turn on and off the front page blocks in functions.php with:-
+ * 	add_theme_support(
+ *		'inti-front-page-blocks',
+ *		array('page', 'posts', 'services', 'testimonials', 'brands', 'bio')
+ *	);
+ *
  * @package Inti
  * @since 1.0.0
  * @license GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -15,7 +21,9 @@
  *
  * @since 1.0.0
  */
-function child_block_page_content() { ?>
+function child_block_page_content() { 
+	if (inti_current_theme_supports( 'inti-front-page-blocks', 'page' )) {
+	?>
 	<section class="block page-content">
 		<div class="row">
 			<div class="small-12 columns">
@@ -25,6 +33,7 @@ function child_block_page_content() { ?>
 		</div>
 	</section><!-- .block page-content -->
 <?php
+	}
 }
 add_action('child_hook_front_page_blocks', 'child_block_page_content', 1);
 
@@ -36,9 +45,11 @@ add_action('child_hook_front_page_blocks', 'child_block_page_content', 1);
  * 
  * @since 1.0.2
  */
-function child_block_blog_posts() { 
-	get_template_part('template-parts/part-block', 'blog-posts');
-	// get_template_part('template-parts/part-block', 'blog-posts-variant-1');
+function child_block_blog_posts() {
+	if (inti_current_theme_supports( 'inti-front-page-blocks', 'posts' )) {
+		get_template_part('template-parts/part-block', 'blog-posts');
+		// get_template_part('template-parts/part-block', 'blog-posts-variant-1');
+	}
 }
 add_action('child_hook_front_page_blocks', 'child_block_blog_posts', 2);
 
@@ -50,8 +61,10 @@ add_action('child_hook_front_page_blocks', 'child_block_blog_posts', 2);
  * 
  * @since 1.0.2
  */
-function child_block_featured_in() { 
-	get_template_part('template-parts/part-block', 'featured-in');
+function child_block_featured_in() {
+	if (inti_current_theme_supports( 'inti-front-page-blocks', 'brands' )) {
+		get_template_part('template-parts/part-block', 'featured-in');
+	}
 }
 add_action('child_hook_front_page_blocks', 'child_block_featured_in', 3);
 
@@ -62,8 +75,10 @@ add_action('child_hook_front_page_blocks', 'child_block_featured_in', 3);
  * 
  * @since 1.0.3
  */
-function child_block_testimonials() { 
-	get_template_part('template-parts/part-block', 'testimonials');
+function child_block_testimonials() {
+	if (inti_current_theme_supports( 'inti-front-page-blocks', 'testimonials' )) {
+		get_template_part('template-parts/part-block', 'testimonials');
+	}
 }
 add_action('child_hook_front_page_blocks', 'child_block_testimonials', 4);
 
@@ -75,7 +90,9 @@ add_action('child_hook_front_page_blocks', 'child_block_testimonials', 4);
  * @since 1.0.3
  */
 function child_block_personal_bio() { 
-	get_template_part('template-parts/part-block', 'personal-bio');
+	if (inti_current_theme_supports( 'inti-front-page-blocks', 'bio' )) {
+		get_template_part('template-parts/part-block', 'personal-bio');
+	}
 }
 add_action('child_hook_front_page_blocks', 'child_block_personal_bio', 5);
 
@@ -87,8 +104,10 @@ add_action('child_hook_front_page_blocks', 'child_block_personal_bio', 5);
  * @since 1.0.3
  */
 function child_block_services() { 
-	get_template_part('template-parts/part-block', 'services');
-	// get_template_part('template-parts/part-block', 'services-variant-1');
+	if (inti_current_theme_supports( 'inti-front-page-blocks', 'services' )) {
+		get_template_part('template-parts/part-block', 'services');
+		// get_template_part('template-parts/part-block', 'services-variant-1');
+	}
 }
 add_action('child_hook_front_page_blocks', 'child_block_services', 6);
 
