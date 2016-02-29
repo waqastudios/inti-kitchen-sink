@@ -26,6 +26,11 @@ $testimonial_category = get_inti_option('fpb_testimonials_category', 'inti_custo
 $number_posts = get_inti_option('fpb_testimonials_post_number', 'inti_customizer_options', -1);
 $order = get_inti_option('fpb_testimonials_order', 'inti_customizer_options', 'ASC');
 
+
+$hide_photos = get_inti_option('fpb_testimonials_hide_photos', 'inti_customizer_options', '');
+$linkto_type = get_inti_option('fpb_testimonials_linkto_type', 'inti_customizer_options', '');
+$linkto_page = get_inti_option('fpb_testimonials_linkto_page', 'inti_customizer_options', '');
+
 $args = "";
 if ($testimonial_category == 0) {
 	$args = array( 
@@ -71,43 +76,68 @@ $testimonials = new WP_Query($args);
 						$testimonial_role = get_post_meta( $post->ID, "_inti_testimonial_role", true );
 						$testimonial_company = get_post_meta( $post->ID, "_inti_testimonial_company", true );
 						$testimonial_url = get_post_meta( $post->ID, "_inti_testimonial_url", true ); 
+									
+						$link = "";
+						if ($linkto_type == "permalink") {
+							$link = '<a href="' . get_the_permalink() . '">';
+						} elseif ($linkto_type == "url" && $linkto_page != "-1") {
+							$link = '<a href="' . get_the_permalink($linkto_page) . '">';
+						} else {
+							// Do nothing
+						}
 
 					?>
-					<div class="slide testimonial">
+					<div class="slide">
+						<?php 
+							if ($link) {
+								echo $link;
+							} 
+						 ?>
 
-						<?php // if it has a thumbnail, create two columns, else just one
-						if ( has_post_thumbnail($post->ID) ) : ?>
-							<div class="medium-5 mlarge-4 columns">
-								<div class="testimonial-image">
-									<?php the_post_thumbnail('testimonial-thumbnail'); ?>
+						<blockquote class="testimonial">
+							<div class="row">
+								
+								<?php // if it has a thumbnail, create two columns, else just one
+								if ( has_post_thumbnail($post->ID) && $hide_photos == 0 ) : ?>
+								<div class="medium-5 mlarge-4 columns">
+									<div class="testimonial-image">
+										<?php the_post_thumbnail('testimonial-thumbnail'); ?>
+									</div>
 								</div>
-							</div>
-							<div class="medium-7 mlarge-8 columns">
-								<blockquote>
+								<div class="medium-7 mlarge-8 columns">
+									
 									<div class="testimonial-text">
 										<?php the_excerpt(); ?>
 										<cite class="testimonial-owner">	
 											<?php the_testimonial_owner($post->ID); ?>		
 										</cite>
 									</div>
-								</blockquote>
-							</div>
-						<?php 
-						else : ?>
-							<div class="column">
-								<blockquote>
+									
+								</div>
+								<?php else : ?>
+								<div class="column">
+									
 									<div class="testimonial-text">
-										<cite><?php the_excerpt(); ?></cite>
-										<p class="testimonial-owner">	
-											<?php the_testimonial_owner($post->ID); ?>					
-										</p>
+										<?php the_excerpt(); ?>
+										<cite class="testimonial-owner">	
+											<?php the_testimonial_owner($post->ID); ?>		
+										</cite>
 									</div>
-								</blockquote>
+									
+								</div>
+								<?php endif; ?>	
+
 							</div>
-						<?php endif; ?>
+						</blockquote>
 				
+
+						<?php 
+							if ($link) {
+								echo '</a>';
+							} 
+						 ?>
 					</div>
-				<?php endwhile; wp_reset_query(); ?>
+				<?php endwhile; ?>
 							
 			</div>
 		</div>
