@@ -128,6 +128,11 @@ function childtheme_override_setup() {
 	require_once locate_template('/framework/theme-options/child-theme-options.php');
 
 	require_once locate_template('/framework/post-types/taxonomies.php');
+
+	if (inti_current_theme_supports( 'inti-post-types', 'testimonial' )) {
+		require_once locate_template('/framework/shortcodes/shortcode-testimonials.php');
+		require_once locate_template('/framework/shortcodes/shortcode-testimonial-single.php');
+	}
 }
 add_action('after_setup_theme', 'childtheme_override_setup', 11);
 

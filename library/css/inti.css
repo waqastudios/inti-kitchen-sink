@@ -4569,6 +4569,31 @@ span.label.category, span.label.tag {
 
 /******************************************************************
 
+Stylesheet: Testimonials
+
+Styles testimonials found in Front Page Block, Shortcode, Widget
+or other forms across the site.
+
+******************************************************************/
+blockquote.testimonial {
+  margin: 0 0 1rem 0;
+  padding: 1rem;
+  border: 1px solid rgba(10, 10, 10, 0.25);
+  border-radius: 0;
+  position: relative;
+  color: #0a0a0a;
+  background-color: white; }
+  blockquote.testimonial > :first-child {
+    margin-top: 0; }
+  blockquote.testimonial > :last-child {
+    margin-bottom: 0; }
+  blockquote.testimonial .testimonial-text cite {
+    text-align: right; }
+  blockquote.testimonial.vertical .testimonial-image {
+    margin: 0 0 1rem 0; }
+
+/******************************************************************
+
 Stylesheet: Comments
 
 Styles for displaying comments, threads of comments and positioning

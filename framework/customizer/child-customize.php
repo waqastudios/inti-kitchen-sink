@@ -106,7 +106,7 @@ function child_new_section($wp_customize) {
 					'name'             => '_customize-dropdown-categories-' . $this->id,
 					'echo'             => 0,
 					'hide_empty'       => false,
-					'show_option_none' => __("All Categories", 'inti'),
+					'show_option_none' => '&mdash; ' . __("All Categories", 'inti') . ' &mdash;',
 					'show_count' => true,
 					'hide_if_empty'    => false,
 					'selected'         => $this->value(),
@@ -136,7 +136,7 @@ function child_new_section($wp_customize) {
 					'name'             => '_customize-dropdown-services-categories-' . $this->id,
 					'echo'             => 0,
 					'hide_empty'       => false,
-					'show_option_all'  => __("All Categories", 'inti'),
+					'show_option_all'  => '&mdash; ' . __("All Categories", 'inti') . ' &mdash;',
 					'show_count'       => true,
 					'taxonomy'         => 'inti-service-category',
 					'hide_if_empty'    => false,
@@ -217,7 +217,7 @@ function child_new_section($wp_customize) {
 								 id="_customize-dropdown-page-'.$this->id.'" 
 								 class="postform">';
 
-			$dropdown .= '<option value="-1">'. __('Select a Page', 'inti') .'</option>';
+			$dropdown .= '<option value="-1">&mdash; ' . __('Select Page', 'inti') . ' &mdash;</option>';
 
 
 			while($optins->have_posts()) : $optins->the_post();

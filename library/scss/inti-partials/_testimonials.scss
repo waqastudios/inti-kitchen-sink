@@ -1,0 +1,114 @@
+/******************************************************************
+
+Stylesheet: Testimonials
+
+Styles testimonials found in Front Page Block, Shortcode, Widget
+or other forms across the site.
+
+******************************************************************/
+
+
+// General styles
+blockquote.testimonial {
+	@include callout;
+	
+		// Common styles across all testimonials
+		.testimonial-image {
+			img {}
+		}
+		.testimonial-text {
+			p {}
+			cite {
+				text-align: right;
+				
+					.testimonial-name {}
+					.testimonial-role {}
+					.testimonial-company {}
+			}
+			a {}
+		}
+
+		// Variations of testimonials
+		&.left {}
+		&.right {}
+		&.vertical {
+			.testimonial-image { margin: 0 0 $global-margin 0; }
+		}
+		&.mixed {}
+}
+
+// Styles for the shortcode that outputs multiple testimonials
+.testimonials-shortcode-list {
+	blockquote.testimonial {
+		.testimonial-image {
+			img {}
+		}
+		.testimonial-text {
+			p {}
+			cite {
+				.testimonial-name {}
+				.testimonial-role {}
+				.testimonial-company {}
+			}
+			a {}
+		}
+
+		// Variations of testimonials
+		&.left {}
+		&.right {}
+		&.vertical {}
+		&.mixed {}
+	}
+}
+
+
+// Styles for the widget that outputs multiple testimonials in a carousel
+.testimonials-widget-list {
+	blockquote.testimonial {
+		.testimonial-image {
+			img {}
+		}
+		.testimonial-text {
+			p {}
+			cite {
+				.testimonial-name {}
+				.testimonial-role {}
+				.testimonial-company {}
+			}
+			a {}
+		}
+
+		// Variations of testimonials
+		&.left {}
+		&.right {}
+		&.vertical {}
+		&.mixed {}
+	}
+}
+
+
+// Styles for the front page block that outputs multiple testimonials in a carousel
+.inti-testimonial-slider {
+	blockquote.testimonial {
+
+			// Common styles across all testimonials
+			.testimonial-image {
+				img {}
+			}
+			.testimonial-text {
+				p {}
+				cite {
+					.testimonial-name {}
+					.testimonial-role {}
+					.testimonial-company {}
+				}
+				a {}
+			}
+
+			// Variations of testimonials
+			&.left {}
+			&.right {}
+			&.vertical {}
+			&.mixed {}
+	}
+}
