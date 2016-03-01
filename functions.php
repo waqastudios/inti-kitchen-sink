@@ -31,7 +31,7 @@ function childtheme_override_setup() {
 	
 	add_theme_support(
 		'inti-post-types',
-		array('service', 'testimonial', 'brand')
+		array('service', 'testimonial', 'brand', 'opt-in')
 	);
 	
 	add_theme_support(
@@ -132,6 +132,10 @@ function childtheme_override_setup() {
 	if (inti_current_theme_supports( 'inti-post-types', 'testimonial' )) {
 		require_once locate_template('/framework/shortcodes/shortcode-testimonials.php');
 		require_once locate_template('/framework/shortcodes/shortcode-testimonial-single.php');
+	}
+	if (inti_current_theme_supports( 'inti-post-types', 'opt-in' )) {
+		require_once locate_template('/framework/shortcodes/shortcode-opt-in.php');
+		require_once locate_template('/framework/widgets/opt-in.php');
 	}
 }
 add_action('after_setup_theme', 'childtheme_override_setup', 11);
