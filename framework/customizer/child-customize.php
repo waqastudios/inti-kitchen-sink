@@ -301,6 +301,22 @@ function child_new_section($wp_customize) {
 					),
 					'priority' => 3,
 				 ) );	
+			$wp_customize->add_setting('inti_customizer_options[fpb_post_order]', array( 
+				'default'        => 'ASC',
+				'type'           => 'option',
+				'capability'     => 'manage_options',
+			 ) );
+				$wp_customize->add_control('inti_customizer_options[fpb_post_order]', array( 
+					'label'    => __('Order', 'inti'),
+					'section'  => 'inti_customizer_front_page_block_blog',
+					'type'     => 'select',
+					'default'  => 'DESC',
+					'choices'  => array( 
+						'ASC' => __('Ascending', 'inti'),
+						'DESC' => __('Descending', 'inti')
+					),
+					'priority' => 4,
+				 ) );	
 			$wp_customize->add_setting('inti_customizer_options[fpb_exclude_category]', array( 
 				'default'    => 1,
 				'type'       => 'option',
@@ -312,7 +328,7 @@ function child_new_section($wp_customize) {
 					'section'  => 'inti_customizer_front_page_block_blog',
 					'description' => __('Hide the posts shown on the front page in the blog index', 'inti'),
 					'type'     => 'checkbox',
-					'priority' => 4,
+					'priority' => 5,
 				 ) );
 	}
 
@@ -631,6 +647,103 @@ function child_new_section($wp_customize) {
 					),
 					'priority' => 6,
 				 ) );	
+	}
+
+	// Video Block
+	if (inti_current_theme_supports( 'inti-front-page-blocks', 'video' )) {
+		$wp_customize->add_section('inti_customizer_front_page_block_video', array( 
+			'title'    => __('Front Page: Video', 'inti'),
+			'description' => __('Modify front page content', 'inti'),
+			'priority' => 5,
+		 ) );
+
+			$wp_customize->add_setting('inti_customizer_options[fpb_video_title]', array( 
+				'default'        => '',
+				'type'           => 'option',
+				'capability'     => 'manage_options',
+			 ) );
+				$wp_customize->add_control('inti_customizer_options[fpb_video_title]', array( 
+					'label'    => __('Title (Optional)', 'inti'),
+					'section'  => 'inti_customizer_front_page_block_video',
+					'type'     => 'text',
+					'priority' => 2,
+				 ) );
+
+			$wp_customize->add_setting('inti_customizer_options[fpb_video_aspect]', array( 
+				'default'        => 'widescreen',
+				'type'           => 'option',
+				'capability'     => 'manage_options',
+			 ) );
+				$wp_customize->add_control('inti_customizer_options[fpb_video_aspect]', array( 
+					'label'    => __('Aspect Ratio', 'inti'),
+					'section'  => 'inti_customizer_front_page_block_video',
+					'type'     => 'select',
+					'choices'  => array( 
+						'widescreen' => __('Widescreen', 'inti'),
+						'fourthree' => __('4:3', 'inti')
+					),
+					'priority' => 3,
+				 ) );	
+
+			$wp_customize->add_setting('inti_customizer_options[fpb_video_source]', array( 
+				'default'        => 'YouTube',
+				'type'           => 'option',
+				'capability'     => 'manage_options',
+			 ) );
+				$wp_customize->add_control('inti_customizer_options[fpb_video_source]', array( 
+					'label'    => __('Video Source', 'inti'),
+					'section'  => 'inti_customizer_front_page_block_video',
+					'type'     => 'select',
+					'choices'  => array( 
+						'YouTube' => 'YouTube',
+						'Vimeo' => 'Vimeo',
+						'Wistia' => 'Wistia'
+					),
+					'priority' => 4,
+				 ) );	
+
+			$wp_customize->add_setting('inti_customizer_options[fpb_video_code]', array( 
+				'default'    => '',
+				'type'       => 'option',
+				'capability' => 'manage_options',
+				// 'transport'  => 'postMessage',
+			 ) );
+				$wp_customize->add_control('inti_customizer_options[fpb_video_code]', array( 
+					'label'    => __('Video Code/ID', 'inti'),
+					'section'  => 'inti_customizer_front_page_block_video',
+					'description' => __('', 'inti'),
+					'type'     => 'text',
+					'priority' => 5,
+				 ) );
+
+
+			$wp_customize->add_setting('inti_customizer_options[fpb_video_button_text]', array( 
+				'default'        => '',
+				'type'           => 'option',
+				'capability'     => 'manage_options',
+				'transport' 	 => 'postMessage',
+			 ) );
+				$wp_customize->add_control('inti_customizer_options[fpb_video_button_text]', array( 
+					'label'    => __('Text for Button', 'inti'),
+					'section'  => 'inti_customizer_front_page_block_video',
+					'description' => __('There is a button beneath the video. Add the text here.', 'inti'),
+					'type'     => 'text',
+					'priority' => 6,
+				 ) );
+
+			$wp_customize->add_setting('inti_customizer_options[fpb_video_button_link]', array( 
+				'default'        => '',
+				'type'           => 'option',
+				'capability'     => 'manage_options',
+				'transport' 	 => 'postMessage',
+			 ) );
+				$wp_customize->add_control('inti_customizer_options[fpb_video_button_link]', array( 
+					'label'    => __('URL for Button', 'inti'),
+					'section'  => 'inti_customizer_front_page_block_video',
+					'description' => __('Add a URL here for the button', 'inti'),
+					'type'     => 'text',
+					'priority' => 7,
+				 ) );
 	}
 
 }

@@ -85,7 +85,7 @@ add_action('child_hook_front_page_blocks', 'child_block_testimonials', 4);
 
 /**
  * Personal bio
- * This block displays bio options from the sidebar
+ * This block displays a biography and photo, or similar
  * 
  * @since 1.0.3
  */
@@ -95,6 +95,20 @@ function child_block_personal_bio() {
 	}
 }
 add_action('child_hook_front_page_blocks', 'child_block_personal_bio', 5);
+
+
+/**
+ * Video
+ * This block displays a video from a 3rd party site
+ * 
+ * @since 1.0.4
+ */
+function child_block_video() { 
+	if (inti_current_theme_supports( 'inti-front-page-blocks', 'bio' )) {
+		get_template_part('template-parts/part-block', 'video');
+	}
+}
+add_action('child_hook_front_page_blocks', 'child_block_video', 6);
 
 
 /**
@@ -109,7 +123,7 @@ function child_block_services() {
 		// get_template_part('template-parts/part-block', 'services-variant-1');
 	}
 }
-add_action('child_hook_front_page_blocks', 'child_block_services', 6);
+add_action('child_hook_front_page_blocks', 'child_block_services', 7);
 
 
 

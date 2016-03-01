@@ -11,6 +11,7 @@
 	$post_category = get_inti_option('fpb_post_category', 'inti_customizer_options', -1);
 	$number_posts = get_inti_option('fpb_post_number', 'inti_customizer_options', 3);
 	$post_columns = get_inti_option('fpb_post_columns', 'inti_customizer_options', 3);
+	$order = get_inti_option('fpb_post_order', 'inti_customizer_options', 'ASC');
 
 ?>
 	<section class="block blog-posts">
@@ -20,6 +21,7 @@
 			'post_type'           => 'post',
 			'cat'                 => $post_category,
 			'posts_per_page'      => $number_posts,
+			'order'               => $order,
 			'ignore_sticky_posts' => 1,
 			'paged'               => $paged );
 		

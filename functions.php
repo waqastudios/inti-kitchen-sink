@@ -26,7 +26,7 @@ function childtheme_override_setup() {
 	 */ 
 	add_theme_support(
 		'inti-front-page-blocks',
-		array('page', 'posts', 'services', 'testimonials', 'brands', 'bio')
+		array('page', 'posts', 'services', 'testimonials', 'brands', 'bio', 'video')
 	);
 	
 	add_theme_support(
