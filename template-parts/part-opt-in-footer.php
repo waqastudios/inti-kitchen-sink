@@ -1,10 +1,11 @@
 <?php
-	if (!$optin_id) $optin_id = '-1';
+	// get the id of the opt in 
+	$optin_id = get_inti_option('footer_opt_in', 'inti_customizer_options', '-1');
 
 	//fetch the opt in
 	$optin_object = get_post($optin_id);
 
-	if($optin_object->post_type == "inti-opt-in") :
+	if($optin_object->post_type == "inti-opt-in" && $optin_object->post_status == "publish") :
 
 		// get its meta
 		$action = get_post_meta( $optin_id, '_inti_opt_in_url', true);

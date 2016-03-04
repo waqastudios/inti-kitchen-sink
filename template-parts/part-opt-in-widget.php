@@ -4,7 +4,7 @@
 	//fetch the opt in
 	$optin_object = get_post($optin_id);
 
-	if($optin_object->post_type == "inti-opt-in") :
+	if($optin_object->post_type == "inti-opt-in" && $optin_object->post_status == "publish") :
 
 
 		// get its meta

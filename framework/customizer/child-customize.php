@@ -161,38 +161,49 @@ function child_new_section($wp_customize) {
 	class WP_Customize_WPEditor_Control extends WP_Customize_Control {
 		public $type = 'wysiwyg';
 
-			public function render_content() { ?>
-				<style>
-					.mce-container {
-						z-index: 99999999999999 !important;
-					}
-					#wp-link-wrap {
-						z-index: 99999999999999 !important;
-					}
-					#wp-link-backdrop {
-						z-index: 99999999999999 !important;
-					}
-				</style>
-				<label><span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-				<input type="hidden" <?php $this->link(); ?> value="<?php echo esc_textarea( $this->value() ); ?>">
-					<?php
-					$content = $this->value();
-					$editor_id = str_replace('[', '_', $this->id);
-					$editor_id = str_replace(']', '', $editor_id);
-					$settings = array( 
-						'textarea_name' => $this->id,
-						'media_buttons' => false, 
-						'drag_drop_upload'=>false );
+		public function render_content() { 
+			static $i = 1;
 
-					wp_editor( $content, $editor_id, $settings );
+			// Important
+			static $number_of_editors = 2; // You'll have to manually tell this control how many there'll be
+			
+			?>
+			<style>
+				.mce-container {
+					z-index: 99999999999999 !important;
+				}
+				#wp-link-wrap {
+					z-index: 99999999999999 !important;
+				}
+				#wp-link-backdrop {
+					z-index: 99999999999999 !important;
+				}
+			</style>
+			<label><span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+			<input type="hidden" <?php $this->link(); ?> value="<?php echo esc_textarea( $this->value() ); ?>">
+				<?php
+				$content = $this->value();
+				$editor_id = str_replace('[', '_', $this->id);
+				$editor_id = str_replace(']', '', $editor_id);
+				$settings = array( 
+					'textarea_name' => $this->id,
+					'media_buttons' => false, 
+					'drag_drop_upload'=>false 
+				);
 
-					do_action('admin_footer');
+				wp_editor( $content, $editor_id, $settings );
+
+				do_action('admin_footer');
+
+				if ($i == $number_of_editors ) {
 					do_action('admin_print_footer_scripts');
+				}
+				$i++;
 
-					?>
-				
-				</label>
-			<?php
+				?>
+			
+			</label>
+		<?php
 		}
 	}
 	
@@ -241,6 +252,49 @@ function child_new_section($wp_customize) {
 
 	}
 
+	/** 
+	 * Opt-Ins
+	 * Shows select for opt ins
+	 */
+	class WP_Customize_Dropdown_Opt_In_Control extends WP_Customize_Control {
+		public $type = 'dropdown-optins';	
+		
+		public function render_content() {
+
+			$args = array(
+				'post_type' => 'inti-opt-in',
+				'order' => 'ASC',
+				'posts_per_page' => 100,
+			);
+			$optins = new WP_Query($args);
+
+			$dropdown = '<select name="_customize-dropdown-opt-in-'.$this->id.'" 
+								 id="_customize-dropdown-opt-in-'.$this->id.'" 
+								 class="postform">';
+
+			$dropdown .= '<option value="-1">&mdash; ' . __('Select Opt-In', 'inti') . ' &mdash;</option>';
+
+
+			while($optins->have_posts()) : $optins->the_post();
+
+				$dropdown .= '<option value="'. get_the_ID(). '">'.get_the_title().'</option>';
+
+			endwhile;
+
+				
+
+			$dropdown .= '</select>';
+
+			$dropdown = str_replace('<select', '<select ' . $this->get_link(), $dropdown );
+
+			printf( 
+				'<label class="customize-control-select"><span class="customize-control-title">%s</span> %s</label>',
+				$this->label,
+				$dropdown
+			 );
+		}
+
+	}
 
 	/**
 	 * 2) Adds all sections and settings
@@ -517,6 +571,7 @@ function child_new_section($wp_customize) {
 						array( 
 							'label'    => __('Personal Bio', 'inti'),
 							'section'  => 'inti_customizer_front_page_block_personal_bio',
+							'settings' => 'inti_customizer_options[fpb_personal_bio]',
 							'type' => 'wysiwyg',
 							'priority' => 3,
 						)
@@ -745,5 +800,65 @@ function child_new_section($wp_customize) {
 					'priority' => 7,
 				 ) );
 	}
+
+
+	/**
+	 * General/Header section exists in parent theme, let's add to it here
+	 * Section: inti_customizer_general
+	 */
+			$wp_customize->add_setting('inti_customizer_options[header_opt_in]', array( 
+				'default'    => 1,
+				'type'       => 'option',
+				'capability' => 'manage_options',
+			 ) );	
+				$wp_customize->add_control(
+					new WP_Customize_Dropdown_Opt_In_Control(
+						$wp_customize,
+						'inti_customizer_options[header_opt_in]',
+						array(
+							'label'    => "Opt-In Form to display",
+							'settings' => 'inti_customizer_options[header_opt_in]',
+							'section'  => 'inti_customizer_general',
+							'priority' => 8,
+						)
+					)
+				);
+
+	/**
+	 * Layouts section exists in parent theme, let's add to it here
+	 * Section: inti_customizer_posts
+	 */
+			$wp_customize->add_setting('inti_customizer_options[footer_opt_in]', array( 
+				'default'    => 1,
+				'type'       => 'option',
+				'capability' => 'manage_options',
+			 ) );	
+				$wp_customize->add_control(
+					new WP_Customize_Dropdown_Opt_In_Control(
+						$wp_customize,
+						'inti_customizer_options[footer_opt_in]',
+						array(
+							'label'    => "Opt-In Form to display",
+							'settings' => 'inti_customizer_options[footer_opt_in]',
+							'section'  => 'inti_customizer_footer',
+							'priority' => 2,
+						)
+					)
+				);
+	/**
+	 * Main Styles section exists in parent theme, let's add to it here
+	 * Section: inti_customizer_main_styles
+	 */
+
+	/**
+	 * Content Styles section exists in parent theme, let's add to it here
+	 * Section: inti_customizer_content_styles
+	 */
+
+	/**
+	 * Footer section exists in parent theme, let's add to it here
+	 * Section: inti_customizer_footer
+	 */
+
 
 }

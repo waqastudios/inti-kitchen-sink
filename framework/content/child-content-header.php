@@ -12,10 +12,10 @@
 /**
  * 
  */
-function child_remove_content_actions(){
+function child_remove_header_content_actions(){
     remove_action( 'inti_hook_site_banner_after', 'inti_do_main_dropdown_menu');
 }
-add_action( 'after_setup_theme', 'child_remove_content_actions', 0 );
+add_action( 'after_setup_theme', 'child_remove_header_content_actions', 0 );
 
 
 /**
@@ -69,4 +69,18 @@ function child_do_main_dropdown_menu() {
 	}
 }
 add_action('inti_hook_site_banner_after', 'child_do_main_dropdown_menu');
+
+
+/**
+ * Add main menu before or after site banner
+ * add or remove .row to control max width
+ * 
+ * @since 1.0.5
+ */
+function child_do_header_optin() {
+	if (inti_current_theme_supports( 'inti-post-types', 'opt-in' )) : 
+		get_template_part('template-parts/part-opt-in', 'header');
+	endif;
+}
+add_action('inti_hook_site_banner_after', 'child_do_header_optin');
 ?>

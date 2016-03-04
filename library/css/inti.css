@@ -4569,6 +4569,21 @@ span.label.category, span.label.tag {
 
 /******************************************************************
 
+Stylesheet: Opt Ins
+
+Styles for the opt in forms site wide.
+
+******************************************************************/
+.opt-in.header {
+  background-color: #e6e6e6;
+  padding: 1rem 0; }
+
+.opt-in.footer {
+  background-color: #e6e6e6;
+  padding: 1rem 0; }
+
+/******************************************************************
+
 Stylesheet: Testimonials
 
 Styles testimonials found in Front Page Block, Shortcode, Widget
