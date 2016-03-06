@@ -14,34 +14,49 @@
  */
 
 
-class inti_widget_inti_opt_in extends WP_Widget {
-	function inti_widget_inti_opt_in() {
-		$widget_ops = array('classname' => 'inti_opt_in', 'description' => __('Displays an opt-in form in the sidebar', 'inti') );
-		$this->WP_Widget('inti_widget_inti_opt_in', 'Opt-In Form', $widget_ops);
-
-		// add_action( 'admin_enqueue_scripts', array($this, 'inti_widget_add_js') );
-	}
-
+class inti_widget_opt_in extends WP_Widget {
 
 	/**
-	 * Adds JS files to the sidebar page in the dashboard
+	 * Register widget with WordPress.
 	 */
-	// function inti_widget_add_js($hook) {
-	// 	if( $hook == 'widgets.php' ) {
-	// 		wp_enqueue_media();	
-	// 		wp_enqueue_style('thickbox');
-	// 		wp_enqueue_script('thickbox');
-	// 		wp_register_script( 'optin-widget', get_template_directory_uri() . '/framework/widgets/js/image.js', array('jquery'), "", TRUE );
-	// 		wp_enqueue_script('optin-widget');
-	// 	}
-	// }
+	function __construct() {
+		parent::__construct(
+			'inti_opt_in', // Base ID
+			__( 'Opt-In Form', 'inti' ), // Name
+			array( 'description' => __( 'Displays an opt-in form in the sidebar', 'inti' ), ) // Args
+		);
+	}
 
+	/**
+	 * Front-end display of widget.
+	 *
+	 * @see WP_Widget::widget()
+	 *
+	 * @param array $args     Widget arguments.
+	 * @param array $instance Saved values from database.
+	 */
+	public function widget( $args, $instance ) {
+
+		// Output before widget
+		echo $args['before_widget'];
+
+		$optin_id = empty($instance['optin_id']) ? ' ' : apply_filters('widget_optin_id', $instance['optin_id']);
+
+		include(locate_template('template-parts/part-opt-in-widget.php'));
+		// Output after widget
+		echo $args['after_widget'];
+
+	}
 
  	/**
-	 * Creates the widget interface in the dashboard
+	 * Back-end widget form.
+	 *
+	 * @see WP_Widget::form()
+	 *
+	 * @param array $instance Previously saved values from database.
 	 */
-	function form($instance) {
-		$instance = wp_parse_args( (array) $instance, array( 'optin_id' => '' ) );
+	public function form($instance) {
+		$instance = wp_parse_args( (array) $instance, array( 'optin_id' => -1 ) );
 		$optin_id = $instance['optin_id'];
 	?>
 		<p>
@@ -78,30 +93,23 @@ class inti_widget_inti_opt_in extends WP_Widget {
 
 	}
  
-
- 	/**
-	 * Saves the new values to the database
+	/**
+	 * Sanitize widget form values as they are saved.
+	 *
+	 * @see WP_Widget::update()
+	 *
+	 * @param array $new_instance Values just sent to be saved.
+	 * @param array $old_instance Previously saved values from database.
+	 *
+	 * @return array Updated safe values to be saved.
 	 */
-	function update($new_instance, $old_instance) {
+	public function update($new_instance, $old_instance) {
 		$instance = $old_instance;
 		$instance['optin_id'] = $new_instance['optin_id'];
 		return $instance;
 	}
-
-
- 	/**
-	 * Public view markup on the website
-	 */
-	function widget($args, $instance) {
-		extract($args, EXTR_SKIP);
-
-		$optin_id = empty($instance['optin_id']) ? ' ' : apply_filters('widget_optin_id', $instance['optin_id']);
-
-		include(locate_template('template-parts/part-opt-in-widget.php'));
-
-	}
  
 }
-add_action( 'widgets_init', create_function('', 'return register_widget("inti_widget_inti_opt_in");') );
+add_action( 'widgets_init', function(){ register_widget('inti_widget_opt_in' ); });
 
 ?>
