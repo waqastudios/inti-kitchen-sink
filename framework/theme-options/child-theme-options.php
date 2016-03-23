@@ -206,6 +206,14 @@ function inti_initialize_general_options() {
 				__( 'They can be displayed before and after the content, or not at all.', 'inti' ),
 			)
 		);
+
+		add_settings_field( 
+			'frontpage_breadcrumbs',                      // ID used to identify the field throughout the theme
+			__( 'Hide breadcrumbs on front page', 'inti' ),                          // The label to the left of the option interface element
+			'inti_frontpage_breadcrumbs_callback',   // The name of the function responsible for rendering the option interface
+			'inti_general_options',    // The page on which this option will be displayed
+			'general_settings_section'
+		);
 	
 		add_settings_field( 
 			'pagination',                      
