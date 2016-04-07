@@ -53,34 +53,39 @@
 							
 									<div class="mlarge-6 columns <?php if (false == $odd) echo 'mlarge-pull-6'; ?>">
 										<header class="entry-header">
-											<div class="entry-meta category">
-												<?php 
-													$args = array( 
-														'show_author' => false,
-														'show_date'   => false,
-														'show_cat'    => true,
-														'show_tag'    => false,
-														'show_icons'  => false,
-														'show_uncategorized' => false,
-													 );
-													echo inti_get_post_header_meta($args); 
-												?>
-											</div>
-											<h3 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __('%s', 'inti'), the_title_attribute('echo=0') ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
-											<div class="entry-meta date comments">
-												<?php 
-													$args = array( 
-														'show_author' => false,
-														'show_date'   => true,
-														'show_cat'    => false,
-														'show_tag'    => false,
-														'show_icons'  => false,
-														'show_uncategorized' => false,
-													 );
-													echo inti_get_post_header_meta($args); 
+										
+											<?php 
+												$args = array( 
+													'show_author' => false,
+													'show_date'   => false,
+													'show_cat'    => true,
+													'show_tag'    => false,
+													'show_icons'  => false,
+													'show_uncategorized' => false,
+												 );
+												echo inti_get_post_header_meta($args); 
+											?>
 
-													echo inti_get_post_page_footer_comments_link();
-												?>
+											<h3 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __('%s', 'inti'), the_title_attribute('echo=0') ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
+											<div class="row">
+												<div class="medium-6 columns">
+													<?php 
+														$args = array( 
+															'show_author' => false,
+															'show_date'   => true,
+															'show_cat'    => false,
+															'show_tag'    => false,
+															'show_icons'  => false,
+															'show_uncategorized' => false,
+														);
+														echo inti_get_post_header_meta($args); 
+													?>
+												</div>
+												<div class="medium-6 columns">
+													<?php 
+														echo inti_get_post_page_footer_comments_link();
+													?>
+												</div>
 											</div>
 										</header><!-- .entry-header -->
 
