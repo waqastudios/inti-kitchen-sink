@@ -4,7 +4,7 @@
 	//fetch the opt in
 	$optin_object = get_post($optin_id);
 
-	if($optin_object->post_type == "inti-opt-in" && $optin_object->post_status == "publish") :
+	if($optin_object && $optin_object->post_type == "inti-opt-in" && $optin_object->post_status == "publish") :
 
 		// get its meta
 		$action = get_post_meta( $optin_id, '_inti_opt_in_url', true);
