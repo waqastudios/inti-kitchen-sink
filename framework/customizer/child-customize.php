@@ -492,6 +492,22 @@ function child_new_section($wp_customize) {
 					),
 					'priority' => 6,
 				 ) );	
+
+			$wp_customize->add_setting('inti_customizer_options[fpb_testimonials_content]', array( 
+				'default'        => 'ASC',
+				'type'           => 'option',
+				'capability'     => 'manage_options',
+			 ) );
+				$wp_customize->add_control('inti_customizer_options[fpb_testimonials_content]', array( 
+					'label'    => __('What to display', 'inti'),
+					'section'  => 'inti_customizer_front_page_block_testimonials',
+					'type'     => 'select',
+					'choices'  => array( 
+						'excerpt' => __('Excerpt Only', 'inti'),
+						'content' => __('Full Content', 'inti')
+					),
+					'priority' => 7,
+				 ) );	
 			$wp_customize->add_setting('inti_customizer_options[fpb_testimonials_hide_photos]', array( 
 				'default'    => 0,
 				'type'       => 'option',
@@ -501,7 +517,7 @@ function child_new_section($wp_customize) {
 					'label'    => __('Force hide testimonial photos', 'inti'),
 					'section'  => 'inti_customizer_front_page_block_testimonials',
 					'type'     => 'checkbox',
-					'priority' => 7,
+					'priority' => 8,
 				 ) );
 		$wp_customize->add_setting('inti_customizer_options[fpb_testimonials_linkto_type]', array( 
 			'default'        => 'none',

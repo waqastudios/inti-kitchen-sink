@@ -14,7 +14,7 @@
  * @package Inti
  * @subpackage blocks
  * @since 1.0.3
- * @version 1.0,4
+ * @version 1.0.8
  */
 
 
@@ -25,6 +25,7 @@ $description = get_inti_option('fpb_testimonials_description', 'inti_customizer_
 $testimonial_category = get_inti_option('fpb_testimonials_category', 'inti_customizer_options', 0);
 $number_posts = get_inti_option('fpb_testimonials_post_number', 'inti_customizer_options', -1);
 $order = get_inti_option('fpb_testimonials_order', 'inti_customizer_options', 'ASC');
+$content = get_inti_option('fpb_testimonials_content', 'inti_customizer_options', 'excerpt');
 
 
 $hide_photos = get_inti_option('fpb_testimonials_hide_photos', 'inti_customizer_options', '');
@@ -107,7 +108,13 @@ $testimonials = new WP_Query($args);
 								<div class="medium-7 mlarge-8 columns">
 									
 									<div class="testimonial-text">
-										<?php the_excerpt(); ?>
+										<?php
+											if ($content == "excerpt") {
+												the_excerpt();
+											} else {
+												the_content();
+											}
+										 ?>
 										<cite class="testimonial-owner">	
 											<?php the_testimonial_owner($post->ID); ?>		
 										</cite>
@@ -118,7 +125,13 @@ $testimonials = new WP_Query($args);
 								<div class="column">
 									
 									<div class="testimonial-text">
-										<?php the_excerpt(); ?>
+										<?php 
+											if ($content == "excerpt") {
+												the_excerpt();
+											} else {
+												the_content();
+											}
+										 ?>
 										<cite class="testimonial-owner">	
 											<?php the_testimonial_owner($post->ID); ?>		
 										</cite>
