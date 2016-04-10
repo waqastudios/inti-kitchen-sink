@@ -107,6 +107,7 @@ function child_new_section($wp_customize) {
 					'echo'             => 0,
 					'hide_empty'       => false,
 					'show_option_none' => '&mdash; ' . __("All Categories", 'inti') . ' &mdash;',
+					'option_none_value'  => '0',
 					'show_count' => true,
 					'hide_if_empty'    => false,
 					'selected'         => $this->value(),
@@ -356,7 +357,7 @@ function child_new_section($wp_customize) {
 					'priority' => 3,
 				 ) );	
 			$wp_customize->add_setting('inti_customizer_options[fpb_post_order]', array( 
-				'default'        => 'ASC',
+				'default'        => 'DESC',
 				'type'           => 'option',
 				'capability'     => 'manage_options',
 			 ) );

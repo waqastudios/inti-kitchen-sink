@@ -5,12 +5,13 @@
  * @package Inti
  * @subpackage blocks
  * @since 1.0.2
+ * @version 1.0.8
  */
 		
 	// get the options
-	$post_category = get_inti_option('fpb_post_category', 'inti_customizer_options', -1);
+	$post_category = get_inti_option('fpb_post_category', 'inti_customizer_options', 0);
 	$number_posts = get_inti_option('fpb_post_number', 'inti_customizer_options', 3);
-	$order = get_inti_option('fpb_post_order', 'inti_customizer_options', 'ASC');
+	$order = get_inti_option('fpb_post_order', 'inti_customizer_options', 'DESC');
 
 ?>
 	<section class="block blog-posts variant-1">
