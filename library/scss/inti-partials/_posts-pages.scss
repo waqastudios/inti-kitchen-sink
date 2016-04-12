@@ -28,9 +28,11 @@ article {
 	.entry-header {}
 	.entry-content { 
 		margin: $global-margin 0; 
+		@include clearfix;
 	}
 	.entry-summary {
 		margin: $global-margin 0; 
+		@include clearfix;
 	}
 	.entry-footer {}
 
