@@ -4286,6 +4286,46 @@ off canvas menu, and hides the main navigation menu
 .top-bar .site-title {
   color: #fefefe; }
 
+.top-bar .off-canvas-button .hamburger {
+  width: 1.5rem;
+  height: 0.875rem;
+  position: relative;
+  display: inline-block;
+  -webkit-transform: rotate(0);
+  transform: rotate(0); }
+  .top-bar .off-canvas-button .hamburger span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: #fff;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    transition: -webkit-transform 125ms linear;
+    transition: transform 125ms linear; }
+    .top-bar .off-canvas-button .hamburger span:nth-child(1) {
+      top: 0; }
+    .top-bar .off-canvas-button .hamburger span:nth-child(2) {
+      top: 0.4375rem; }
+    .top-bar .off-canvas-button .hamburger span:nth-child(3) {
+      top: 0.875rem; }
+
+.is-off-canvas-open .top-bar .off-canvas-button .hamburger span:nth-child(1) {
+  top: 0.5rem;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg); }
+
+.is-off-canvas-open .top-bar .off-canvas-button .hamburger span:nth-child(2) {
+  top: 0.4375rem;
+  opacity: 0; }
+
+.is-off-canvas-open .top-bar .off-canvas-button .hamburger span:nth-child(3) {
+  top: 0.5rem;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg); }
+
 /******************************************************************
 
 Stylesheet: Off Canvas
