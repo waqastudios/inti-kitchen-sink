@@ -11,7 +11,9 @@ var gulp  = require('gulp'),
     concat = require('gulp-concat'),
     rename = require('gulp-rename'),
     plumber = require('gulp-plumber'),
-    bower = require('gulp-bower')
+    bower = require('gulp-bower'),
+    babel = require('gulp-babel');
+
     
 // Compile Sass, Autoprefix and minify
 gulp.task('styles', function() {
@@ -36,16 +38,16 @@ gulp.task('styles', function() {
     
 // JSHint, concat, and minify JavaScript
 gulp.task('site-js', function() {
-  return gulp.src([	
-	  
+  return gulp.src([ 
+    
            // Grab your custom scripts
-  		  './library/js/scripts/*.js'
-  		  
+        './library/js/scripts/*.js'
+        
   ])
     .pipe(plumber())
     .pipe(jshint())
     .pipe(jshint.reporter('jshint-stylish'))
-    .pipe(concat('child.js'))
+    .pipe(concat('inti.js'))
     .pipe(gulp.dest('./library/js'))
     .pipe(rename({suffix: '-min'}))
     .pipe(uglify())
@@ -54,9 +56,9 @@ gulp.task('site-js', function() {
 
 // JSHint, concat, and minify Foundation JavaScript
 gulp.task('vendor-js', function() {
-  return gulp.src([	
-  		  
-  		  // Call all required vendor files
+  return gulp.src([ 
+        
+        // Call all required vendor files
 
         //if you won't use WP jquery
           //'./library/vendor/jquery/dist/jquery.js',
@@ -81,9 +83,9 @@ gulp.task('vendor-js', function() {
 
 // JSHint, concat, and minify Foundation JavaScript
 gulp.task('foundation-js', function() {
-  return gulp.src([	
-  		  
-  		  // Foundation core - needed if you want to use any of the components below
+  return gulp.src([ 
+        
+        // Foundation core - needed if you want to use any of the components below
           './library/vendor/foundation-sites/js/foundation.core.js',
           './library/vendor/foundation-sites/js/foundation.util.*.js',
           
@@ -106,9 +108,12 @@ gulp.task('foundation-js', function() {
           './library/vendor/foundation-sites/js/foundation.sticky.js',
           './library/vendor/foundation-sites/js/foundation.tabs.js',
           './library/vendor/foundation-sites/js/foundation.toggler.js',
-          './library/vendor/foundation-sites/js/foundation.tooltip.js',
-          './library/vendor/foundation-sites/js/motion-ui.js'
+          './library/vendor/foundation-sites/js/foundation.tooltip.js'
   ])
+    .pipe(babel({
+      presets: ['es2015'],
+        compact: true
+    }))
     .pipe(jshint())
     .pipe(jshint.reporter('jshint-stylish'))
     .pipe(concat('foundation.js'))
