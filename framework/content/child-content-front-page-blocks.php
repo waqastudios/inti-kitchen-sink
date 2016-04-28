@@ -104,7 +104,7 @@ add_action('child_hook_front_page_blocks', 'child_block_personal_bio', 5);
  * @since 1.0.4
  */
 function child_block_video() { 
-	if (inti_current_theme_supports( 'inti-front-page-blocks', 'bio' )) {
+	if (inti_current_theme_supports( 'inti-front-page-blocks', 'video' )) {
 		get_template_part('template-parts/part-block', 'video');
 	}
 }
@@ -124,6 +124,34 @@ function child_block_services() {
 	}
 }
 add_action('child_hook_front_page_blocks', 'child_block_services', 7);
+
+
+/**
+ * Google Maps
+ * This block displays a map from Google
+ * 
+ * @since 1.0.9
+ */
+function child_block_gmap() { 
+	if (inti_current_theme_supports( 'inti-front-page-blocks', 'gmap' )) {
+		get_template_part('template-parts/part-block', 'gmap');
+	}
+}
+add_action('child_hook_front_page_blocks', 'child_block_gmap', 8);
+
+
+/**
+ * Slogan
+ * This block displays a company slogan or message
+ * 
+ * @since 1.0.9
+ */
+function child_block_slogan() { 
+	if (inti_current_theme_supports( 'inti-front-page-blocks', 'slogan' )) {
+		get_template_part('template-parts/part-block', 'slogan');
+	}
+}
+add_action('child_hook_front_page_blocks', 'child_block_slogan', 9);
 
 
 

@@ -166,7 +166,7 @@ function child_new_section($wp_customize) {
 			static $i = 1;
 
 			// Important
-			static $number_of_editors = 2; // You'll have to manually tell this control how many there'll be
+			static $number_of_editors = 3; // You'll have to manually tell this control how many there'll be
 			
 			?>
 			<style>
@@ -816,6 +816,55 @@ function child_new_section($wp_customize) {
 					'type'     => 'text',
 					'priority' => 7,
 				 ) );
+	}
+
+	// Gmaps Block
+	if (inti_current_theme_supports( 'inti-front-page-blocks', 'gmap' )) {
+		$wp_customize->add_section('inti_customizer_front_page_block_gmap', array( 
+			'title'    => __('Front Page: Google Maps', 'inti'),
+			'description' => __('Adds a map as a front page block', 'inti'),
+			'priority' => 5,
+		 ) );
+			$wp_customize->add_setting('inti_customizer_options[fpb_gmap_source]', array( 
+				'default'    => '',
+				'type'       => 'option',
+				'capability' => 'manage_options',
+				// 'transport'  => 'postMessage',
+			 ) );
+				$wp_customize->add_control('inti_customizer_options[fpb_gmap_source]', array( 
+					'label'    => __('Source', 'inti'),
+					'section'  => 'inti_customizer_front_page_block_gmap',
+					'type'     => 'text',
+					'priority' => 8,
+				 ) );
+	}
+
+	// Slogan Block
+	if (inti_current_theme_supports( 'inti-front-page-blocks', 'slogan' )) {
+		$wp_customize->add_section('inti_customizer_front_page_block_slogan', array( 
+			'title'    => __('Front Page: Slogan', 'inti'),
+			'description' => __('Modify front page slogan', 'inti'),
+			'priority' => 5,
+		 ) );
+			$wp_customize->add_setting('inti_customizer_options[fpb_slogan]', array( 
+				'default'    => get_option('inti_customizer_options[fpb_slogan]'),
+				'type'       => 'option',
+				'capability' => 'manage_options',
+				// 'transport'  => 'postMessage',
+			 ) );
+				$wp_customize->add_control(
+					new WP_Customize_WPEditor_Control(
+						$wp_customize,
+						'inti_customizer_options[fpb_slogan]', 
+						array( 
+							'label'    => __('Slogan', 'inti'),
+							'section'  => 'inti_customizer_front_page_block_slogan',
+							'settings' => 'inti_customizer_options[fpb_slogan]',
+							'type' => 'wysiwyg',
+							'priority' => 3,
+						)
+					)
+				);
 	}
 
 
