@@ -8,29 +8,30 @@
  * @version 1.0.8
  */
 		
-	// get the options
-	$post_category = get_inti_option('fpb_post_category', 'inti_customizer_options', 0);
-	$number_posts = get_inti_option('fpb_post_number', 'inti_customizer_options', 3);
-	$order = get_inti_option('fpb_post_order', 'inti_customizer_options', 'DESC');
+// get the options
+$show = get_inti_option('fpb_post_show', 'inti_customizer_options', 1);
+$post_category = get_inti_option('fpb_post_category', 'inti_customizer_options', 0);
+$number_posts = get_inti_option('fpb_post_number', 'inti_customizer_options', 3);
+$order = get_inti_option('fpb_post_order', 'inti_customizer_options', 'DESC');
 
+$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+$args = array( 
+	'post_type'           => 'post',
+	'cat'                 => $post_category,
+	'posts_per_page'      => $number_posts,
+	'order'               => $order,
+	'ignore_sticky_posts' => 1,
+	'paged'               => $paged );
+
+global $frontpage_query;
+
+if ($show) :
+	$frontpage_query = new WP_Query( $args ); 
 ?>
 	<section class="block blog-posts variant-1">
-	<?php // start the loop
-		$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
-		$args = array( 
-			'post_type'           => 'post',
-			'cat'                 => $post_category,
-			'posts_per_page'      => $number_posts,
-			'order'               => $order,
-			'ignore_sticky_posts' => 1,
-			'paged'               => $paged );
-		
-		global $frontpage_query;
-		$frontpage_query = new WP_Query( $args ); ?>
-			  
+
 		<?php if ( $frontpage_query->have_posts() ) : $odd = true; ?>
-		
-		
+
 			
 				<?php while ( $frontpage_query->have_posts() ) : $frontpage_query->the_post(); global $more; $more = 0; ?>
 					
@@ -116,5 +117,15 @@
 				<?php endwhile; // end of the loop ?>
 			
 
-		<?php endif; // end have_posts() check ?>
-	</section>
+			<?php else: ?>
+				<div class="row">
+					<div class="callout warning" data-closable>
+						<p><?php _e('There are currently no published blog posts in this category.'); ?></p>
+						<button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+				</div>
+			<?php endif; // end have_posts() check ?>
+		</section>
+	<?php endif; ?>

@@ -11,6 +11,7 @@
 
 
 // get the options
+$show = get_inti_option('fpb_video_show', 'inti_customizer_options', 1);
 $title = get_inti_option('fpb_video_title', 'inti_customizer_options');
 $aspect = get_inti_option('fpb_video_aspect', 'inti_customizer_options', 'widescreen');
 $source = get_inti_option('fpb_video_source', 'inti_customizer_options', 'YouTube');
@@ -18,7 +19,7 @@ $code = get_inti_option('fpb_video_code', 'inti_customizer_options');
 $button_text = get_inti_option('fpb_video_button_text', 'inti_customizer_options');
 $button_link = get_inti_option('fpb_video_button_link', 'inti_customizer_options');
 
-
+if ($show) :
 ?>
 
 	<section class="block video">	
@@ -67,3 +68,6 @@ $button_link = get_inti_option('fpb_video_button_link', 'inti_customizer_options
 			</div>
 		</div>
 	</section>
+<?php 
+endif;
+?>

@@ -12,10 +12,11 @@
 
 
 // get the options
+$show = get_inti_option('fpb_slogan_show', 'inti_customizer_options', 1);
 $slogan = get_inti_option('fpb_slogan', 'inti_customizer_options');
 ?>
 
-<?php if ($slogan) : ?>	
+<?php if ($show) : ?>	
 
 	<section class="block personal-bio">	
 

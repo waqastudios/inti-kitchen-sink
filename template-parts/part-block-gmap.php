@@ -12,13 +12,14 @@
 
 
 // get the options
+$show = get_inti_option('fpb_gmap_show', 'inti_customizer_options', 1);
 $src = get_inti_option('fpb_gmap_source', 'inti_customizer_options');
  
-if ($src) :
+if ($show) :
 ?>
 
 	<section class="block gmap">	
 		<iframe src="<?php echo $src; ?>" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
 	</section>
 
-<? endif;
+<? endif; ?>

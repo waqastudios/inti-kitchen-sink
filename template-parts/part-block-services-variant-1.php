@@ -18,14 +18,46 @@
  */
 		
 	// get the options
-	$title = get_inti_option('fpb_services_title', 'inti_customizer_options');
-	$description = get_inti_option('fpb_services_description', 'inti_customizer_options');
+$show = get_inti_option('fpb_slogan_show', 'inti_customizer_options', 1);
+$title = get_inti_option('fpb_services_title', 'inti_customizer_options');
+$description = get_inti_option('fpb_services_description', 'inti_customizer_options');
 
-	$service_category = get_inti_option('fpb_services_category', 'inti_customizer_options', 0);
-	$number_posts = get_inti_option('fpb_services_post_number', 'inti_customizer_options', 3);
-	$post_columns = get_inti_option('fpb_services_post_columns', 'inti_customizer_options', 3);
-	$order = get_inti_option('fpb_services_order', 'inti_customizer_options', 'ASC');
-	$default_action_text = get_inti_option('read_more_text', 'inti_general_options', 'Read more &raquo;');
+$service_category = get_inti_option('fpb_services_category', 'inti_customizer_options', 0);
+$number_posts = get_inti_option('fpb_services_post_number', 'inti_customizer_options', 3);
+$post_columns = get_inti_option('fpb_services_post_columns', 'inti_customizer_options', 3);
+$order = get_inti_option('fpb_services_order', 'inti_customizer_options', 'ASC');
+$default_action_text = get_inti_option('read_more_text', 'inti_general_options', 'Read more &raquo;');
+
+$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+$args = "";
+if ($service_category == 0) {
+	$args = array( 
+	'post_type'           => 'inti-service',
+	'posts_per_page'      => $number_posts,
+	'order'               => $order,
+	'orderby'             => 'menu_order',
+	'ignore_sticky_posts' => 1,
+	'paged'               => $paged );
+} else {
+	$args = array( 
+	'post_type'           => 'inti-service',
+	'tax_query'           => array(
+								array(
+									'taxonomy' => 'inti-service-category', 
+									'field' => 'id', 
+									'terms' => $service_category)
+							 ),
+	'posts_per_page'      => $number_posts,
+	'order'               => $order,
+	'orderby'             => 'menu_order',
+	'ignore_sticky_posts' => 1,
+	'paged'               => $paged );
+}
+
+global $services_query;
+
+if ($show) :
+	$services_query = new WP_Query( $args );
 ?>
 	<section class="block services variant-1">
 		<div class="row">
@@ -38,36 +70,7 @@
 				<?php endif; ?>
 			</div>
 		</div>
-	<?php // start the loop
-		$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
-		$args = "";
-		if ($service_category == 0) {
-			$args = array( 
-			'post_type'           => 'inti-service',
-			'posts_per_page'      => $number_posts,
-			'order'               => $order,
-			'orderby'             => 'menu_order',
-			'ignore_sticky_posts' => 1,
-			'paged'               => $paged );
-		} else {
-			$args = array( 
-			'post_type'           => 'inti-service',
-			'tax_query'           => array(
-										array(
-											'taxonomy' => 'inti-service-category', 
-											'field' => 'id', 
-											'terms' => $service_category)
-									 ),
-			'posts_per_page'      => $number_posts,
-			'order'               => $order,
-			'orderby'             => 'menu_order',
-			'ignore_sticky_posts' => 1,
-			'paged'               => $paged );
-		}
-		
-		global $services_query;
-		$services_query = new WP_Query( $args ); ?>
-			  
+	  
 		<?php if ( $services_query->have_posts() ) : ?>
 		
 		
@@ -153,5 +156,15 @@
 			<?php if ( $post_columns != 1 ) echo '</div>'; // close the block-grid ?>
 			
 
+		<?php else: ?>
+			<div class="row">
+				<div class="callout warning" data-closable>
+					<p><?php _e('There are currently no published services in this category'); ?></p>
+					<button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+			</div>
 		<?php endif; // end have_posts() check ?>
 	</section>
+<?php endif; ?>
