@@ -26,7 +26,7 @@ function childtheme_override_setup() {
 	 */ 
 	add_theme_support(
 		'inti-front-page-blocks',
-		array('page', 'posts', 'services', 'testimonials', 'brands', 'bio', 'video')
+		array('page', 'posts', 'services', 'testimonials', 'brands', 'bio', 'video', 'gmap', 'slogan')
 	);
 	
 	add_theme_support(
@@ -156,4 +156,7 @@ add_action('after_setup_theme', 'childtheme_override_setup', 11);
  */
 function child_hook_front_page_blocks() {
 	do_action('child_hook_front_page_blocks');
+}
+function child_hook_site_banner_auxiliary_column() {
+	do_action('child_hook_site_banner_auxiliary_column');
 }

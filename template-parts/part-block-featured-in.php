@@ -14,11 +14,12 @@
  * @subpackage blocks
  * @since 1.0.2
  */
- 	// get the options
-	$title = get_inti_option('fpb_featuredinblock_title', 'inti_customizer_options');
-	$description = get_inti_option('fpb_featuredinblock_description', 'inti_customizer_options');
+	// get the options
+$show = get_inti_option('fpb_featured_in_show', 'inti_customizer_options', 1);
+$title = get_inti_option('fpb_featuredinblock_title', 'inti_customizer_options');
+$description = get_inti_option('fpb_featuredinblock_description', 'inti_customizer_options');
 
-
+if ($show) :
 	$brands = new WP_Query(array(
 		'post_type' => 'inti-brand',
 		'order' => 'ASC',
@@ -36,27 +37,39 @@
 					<?php if ($description) : ?><p><?php echo $description; ?></p><?php endif; ?>
 				</header>
 				<?php endif; ?>
-				<div class="inti-carousel inti-brand clearfix">
-				<?php while ( $brands->have_posts() ) : $brands->the_post(); global $post; ?>
+				<?php if ($brands->have_posts()): ?>
+					<div class="inti-carousel inti-brand clearfix">
+					<?php while ( $brands->have_posts() ) : $brands->the_post(); global $post; ?>
 
-					<div class="slide">
-					<?php 
-						if ( has_post_thumbnail($post->ID) ) :
+						<div class="slide">
+						<?php 
+							if ( has_post_thumbnail($post->ID) ) :
 
-							// Get the meta data 
-							$brand_url = get_post_meta( $post->ID, "_inti_brand_url", true );
-							if ( $brand_url ) : ?>
-								<a href="<?php echo esc_url($brand_url); ?>" target="_blank">
+								// Get the meta data 
+								$brand_url = get_post_meta( $post->ID, "_inti_brand_url", true );
+								if ( $brand_url ) : ?>
+									<a href="<?php echo esc_url($brand_url); ?>" target="_blank">
+										<?php the_post_thumbnail( 'brand-thumbnail', array( 'class'	=> 'brand-thumbnail', 'alt' => get_the_title() ) ); ?>
+									</a>
+								<?php else : ?>
 									<?php the_post_thumbnail( 'brand-thumbnail', array( 'class'	=> 'brand-thumbnail', 'alt' => get_the_title() ) ); ?>
-								</a>
-							<?php else : ?>
-								<?php the_post_thumbnail( 'brand-thumbnail', array( 'class'	=> 'brand-thumbnail', 'alt' => get_the_title() ) ); ?>
+								<?php endif; ?>
 							<?php endif; ?>
-						<?php endif; ?>
-					</div>
+						</div>
 
-				<?php endwhile; wp_reset_query(); ?>
-				</div>				
+					<?php endwhile; wp_reset_query(); ?>
+					</div>
+				<?php else: ?>
+					<div class="row">
+						<div class="callout warning" data-closable>
+							<p><?php _e('There are currently no published brands'); ?></p>
+							<button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+					</div>
+				<?php endif; ?>		
 			</div>
 		</div>
 	</section>
+<?php endif; ?>

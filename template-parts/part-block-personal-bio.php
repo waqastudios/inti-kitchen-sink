@@ -11,12 +11,13 @@
 
 
 // get the options
+$show = get_inti_option('fpb_personal_bio_show', 'inti_customizer_options', 1);
 $title = get_inti_option('fpb_personal_bio_title', 'inti_customizer_options');
 $bio_text = get_inti_option('fpb_personal_bio', 'inti_customizer_options');
 $bio_image = get_inti_option('fpb_personal_bio_image', 'inti_customizer_options');
 $bio_link = get_inti_option('fpb_personal_bio_link', 'inti_customizer_options');
  
-
+if ($show):
 ?>
 	<section class="block personal-bio">	
 	<?php if ($title) : ?>	
@@ -39,3 +40,5 @@ $bio_link = get_inti_option('fpb_personal_bio_link', 'inti_customizer_options');
 			</div>
 		</div>
 	</section>
+
+<?php endif; ?>

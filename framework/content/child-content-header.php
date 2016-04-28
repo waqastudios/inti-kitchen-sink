@@ -74,6 +74,8 @@ function child_do_main_dropdown_menu() {
 	}
 }
 add_action('inti_hook_site_banner_after', 'child_do_main_dropdown_menu');
+// add_action('inti_hook_site_banner_before', 'child_do_main_dropdown_menu');
+// add_action('child_hook_site_banner_auxiliary_column', 'child_do_main_dropdown_menu');
 
 
 /**

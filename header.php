@@ -23,3 +23,4 @@
 		
 			<?php get_template_part('template-parts/part', 'header-contained'); ?>
 			<?php // get_template_part('template-parts/part', 'header-business-hero'); ?>
+			<?php // get_template_part('template-parts/part', 'header-modern-hero'); ?>

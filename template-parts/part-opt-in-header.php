@@ -9,8 +9,11 @@
 
 		// get its meta
 		$action = get_post_meta( $optin_id, '_inti_opt_in_url', true);
+		$target = get_post_meta( $optin_id, '_inti_opt_in_target', true);
 		$hidden = get_post_meta( $optin_id, '_inti_opt_in_hidden', true);
 		$button_text = get_post_meta( $optin_id, '_inti_opt_in_button_text', true);
+		$button_name = get_post_meta( $optin_id, '_inti_opt_in_button_name', true);
+		$form_name = get_post_meta( $optin_id, '_inti_opt_in_form_name', true);
 
 		$first_name_name = get_post_meta( $optin_id, '_inti_opt_in_first_name_name', true);
 		$first_name_placeholder = get_post_meta( $optin_id, '_inti_opt_in_first_name_placeholder', true);
@@ -25,25 +28,25 @@
 			<div class="row">
 				<div class="small-12 medium-6 mlarge-5 columns">
 					<div class="opt-in-lead-in">
-						<?php echo wpautop($optin_object->post_content); ?>
+						<?php echo wpautop(do_shortcode($optin_object->post_content)); ?>
 					</div>
 				</div>
 				<div class="small-12 medium-6 mlarge-7 columns">
 
-					<form action="<?php echo $action; ?>" method="post" id="header-opt-in" name="">
+					<form action="<?php echo $action; ?>" method="post" id="header-opt-in" name="<?php if ($form_name) : echo $form_name; else : echo "form-" . $optin_object->ID; endif; ?>" <?php if ($target) echo 'target="_blank"'; ?>>
 						<div class="hide">
-							<?php echo $hidden; ?>
+							<?php echo stripslashes($hidden); ?>
 						</div>
 
 						<fieldset>
 							<div class="medium-6 mlarge-4 columns">
-								<input type="text" name="<?php echo $first_name_name; ?>" id="footer-opt-in-<?php echo $first_name_name; ?>" placeholder="<?php echo $first_name_placeholder; ?>" class=""<?php if ($first_name_required) echo ' required'; ?>>
+								<input type="text" name="<?php echo $first_name_name; ?>" id="header-opt-in-<?php echo $first_name_name; ?>" placeholder="<?php echo $first_name_placeholder; ?>" class=""<?php if ($first_name_required) echo ' required'; ?>>
 							</div>
 							<div class="medium-6 mlarge-4 columns">
-								<input type="email" name="<?php echo $email_name; ?>" id="footer-opt-in-<?php echo $email_name; ?>" placeholder="<?php echo $email_placeholder; ?>" class=""<?php if ($email_required) echo ' required'; ?>>
+								<input type="email" name="<?php echo $email_name; ?>" id="header-opt-in-<?php echo $email_name; ?>" placeholder="<?php echo $email_placeholder; ?>" class=""<?php if ($email_required) echo ' required'; ?>>
 							</div>
 							<div class="medium-12 mlarge-4 columns">
-								<input type="submit" value="<?php echo $button_text ?>" name="submit" id="submit" class="button expanded">
+								<input type="submit" value="<?php echo $button_text ?>" name="<?php $button_name; ?>" id="submit" class="button expanded">
 							</div>
 						</fieldset>
 					</form>

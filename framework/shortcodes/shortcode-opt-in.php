@@ -10,7 +10,7 @@ function inti_shortcode_opt_in( $atts, $content = null ) {
 	), $atts));
 	$optin_id = $id;
 
-
+	ob_start();
 
 	include(locate_template('template-parts/part-opt-in-shortcode.php'));
 

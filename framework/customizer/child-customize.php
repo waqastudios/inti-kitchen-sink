@@ -166,7 +166,7 @@ function child_new_section($wp_customize) {
 			static $i = 1;
 
 			// Important
-			static $number_of_editors = 2; // You'll have to manually tell this control how many there'll be
+			static $number_of_editors = 3; // You'll have to manually tell this control how many there'll be
 			
 			?>
 			<style>
@@ -307,7 +307,19 @@ function child_new_section($wp_customize) {
 			'title'    => __('Front Page: Blog Posts', 'inti'),
 			'description' => __('Configure the settings for the blog posts block', 'inti'),
 			'priority' => 1,
-		 ) );
+		 ) );			
+			$wp_customize->add_setting('inti_customizer_options[fpb_blog_show]', array( 
+				'default'    => 1,
+				'type'       => 'option',
+				'capability' => 'manage_options',
+			 ) );	
+				$wp_customize->add_control('inti_customizer_options[fpb_blog_show]', array( 
+					'label'    => __('Show this block', 'inti'),
+					'section'  => 'inti_customizer_front_page_block_blog',
+					'description' => '',
+					'type'     => 'checkbox',
+					'priority' => 1,
+				 ) );
 			$wp_customize->add_setting('inti_customizer_options[fpb_post_category]', array( 
 				'default'    => 1,
 				'type'       => 'option',
@@ -322,7 +334,7 @@ function child_new_section($wp_customize) {
 							'label'    => __('Post Category to display', 'inti'),
 							'settings' => 'inti_customizer_options[fpb_post_category]',
 							'section'  => 'inti_customizer_front_page_block_blog',
-							'priority' => 1,
+							'priority' => 2,
 						)
 					)
 				);
@@ -336,7 +348,7 @@ function child_new_section($wp_customize) {
 					'label'    => __('Number of Posts to display', 'inti'),
 					'section'  => 'inti_customizer_front_page_block_blog',
 					'type'     => 'text',
-					'priority' => 2,
+					'priority' => 3,
 				 ) );
 
 			$wp_customize->add_setting('inti_customizer_options[fpb_post_columns]', array( 
@@ -354,7 +366,7 @@ function child_new_section($wp_customize) {
 						'3' => '3',
 						'4' => '4',
 					),
-					'priority' => 3,
+					'priority' => 4,
 				 ) );	
 			$wp_customize->add_setting('inti_customizer_options[fpb_post_order]', array( 
 				'default'        => 'DESC',
@@ -370,7 +382,7 @@ function child_new_section($wp_customize) {
 						'ASC' => __('Ascending', 'inti'),
 						'DESC' => __('Descending', 'inti')
 					),
-					'priority' => 4,
+					'priority' => 5,
 				 ) );	
 			$wp_customize->add_setting('inti_customizer_options[fpb_exclude_category]', array( 
 				'default'    => 1,
@@ -383,7 +395,7 @@ function child_new_section($wp_customize) {
 					'section'  => 'inti_customizer_front_page_block_blog',
 					'description' => __('Hide the posts shown on the front page in the blog index', 'inti'),
 					'type'     => 'checkbox',
-					'priority' => 5,
+					'priority' => 6,
 				 ) );
 	}
 
@@ -395,6 +407,18 @@ function child_new_section($wp_customize) {
 			'description' => __('Configure the settings for the featured in block', 'inti'),
 			'priority' => 1,
 		 ) );
+			$wp_customize->add_setting('inti_customizer_options[fpb_featured_in_show]', array( 
+				'default'    => 1,
+				'type'       => 'option',
+				'capability' => 'manage_options',
+			 ) );	
+				$wp_customize->add_control('inti_customizer_options[fpb_featured_in_show]', array( 
+					'label'    => __('Show this block', 'inti'),
+					'section'  => 'inti_customizer_front_page_block_featured_in',
+					'description' => '',
+					'type'     => 'checkbox',
+					'priority' => 1,
+				 ) );
 			$wp_customize->add_setting('inti_customizer_options[fpb_featuredinblock_title]', array( 
 				'default'        => '',
 				'type'           => 'option',
@@ -415,7 +439,7 @@ function child_new_section($wp_customize) {
 					'label'    => __('Description (Optional)', 'inti'),
 					'section'  => 'inti_customizer_front_page_block_featured_in',
 					'type'     => 'textarea',
-					'priority' => 2,
+					'priority' => 3,
 				 ) );
 	}
 
@@ -427,6 +451,18 @@ function child_new_section($wp_customize) {
 			'description' => __('Configure the settings for the testimonial block', 'inti'),
 			'priority' => 1,
 		 ) );
+			$wp_customize->add_setting('inti_customizer_options[fpb_testimonials_show]', array( 
+				'default'    => 1,
+				'type'       => 'option',
+				'capability' => 'manage_options',
+			 ) );	
+				$wp_customize->add_control('inti_customizer_options[fpb_testimonials_show]', array( 
+					'label'    => __('Show this block', 'inti'),
+					'section'  => 'inti_customizer_front_page_block_testimonials',
+					'description' => '',
+					'type'     => 'checkbox',
+					'priority' => 1,
+				 ) );
 			$wp_customize->add_setting('inti_customizer_options[fpb_testimonials_title]', array( 
 				'default'        => '',
 				'type'           => 'option',
@@ -520,39 +556,39 @@ function child_new_section($wp_customize) {
 					'type'     => 'checkbox',
 					'priority' => 8,
 				 ) );
-		$wp_customize->add_setting('inti_customizer_options[fpb_testimonials_linkto_type]', array( 
-			'default'        => 'none',
-			'type'           => 'option',
-			'capability'     => 'manage_options',
-		 ) );
-			$wp_customize->add_control('inti_customizer_options[fpb_testimonials_linkto_type]', array( 
-				'label'    => __('Link Slides To', 'inti'),
-				'section'  => 'inti_customizer_front_page_block_testimonials',
-				'type'     => 'select',
-				'choices'  => array( 
-					'none' => __('No Link', 'inti'),
-					'permalink' => __('Testimonial Single (if theme supports)', 'inti'),
-					'url' => __('Praise Page (with a testimonials shortcode)', 'inti')
-				),
-				'priority' => 11,
-			 ) );			
-		$wp_customize->add_setting('inti_customizer_options[fpb_testimonials_linkto_page]', array( 
-			'default'    => 1,
-			'type'       => 'option',
-			'capability' => 'manage_options',
-		 ) );	
-			$wp_customize->add_control(
-				new WP_Customize_Dropdown_Pages_Control(
-					$wp_customize,
-					'inti_customizer_options[fpb_testimonials_linkto_page]',
-					array(
-						'label'    => __('Page to link to (if selected above)', 'inti'),
-						'settings' => 'inti_customizer_options[fpb_testimonials_linkto_page]',
-						'section'  => 'inti_customizer_front_page_block_testimonials',
-						'priority' => 12,
+			$wp_customize->add_setting('inti_customizer_options[fpb_testimonials_linkto_type]', array( 
+				'default'        => 'none',
+				'type'           => 'option',
+				'capability'     => 'manage_options',
+			 ) );
+				$wp_customize->add_control('inti_customizer_options[fpb_testimonials_linkto_type]', array( 
+					'label'    => __('Link Slides To', 'inti'),
+					'section'  => 'inti_customizer_front_page_block_testimonials',
+					'type'     => 'select',
+					'choices'  => array( 
+						'none' => __('No Link', 'inti'),
+						'permalink' => __('Testimonial Single (if theme supports)', 'inti'),
+						'url' => __('Praise Page (with a testimonials shortcode)', 'inti')
+					),
+					'priority' => 9,
+				 ) );			
+			$wp_customize->add_setting('inti_customizer_options[fpb_testimonials_linkto_page]', array( 
+				'default'    => 1,
+				'type'       => 'option',
+				'capability' => 'manage_options',
+			 ) );	
+				$wp_customize->add_control(
+					new WP_Customize_Dropdown_Pages_Control(
+						$wp_customize,
+						'inti_customizer_options[fpb_testimonials_linkto_page]',
+						array(
+							'label'    => __('Page to link to (if selected above)', 'inti'),
+							'settings' => 'inti_customizer_options[fpb_testimonials_linkto_page]',
+							'section'  => 'inti_customizer_front_page_block_testimonials',
+							'priority' => 10,
+						)
 					)
-				)
-			);
+				);
 	}
 
 	// Personal Bio Block
@@ -562,7 +598,18 @@ function child_new_section($wp_customize) {
 			'description' => __('Modify front page content', 'inti'),
 			'priority' => 1,
 		 ) );
-
+			$wp_customize->add_setting('inti_customizer_options[fpb_personal_bio_show]', array( 
+				'default'    => 1,
+				'type'       => 'option',
+				'capability' => 'manage_options',
+			 ) );	
+				$wp_customize->add_control('inti_customizer_options[fpb_personal_bio_show]', array( 
+					'label'    => __('Show this block', 'inti'),
+					'section'  => 'inti_customizer_front_page_block_personal_bio',
+					'description' => '',
+					'type'     => 'checkbox',
+					'priority' => 1,
+				 ) );
 			$wp_customize->add_setting('inti_customizer_options[fpb_personal_bio_title]', array( 
 				'default'        => '',
 				'type'           => 'option',
@@ -635,6 +682,18 @@ function child_new_section($wp_customize) {
 			'description' => __('Configure the settings for the services block', 'inti'),
 			'priority' => 1,
 		 ) );
+			$wp_customize->add_setting('inti_customizer_options[fpb_services_show]', array( 
+				'default'    => 1,
+				'type'       => 'option',
+				'capability' => 'manage_options',
+			 ) );	
+				$wp_customize->add_control('inti_customizer_options[fpb_services_show]', array( 
+					'label'    => __('Show this block', 'inti'),
+					'section'  => 'inti_customizer_front_page_block_services',
+					'description' => '',
+					'type'     => 'checkbox',
+					'priority' => 1,
+				 ) );
 			$wp_customize->add_setting('inti_customizer_options[fpb_services_title]', array( 
 				'default'        => '',
 				'type'           => 'option',
@@ -655,7 +714,7 @@ function child_new_section($wp_customize) {
 					'label'    => __('Description (Optional)', 'inti'),
 					'section'  => 'inti_customizer_front_page_block_services',
 					'type'     => 'textarea',
-					'priority' => 2,
+					'priority' => 3,
 				 ) );
 			$wp_customize->add_setting('inti_customizer_options[fpb_services_category]', array( 
 				'default'    => 1,
@@ -670,7 +729,7 @@ function child_new_section($wp_customize) {
 							'label'    => __('Service Category to display', 'inti'),
 							'settings' => 'inti_customizer_options[fpb_services_category]',
 							'section'  => 'inti_customizer_front_page_block_services',
-							'priority' => 3,
+							'priority' => 4,
 						)
 					)
 				);
@@ -683,7 +742,7 @@ function child_new_section($wp_customize) {
 					'label'    => __('Number of Services to display', 'inti'),
 					'section'  => 'inti_customizer_front_page_block_services',
 					'type'     => 'text',
-					'priority' => 4,
+					'priority' => 5,
 				 ) );
 
 			$wp_customize->add_setting('inti_customizer_options[fpb_services_post_columns]', array( 
@@ -701,7 +760,7 @@ function child_new_section($wp_customize) {
 						'3' => '3',
 						'4' => '4',
 					),
-					'priority' => 5,
+					'priority' => 6,
 				 ) );	
 
 			$wp_customize->add_setting('inti_customizer_options[fpb_services_order]', array( 
@@ -717,7 +776,7 @@ function child_new_section($wp_customize) {
 						'ASC' => __('Ascending', 'inti'),
 						'DESC' => __('Descending', 'inti')
 					),
-					'priority' => 6,
+					'priority' => 7,
 				 ) );	
 	}
 
@@ -726,9 +785,20 @@ function child_new_section($wp_customize) {
 		$wp_customize->add_section('inti_customizer_front_page_block_video', array( 
 			'title'    => __('Front Page: Video', 'inti'),
 			'description' => __('Modify front page content', 'inti'),
-			'priority' => 5,
+			'priority' => 1,
 		 ) );
-
+			$wp_customize->add_setting('inti_customizer_options[fpb_video_show]', array( 
+				'default'    => 1,
+				'type'       => 'option',
+				'capability' => 'manage_options',
+			 ) );	
+				$wp_customize->add_control('inti_customizer_options[fpb_video_show]', array( 
+					'label'    => __('Show this block', 'inti'),
+					'section'  => 'inti_customizer_front_page_block_video',
+					'description' => '',
+					'type'     => 'checkbox',
+					'priority' => 1,
+				 ) );
 			$wp_customize->add_setting('inti_customizer_options[fpb_video_title]', array( 
 				'default'        => '',
 				'type'           => 'option',
@@ -816,6 +886,79 @@ function child_new_section($wp_customize) {
 					'type'     => 'text',
 					'priority' => 7,
 				 ) );
+	}
+
+	// Gmaps Block
+	if (inti_current_theme_supports( 'inti-front-page-blocks', 'gmap' )) {
+		$wp_customize->add_section('inti_customizer_front_page_block_gmap', array( 
+			'title'    => __('Front Page: Google Maps', 'inti'),
+			'description' => __('Adds a map as a front page block', 'inti'),
+			'priority' => 1,
+		 ) );
+			$wp_customize->add_setting('inti_customizer_options[fpb_gmap_show]', array( 
+				'default'    => 1,
+				'type'       => 'option',
+				'capability' => 'manage_options',
+			 ) );	
+				$wp_customize->add_control('inti_customizer_options[fpb_gmap_show]', array( 
+					'label'    => __('Show this block', 'inti'),
+					'section'  => 'inti_customizer_front_page_block_gmap',
+					'description' => '',
+					'type'     => 'checkbox',
+					'priority' => 1,
+				 ) );
+			$wp_customize->add_setting('inti_customizer_options[fpb_gmap_source]', array( 
+				'default'    => '',
+				'type'       => 'option',
+				'capability' => 'manage_options',
+				// 'transport'  => 'postMessage',
+			 ) );
+				$wp_customize->add_control('inti_customizer_options[fpb_gmap_source]', array( 
+					'label'    => __('Source', 'inti'),
+					'section'  => 'inti_customizer_front_page_block_gmap',
+					'type'     => 'text',
+					'priority' => 2,
+				 ) );
+	}
+
+	// Slogan Block
+	if (inti_current_theme_supports( 'inti-front-page-blocks', 'slogan' )) {
+		$wp_customize->add_section('inti_customizer_front_page_block_slogan', array( 
+			'title'    => __('Front Page: Slogan', 'inti'),
+			'description' => __('Modify front page slogan', 'inti'),
+			'priority' => 1,
+		 ) );
+			$wp_customize->add_setting('inti_customizer_options[fpb_slogan_show]', array( 
+				'default'    => 1,
+				'type'       => 'option',
+				'capability' => 'manage_options',
+			 ) );	
+				$wp_customize->add_control('inti_customizer_options[fpb_slogan_show]', array( 
+					'label'    => __('Show this block', 'inti'),
+					'section'  => 'inti_customizer_front_page_block_slogan',
+					'description' => '',
+					'type'     => 'checkbox',
+					'priority' => 1,
+				 ) );
+			$wp_customize->add_setting('inti_customizer_options[fpb_slogan]', array( 
+				'default'    => get_option('inti_customizer_options[fpb_slogan]'),
+				'type'       => 'option',
+				'capability' => 'manage_options',
+				// 'transport'  => 'postMessage',
+			 ) );
+				$wp_customize->add_control(
+					new WP_Customize_WPEditor_Control(
+						$wp_customize,
+						'inti_customizer_options[fpb_slogan]', 
+						array( 
+							'label'    => __('Slogan', 'inti'),
+							'section'  => 'inti_customizer_front_page_block_slogan',
+							'settings' => 'inti_customizer_options[fpb_slogan]',
+							'type' => 'wysiwyg',
+							'priority' => 2,
+						)
+					)
+				);
 	}
 
 
