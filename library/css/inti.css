@@ -4476,6 +4476,20 @@ normally includes a logo, or a full width hero image.
   padding: 6rem 0;
   background-color: #e6e6e6; }
 
+/**
+ * Modern Hero header
+ */
+.site-banner.modern-hero {
+  padding: 1rem 0;
+  background-color: #cacaca; }
+  .site-banner.modern-hero nav.top-bar .row {
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0; }
+
+.site-hero.modern-hero {
+  padding: 6rem 0; }
+
 /******************************************************************
 
 Stylesheet: Top Bar

@@ -45,3 +45,25 @@ normally includes a logo, or a full width hero image.
 	padding: ($global-padding * 6) 0;
 	background-color: $light-gray; 
 }
+
+
+
+
+/**
+ * Modern Hero header
+ */
+.site-banner.modern-hero {
+	padding: $global-padding 0;
+	background-color: $medium-gray; 
+
+		.site-logo {}
+		.title-area {}
+
+		nav.top-bar .row {
+			@include grid-row-nest(0);
+		}
+}
+
+.site-hero.modern-hero {
+	padding: ($global-padding * 6) 0;
+}
