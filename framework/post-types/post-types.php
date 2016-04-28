@@ -27,7 +27,7 @@ function change_post_type_titles( $title ){
     }
 
     if  ( 'inti-opt-in' == $screen->post_type && inti_current_theme_supports('inti-post-types', 'opt-in') ) {
-        $title = __('Lead-in title', 'inti');
+        $title = __('Purpose/Name', 'inti');
     }
  
     return $title;
@@ -185,40 +185,42 @@ if (inti_current_theme_supports('inti-post-types', 'service') ) {
  * Related Taxonomy: None
  * Related Metaboxes: inti_register_opt_in_metabox
  */
-add_action('init', 'opt_in_post_type_init');
-function opt_in_post_type_init() {
-	$labels = array(
-		'name' => _x('Opt-in Forms', 'post type general name', 'inti'),
-		'singular_name' => _x('Opt-in Form', 'post type singular name', 'inti'),
-		'add_new' => __('Add New', 'Opt-in Form', 'inti'),
-		'add_new_item' => __('Add New Opt-in Form', 'inti'),
-		'edit_item' => __('Edit Opt-in Form', 'inti'),
-		'new_item' => __('New Opt-in Form', 'inti'),
-		'view_item' => __('View Opt-in Form', 'inti'),
-		'search_items' => __('Search Opt-ins', 'inti'),
-		'not_found' =>  __('No Opt-in Form found', 'inti'),
-		'not_found_in_trash' => __('No Opt-in Form found in Trash', 'inti'), 
-		'parent_item_colon' => '',
-		'menu_name' => _x('Opt-in Forms', '', 'inti')
-	);
-	$args = array(
-		'labels' => $labels,
-		'public' => true,
-		'publicly_queryable' => false,
-		'show_ui' => true, 
-		'rewrite'   => false,
-		'has_archive' => false,
-		'query_var' => true,
-		'capability_type' => 'page',
-		'hierarchical' => false,
-		'show_in_nav_menus' => false,
-		'menu_position' => 35,
-		'menu_icon' => 'dashicons-align-none', 
-		'supports' => array(
-			'title',
-			'thumbnail',
-			'editor',
-		)
-	);
-	register_post_type('inti-opt-in',$args);
+if (inti_current_theme_supports('inti-post-types', 'opt-in') ) {
+	add_action('init', 'opt_in_post_type_init');
+	function opt_in_post_type_init() {
+		$labels = array(
+			'name' => _x('Opt-in Forms', 'post type general name', 'inti'),
+			'singular_name' => _x('Opt-in Form', 'post type singular name', 'inti'),
+			'add_new' => __('Add New', 'Opt-in Form', 'inti'),
+			'add_new_item' => __('Add New Opt-in Form', 'inti'),
+			'edit_item' => __('Edit Opt-in Form', 'inti'),
+			'new_item' => __('New Opt-in Form', 'inti'),
+			'view_item' => __('View Opt-in Form', 'inti'),
+			'search_items' => __('Search Opt-ins', 'inti'),
+			'not_found' =>  __('No Opt-in Form found', 'inti'),
+			'not_found_in_trash' => __('No Opt-in Form found in Trash', 'inti'), 
+			'parent_item_colon' => '',
+			'menu_name' => _x('Opt-in Forms', '', 'inti')
+		);
+		$args = array(
+			'labels' => $labels,
+			'public' => true,
+			'publicly_queryable' => false,
+			'show_ui' => true, 
+			'rewrite'   => false,
+			'has_archive' => false,
+			'query_var' => true,
+			'capability_type' => 'page',
+			'hierarchical' => false,
+			'show_in_nav_menus' => false,
+			'menu_position' => 35,
+			'menu_icon' => 'dashicons-align-none', 
+			'supports' => array(
+				'title',
+				'thumbnail',
+				'editor',
+			)
+		);
+		register_post_type('inti-opt-in',$args);
+	}
 }

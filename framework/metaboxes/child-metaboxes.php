@@ -155,7 +155,7 @@ function inti_register_opt_in_metabox() {
 		// 'show_names' => true, // Show field names on the left
 		// 'cmb_styles' => false, // false to disable the CMB stylesheet
 		// 'closed'     => true, // true to keep the metabox closed by default
-	) );	
+	) );
 
 	$cmb_opt_in->add_field( array(
 		'name'    => __( 'Post action URL', 'inti' ),
@@ -163,6 +163,13 @@ function inti_register_opt_in_metabox() {
 		'id'      => $prefix . 'url',
 		'type'    => 'text_url',
 		'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
+	) );
+	
+	$cmb_opt_in->add_field( array(
+		'name'    => __( 'Target <em>_blank</em>', 'inti' ),
+		'desc'    => __( 'Post form to new tab', 'inti' ),
+		'id'      => $prefix . 'target',
+		'type'    => 'checkbox',
 	) );
 
 	$cmb_opt_in->add_field( array(
@@ -226,11 +233,29 @@ function inti_register_opt_in_metabox() {
 		'type'    => 'checkbox',
 	) );
 
-
+	$cmb_opt_in->add_field( array(
+		'name' => __( 'Submission Settings', 'inti' ),
+		'desc' => __( 'Values for submit button, form', 'inti' ),
+		'id'   => $prefix . 'submission_title',
+		'type' => 'title',
+	) );
 	$cmb_opt_in->add_field( array(
 		'name'    => __( 'Submit Button Text', 'inti' ),
 		'desc'    => __( 'Text for submit button', 'inti' ),
 		'id'      => $prefix . 'button_text',
+		'type'    => 'text_small',
+	) );	
+	$cmb_opt_in->add_field( array(
+		'name'    => __( 'Submit Button element name', 'inti' ),
+		'desc'    => __( 'Element name (only needed if your particular service checks for the button\'s existence by looking for a specific element name', 'inti' ),
+		'default' => 'submit',
+		'id'      => $prefix . 'button_name',
+		'type'    => 'text_small',
+	) );
+	$cmb_opt_in->add_field( array(
+		'name'    => __( 'Form element name', 'inti' ),
+		'desc'    => __( 'Element name (as above)', 'inti' ),
+		'id'      => $prefix . 'form_name',
 		'type'    => 'text_small',
 	) );
 
