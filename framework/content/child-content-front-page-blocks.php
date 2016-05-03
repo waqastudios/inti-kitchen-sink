@@ -55,6 +55,20 @@ add_action('child_hook_front_page_blocks', 'child_block_blog_posts', 2);
 
 
 /**
+ * Slogan
+ * This block displays a company slogan or message
+ * 
+ * @since 1.0.9
+ */
+function child_block_slogan() { 
+	if (inti_current_theme_supports( 'inti-front-page-blocks', 'slogan' )) {
+		get_template_part('template-parts/part-block', 'slogan');
+	}
+}
+add_action('child_hook_front_page_blocks', 'child_block_slogan', 3);
+
+
+/**
  * Featured in/As Seen in carousel
  * This block would show logos from media companies where the client's business was
  * featured in a report or article
@@ -66,7 +80,7 @@ function child_block_featured_in() {
 		get_template_part('template-parts/part-block', 'featured-in');
 	}
 }
-add_action('child_hook_front_page_blocks', 'child_block_featured_in', 3);
+add_action('child_hook_front_page_blocks', 'child_block_featured_in', 4);
 
 
 /**
@@ -80,7 +94,7 @@ function child_block_testimonials() {
 		get_template_part('template-parts/part-block', 'testimonials');
 	}
 }
-add_action('child_hook_front_page_blocks', 'child_block_testimonials', 4);
+add_action('child_hook_front_page_blocks', 'child_block_testimonials', 5);
 
 
 /**
@@ -94,7 +108,7 @@ function child_block_personal_bio() {
 		get_template_part('template-parts/part-block', 'personal-bio');
 	}
 }
-add_action('child_hook_front_page_blocks', 'child_block_personal_bio', 5);
+add_action('child_hook_front_page_blocks', 'child_block_personal_bio', 6);
 
 
 /**
@@ -108,7 +122,7 @@ function child_block_video() {
 		get_template_part('template-parts/part-block', 'video');
 	}
 }
-add_action('child_hook_front_page_blocks', 'child_block_video', 6);
+add_action('child_hook_front_page_blocks', 'child_block_video', 7);
 
 
 /**
@@ -123,7 +137,7 @@ function child_block_services() {
 		// get_template_part('template-parts/part-block', 'services-variant-1');
 	}
 }
-add_action('child_hook_front_page_blocks', 'child_block_services', 7);
+add_action('child_hook_front_page_blocks', 'child_block_services', 8);
 
 
 /**
@@ -137,21 +151,7 @@ function child_block_gmap() {
 		get_template_part('template-parts/part-block', 'gmap');
 	}
 }
-add_action('child_hook_front_page_blocks', 'child_block_gmap', 8);
-
-
-/**
- * Slogan
- * This block displays a company slogan or message
- * 
- * @since 1.0.9
- */
-function child_block_slogan() { 
-	if (inti_current_theme_supports( 'inti-front-page-blocks', 'slogan' )) {
-		get_template_part('template-parts/part-block', 'slogan');
-	}
-}
-add_action('child_hook_front_page_blocks', 'child_block_slogan', 9);
+add_action('child_hook_front_page_blocks', 'child_block_gmap', 9);
 
 
 

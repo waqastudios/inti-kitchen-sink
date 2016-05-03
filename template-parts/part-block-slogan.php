@@ -13,12 +13,12 @@
 
 // get the options
 $show = get_inti_option('fpb_slogan_show', 'inti_customizer_options', 1);
-$slogan = get_inti_option('fpb_slogan', 'inti_customizer_options');
+$slogan = get_inti_option('fpb_slogan', 'inti_customizer_options', 'Inti Foundation - Kitchen Sink child theme');
 ?>
 
 <?php if ($show) : ?>	
 
-	<section class="block personal-bio">	
+	<section class="block slogan">	
 
 		<div class="row">
 			<div class="column">

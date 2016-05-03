@@ -63,37 +63,6 @@ function child_new_section($wp_customize) {
 	 */	
 
 	/** 
-	 * Dropdown Testimonials Categories
-	 * Shows select for inti-testimonial-category taxonomy created for inti-testimonial custom type
-	 */
-	class WP_Customize_Dropdown_Testimonials_Categories_Control extends WP_Customize_Control {
-		public $type = 'dropdown-testimonials-categories';	
-		
-		public function render_content() {
-			$dropdown = wp_dropdown_categories( 
-				array( 
-					'name'             => '_customize-dropdown-testimonials-categories-' . $this->id,
-					'echo'             => 0,
-					'hide_empty'       => false,
-					'show_option_all'  => '&mdash; ' . __("All Categories", 'inti') . ' &mdash;',
-					'show_count'       => true,
-					'taxonomy'         => 'inti-testimonial-category',
-					'hide_if_empty'    => false,
-					'selected'         => $this->value(),
-				 )
-			 );
-
-			$dropdown = str_replace('<select', '<select ' . $this->get_link(), $dropdown );
-
-			printf( 
-				'<label class="customize-control-select"><span class="customize-control-title">%s</span> %s</label>',
-				$this->label,
-				$dropdown
-			 );
-		}
-	}
-
-	/** 
 	 * Dropdown Categories
 	 * Shows select for category taxonomy for posts
 	 */
@@ -140,6 +109,37 @@ function child_new_section($wp_customize) {
 					'show_option_all'  => '&mdash; ' . __("All Categories", 'inti') . ' &mdash;',
 					'show_count'       => true,
 					'taxonomy'         => 'inti-service-category',
+					'hide_if_empty'    => false,
+					'selected'         => $this->value(),
+				 )
+			 );
+
+			$dropdown = str_replace('<select', '<select ' . $this->get_link(), $dropdown );
+
+			printf( 
+				'<label class="customize-control-select"><span class="customize-control-title">%s</span> %s</label>',
+				$this->label,
+				$dropdown
+			 );
+		}
+	}
+
+	/** 
+	 * Dropdown Testimonials Categories
+	 * Shows select for inti-testimonial-category taxonomy created for inti-testimonial custom type
+	 */
+	class WP_Customize_Dropdown_Testimonials_Categories_Control extends WP_Customize_Control {
+		public $type = 'dropdown-testimonials-categories';	
+		
+		public function render_content() {
+			$dropdown = wp_dropdown_categories( 
+				array( 
+					'name'             => '_customize-dropdown-testimonials-categories-' . $this->id,
+					'echo'             => 0,
+					'hide_empty'       => false,
+					'show_option_all'  => '&mdash; ' . __("All Categories", 'inti') . ' &mdash;',
+					'show_count'       => true,
+					'taxonomy'         => 'inti-testimonial-category',
 					'hide_if_empty'    => false,
 					'selected'         => $this->value(),
 				 )
@@ -399,6 +399,46 @@ function child_new_section($wp_customize) {
 				 ) );
 	}
 
+	// Slogan Block
+	if (inti_current_theme_supports( 'inti-front-page-blocks', 'slogan' )) {
+		$wp_customize->add_section('inti_customizer_front_page_block_slogan', array( 
+			'title'    => __('Front Page: Slogan', 'inti'),
+			'description' => __('Modify front page slogan', 'inti'),
+			'priority' => 1,
+		 ) );
+			$wp_customize->add_setting('inti_customizer_options[fpb_slogan_show]', array( 
+				'default'    => 1,
+				'type'       => 'option',
+				'capability' => 'manage_options',
+			 ) );	
+				$wp_customize->add_control('inti_customizer_options[fpb_slogan_show]', array( 
+					'label'    => __('Show this block', 'inti'),
+					'section'  => 'inti_customizer_front_page_block_slogan',
+					'description' => '',
+					'type'     => 'checkbox',
+					'priority' => 1,
+				 ) );
+			$wp_customize->add_setting('inti_customizer_options[fpb_slogan]', array( 
+				'default'    => 'Inti Foundation - Kitchen Sink child theme',
+				'type'       => 'option',
+				'capability' => 'manage_options',
+				// 'transport'  => 'postMessage',
+			 ) );
+				$wp_customize->add_control(
+					new WP_Customize_WPEditor_Control(
+						$wp_customize,
+						'inti_customizer_options[fpb_slogan]', 
+						array( 
+							'label'    => __('Slogan', 'inti'),
+							'section'  => 'inti_customizer_front_page_block_slogan',
+							'settings' => 'inti_customizer_options[fpb_slogan]',
+							'type' => 'wysiwyg',
+							'priority' => 2,
+						)
+					)
+				);
+	}
+
 
 	// Featured In Block
 	if (inti_current_theme_supports( 'inti-front-page-blocks', 'brands' )) {
@@ -486,7 +526,7 @@ function child_new_section($wp_customize) {
 					'priority' => 3,
 				 ) );
 			$wp_customize->add_setting('inti_customizer_options[fpb_testimonials_category]', array( 
-				'default'    => 0,
+				'default'    => -1,
 				'type'       => 'option',
 				'capability' => 'manage_options',
 			 ) );	
@@ -495,7 +535,7 @@ function child_new_section($wp_customize) {
 						$wp_customize,
 						'inti_customizer_options[fpb_testimonials_category]',
 						array(
-							'label'    => __('Service Category to display', 'inti'),
+							'label'    => __('Testimonial Category to display', 'inti'),
 							'settings' => 'inti_customizer_options[fpb_testimonials_category]',
 							'section'  => 'inti_customizer_front_page_block_testimonials',
 							'priority' => 4,
@@ -531,7 +571,7 @@ function child_new_section($wp_customize) {
 				 ) );	
 
 			$wp_customize->add_setting('inti_customizer_options[fpb_testimonials_content]', array( 
-				'default'        => 'ASC',
+				'default'        => 'excerpt',
 				'type'           => 'option',
 				'capability'     => 'manage_options',
 			 ) );
@@ -573,7 +613,7 @@ function child_new_section($wp_customize) {
 					'priority' => 9,
 				 ) );			
 			$wp_customize->add_setting('inti_customizer_options[fpb_testimonials_linkto_page]', array( 
-				'default'    => 1,
+				'default'    => -1,
 				'type'       => 'option',
 				'capability' => 'manage_options',
 			 ) );	
@@ -746,7 +786,7 @@ function child_new_section($wp_customize) {
 				 ) );
 
 			$wp_customize->add_setting('inti_customizer_options[fpb_services_post_columns]', array( 
-				'default'        => 'numbered',
+				'default'        => '3',
 				'type'           => 'option',
 				'capability'     => 'manage_options',
 			 ) );
@@ -845,7 +885,7 @@ function child_new_section($wp_customize) {
 				 ) );	
 
 			$wp_customize->add_setting('inti_customizer_options[fpb_video_code]', array( 
-				'default'    => '',
+				'default'    => 'MtCMtC50gwY',
 				'type'       => 'option',
 				'capability' => 'manage_options',
 				// 'transport'  => 'postMessage',
@@ -908,7 +948,7 @@ function child_new_section($wp_customize) {
 					'priority' => 1,
 				 ) );
 			$wp_customize->add_setting('inti_customizer_options[fpb_gmap_source]', array( 
-				'default'    => '',
+				'default'    => 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12090.470159428245!2d-73.9856644!3d40.7484405!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd134e199a405a163!2sEmpire+State+Building!5e0!3m2!1sen!2spe!4v1462314250678',
 				'type'       => 'option',
 				'capability' => 'manage_options',
 				// 'transport'  => 'postMessage',
@@ -919,46 +959,6 @@ function child_new_section($wp_customize) {
 					'type'     => 'text',
 					'priority' => 2,
 				 ) );
-	}
-
-	// Slogan Block
-	if (inti_current_theme_supports( 'inti-front-page-blocks', 'slogan' )) {
-		$wp_customize->add_section('inti_customizer_front_page_block_slogan', array( 
-			'title'    => __('Front Page: Slogan', 'inti'),
-			'description' => __('Modify front page slogan', 'inti'),
-			'priority' => 1,
-		 ) );
-			$wp_customize->add_setting('inti_customizer_options[fpb_slogan_show]', array( 
-				'default'    => 1,
-				'type'       => 'option',
-				'capability' => 'manage_options',
-			 ) );	
-				$wp_customize->add_control('inti_customizer_options[fpb_slogan_show]', array( 
-					'label'    => __('Show this block', 'inti'),
-					'section'  => 'inti_customizer_front_page_block_slogan',
-					'description' => '',
-					'type'     => 'checkbox',
-					'priority' => 1,
-				 ) );
-			$wp_customize->add_setting('inti_customizer_options[fpb_slogan]', array( 
-				'default'    => get_option('inti_customizer_options[fpb_slogan]'),
-				'type'       => 'option',
-				'capability' => 'manage_options',
-				// 'transport'  => 'postMessage',
-			 ) );
-				$wp_customize->add_control(
-					new WP_Customize_WPEditor_Control(
-						$wp_customize,
-						'inti_customizer_options[fpb_slogan]', 
-						array( 
-							'label'    => __('Slogan', 'inti'),
-							'section'  => 'inti_customizer_front_page_block_slogan',
-							'settings' => 'inti_customizer_options[fpb_slogan]',
-							'type' => 'wysiwyg',
-							'priority' => 2,
-						)
-					)
-				);
 	}
 
 

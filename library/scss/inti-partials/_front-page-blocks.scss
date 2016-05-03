@@ -31,6 +31,13 @@ section.block {
 			article { margin: $global-margin 0; }
 		}
 
+
+		&.slogan {
+			background-color: $light-gray;
+
+				h2 { font-weight: 100; text-align: center; }
+		}
+
 		// Shows logos that a Featured Images of the Brand custom type
 		&.featured-in {
 			header.block-header {
@@ -92,4 +99,9 @@ section.block {
 					}
 			}
 		}
+
+		&.gmap {
+			iframe { display:block; max-height: 350px; }
+		}
+
 }

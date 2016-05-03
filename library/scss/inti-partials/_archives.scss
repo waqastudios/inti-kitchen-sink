@@ -29,4 +29,8 @@ body.archive, body.blog, body.search-results {
 
 			.entry-body {}
 	}
+
+	&.home { 
+		article { margin: 0; }
+	}
 }

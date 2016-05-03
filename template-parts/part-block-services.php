@@ -23,7 +23,7 @@ $show = get_inti_option('fpb_services_show', 'inti_customizer_options', 1);
 $title = get_inti_option('fpb_services_title', 'inti_customizer_options');
 $description = get_inti_option('fpb_services_description', 'inti_customizer_options');
 
-$service_category = get_inti_option('fpb_services_category', 'inti_customizer_options', 0);
+$service_category = get_inti_option('fpb_services_category', 'inti_customizer_options', -1);
 $number_posts = get_inti_option('fpb_services_post_number', 'inti_customizer_options', 3);
 $post_columns = get_inti_option('fpb_services_post_columns', 'inti_customizer_options', 3);
 $order = get_inti_option('fpb_services_order', 'inti_customizer_options', 'ASC');

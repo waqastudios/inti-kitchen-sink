@@ -4648,6 +4648,11 @@ section.block {
     margin-bottom: 0; }
   section.block.blog-posts.variant-1 article {
     margin: 1rem 0; }
+  section.block.slogan {
+    background-color: #e6e6e6; }
+    section.block.slogan h2 {
+      font-weight: 100;
+      text-align: center; }
   section.block.featured-in .inti-brand-carousel {
     position: relative; }
     section.block.featured-in .inti-brand-carousel .arrows {
@@ -4692,6 +4697,9 @@ section.block {
       position: absolute;
       bottom: 1rem;
       right: 0; }
+  section.block.gmap iframe {
+    display: block;
+    max-height: 350px; }
 
 /******************************************************************
 
@@ -4821,6 +4829,9 @@ header.archive-header {
 
 body.archive article, body.blog article, body.search-results article {
   margin: 0 0 4rem 0; }
+
+body.archive.home article, body.blog.home article, body.search-results.home article {
+  margin: 0; }
 
 /******************************************************************
 
