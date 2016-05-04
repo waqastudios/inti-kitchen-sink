@@ -1,3 +1,7 @@
+<?php inti_hook_site_header_before(); ?>
+
+<div id="site-header" class="site-header">
+
 	<?php inti_hook_site_banner_before(); // inti_do_main_dropwdown_menu() is placed above or below banner ?>
 
 	<div class="site-banner modern-hero" role="banner">
@@ -43,5 +47,9 @@
 	</div><!-- .site-banner -->
 
 	<?php inti_hook_site_banner_after(); // inti_do_main_dropwdown_menu() is placed above or below banner ?>
+
+</div>
+
+<?php inti_hook_site_header_after(); ?>
 
 

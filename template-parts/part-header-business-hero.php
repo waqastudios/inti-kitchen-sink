@@ -1,3 +1,7 @@
+<?php inti_hook_site_header_before(); ?>
+
+<div id="site-header" class="site-header">
+
 	<?php inti_hook_site_banner_before(); // inti_do_main_dropwdown_menu() is placed above or below banner ?>
 
 	<div class="site-banner<?php if ( !get_inti_option('show_site_banner_mobile', 'inti_customizer_options') ) echo " show-for-mlarge"; ?> business-hero" role="banner">
@@ -74,4 +78,8 @@
 			</div>
 		</div>
 	</div>
+
+</div>
+
+<?php inti_hook_site_header_after(); ?>
 

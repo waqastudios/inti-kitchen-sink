@@ -4450,45 +4450,44 @@ Styles that affect the look of page and post content
 
 /******************************************************************
 
-Stylesheet: Site Banner
+Stylesheet: Site Header
 
+The site header wraps both the site-banner, the main navigation and
+anything else that has been added to one of the hooks alongside them.
 The site banner comes before or after the main navigation menu, it
 normally includes a logo, or a full width hero image.
 
 ******************************************************************/
-.site-banner {
-  overflow: auto; }
-
-/**
- * Business Hero header
- */
-.site-banner.business-hero {
-  padding: 1rem 0; }
-  .site-banner.business-hero .contact-area .contact-icon {
-    display: inline-block;
-    vertical-align: top; }
-  .site-banner.business-hero .contact-area .contact-text {
-    display: inline-block; }
-  .site-banner.business-hero .contact-area p {
-    margin: 0; }
-
-.site-hero.business-hero {
-  padding: 6rem 0;
-  background-color: #e6e6e6; }
-
-/**
- * Modern Hero header
- */
-.site-banner.modern-hero {
-  padding: 1rem 0;
-  background-color: #cacaca; }
-  .site-banner.modern-hero nav.top-bar .row {
-    max-width: none;
-    margin-left: 0;
-    margin-right: 0; }
-
-.site-hero.modern-hero {
-  padding: 6rem 0; }
+.site-header {
+  /**
+	 * Business Hero header
+	 */
+  /**
+	 * Modern Hero header
+	 */ }
+  .site-header .site-banner {
+    overflow: auto; }
+  .site-header .site-banner.business-hero {
+    padding: 1rem 0; }
+    .site-header .site-banner.business-hero .contact-area .contact-icon {
+      display: inline-block;
+      vertical-align: top; }
+    .site-header .site-banner.business-hero .contact-area .contact-text {
+      display: inline-block; }
+    .site-header .site-banner.business-hero .contact-area p {
+      margin: 0; }
+  .site-header .site-hero.business-hero {
+    padding: 6rem 0;
+    background-color: #e6e6e6; }
+  .site-header .site-banner.modern-hero {
+    padding: 1rem 0;
+    background-color: #cacaca; }
+    .site-header .site-banner.modern-hero nav.top-bar .row {
+      max-width: none;
+      margin-left: 0;
+      margin-right: 0; }
+  .site-header .site-hero.modern-hero {
+    padding: 6rem 0; }
 
 /******************************************************************
 
@@ -4870,6 +4869,13 @@ Styles for sidebars and the widgets they contain
     display: inline-block;
     margin: 0 0.5rem; }
 
+.admin-bar .sidebar .sticky.is-stuck {
+  margin-top: 32px !important;
+  transition: margin-top .25s ease; }
+  @media screen and (max-width: 48.875em) {
+    .admin-bar .sidebar .sticky.is-stuck {
+      margin-top: 46px !important; } }
+
 /******************************************************************
 
 Stylesheet: Shortcodes
@@ -5067,10 +5073,9 @@ footer can be wide or contained.
 /* General Inti Styles - fix this */
 body.admin-bar {
   padding-top: 32px; }
-
-@media screen and (max-width: 48em) {
-  body.admin-bar {
-    padding-top: 46px !important; } }
+  @media screen and (max-width: 48.875em) {
+    body.admin-bar {
+      padding-top: 46px !important; } }
 
 * {
   outline: 0; }

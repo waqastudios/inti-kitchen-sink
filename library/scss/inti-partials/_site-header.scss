@@ -1,69 +1,75 @@
 /******************************************************************
 
-Stylesheet: Site Banner
+Stylesheet: Site Header
 
+The site header wraps both the site-banner, the main navigation and
+anything else that has been added to one of the hooks alongside them.
 The site banner comes before or after the main navigation menu, it
 normally includes a logo, or a full width hero image.
 
 ******************************************************************/
 
-.site-banner {
-	overflow: auto;
+.site-header {
 
-		.row {}
+	.site-banner {
+		overflow: auto;
 
-		.site-logo {
-			img {}
-		}
+			.row {}
 
-		.title-area { // may be set to display: none in the customizer options
-			h1.site-title {}
-			p.site-description {}
-		} 
-}
+			.site-logo {
+				img {}
+			}
 
-
-/**
- * Business Hero header
- */
-.site-banner.business-hero {
-	padding: $global-padding 0;
-
-		.site-logo {}
-		.title-area {}
-
-		.contact-area {
-			.contact-method {}
-			.contact-icon { display: inline-block; vertical-align: top; }
-			.contact-text { display: inline-block; }
-
-			p { margin: 0; }
-		}
-}
-
-.site-hero.business-hero {
-	padding: ($global-padding * 6) 0;
-	background-color: $light-gray; 
-}
+			.title-area { // may be set to display: none in the customizer options
+				h1.site-title {}
+				p.site-description {}
+			} 
+	}
 
 
+	/**
+	 * Business Hero header
+	 */
+	.site-banner.business-hero {
+		padding: $global-padding 0;
+
+			.site-logo {}
+			.title-area {}
+
+			.contact-area {
+				.contact-method {}
+				.contact-icon { display: inline-block; vertical-align: top; }
+				.contact-text { display: inline-block; }
+
+				p { margin: 0; }
+			}
+	}
+
+	.site-hero.business-hero {
+		padding: ($global-padding * 6) 0;
+		background-color: $light-gray; 
+	}
 
 
-/**
- * Modern Hero header
- */
-.site-banner.modern-hero {
-	padding: $global-padding 0;
-	background-color: $medium-gray; 
 
-		.site-logo {}
-		.title-area {}
 
-		nav.top-bar .row {
-			@include grid-row-nest(0);
-		}
-}
+	/**
+	 * Modern Hero header
+	 */
+	.site-banner.modern-hero {
+		padding: $global-padding 0;
+		background-color: $medium-gray; 
 
-.site-hero.modern-hero {
-	padding: ($global-padding * 6) 0;
+			.site-logo {}
+			.title-area {}
+
+			nav.top-bar .row {
+				@include grid-row-nest(0);
+			}
+	}
+
+	.site-hero.modern-hero {
+		padding: ($global-padding * 6) 0;
+	}
+
 }
