@@ -215,7 +215,7 @@ function inti_shortcode_testimonials( $atts, $content = null ) {
 
 			<?php else : ?>
 				<div class="callout alert">
-					<p><?php _e('Alignment not recognized', 'inti'); ?></p>
+					<p><?php _e('Alignment not recognized', 'inti-child'); ?></p>
 				</div>
 			<?php endif; ?>
 
@@ -239,7 +239,7 @@ add_shortcode('testimonials', 'inti_shortcode_testimonials');
  * Add a filter so it shows in the shortcode picker
  */
 function inti_shortcode_add_testimonials_to_select($args){
-	$args['inti-testimonials'] = 'Testimonials';
+	$args['inti-testimonials'] = __('Testimonials', 'inti-child');
 	return $args;
 }
 add_filter( 'inti_shortcode_filter_select' , 'inti_shortcode_add_testimonials_to_select');
@@ -264,12 +264,12 @@ function inti_shortcode_add_testimonials() {
 	ob_start();?>
 	<tr class="option inti-testimonials">
 		<th class="label">
-			<label for="testimonials-id"><?php _e('Choose a Testimonials Category', 'inti'); ?></label>
+			<label for="testimonials-id"><?php _e('Choose a Testimonials Category', 'inti-child'); ?></label>
 		</th>
 
 		<td class="field">
 			<?php wp_dropdown_categories(array(
-				'show_option_all'    => '&mdash; ' . __("All Categories", 'inti') . ' &mdash;',
+				'show_option_all'    => '&mdash; ' . __("All Categories", 'inti-child') . ' &mdash;',
 				'show_count' => true,
 				'taxonomy' => 'inti-testimonial-category',
 				'name' => 'testimonials-catid',
@@ -280,16 +280,16 @@ function inti_shortcode_add_testimonials() {
 	</tr>
 	<tr class="option inti-testimonials">
 		<th class="label">
-			<label for="testimonials-align"><?php _e('Photo Align', 'inti'); ?></label>
+			<label for="testimonials-align"><?php _e('Photo Align', 'inti-child'); ?></label>
 		</th>
 
 		<td class="field">
 		
 			<select name="testimonials-align" id="testimonials-align" class="widefat">
-				<option value="left" selected><?php _e('All Left', 'inti'); ?></option>
-				<option value="right"><?php _e('All Right', 'inti'); ?></option>
-				<option value="mixed"><?php _e('Left Right Left', 'inti'); ?></option>
-				<option value="vertical"><?php _e('Photo above', 'inti'); ?></option>
+				<option value="left" selected><?php _e('All Left', 'inti-child'); ?></option>
+				<option value="right"><?php _e('All Right', 'inti-child'); ?></option>
+				<option value="mixed"><?php _e('Left Right Left', 'inti-child'); ?></option>
+				<option value="vertical"><?php _e('Photo above', 'inti-child'); ?></option>
 			</select>
 
 		</td>
@@ -297,14 +297,14 @@ function inti_shortcode_add_testimonials() {
 
 	<tr class="option inti-testimonials">
 		<th class="label">
-			<label for="testimonials-order"><?php _e('Order', 'inti'); ?></label>
+			<label for="testimonials-order"><?php _e('Order', 'inti-child'); ?></label>
 		</th>
 
 		<td class="field">
 		
 			<select name="testimonials-order" id="testimonials-order" class="widefat">
-				<option value="ASC" selected><?php _e('Ascending', 'inti'); ?></option>
-				<option value="DESC"><?php _e('Descending', 'inti'); ?></option>
+				<option value="ASC" selected><?php _e('Ascending', 'inti-child'); ?></option>
+				<option value="DESC"><?php _e('Descending', 'inti-child'); ?></option>
 			</select>
 
 		</td>

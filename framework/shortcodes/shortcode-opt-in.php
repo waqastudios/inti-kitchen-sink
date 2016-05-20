@@ -27,7 +27,7 @@ add_shortcode('opt-in', 'inti_shortcode_opt_in');
  * Add a filter so it shows in the shortcode picker
  */
 function inti_shortcode_add_opt_in_to_select($args){
-	$args['inti-opt-in'] = 'Opt-in Form';
+	$args['inti-opt-in'] = __('Opt-In Form', 'inti-child');
 	return $args;
 }
 add_filter( 'inti_shortcode_filter_select' , 'inti_shortcode_add_opt_in_to_select');
@@ -52,7 +52,7 @@ function inti_shortcode_add_opt_in() {
 	ob_start();?>
 	<tr class="option inti-opt-in">
 		<th class="label">
-			<label for="opt-in-id"><?php _e('Choose an Opt-In Form', 'inti'); ?></label>
+			<label for="opt-in-id"><?php _e('Choose an Opt-In Form', 'inti-child'); ?></label>
 		</th>
 
 		<td class="field">
@@ -69,7 +69,7 @@ function inti_shortcode_add_opt_in() {
 
 				<select name="opt-in-id" id="opt-in-id" class="widefat">'
 
-					<option value="-1">&mdash; <?php _e('Select a Form', 'inti'); ?> &mdash;</option>;
+					<option value="-1">&mdash; <?php _e('Select a Form', 'inti-child'); ?> &mdash;</option>;
 
 					<?php
 					while($optins->have_posts()) : $optins->the_post(); ?>

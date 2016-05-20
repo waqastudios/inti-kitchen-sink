@@ -100,7 +100,7 @@ if ($show) :
 
 										<div class="entry-summary">
 											<?php the_excerpt(); ?>
-											<a href="<?php the_permalink(); ?>" class="button read-more"><?php echo get_inti_option('read_more_text', 'inti_general_options', 'Read more &raquo;'); ?></a>
+											<a href="<?php the_permalink(); ?>" class="button read-more"><?php echo get_inti_option('read_more_text', 'inti_general_options', __('Read more >', 'inti')); ?></a>
 										</div><!-- .entry-content -->               
 
 										 <footer class="entry-footer">
@@ -128,7 +128,7 @@ if ($show) :
 		<?php else: ?>
 			<div class="row">
 				<div class="callout warning" data-closable>
-					<p><?php _e('There are currently no published blog posts in this category.'); ?></p>
+					<p><?php _e('There are currently no published blog posts in this category.', 'inti-child'); ?></p>
 					<button class="close-button" aria-label="Dismiss alert" type="button" data-close>
 						<span aria-hidden="true">&times;</span>
 					</button>

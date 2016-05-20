@@ -161,7 +161,7 @@ if ($show) :
 		<?php else: ?>
 			<div class="row">
 				<div class="callout warning" data-closable>
-					<p><?php _e('There are currently no published services in this category'); ?></p>
+					<p><?php _e('There are currently no published services in this category', 'inti-child'); ?></p>
 					<button class="close-button" aria-label="Dismiss alert" type="button" data-close>
 						<span aria-hidden="true">&times;</span>
 					</button>

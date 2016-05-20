@@ -19,7 +19,7 @@ function inti_register_brand_metabox() {
 
 	$cmb_brand = new_cmb2_box( array(
 		'id'            => $prefix . 'metabox',
-		'title'         => __( 'Brand Configuration', 'inti' ),
+		'title'         => __( 'Brand Configuration', 'inti-child' ),
 		'object_types'  => array( 'inti-brand' ), // Post type
 		// 'show_on_cb' => 'inti_hide_if_front_page', // function should return a bool value
 		'context'    => 'side',
@@ -30,8 +30,8 @@ function inti_register_brand_metabox() {
 	) );	
 
 	$cmb_brand->add_field( array(
-		'name'    => __( 'Brand URL (optional)', 'inti' ),
-		'desc'    => __( 'Link the brand logo (Featured Image) to an external URL', 'inti' ),
+		'name'    => __( 'Brand URL (optional)', 'inti-child' ),
+		'desc'    => __( 'Link the brand logo (Featured Image) to an external URL', 'inti-child' ),
 		'id'      => $prefix . 'url',
 		'type'    => 'text_url',
 		'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
@@ -50,7 +50,7 @@ function inti_register_testimonial_metabox() {
 
 	$cmb_testimonial = new_cmb2_box( array(
 		'id'            => $prefix . 'metabox',
-		'title'         => __( 'Testimonial Meta', 'inti' ),
+		'title'         => __( 'Testimonial Meta', 'inti-child' ),
 		'object_types'  => array( 'inti-testimonial' ), // Post type
 		// 'show_on_cb' => 'inti_hide_if_front_page', // function should return a bool value
 		'context'    => 'normal',
@@ -61,22 +61,22 @@ function inti_register_testimonial_metabox() {
 	) );
 
 	$cmb_testimonial->add_field( array(
-		'name'    => __( 'Role', 'inti' ),
-		'desc'    => __( 'Position, Job Title', 'inti' ),
+		'name'    => __( 'Role', 'inti-child' ),
+		'desc'    => __( 'Position, Job Title', 'inti-child' ),
 		'id'      => $prefix . 'role',
 		'type'    => 'text'
 	) );	
 
 	$cmb_testimonial->add_field( array(
-		'name'    => __( 'Company/ Organization', 'inti' ),
-		'desc'    => __( 'Company or organization', 'inti' ),
+		'name'    => __( 'Company/ Organization', 'inti-child' ),
+		'desc'    => __( 'Company or organization', 'inti-child' ),
 		'id'      => $prefix . 'company',
 		'type'    => 'text'
 	) );
 
 	$cmb_testimonial->add_field( array(
-		'name'    => __( 'Company URL', 'inti' ),
-		'desc'    => __( 'Link the company to an external URL', 'inti' ),
+		'name'    => __( 'Company URL', 'inti-child' ),
+		'desc'    => __( 'Link the company to an external URL', 'inti-child' ),
 		'id'      => $prefix . 'url',
 		'type'    => 'text_url',
 		'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
@@ -84,8 +84,8 @@ function inti_register_testimonial_metabox() {
 
 
 	$cmb_testimonial->add_field( array(
-		'name'    => __( 'Open in new window', 'inti' ),
-		'desc'    => __( 'Open link to the company in a new window', 'inti' ),
+		'name'    => __( 'Open in new window', 'inti-child' ),
+		'desc'    => __( 'Open link to the company in a new window', 'inti-child' ),
 		'id'      => $prefix . 'new',
 		'type'    => 'checkbox',
 	) );
@@ -102,7 +102,7 @@ function inti_register_service_metabox() {
 
 	$cmb_service = new_cmb2_box( array(
 		'id'            => $prefix . 'metabox',
-		'title'         => __( 'Service Meta', 'inti' ),
+		'title'         => __( 'Service Meta', 'inti-child' ),
 		'object_types'  => array( 'inti-service' ), // Post type
 		// 'show_on_cb' => 'inti_hide_if_front_page', // function should return a bool value
 		'context'    => 'normal',
@@ -113,15 +113,15 @@ function inti_register_service_metabox() {
 	) );
 
 	$cmb_service->add_field( array(
-		'name'    => __( 'Action Text', 'inti' ),
-		'desc'    => __( 'Any call-to-action text the theme supports, possibly a button below the service description or the alt text on the service image', 'inti' ),
+		'name'    => __( 'Action Text', 'inti-child' ),
+		'desc'    => __( 'Any call-to-action text the theme supports, possibly a button below the service description or the alt text on the service image', 'inti-child' ),
 		'id'      => $prefix . 'action_text',
 		'type'    => 'text'
 	) );
 
 	$cmb_service->add_field( array(
-		'name'    => __( 'Custom URL', 'inti' ),
-		'desc'    => __( 'Alternative link to custom URL - leave blank to keep default service page', 'inti' ),
+		'name'    => __( 'Custom URL', 'inti-child' ),
+		'desc'    => __( 'Alternative link to custom URL - leave blank to keep default service page', 'inti-child' ),
 		'id'      => $prefix . 'url',
 		'type'    => 'text_url',
 		'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
@@ -129,8 +129,8 @@ function inti_register_service_metabox() {
 
 
 	$cmb_service->add_field( array(
-		'name'    => __( 'Open in new window', 'inti' ),
-		'desc'    => __( 'Open link to the company in a new window', 'inti' ),
+		'name'    => __( 'Open in new window', 'inti-child' ),
+		'desc'    => __( 'Open link to the company in a new window', 'inti-child' ),
 		'id'      => $prefix . 'new',
 		'type'    => 'checkbox',
 	) );
@@ -147,7 +147,7 @@ function inti_register_opt_in_metabox() {
 
 	$cmb_opt_in = new_cmb2_box( array(
 		'id'            => $prefix . 'metabox',
-		'title'         => __( 'Opt-in Configuration', 'inti' ),
+		'title'         => __( 'Opt-in Configuration', 'inti-child' ),
 		'object_types'  => array( 'inti-opt-in' ), // Post type
 		// 'show_on_cb' => 'inti_hide_if_front_page', // function should return a bool value
 		'context'    => 'normal',
@@ -158,103 +158,103 @@ function inti_register_opt_in_metabox() {
 	) );
 
 	$cmb_opt_in->add_field( array(
-		'name'    => __( 'Post action URL', 'inti' ),
-		'desc'    => __( 'URL to post the form to', 'inti' ),
+		'name'    => __( 'Post action URL', 'inti-child' ),
+		'desc'    => __( 'URL to post the form to', 'inti-child' ),
 		'id'      => $prefix . 'url',
 		'type'    => 'text_url',
 		'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
 	) );
 	
 	$cmb_opt_in->add_field( array(
-		'name'    => __( 'Target <em>_blank</em>', 'inti' ),
-		'desc'    => __( 'Post form to new tab', 'inti' ),
+		'name'    => __( 'Target <em>_blank</em>', 'inti-child' ),
+		'desc'    => __( 'Post form to new tab', 'inti-child' ),
 		'id'      => $prefix . 'target',
 		'type'    => 'checkbox',
 	) );
 
 	$cmb_opt_in->add_field( array(
-		'name'    => __( 'Hidden Fields', 'inti' ),
-		'desc'    => __( 'Most form embed codes come with fields that are kept hidden, paste those here.', 'inti' ),
+		'name'    => __( 'Hidden Fields', 'inti-child' ),
+		'desc'    => __( 'Most form embed codes come with fields that are kept hidden, paste those here.', 'inti-child' ),
 		'id'      => $prefix . 'hidden',
 		'type'    => 'textarea_code',
 	) );
 
 
 	$cmb_opt_in->add_field( array(
-		'name' => __( 'First Name field', 'inti' ),
-		'desc' => __( 'Values for the First Name field', 'inti' ),
+		'name' => __( 'First Name field', 'inti-child' ),
+		'desc' => __( 'Values for the First Name field', 'inti-child' ),
 		'id'   => $prefix . 'first_name_title',
 		'type' => 'title',
 	) );
 	$cmb_opt_in->add_field( array(
-		'name'    => __( 'First Name element name', 'inti' ),
-		'desc'    => __( 'Value for the name property', 'inti' ),
+		'name'    => __( 'First Name element name', 'inti-child' ),
+		'desc'    => __( 'Value for the name property', 'inti-child' ),
 		'id'      => $prefix . 'first_name_name',
 		'type'    => 'text_medium',
 	) );
 	$cmb_opt_in->add_field( array(
-		'name'    => __( 'First Name element placeholder text', 'inti' ),
-		'desc'    => __( 'Value for the placeholder property', 'inti' ),
+		'name'    => __( 'First Name element placeholder text', 'inti-child' ),
+		'desc'    => __( 'Value for the placeholder property', 'inti-child' ),
 		'id'      => $prefix . 'first_name_placeholder',
 		'type'    => 'text_medium',
-		'default' => __('First Name', 'inti'),
+		'default' => __('First Name', 'inti-child'),
 	) );
 	$cmb_opt_in->add_field( array(
-		'name'    => __( 'First Name required', 'inti' ),
-		'desc'    => __( 'This field is required', 'inti' ),
+		'name'    => __( 'First Name required', 'inti-child' ),
+		'desc'    => __( 'This field is required', 'inti-child' ),
 		'id'      => $prefix . 'first_name_required',
 		'type'    => 'checkbox',
 	) );
 
 
 	$cmb_opt_in->add_field( array(
-		'name' => __( 'Email Address field', 'inti' ),
-		'desc' => __( 'Values for the Email Address field', 'inti' ),
+		'name' => __( 'Email Address field', 'inti-child' ),
+		'desc' => __( 'Values for the Email Address field', 'inti-child' ),
 		'id'   => $prefix . 'email_title',
 		'type' => 'title',
 	) );
 	$cmb_opt_in->add_field( array(
-		'name'    => __( 'Email element name', 'inti' ),
-		'desc'    => __( 'Value for the name property', 'inti' ),
+		'name'    => __( 'Email element name', 'inti-child' ),
+		'desc'    => __( 'Value for the name property', 'inti-child' ),
 		'id'      => $prefix . 'email_name',
 		'type'    => 'text_medium',
 	) );
 	$cmb_opt_in->add_field( array(
-		'name'    => __( 'Email element placeholder text', 'inti' ),
-		'desc'    => __( 'Value for the placeholder property', 'inti' ),
+		'name'    => __( 'Email element placeholder text', 'inti-child' ),
+		'desc'    => __( 'Value for the placeholder property', 'inti-child' ),
 		'id'      => $prefix . 'email_placeholder',
 		'type'    => 'text_medium',
-		'default' => __('Email', 'inti'),
+		'default' => __('Email', 'inti-child'),
 	) );
 	$cmb_opt_in->add_field( array(
-		'name'    => __( 'Email required', 'inti' ),
-		'desc'    => __( 'This field is required', 'inti' ),
+		'name'    => __( 'Email required', 'inti-child' ),
+		'desc'    => __( 'This field is required', 'inti-child' ),
 		'id'      => $prefix . 'email_required',
 		'type'    => 'checkbox',
 	) );
 
 	$cmb_opt_in->add_field( array(
-		'name' => __( 'Submission Settings', 'inti' ),
-		'desc' => __( 'Values for submit button, form', 'inti' ),
+		'name' => __( 'Submission Settings', 'inti-child' ),
+		'desc' => __( 'Values for submit button, form', 'inti-child' ),
 		'id'   => $prefix . 'submission_title',
 		'type' => 'title',
 	) );
 	$cmb_opt_in->add_field( array(
-		'name'    => __( 'Submit Button Text', 'inti' ),
-		'desc'    => __( 'Text for submit button', 'inti' ),
+		'name'    => __( 'Submit Button Text', 'inti-child' ),
+		'desc'    => __( 'Text for submit button', 'inti-child' ),
 		'id'      => $prefix . 'button_text',
 		'type'    => 'text_small',
 	) );	
 	$cmb_opt_in->add_field( array(
-		'name'    => __( 'Submit Button element name', 'inti' ),
-		'desc'    => __( 'Element name (only needed if your particular service checks for the button\'s existence by looking for a specific element name', 'inti' ),
+		'name'    => __( 'Submit Button element name', 'inti-child' ),
+		'desc'    => __( 'Element name (only needed if your particular service checks for the button\'s existence by looking for a specific element name', 'inti-child' ),
 		'default' => 'submit',
 		'id'      => $prefix . 'button_name',
 		'type'    => 'text_small',
 	) );
 	$cmb_opt_in->add_field( array(
-		'name'    => __( 'Form element name', 'inti' ),
-		'desc'    => __( 'Element name (as above)', 'inti' ),
+		'name'    => __( 'Form element name', 'inti-child' ),
+		'desc'    => __( 'Element name (as above)', 'inti-child' ),
 		'id'      => $prefix . 'form_name',
 		'type'    => 'text_small',
 	) );

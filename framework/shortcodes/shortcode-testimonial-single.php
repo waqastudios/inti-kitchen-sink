@@ -136,7 +136,7 @@ function inti_shortcode_testimonial_single( $atts, $content = null ) {
 				<?php else : ?>
 
 					<div class="callout alert"><?php the_testimonial_owner($testimonial_object->ID); ?>
-						<p><?php _e('No testimonial was found with this ID, you may need to re-insert this shortcode.', 'inti') ?></p>
+						<p><?php _e('No testimonial was found with this ID, you may need to re-insert this shortcode.', 'inti-child') ?></p>
 					</div>
 				<?php endif; ?>
 
@@ -151,7 +151,7 @@ function inti_shortcode_testimonial_single( $atts, $content = null ) {
 			ob_start(); ?>
 	
 			<div class="callout alert">
-				<p><?php _e('No testimonial was found with this ID, you may need to re-insert this shortcode.', 'inti') ?></p>
+				<p><?php _e('No testimonial was found with this ID, you may need to re-insert this shortcode.', 'inti-child') ?></p>
 			</div>
 
 			<?php
@@ -169,7 +169,7 @@ add_shortcode('testimonial-single', 'inti_shortcode_testimonial_single');
  * Add a filter so it shows in the shortcode picker
  */
 function inti_shortcode_add_testimonial_single_to_select($args){
-	$args['inti-testimonial-single'] = 'Testimonial (Single)';
+	$args['inti-testimonial-single'] = __('Testimonial (Single)', 'inti-child');
 	return $args;
 }
 add_filter( 'inti_shortcode_filter_select' , 'inti_shortcode_add_testimonial_single_to_select');
@@ -194,32 +194,32 @@ function inti_shortcode_add_testimonial_single() {
 	ob_start();?>
 	<tr class="option inti-testimonial-single">
 		<th class="label">
-			<label for="testimonial-single-id"><?php _e('Choose a Testimonial', 'inti'); ?></label>
+			<label for="testimonial-single-id"><?php _e('Choose a Testimonial', 'inti-child'); ?></label>
 		</th>
 
 		<td class="field">
 			<select name="testimonial-single-id" id="testimonial-single-id" class="widefat">
-				<option value="" selected>&mdash; <?php _e('Select a testimonial by name', 'inti'); ?> &mdash;</option>
+				<option value="" selected>&mdash; <?php _e('Select a testimonial by name', 'inti-child'); ?> &mdash;</option>
 				<?php
 					$testimonial = new WP_Query('post_type=inti-testimonial&posts_per_page=-1'); 
 					while($testimonial->have_posts()) : $testimonial->the_post();
 				?>
-						<option value="<?php echo get_the_ID(); ?>" selected><?php _e(get_the_title(get_the_ID()), 'inti'); ?></option>
+						<option value="<?php echo get_the_ID(); ?>" selected><?php _e(get_the_title(get_the_ID()), 'inti-child'); ?></option>
 					<?php endwhile; ?>
 			</select>
 		</td>
 	</tr>
 	<tr class="option inti-testimonial-single">
 		<th class="label">
-			<label for="testimonial-single-align"><?php _e('Photo Align', 'inti'); ?></label>
+			<label for="testimonial-single-align"><?php _e('Photo Align', 'inti-child'); ?></label>
 		</th>
 
 		<td class="field">
 		
 			<select name="testimonial-single-align" id="testimonial-single-align" class="widefat">
-				<option value="left" selected><?php _e('Left', 'inti'); ?></option>
-				<option value="right"><?php _e('Right', 'inti'); ?></option>
-				<option value="vertical"><?php _e('Photo above', 'inti'); ?></option>
+				<option value="left" selected><?php _e('Left', 'inti-child'); ?></option>
+				<option value="right"><?php _e('Right', 'inti-child'); ?></option>
+				<option value="vertical"><?php _e('Photo above', 'inti-child'); ?></option>
 			</select>
 
 		</td>

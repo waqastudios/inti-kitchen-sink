@@ -107,6 +107,13 @@ function childtheme_override_setup() {
 	
 	// editor stylesheet for TinyMCE
 	add_editor_style('/library/css/editor.css');
+
+	// load parent translations
+	load_theme_textdomain( 'inti' , get_template_directory() . '/languages');
+
+	// load parent translations
+	load_theme_textdomain( 'inti-child' , get_stylesheet_directory() . '/languages');
+
 		
 	/**
 	 * Load framework files from child theme's framework directory

@@ -30,7 +30,7 @@
 							<div class="contact-method phone">
 								<div class="contact-icon"><i class="fa fa-phone"></i></div>
 								<div class="contact-text">
-									<p><strong>Call now!</strong></p>
+									<p><strong><?php _e('Call now!', 'inti-child'); ?></strong></p>
 									<p>1-800-123-4567</p>
 								</div>
 							</div>
@@ -39,8 +39,8 @@
 							<div class="contact-method physical">
 								<div class="contact-icon"><i class="fa fa-home"></i></div>
 								<div class="contact-text">
-									<p><strong>Visit us!</strong></p>
-									<p>100 Your Address</p>
+									<p><strong><?php _e('Visit us!', 'inti-child'); ?></strong></p>
+									<p><?php _e('100 Your Address', 'inti-child'); ?></p>
 								</div>
 							</div>
 						</div>
@@ -48,7 +48,7 @@
 							<div class="contact-method email">
 								<div class="contact-icon"><i class="fa fa-envelope"></i></div>
 								<div class="contact-text">
-									<p><strong>Email Us</strong></p>
+									<p><strong><?php _e('Email Us', 'inti-child'); ?></strong></p>
 									<p>you@youremail.local</p>
 								</div>
 							</div>
@@ -65,15 +65,15 @@
 		<div class="row">
 			<div class="mlarge-6 columns">
 				<div class="hero-area">
-					<h1>Example text</h1>
-					<p>Could be made editable in customizer</p>
-					<p><a href="#" class="button">More Info</a></p>
+					<h1><?php _e('Example text', 'inti-child'); ?></h1>
+					<p><?php _e('Could be made editable in customizer', 'inti-child'); ?></p>
+					<p><a href="#" class="button"><?php _e('More Info', 'inti-child'); ?></a></p>
 				</div>
 			</div>
 			<div class="mlarge-6 columns">
 				<div class="callout">
-					<h5>Replace this with something important</h5>
-					<p>Perhaps an image of a product</p>
+					<h5><?php _e('Replace this with something important', 'inti-child'); ?></h5>
+					<p><?php _e('Perhaps an image of a product', 'inti-child'); ?></p>
 				</div>
 			</div>
 		</div>

@@ -19,15 +19,15 @@ function change_post_type_titles( $title ){
     $screen = get_current_screen();
      
     if  ( 'inti-brand' == $screen->post_type && inti_current_theme_supports('inti-post-types', 'brand') ) {
-        $title = __('Enter brand name', 'inti');
+        $title = __('Enter brand name', 'inti-child');
      }
 
     if  ( 'inti-testimonial' == $screen->post_type && inti_current_theme_supports('inti-post-types', 'testimonial') ) {
-        $title = __('Enter person\'s name', 'inti');
+        $title = __('Enter person\'s name', 'inti-child');
     }
 
     if  ( 'inti-opt-in' == $screen->post_type && inti_current_theme_supports('inti-post-types', 'opt-in') ) {
-        $title = __('Purpose/Name', 'inti');
+        $title = __('Purpose/Name', 'inti-child');
     }
  
     return $title;
@@ -44,18 +44,18 @@ if (inti_current_theme_supports('inti-post-types', 'brand') ) {
 	add_action('init', 'brand_post_type_init');
 	function brand_post_type_init() {
 		$labels = array(
-			'name' => _x('Brands', 'post type general name', 'inti'),
-			'singular_name' => _x('Brand', 'post type singular name', 'inti'),
-			'add_new' => __('Add New', 'Brand', 'inti'),
-			'add_new_item' => __('Add New Brand', 'inti'),
-			'edit_item' => __('Edit Brand', 'inti'),
-			'new_item' => __('New Brand', 'inti'),
-			'view_item' => __('View Brand', 'inti'),
-			'search_items' => __('Search Brands', 'inti'),
-			'not_found' =>  __('No Brand found', 'inti'),
-			'not_found_in_trash' => __('No Brand found in Trash', 'inti'), 
+			'name' => _x('Brands', 'post type general name', 'inti-child'),
+			'singular_name' => _x('Brand', 'post type singular name', 'inti-child'),
+			'add_new' => __('Add New', 'Brand', 'inti-child'),
+			'add_new_item' => __('Add New Brand', 'inti-child'),
+			'edit_item' => __('Edit Brand', 'inti-child'),
+			'new_item' => __('New Brand', 'inti-child'),
+			'view_item' => __('View Brand', 'inti-child'),
+			'search_items' => __('Search Brands', 'inti-child'),
+			'not_found' =>  __('No Brand found', 'inti-child'),
+			'not_found_in_trash' => __('No Brand found in Trash', 'inti-child'), 
 			'parent_item_colon' => '',
-			'menu_name' => _x('Brands', '', 'inti')
+			'menu_name' => _x('Brands', '', 'inti-child')
 		);
 		$args = array(
 			'labels' => $labels,
@@ -92,18 +92,18 @@ if (inti_current_theme_supports('inti-post-types', 'testimonial') ) {
 	add_action('init', 'testimonial_post_type_init');
 	function testimonial_post_type_init() {
 		$labels = array(
-			'name' => _x('Testimonials', 'post type general name', 'inti'),
-			'singular_name' => _x('Testimonial', 'post type singular name', 'inti'),
-			'add_new' => __('Add New', 'Testimonial', 'inti'),
-			'add_new_item' => __('Add New Testimonial', 'inti'),
-			'edit_item' => __('Edit Testimonial', 'inti'),
-			'new_item' => __('New Testimonial', 'inti'),
-			'view_item' => __('View Testimonial', 'inti'),
-			'search_items' => __('Search Testimonials', 'inti'),
-			'not_found' =>  __('No Testimonial found', 'inti'),
-			'not_found_in_trash' => __('No Testimonial found in Trash', 'inti'), 
+			'name' => _x('Testimonials', 'post type general name', 'inti-child'),
+			'singular_name' => _x('Testimonial', 'post type singular name', 'inti-child'),
+			'add_new' => __('Add New', 'Testimonial', 'inti-child'),
+			'add_new_item' => __('Add New Testimonial', 'inti-child'),
+			'edit_item' => __('Edit Testimonial', 'inti-child'),
+			'new_item' => __('New Testimonial', 'inti-child'),
+			'view_item' => __('View Testimonial', 'inti-child'),
+			'search_items' => __('Search Testimonials', 'inti-child'),
+			'not_found' =>  __('No Testimonial found', 'inti-child'),
+			'not_found_in_trash' => __('No Testimonial found in Trash', 'inti-child'), 
 			'parent_item_colon' => '',
-			'menu_name' => _x('Testimonials', '', 'inti')
+			'menu_name' => _x('Testimonials', '', 'inti-child')
 		);
 		$args = array(
 			'labels' => $labels,
@@ -140,18 +140,18 @@ if (inti_current_theme_supports('inti-post-types', 'service') ) {
 	add_action('init', 'service_post_type_init');
 	function service_post_type_init() {
 		$labels = array(
-			'name' => _x('Services', 'post type general name', 'inti'),
-			'singular_name' => _x('Service', 'post type singular name', 'inti'),
-			'add_new' => __('Add New', 'Service', 'inti'),
-			'add_new_item' => __('Add New Service', 'inti'),
-			'edit_item' => __('Edit Service', 'inti'),
-			'new_item' => __('New Service', 'inti'),
-			'view_item' => __('View Service', 'inti'),
-			'search_items' => __('Search Services', 'inti'),
-			'not_found' =>  __('No Service found', 'inti'),
-			'not_found_in_trash' => __('No Service found in Trash', 'inti'), 
+			'name' => _x('Services', 'post type general name', 'inti-child'),
+			'singular_name' => _x('Service', 'post type singular name', 'inti-child'),
+			'add_new' => __('Add New', 'Service', 'inti-child'),
+			'add_new_item' => __('Add New Service', 'inti-child'),
+			'edit_item' => __('Edit Service', 'inti-child'),
+			'new_item' => __('New Service', 'inti-child'),
+			'view_item' => __('View Service', 'inti-child'),
+			'search_items' => __('Search Services', 'inti-child'),
+			'not_found' =>  __('No Service found', 'inti-child'),
+			'not_found_in_trash' => __('No Service found in Trash', 'inti-child'), 
 			'parent_item_colon' => '',
-			'menu_name' => _x('Services', '', 'inti')
+			'menu_name' => _x('Services', '', 'inti-child')
 		);
 		$args = array(
 			'labels' => $labels,
@@ -189,18 +189,18 @@ if (inti_current_theme_supports('inti-post-types', 'opt-in') ) {
 	add_action('init', 'opt_in_post_type_init');
 	function opt_in_post_type_init() {
 		$labels = array(
-			'name' => _x('Opt-in Forms', 'post type general name', 'inti'),
-			'singular_name' => _x('Opt-in Form', 'post type singular name', 'inti'),
-			'add_new' => __('Add New', 'Opt-in Form', 'inti'),
-			'add_new_item' => __('Add New Opt-in Form', 'inti'),
-			'edit_item' => __('Edit Opt-in Form', 'inti'),
-			'new_item' => __('New Opt-in Form', 'inti'),
-			'view_item' => __('View Opt-in Form', 'inti'),
-			'search_items' => __('Search Opt-ins', 'inti'),
-			'not_found' =>  __('No Opt-in Form found', 'inti'),
-			'not_found_in_trash' => __('No Opt-in Form found in Trash', 'inti'), 
+			'name' => _x('Opt-in Forms', 'post type general name', 'inti-child'),
+			'singular_name' => _x('Opt-in Form', 'post type singular name', 'inti-child'),
+			'add_new' => __('Add New', 'Opt-in Form', 'inti-child'),
+			'add_new_item' => __('Add New Opt-in Form', 'inti-child'),
+			'edit_item' => __('Edit Opt-in Form', 'inti-child'),
+			'new_item' => __('New Opt-in Form', 'inti-child'),
+			'view_item' => __('View Opt-in Form', 'inti-child'),
+			'search_items' => __('Search Opt-ins', 'inti-child'),
+			'not_found' =>  __('No Opt-in Form found', 'inti-child'),
+			'not_found_in_trash' => __('No Opt-in Form found in Trash', 'inti-child'), 
 			'parent_item_colon' => '',
-			'menu_name' => _x('Opt-in Forms', '', 'inti')
+			'menu_name' => _x('Opt-in Forms', '', 'inti-child')
 		);
 		$args = array(
 			'labels' => $labels,

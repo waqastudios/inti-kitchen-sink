@@ -22,8 +22,8 @@ class inti_widget_opt_in extends WP_Widget {
 	function __construct() {
 		parent::__construct(
 			'inti_opt_in', // Base ID
-			__( 'Opt-In Form', 'inti' ), // Name
-			array( 'description' => __( 'Displays an opt-in form in the sidebar', 'inti' ), ) // Args
+			__( 'Opt-In Form', 'inti-child' ), // Name
+			array( 'description' => __( 'Displays an opt-in form in the sidebar', 'inti-child' ), ) // Args
 		);
 	}
 
@@ -60,7 +60,7 @@ class inti_widget_opt_in extends WP_Widget {
 		$optin_id = $instance['optin_id'];
 	?>
 		<p>
-			<label for="<?php echo $this->get_field_id('optin_id'); ?>"><?php _e('Opt-In Form:', 'inti'); ?></label>
+			<label for="<?php echo $this->get_field_id('optin_id'); ?>"><?php _e('Opt-In Form:', 'inti-child'); ?></label>
 		</p>
 
 	<?php 
@@ -76,7 +76,7 @@ class inti_widget_opt_in extends WP_Widget {
 
 		<select name="<?php echo $this->get_field_name('optin_id'); ?>" id="<?php echo $this->get_field_id('optin_id'); ?>" class="widefat">
 
-			<option value="-1">&mdash; <?php _e('Select a Form', 'inti'); ?> &mdash;</option>;
+			<option value="-1">&mdash; <?php _e('Select a Form', 'inti-child'); ?> &mdash;</option>;
 
 			<?php
 			while($optins->have_posts()) : $optins->the_post(); ?>

@@ -22,17 +22,17 @@ if (inti_current_theme_supports('inti-post-types', 'testimonial') ) {
 	add_action( 'init', 'testimonial_taxonomies', 0 );  
 	function testimonial_taxonomies() {  
 		$labels = array(
-			'name'              => _x( 'Categories', 'taxonomy general name', 'inti'),
-			'singular_name'     => _x( 'Category', 'taxonomy singular name', 'inti'),
-			'search_items'      => __( 'Search Testimonial Categories', 'inti'),
-			'all_items'         => __( 'All Testimonial Categories', 'inti'),
-			'parent_item'       => __( 'Parent Category', 'inti'),
-			'parent_item_colon' => __( 'Parent Category:', 'inti'),
-			'edit_item'         => __( 'Edit Category', 'inti'),
-			'update_item'       => __( 'Update Category', 'inti'),
-			'add_new_item'      => __( 'Add New Testimonial Category', 'inti'),
-			'new_item_name'     => __( 'New Category Name', 'inti'),
-			'menu_name'         => __( 'Categories', 'inti'),
+			'name'              => _x( 'Categories', 'taxonomy general name', 'inti-child'),
+			'singular_name'     => _x( 'Category', 'taxonomy singular name', 'inti-child'),
+			'search_items'      => __( 'Search Testimonial Categories', 'inti-child'),
+			'all_items'         => __( 'All Testimonial Categories', 'inti-child'),
+			'parent_item'       => __( 'Parent Category', 'inti-child'),
+			'parent_item_colon' => __( 'Parent Category:', 'inti-child'),
+			'edit_item'         => __( 'Edit Category', 'inti-child'),
+			'update_item'       => __( 'Update Category', 'inti-child'),
+			'add_new_item'      => __( 'Add New Testimonial Category', 'inti-child'),
+			'new_item_name'     => __( 'New Category Name', 'inti-child'),
+			'menu_name'         => __( 'Categories', 'inti-child'),
 		);
 
 		$args = array(
@@ -61,17 +61,17 @@ if (inti_current_theme_supports('inti-post-types', 'service') ) {
 	add_action( 'init', 'service_taxonomies', 0 );  
 	function service_taxonomies() {  
 		$labels = array(
-			'name'              => _x( 'Categories', 'taxonomy general name', 'inti'),
-			'singular_name'     => _x( 'Category', 'taxonomy singular name', 'inti'),
-			'search_items'      => __( 'Search Service Categories', 'inti'),
-			'all_items'         => __( 'All Service Categories', 'inti'),
-			'parent_item'       => __( 'Parent Category', 'inti'),
-			'parent_item_colon' => __( 'Parent Category:', 'inti'),
-			'edit_item'         => __( 'Edit Category', 'inti'),
-			'update_item'       => __( 'Update Category', 'inti'),
-			'add_new_item'      => __( 'Add New Service Category', 'inti'),
-			'new_item_name'     => __( 'New Category Name', 'inti'),
-			'menu_name'         => __( 'Categories', 'inti'),
+			'name'              => _x( 'Categories', 'taxonomy general name', 'inti-child'),
+			'singular_name'     => _x( 'Category', 'taxonomy singular name', 'inti-child'),
+			'search_items'      => __( 'Search Service Categories', 'inti-child'),
+			'all_items'         => __( 'All Service Categories', 'inti-child'),
+			'parent_item'       => __( 'Parent Category', 'inti-child'),
+			'parent_item_colon' => __( 'Parent Category:', 'inti-child'),
+			'edit_item'         => __( 'Edit Category', 'inti-child'),
+			'update_item'       => __( 'Update Category', 'inti-child'),
+			'add_new_item'      => __( 'Add New Service Category', 'inti-child'),
+			'new_item_name'     => __( 'New Category Name', 'inti-child'),
+			'menu_name'         => __( 'Categories', 'inti-child'),
 		);
 
 		$args = array(

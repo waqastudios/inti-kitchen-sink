@@ -112,7 +112,7 @@ add_action( 'admin_menu', 'inti_options_setup' );
 function child_options_interface( $tabs ) {
 	$tabs = array(
 		'general_options' => __('General', 'inti'),
-		'childexample_options' => __('Child Example', 'inti'),
+		'childexample_options' => __('Child Example', 'inti-child'),
 		'headernav_options' => __('Header/Navigation', 'inti'),
 		'footer_options' => __('Footer/Analytics', 'inti'),
 		'social_options' => __('Social Media Profiles', 'inti'),
@@ -341,7 +341,7 @@ function inti_initialize_general_options() {
 			'inti_general_options',    // The page on which this option will be displayed
 			'general_settings_section_4',         // The name of the section to which this field belongs
 			array(                              // The array of arguments to pass to the callback. In this case, just a description.
-				__( '', 'inti' ),
+				'',
 			)
 		);
 	
@@ -376,14 +376,14 @@ function inti_initialize_childexample_options() {
  */
 	add_settings_section(
 		'frontpage_settings_section_1',         // ID used to identify this section and with which to register options
-		__( 'Example Child Options', 'inti' ),     // Title to be displayed on the administration page
+		__( 'Example Child Options', 'inti-child' ),     // Title to be displayed on the administration page
 		'inti_examplesection_callback', // Callback used to render the description of the section
 		'inti_childexample_options'     // Page on which to add this section of options
 	);
 	
 		add_settings_field( 
 			'examplesection_post_category',                      // ID used to identify the field throughout the theme
-			__( 'Blog post categories', 'inti' ),                          // The label to the left of the option interface element
+			__( 'Blog post categories', 'inti-child' ),                          // The label to the left of the option interface element
 			'inti_examplesection_post_category_callback',   // The name of the function responsible for rendering the option interface
 			'inti_childexample_options',    // The page on which this option will be displayed
 			'frontpage_settings_section_1'
@@ -391,7 +391,7 @@ function inti_initialize_childexample_options() {
 	
 		add_settings_field( 
 			'examplesection_post_number',                      // ID used to identify the field throughout the theme
-			__( 'Number of posts', 'inti' ),                          // The label to the left of the option interface element
+			__( 'Number of posts', 'inti-child' ),                          // The label to the left of the option interface element
 			'inti_examplesection_post_number_callback',   // The name of the function responsible for rendering the option interface
 			'inti_childexample_options',    // The page on which this option will be displayed
 			'frontpage_settings_section_1'
@@ -399,7 +399,7 @@ function inti_initialize_childexample_options() {
 
 		add_settings_field( 
 			'examplesection_post_columns',                      // ID used to identify the field throughout the theme
-			__( 'Number of columns', 'inti' ),                          // The label to the left of the option interface element
+			__( 'Number of columns', 'inti-child' ),                          // The label to the left of the option interface element
 			'inti_examplesection_post_columns_callback',   // The name of the function responsible for rendering the option interface
 			'inti_childexample_options',    // The page on which this option will be displayed
 			'frontpage_settings_section_1'
@@ -407,7 +407,7 @@ function inti_initialize_childexample_options() {
 
 		add_settings_field( 
 			'examplesection_post_show',                      // ID used to identify the field throughout the theme
-			__( 'Checkbox', 'inti' ),                          // The label to the left of the option interface element
+			__( 'Checkbox', 'inti-child' ),                          // The label to the left of the option interface element
 			'inti_examplesection_post_show_callback',   // The name of the function responsible for rendering the option interface
 			'inti_childexample_options',    // The page on which this option will be displayed
 			'frontpage_settings_section_1'
@@ -437,7 +437,7 @@ add_action( 'admin_init', 'inti_initialize_childexample_options' );
  */
 
 function inti_examplesection_callback() {
-	echo '<p>' . __( 'Doesn\'t really do anything, this is just an example of how you\'d expand the theme options in a child theme', 'inti' ) . '</p>';
+	echo '<p>' . __( 'Doesn\'t really do anything, this is just an example of how you\'d expand the theme options in a child theme', 'inti-child' ) . '</p>';
 } 
 // end inti_examplesection_callback
 
@@ -450,7 +450,7 @@ function inti_examplesection_post_category_callback($args) {
 	$options = get_option('inti_childexample_options');
 	
 	wp_dropdown_categories(array(
-		'show_option_none' => __("All Categories", 'inti'),
+		'show_option_none' => __("All Categories", 'inti-child'),
 		'show_count' => true,
 		'taxonomy' => 'category',
 		'name' => 'inti_childexample_options[examplesection_post_category]',
@@ -511,7 +511,7 @@ function inti_examplesection_post_show_callback() {
 	
 	$html = '<input type="checkbox" id="frontpage_post_show" name="inti_childexample_options[frontpage_post_show]" value="1"' . checked( 1, $options['frontpage_post_show'], false ) . '/>';
 	$html .= '&nbsp;';
-	$html .= '<label for="frontpage_post_show">Exclude the front page post category from the rest of the blog</label><p></p><br><br>';
+	$html .= '<label for="frontpage_post_show">'.__('Exclude the front page post category from the rest of the blog', 'inti-child').'</label><p></p><br><br>';
 	
 	echo $html;
 

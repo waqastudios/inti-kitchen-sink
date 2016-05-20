@@ -61,7 +61,7 @@
 	?>
 		<section class="widget">
 			<div class="callout alert" data-closable>
-				<p>No ID specified or no longer exists</p>       
+				<p><?php _e('No ID specified or no longer exists', 'inti-child'); ?></p>       
 				<button class="close-button" aria-label="Dismiss alert" type="button" data-close>
 					<span aria-hidden="true">&times;</span>
 				</button>
