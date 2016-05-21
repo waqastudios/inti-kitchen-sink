@@ -18,8 +18,8 @@
  * @license GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
  */
 
-add_action('wp_enqueue_scripts', 'child_register_styles', 1);
-add_action('wp_enqueue_scripts', 'child_enqueue_styles', 5);
+add_action('wp_enqueue_scripts', 'child_register_styles', 9);
+add_action('wp_enqueue_scripts', 'child_enqueue_styles', 9);
  
 function child_register_styles() {
 	// register styles
