@@ -24,11 +24,11 @@ $show = get_inti_option('fpb_testimonials_show', 'inti_customizer_options', 1);
 $title = get_inti_option('fpb_testimonials_title', 'inti_customizer_options');
 $description = get_inti_option('fpb_testimonials_description', 'inti_customizer_options');
 
-$testimonial_category = get_inti_option('fpb_testimonials_category', 'inti_customizer_options', -1);
+$testimonial_category = get_inti_option('fpb_testimonials_category', 'inti_customizer_options', 0);
 $number_posts = get_inti_option('fpb_testimonials_post_number', 'inti_customizer_options', -1);
 $order = get_inti_option('fpb_testimonials_order', 'inti_customizer_options', 'ASC');
 $content = get_inti_option('fpb_testimonials_content', 'inti_customizer_options', 'excerpt');
-
+echo $testimonial_category;
 
 $hide_photos = get_inti_option('fpb_testimonials_hide_photos', 'inti_customizer_options', '');
 $linkto_type = get_inti_option('fpb_testimonials_linkto_type', 'inti_customizer_options', '');
@@ -75,12 +75,12 @@ if ($show) :
 		<div class="row">
 			<div class="inti-slider inti-testimonial-slider clearfix">
 				<?php if ($testimonials->have_posts()) : ?>
-					<?php while ( $testimonials->have_posts() ) : $testimonials->the_post(); global $post; ?>
+					<?php while ( $testimonials->have_posts() ) : $testimonials->the_post(); ?>
 						<?php 
 							// Get the meta data 
-							$testimonial_role = get_post_meta( $post->ID, "_inti_testimonial_role", true );
-							$testimonial_company = get_post_meta( $post->ID, "_inti_testimonial_company", true );
-							$testimonial_url = get_post_meta( $post->ID, "_inti_testimonial_url", true ); 
+							$testimonial_role = get_post_meta( get_the_ID(), "_inti_testimonial_role", true );
+							$testimonial_company = get_post_meta( get_the_ID(), "_inti_testimonial_company", true );
+							$testimonial_url = get_post_meta( get_the_ID(), "_inti_testimonial_url", true ); 
 										
 							$link = "";
 							if ($linkto_type == "permalink") {
@@ -103,7 +103,7 @@ if ($show) :
 								<div class="row">
 									
 									<?php // if it has a thumbnail, create two columns, else just one
-									if ( has_post_thumbnail($post->ID) && $hide_photos == 0 ) : ?>
+									if ( has_post_thumbnail(get_the_ID()) && $hide_photos == 0 ) : ?>
 									<div class="medium-5 mlarge-4 columns">
 										<div class="testimonial-image">
 											<?php the_post_thumbnail('testimonial-thumbnail'); ?>
@@ -120,7 +120,7 @@ if ($show) :
 												}
 											 ?>
 											<cite class="testimonial-owner">	
-												<?php the_testimonial_owner($post->ID); ?>		
+												<?php the_testimonial_owner(get_the_ID()); ?>		
 											</cite>
 										</div>
 										
@@ -137,7 +137,7 @@ if ($show) :
 												}
 											 ?>
 											<cite class="testimonial-owner">	
-												<?php the_testimonial_owner($post->ID); ?>		
+												<?php the_testimonial_owner(get_the_ID()); ?>		
 											</cite>
 										</div>
 										
@@ -154,7 +154,8 @@ if ($show) :
 								} 
 							 ?>
 						</div>
-					<?php endwhile; ?>
+					<?php endwhile;
+						wp_reset_query(); ?>
 				<?php else: ?>
 					<div class="callout warning" data-closable>
 						<p><?php _e('There are currently no published testimonials in this category', 'inti-child'); ?></p>

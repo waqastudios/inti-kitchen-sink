@@ -114,7 +114,8 @@ if ($show) :
 
 					<?php if (true == $odd) : $odd = false; else : $odd = true; endif; ?>
 
-				<?php endwhile; // end of the loop ?>
+				<?php endwhile; // end of the loop 
+					wp_reset_query(); ?>
 			
 
 			<?php else: ?>

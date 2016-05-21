@@ -54,7 +54,7 @@ function inti_shortcode_testimonials( $atts, $content = null ) {
 								<div class="testimonial-text">
 									<?php the_content(); ?>
 									<cite class="testimonial-owner">
-										<?php the_testimonial_owner($testimonials->ID); ?>
+										<?php the_testimonial_owner(get_the_ID()); ?>
 									</cite>
 								</div>
 							</div>
@@ -65,7 +65,7 @@ function inti_shortcode_testimonials( $atts, $content = null ) {
 								<div class="testimonial-text">
 									<?php the_content(); ?>
 									<cite class="testimonial-owner">
-										<?php the_testimonial_owner($testimonials->ID); ?>
+										<?php the_testimonial_owner(get_the_ID()); ?>
 									</cite>
 								</div>
 							</div>
@@ -89,7 +89,7 @@ function inti_shortcode_testimonials( $atts, $content = null ) {
 								<div class="testimonial-text">
 									<?php the_content(); ?>
 									<cite class="testimonial-owner">
-										<?php the_testimonial_owner($testimonials->ID); ?>
+										<?php the_testimonial_owner(get_the_ID()); ?>
 									</cite>
 								</div>
 							</div>
@@ -100,7 +100,7 @@ function inti_shortcode_testimonials( $atts, $content = null ) {
 								<div class="testimonial-text">
 									<?php the_content(); ?>
 									<cite class="testimonial-owner">
-										<?php the_testimonial_owner($testimonials->ID); ?>
+										<?php the_testimonial_owner(get_the_ID()); ?>
 									</cite>
 								</div>
 							</div>
@@ -124,7 +124,7 @@ function inti_shortcode_testimonials( $atts, $content = null ) {
 										<div class="testimonial-text">
 											<?php the_content(); ?>
 											<cite class="testimonial-owner">
-												<?php the_testimonial_owner($testimonials->ID); ?>
+												<?php the_testimonial_owner(get_the_ID()); ?>
 											</cite>
 										</div>
 									</div>
@@ -135,7 +135,7 @@ function inti_shortcode_testimonials( $atts, $content = null ) {
 										<div class="testimonial-text">
 											<?php the_content(); ?>
 											<cite class="testimonial-owner">
-												<?php the_testimonial_owner($testimonials->ID); ?>
+												<?php the_testimonial_owner(get_the_ID()); ?>
 											</cite>
 										</div>
 									</div>
@@ -155,7 +155,7 @@ function inti_shortcode_testimonials( $atts, $content = null ) {
 									<div class="testimonial-text">
 										<?php the_content(); ?>
 										<cite class="testimonial-owner">
-											<?php the_testimonial_owner($testimonials->ID); ?>
+											<?php the_testimonial_owner(get_the_ID()); ?>
 										</cite>
 									</div>
 								</div>
@@ -166,7 +166,7 @@ function inti_shortcode_testimonials( $atts, $content = null ) {
 									<div class="testimonial-text">
 										<?php the_content(); ?>
 										<cite class="testimonial-owner">
-											<?php the_testimonial_owner($testimonials->ID); ?>
+											<?php the_testimonial_owner(get_the_ID()); ?>
 										</cite>
 									</div>
 								</div>
@@ -192,7 +192,7 @@ function inti_shortcode_testimonials( $atts, $content = null ) {
 								<div class="testimonial-text">
 									<?php the_content(); ?>
 									<cite class="testimonial-owner">
-										<?php the_testimonial_owner($testimonials->ID); ?>
+										<?php the_testimonial_owner(get_the_ID()); ?>
 									</cite>
 								</div>
 							</div>
@@ -203,7 +203,7 @@ function inti_shortcode_testimonials( $atts, $content = null ) {
 								<div class="testimonial-text">
 									<?php the_content(); ?>
 									<cite class="testimonial-owner">
-										<?php the_testimonial_owner($testimonials->ID); ?>
+										<?php the_testimonial_owner(get_the_ID()); ?>
 									</cite>
 								</div>
 							</div>
@@ -224,6 +224,7 @@ function inti_shortcode_testimonials( $atts, $content = null ) {
 		
 		<?php
 		endwhile;
+		wp_reset_query();
 		$html = '<section class="testimonials-list">';
 		$html .= ob_get_contents();
 		$html .= '</section>';

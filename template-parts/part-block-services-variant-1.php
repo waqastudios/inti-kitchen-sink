@@ -151,7 +151,8 @@ if ($show) :
 						
 					<?php if ( $post_columns != 1 ) echo '</div>'; ?> 
 					
-				<?php endwhile; // end of the loop ?>
+				<?php endwhile; // end of the loop 
+				wp_reset_query(); ?>
 				
 			<?php if ( $post_columns != 1 ) echo '</div>'; // close the block-grid ?>
 			

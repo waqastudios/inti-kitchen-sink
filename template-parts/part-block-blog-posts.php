@@ -103,7 +103,7 @@ if ($show) :
 											<a href="<?php the_permalink(); ?>" class="button read-more"><?php echo get_inti_option('read_more_text', 'inti_general_options', __('Read more >', 'inti')); ?></a>
 										</div><!-- .entry-content -->               
 
-										 <footer class="entry-footer">
+										<footer class="entry-footer">
 											
 										</footer><!-- .entry-footer -->
 
@@ -121,7 +121,8 @@ if ($show) :
 					
 					<?php inti_hook_post_after(); ?>
 
-				<?php endwhile; // end of the loop ?>
+				<?php endwhile; // end of the loop 
+					wp_reset_query(); ?>
 				
 			<?php if ( $post_columns != 1 ) echo '</div>'; // close the block-grid ?>
 			

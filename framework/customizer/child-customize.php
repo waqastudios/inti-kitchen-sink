@@ -339,7 +339,7 @@ function child_new_section($wp_customize) {
 					)
 				);
 			$wp_customize->add_setting('inti_customizer_options[fpb_post_number]', array( 
-				'default'        => '',
+				'default'        => '3',
 				'type'           => 'option',
 				'capability'     => 'manage_options',
 				'transport'		 => 'postMessage',
@@ -352,7 +352,7 @@ function child_new_section($wp_customize) {
 				 ) );
 
 			$wp_customize->add_setting('inti_customizer_options[fpb_post_columns]', array( 
-				'default'        => 'numbered',
+				'default'        => '3',
 				'type'           => 'option',
 				'capability'     => 'manage_options',
 			 ) );
@@ -526,7 +526,7 @@ function child_new_section($wp_customize) {
 					'priority' => 3,
 				 ) );
 			$wp_customize->add_setting('inti_customizer_options[fpb_testimonials_category]', array( 
-				'default'    => -1,
+				'default'    => 0,
 				'type'       => 'option',
 				'capability' => 'manage_options',
 			 ) );	
@@ -757,7 +757,7 @@ function child_new_section($wp_customize) {
 					'priority' => 3,
 				 ) );
 			$wp_customize->add_setting('inti_customizer_options[fpb_services_category]', array( 
-				'default'    => 1,
+				'default'    => 0,
 				'type'       => 'option',
 				'capability' => 'manage_options',
 			 ) );	
@@ -774,7 +774,7 @@ function child_new_section($wp_customize) {
 					)
 				);
 			$wp_customize->add_setting('inti_customizer_options[fpb_services_post_number]', array( 
-				'default'        => '',
+				'default'        => '3',
 				'type'           => 'option',
 				'capability'     => 'manage_options',
 			 ) );
