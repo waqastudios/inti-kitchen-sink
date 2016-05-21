@@ -47,7 +47,7 @@ gulp.task('site-js', function() {
     .pipe(plumber())
     .pipe(jshint())
     .pipe(jshint.reporter('jshint-stylish'))
-    .pipe(concat('inti.js'))
+    .pipe(concat('inti-child.js'))
     .pipe(gulp.dest('./library/js'))
     .pipe(rename({suffix: '-min'}))
     .pipe(uglify())

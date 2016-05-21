@@ -61,7 +61,7 @@ add_action('wp_enqueue_scripts', 'child_register_scripts', 1);
 add_action('wp_enqueue_scripts', 'child_enqueue_scripts');
  
 function child_register_scripts() {
-	wp_register_script('child-js', get_stylesheet_directory_uri() . '/library/js/child-min.js', array(), filemtime(get_stylesheet_directory() . '/library/js/child-min.js'), true);
+	wp_register_script('inti-child-js', get_stylesheet_directory_uri() . '/library/js/inti-child-min.js', array(), filemtime(get_stylesheet_directory() . '/library/js/inti-child-min.js'), true);
 
 }
 
@@ -80,7 +80,7 @@ function child_enqueue_scripts() {
 		// wp_enqueue_script('inti-js');
 
 		// enqueue scripts for child
-		wp_enqueue_script('child-js');
+		wp_enqueue_script('inti-child-js');
 
 		// comment reply script for threaded comments
 		if ( is_singular() && comments_open() && get_option('thread_comments') ) {
