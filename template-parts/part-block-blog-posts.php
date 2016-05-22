@@ -143,8 +143,12 @@ if ($show) :
 		<?php if ($showlinktoblog) : ?>
 			<div class="row">
 				<nav class="content-navigation block-blog-posts-navigation" role="navigation">
-					<div class="float-left">
-						<a href="<?php echo $bloglinkurl; ?>" class="button"><?php echo $bloglinktext; ?></a>
+					<div class="row collapse">
+						<div class="column">
+							<div class="float-left">
+								<a href="<?php echo $bloglinkurl; ?>" class="button"><?php echo $bloglinktext; ?></a>
+							</div>
+						</div>
 					</div>
 				</nav>
 			</div>
