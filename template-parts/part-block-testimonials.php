@@ -28,7 +28,6 @@ $testimonial_category = get_inti_option('fpb_testimonials_category', 'inti_custo
 $number_posts = get_inti_option('fpb_testimonials_post_number', 'inti_customizer_options', -1);
 $order = get_inti_option('fpb_testimonials_order', 'inti_customizer_options', 'ASC');
 $content = get_inti_option('fpb_testimonials_content', 'inti_customizer_options', 'excerpt');
-echo $testimonial_category;
 
 $hide_photos = get_inti_option('fpb_testimonials_hide_photos', 'inti_customizer_options', '');
 $linkto_type = get_inti_option('fpb_testimonials_linkto_type', 'inti_customizer_options', '');

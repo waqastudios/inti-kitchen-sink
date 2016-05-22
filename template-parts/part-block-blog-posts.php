@@ -15,6 +15,10 @@ $number_posts = get_inti_option('fpb_post_number', 'inti_customizer_options', 3)
 $post_columns = get_inti_option('fpb_post_columns', 'inti_customizer_options', 3);
 $order = get_inti_option('fpb_post_order', 'inti_customizer_options', 'DESC');
 
+$showlinktoblog = get_inti_option('fpb_blog_link_show', 'inti_customizer_options', 0);
+$bloglinkurl = get_inti_option('fpb_blog_link_url', 'inti_customizer_options', get_permalink(get_option('page_for_posts')));
+$bloglinktext = get_inti_option('fpb_blog_link_text', 'inti_customizer_options', __('View All Posts', 'inti-child'));
+
 $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 $args = array( 
 	'post_type'           => 'post',
@@ -136,5 +140,14 @@ if ($show) :
 				</div>
 			</div>
 		<?php endif; // end have_posts() check ?>
+		<?php if ($showlinktoblog) : ?>
+			<div class="row">
+				<nav class="content-navigation block-blog-posts-navigation" role="navigation">
+					<div class="float-left">
+						<a href="<?php echo $bloglinkurl; ?>" class="button"><?php echo $bloglinktext; ?></a>
+					</div>
+				</nav>
+			</div>
+		<?php endif; ?>
 	</section>
 <?php endif; ?>

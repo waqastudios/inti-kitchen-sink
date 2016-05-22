@@ -397,6 +397,40 @@ function child_new_section($wp_customize) {
 					'type'     => 'checkbox',
 					'priority' => 6,
 				 ) );
+			$wp_customize->add_setting('inti_customizer_options[fpb_blog_link_show]', array( 
+				'default'        => 0,
+				'type'           => 'option',
+				'capability'     => 'manage_options',
+			 ) );
+				$wp_customize->add_control('inti_customizer_options[fpb_blog_link_show]', array( 
+					'label'    => __('Show link to blog index', 'inti-child'),
+					'section'  => 'inti_customizer_front_page_block_blog',
+					'description' => __('Display a link to the posts index below the small subset of posts displayed in this block', 'inti-child'),
+					'type'     => 'checkbox',
+					'priority' => 7,
+				 ) );
+			$wp_customize->add_setting('inti_customizer_options[fpb_blog_link_url]', array( 
+				'default'        => get_permalink(get_option('page_for_posts')),
+				'type'           => 'option',
+				'capability'     => 'manage_options',
+			 ) );
+				$wp_customize->add_control('inti_customizer_options[fpb_blog_link_url]', array( 
+					'label'    => __('URL of page for posts', 'inti-child'),
+					'section'  => 'inti_customizer_front_page_block_blog',
+					'type'     => 'text',
+					'priority' => 8,
+				 ) );
+			$wp_customize->add_setting('inti_customizer_options[fpb_blog_link_text]', array( 
+				'default'        => __('View All Posts', 'inti-child'),
+				'type'           => 'option',
+				'capability'     => 'manage_options',
+			 ) );
+				$wp_customize->add_control('inti_customizer_options[fpb_blog_link_text]', array( 
+					'label'    => __('Text for the button to view page for posts', 'inti-child'),
+					'section'  => 'inti_customizer_front_page_block_blog',
+					'type'     => 'text',
+					'priority' => 9,
+				 ) );
 	}
 
 	// Slogan Block
