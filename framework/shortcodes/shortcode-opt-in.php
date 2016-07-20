@@ -37,7 +37,7 @@ add_filter( 'inti_shortcode_filter_select' , 'inti_shortcode_add_opt_in_to_selec
  * Enqueue JS
  */
 function child_shortcode_enqueue_shortcodes($hook){
-	if ($hook == "post.php"){
+	if ($hook == "post.php" || $hook == "post-new.php" || is_customize_preview() ){
 
 		wp_register_script('inti-opt-in', get_stylesheet_directory_uri() . '/framework/shortcodes/js/shortcode-opt-in.js', '', filemtime(get_stylesheet_directory() . '/framework/shortcodes/js/shortcode-opt-in.js'), TRUE);
 		wp_enqueue_script('inti-opt-in'); 

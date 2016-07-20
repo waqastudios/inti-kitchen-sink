@@ -250,7 +250,7 @@ add_filter( 'inti_shortcode_filter_select' , 'inti_shortcode_add_testimonials_to
  * Enqueue JS
  */
 function child_shortcode_enqueue_testimonials_shortcodes($hook){
-	if ($hook == "post.php"){
+	if ($hook == "post.php" || $hook == "post-new.php" || is_customize_preview() ){
 
 		wp_register_script('inti-testimonials', get_stylesheet_directory_uri() . '/framework/shortcodes/js/shortcode-testimonials.js', '', filemtime(get_stylesheet_directory() . '/framework/shortcodes/js/shortcode-testimonials.js'), TRUE);
 		wp_enqueue_script('inti-testimonials'); 
