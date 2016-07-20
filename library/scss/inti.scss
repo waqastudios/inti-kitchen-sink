@@ -74,6 +74,9 @@ new styles, or the minimized inti-min.css file can be unqueued
 
 ******************************************************************/
 
+// Import Vendor CSS
+@import "foundation-icons";
+@import "../vendor/font-awesome/scss/font-awesome";
 
 // Import mixins
 @import "mixins";
