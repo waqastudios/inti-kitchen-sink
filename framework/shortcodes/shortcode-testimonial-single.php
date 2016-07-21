@@ -178,14 +178,14 @@ add_filter( 'inti_shortcode_filter_select' , 'inti_shortcode_add_testimonial_sin
 /**
  * Enqueue JS
  */
-function child_shortcode_enqueue_testimonial_single_shortcodes($hook){
+function child_shortcode_enqueue_testimonial_single_shortcode($hook){
 	if ($hook == "post.php" || $hook == "post-new.php" || is_customize_preview() ){
 
 		wp_register_script('inti-testimonial-single', get_stylesheet_directory_uri() . '/framework/shortcodes/js/shortcode-testimonial-single.js', '', filemtime(get_stylesheet_directory() . '/framework/shortcodes/js/shortcode-testimonial-single.js'), TRUE);
 		wp_enqueue_script('inti-testimonial-single'); 
 	}
 }
-add_action('admin_enqueue_scripts', 'child_shortcode_enqueue_testimonial_single_shortcodes');
+add_action('admin_enqueue_scripts', 'child_shortcode_enqueue_testimonial_single_shortcode');
 
 /**
  * Dispaly for inti-testimonial-single
