@@ -72,6 +72,8 @@ function childtheme_override_setup() {
 	add_theme_support('inti-post-header-meta');
 	
 	add_theme_support('inti-shortcodes');
+		
+	add_theme_support('inti-sticky-sidebars');
 	
 	add_theme_support('inti-custom-login');
 	
