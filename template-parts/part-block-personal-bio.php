@@ -31,7 +31,7 @@ if ($show):
 	<?php endif; ?>
 		<div class="row">
 			<div class="mlarge-8 columns">
-				<?php echo $bio_text; ?>
+				<?php echo do_shortcode(wpautop($bio_text)); ?>
 			</div>
 			<div class="mlarge-4 columns">
 				<?php if ($bio_link): ?><a href="<?php echo $bio_link; ?>"><?php endif; ?>
