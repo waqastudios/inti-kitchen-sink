@@ -25,3 +25,8 @@
 ### 1.0.11 (May 21, 2016)
 
 ### 1.0.12 (Jul 22, 2016)
+
+### 1.0.13 (Aug 9, 2016)
+- [#1](https://github.com/waqastudios/inti-foundation/pull/1) Removed stray PHP short tag in a FPB (Front Page Block), replaced with complete <?php. (@joffcrabtree)
+- Fixed typo for a field label in Inti Options
+- Added do_shortcode() to the personal bio FPB (Front Page Block) that's likely to contain shortcodes
