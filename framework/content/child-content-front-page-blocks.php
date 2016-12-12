@@ -28,7 +28,7 @@ function child_block_page_content() {
 		<div class="row">
 			<div class="small-12 columns">
 				<?php // get the page loop
-				get_template_part('loops/loop', 'page'); ?>
+				get_template_part('loops/loop', 'frontpage-page'); ?>
 			</div>
 		</div>
 	</section><!-- .block page-content -->
