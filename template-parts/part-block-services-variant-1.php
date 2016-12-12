@@ -14,11 +14,11 @@
  * @package Inti
  * @subpackage blocks
  * @since 1.0.3
- * @version 1.0,4
+ * @version 1.0.14
  */
 		
 	// get the options
-$show = get_inti_option('fpb_slogan_show', 'inti_customizer_options', 1);
+$show = get_inti_option('fpb_services_show', 'inti_customizer_options', 1);
 $title = get_inti_option('fpb_services_title', 'inti_customizer_options');
 $description = get_inti_option('fpb_services_description', 'inti_customizer_options');
 

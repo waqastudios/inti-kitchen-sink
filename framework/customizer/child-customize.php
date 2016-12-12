@@ -1000,6 +1000,7 @@ function child_new_section($wp_customize) {
 	 * General/Header section exists in parent theme, let's add to it here
 	 * Section: inti_customizer_general
 	 */
+	if (inti_current_theme_supports( 'inti-post-types', 'opt-in' )) {
 			$wp_customize->add_setting('inti_customizer_options[header_opt_in]', array( 
 				'default'    => 1,
 				'type'       => 'option',
@@ -1017,11 +1018,14 @@ function child_new_section($wp_customize) {
 						)
 					)
 				);
+	}
 
 	/**
 	 * Layouts section exists in parent theme, let's add to it here
 	 * Section: inti_customizer_posts
 	 */
+
+	if (inti_current_theme_supports( 'inti-post-types', 'opt-in' )) {
 			$wp_customize->add_setting('inti_customizer_options[footer_opt_in]', array( 
 				'default'    => 1,
 				'type'       => 'option',
@@ -1039,6 +1043,7 @@ function child_new_section($wp_customize) {
 						)
 					)
 				);
+	}
 	/**
 	 * Main Styles section exists in parent theme, let's add to it here
 	 * Section: inti_customizer_main_styles

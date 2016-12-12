@@ -4807,41 +4807,15 @@ section.block {
       font-weight: 100;
       text-align: center; }
   section.block.featured-in .inti-brand-carousel {
-    position: relative; }
-    section.block.featured-in .inti-brand-carousel .arrows {
-      z-index: 1;
-      opacity: 0.25;
-      padding: 1rem;
-      font-size: 2rem; }
-    section.block.featured-in .inti-brand-carousel .arrows:hover {
-      z-index: 1;
-      opacity: 1; }
-    section.block.featured-in .inti-brand-carousel .slick-prev {
-      position: absolute;
-      top: 35%;
-      left: 0; }
-    section.block.featured-in .inti-brand-carousel .slick-next {
-      position: absolute;
-      top: 35%;
-      right: 0; }
+    position: relative;
+    display: none; }
+    section.block.featured-in .inti-brand-carousel.slick-initialized {
+      display: block; }
   section.block.testimonials .inti-testimonial-slider {
-    position: relative; }
-    section.block.testimonials .inti-testimonial-slider .arrows {
-      z-index: 1;
-      opacity: 0.25;
-      padding: 1rem;
-      font-size: 2rem; }
-    section.block.testimonials .inti-testimonial-slider .arrows:hover {
-      z-index: 1;
-      opacity: 1; }
-    section.block.testimonials .inti-testimonial-slider .slick-prev {
-      position: absolute;
-      top: 40%;
-      left: -2rem; }
-    section.block.testimonials .inti-testimonial-slider .slick-next {
-      position: absolute;
-      top: 40%;
-      right: -2rem; }
+    position: relative;
+    display: none; }
+    section.block.testimonials .inti-testimonial-slider.slick-initialized {
+      display: block; }
   section.block.services.variant-1 article {
     position: relative;
     padding: 0 0 2rem; }
@@ -5120,6 +5094,7 @@ of comment areas
   #comments li.comment.even > article {
     background-color: #f1f1f1; }
   #comments li.comment ul.children {
+    list-style: none;
     margin: 0 0 1rem 1.25rem; }
 
 /******************************************************************
@@ -5165,10 +5140,11 @@ footer can be wide or contained.
 /* Arrows */
 .slick-prev,
 .slick-next {
+  z-index: 1;
   position: absolute;
   display: block;
-  height: 20px;
-  width: 20px;
+  height: 60px;
+  width: 60px;
   line-height: 0px;
   font-size: 0px;
   cursor: pointer;
@@ -5196,7 +5172,7 @@ footer can be wide or contained.
   .slick-prev:before,
   .slick-next:before {
     font-family: "FontAwesome";
-    font-size: 20px;
+    font-size: 64px;
     line-height: 1;
     color: #0a0a0a;
     opacity: 0.75;
@@ -5204,24 +5180,24 @@ footer can be wide or contained.
     -moz-osx-font-smoothing: grayscale; }
 
 .slick-prev {
-  left: -25px; }
+  left: -2rem; }
   [dir="rtl"] .slick-prev {
     left: auto;
-    right: -25px; }
+    right: -2rem; }
   .slick-prev:before {
-    content: ""; }
+    content: ""; }
     [dir="rtl"] .slick-prev:before {
-      content: ""; }
+      content: ""; }
 
 .slick-next {
-  right: -25px; }
+  right: -2rem; }
   [dir="rtl"] .slick-next {
-    left: -25px;
+    left: -2rem;
     right: auto; }
   .slick-next:before {
-    content: ""; }
+    content: ""; }
     [dir="rtl"] .slick-next:before {
-      content: ""; }
+      content: ""; }
 
 /* Dots */
 .slick-dotted.slick-slider {
