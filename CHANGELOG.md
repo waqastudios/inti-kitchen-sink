@@ -30,3 +30,12 @@
 - [#1](https://github.com/waqastudios/inti-foundation/pull/1) Removed stray PHP short tag in a FPB (Front Page Block), replaced with complete <?php. (@joffcrabtree)
 - Fixed typo for a field label in Inti Options
 - Added do_shortcode() to the personal bio FPB (Front Page Block) that's likely to contain shortcodes
+
+### 1.0.14 (Dec 12, 2016)
+- Updated Foundation for Sites to 6.2.4
+- Updated Font Awesome to 4.7.0
+- Switched Off Canvas to right hand side by default
+- Added animate.css by default
+- Added template for front page block of 'page'
+- Added the ability to add Google Fonts to the child theme faster
+- Minor bugs
