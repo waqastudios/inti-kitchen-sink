@@ -76,6 +76,7 @@ new styles, or the minimized inti-min.css file can be unqueued
 
 // Import Vendor CSS
 @import "foundation-icons";
+@import "../vendor/animate.css/animate.min.css";
 
 /**
  * We'll want to enqueue font-awesome separately in WP so that
