@@ -148,8 +148,9 @@ function childtheme_override_setup() {
 		require_once locate_template('/framework/shortcodes/shortcode-opt-in.php');
 		require_once locate_template('/framework/widgets/opt-in.php');
 	}
+
 }
-add_action('after_setup_theme', 'childtheme_override_setup', 11);
+add_action('after_setup_theme', 'childtheme_override_setup', 15);
 
 
 

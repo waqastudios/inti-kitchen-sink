@@ -16,7 +16,7 @@ function child_remove_footer_content_actions(){
     remove_action( 'inti_hook_footer_inside', 'inti_do_footer_info', 4);
     remove_action( 'inti_hook_footer_inside', 'inti_do_footer_social', 3);
 }
-add_action( 'after_setup_theme', 'child_remove_footer_content_actions', 0 );
+add_action( 'after_setup_theme', 'child_remove_footer_content_actions', 15 );
 
 /**
  * Footer opt-in

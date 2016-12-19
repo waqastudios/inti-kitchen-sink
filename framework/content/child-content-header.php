@@ -15,7 +15,7 @@
 function child_remove_header_content_actions(){
     remove_action( 'inti_hook_site_banner_after', 'inti_do_main_dropdown_menu');
 }
-add_action( 'after_setup_theme', 'child_remove_header_content_actions', 0 );
+add_action( 'after_setup_theme', 'child_remove_header_content_actions', 15 );
 
 
 /**
