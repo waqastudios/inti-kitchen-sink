@@ -25,55 +25,10 @@ add_action( 'after_setup_theme', 'child_remove_header_content_actions', 15 );
  * @since 1.0.4
  */
 function child_do_main_dropdown_menu() {
-   //adds the main menu
-	if ( has_nav_menu('dropdown-menu') ) {?>
-		<nav class="top-bar" id="top-bar-menu">
-			<div class="row">
-
-			<?php 
-				/**
-				* Add logo or site title to the navigation bar, in addition or instead of having the site banner
-				*/
-				$mobilebanner = get_inti_option('show_nav_logo_title', 'inti_customizer_options', 'none');
-
-				if ($mobilebanner != 'none') :
-			?>
-				<div class="top-bar-left float-left hide-for-mlarge mobile-banner">
-					<ul class="menu">
-						<li class="menu-text site-logo">
-							<?php if ( get_inti_option('nav_logo_image', 'inti_customizer_options') ) : ?>
-								<?php inti_do_srcset_image(get_inti_option('nav_logo_image', 'inti_customizer_options'), esc_attr( get_bloginfo('name', 'display') . ' logo')); ?>
-							<?php endif; ?>
-						</li>
-						<li class="menu-text site-title"><?php bloginfo('name'); ?></li>
-					</ul>
-				</div>
-			<?php endif; ?>
-				<div class="top-bar-left show-for-mlarge main-dropdown-menu">
-					<?php echo inti_get_dropdown_menu(); ?>
-				</div>
-				<div class="top-bar-right show-for-mlarge">
-					<?php 
-					$showsocial = get_inti_option('nav_social', 'inti_headernav_options');
-					if ($showsocial) echo inti_get_dropdown_social_links();  ?>
-				</div>
-				<div class="top-bar-right float-right hide-for-mlarge">
-					<ul class="menu">
-						<li class="menu-text off-canvas-button"><a data-toggle="inti-off-canvas-menu">
-							<div class="hamburger">
-								<span></span>
-								<span></span>
-								<span></span>
-							</div>
-						</a></li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-	<?php
-	}
+	// adds the main menu
+	// place the top-bar code from the part-header-*.php templates if you'd like to use hooks
 }
-add_action('inti_hook_site_banner_after', 'child_do_main_dropdown_menu');
+// add_action('inti_hook_site_banner_after', 'child_do_main_dropdown_menu');
 // add_action('inti_hook_site_banner_before', 'child_do_main_dropdown_menu');
 // add_action('child_hook_site_banner_auxiliary_column', 'child_do_main_dropdown_menu');
 
@@ -89,5 +44,5 @@ function child_do_header_optin() {
 		get_template_part('template-parts/part-opt-in', 'header');
 	endif;
 }
-add_action('inti_hook_site_banner_after', 'child_do_header_optin');
+// add_action('inti_hook_site_banner_after', 'child_do_header_optin');
 ?>

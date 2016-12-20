@@ -4948,14 +4948,16 @@ normally includes a logo, or a full width hero image.
 
 ******************************************************************/
 .site-header {
+  position: relative;
   /**
 	 * Business Hero header
 	 */
   /**
 	 * Modern Hero header
+	 */
+  /**
+	 * Slide Hero header
 	 */ }
-  .site-header .site-banner {
-    overflow: auto; }
   .site-header .site-banner.business-hero {
     padding: 1rem 0; }
     .site-header .site-banner.business-hero .contact-area .contact-icon {
@@ -4988,6 +4990,61 @@ normally includes a logo, or a full width hero image.
           margin-left: 0; } }
   .site-header .site-hero.modern-hero {
     padding: 6rem 0; }
+  .site-header .site-banner.slide-hero {
+    background-color: transparent;
+    height: 110px; }
+    .site-header .site-banner.slide-hero .top-bar {
+      background-color: transparent; }
+  .site-header .main-slider .slide {
+    position: relative;
+    height: 100vh;
+    background-position: 50%;
+    background-size: cover;
+    background-color: #e6e6e6; }
+    .site-header .main-slider .slide .site-scroll {
+      position: absolute;
+      bottom: 3rem;
+      left: 0;
+      right: 0;
+      text-align: center; }
+      .site-header .main-slider .slide .site-scroll a {
+        font-size: 2rem;
+        color: #fefefe; }
+    .site-header .main-slider .slide .unexpanded {
+      max-width: 75rem; }
+    .site-header .main-slider .slide .slide-entry {
+      width: 100%;
+      position: absolute;
+      top: 20%;
+      left: 0;
+      text-align: center;
+      color: #fefefe;
+      font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; }
+  .site-header .internal-banner {
+    min-height: 180px;
+    background-color: #2199e8;
+    background-size: cover;
+    background-position: 50%; }
+    @media screen and (min-width: 64em) {
+      .site-header .internal-banner {
+        min-height: 200px; } }
+    @media screen and (min-width: 75em) {
+      .site-header .internal-banner {
+        min-height: 320px; } }
+    .site-header .internal-banner.small {
+      height: 200px;
+      min-height: auto; }
+
+.slide-hero-container.sticky-container {
+  margin-bottom: -110px;
+  z-index: 9999; }
+
+.site-header .sticky.is-stuck {
+  background-color: #0a0a0a;
+  transition: background-color .5s ease-in; }
+
+.site-header .sticky.is-anchored {
+  position: absolute; }
 
 /******************************************************************
 
@@ -5023,47 +5080,54 @@ ul.site-navigation {
 
 .top-bar {
   background-color: #0a0a0a; }
+  .top-bar .site-title {
+    color: #fefefe; }
   .top-bar ul.dropdown.menu ul {
     display: none; }
   .top-bar ul.dropdown.menu ul.js-dropdown-active {
     display: block; }
 
-.top-bar .off-canvas-button .hamburger {
-  width: 1.5rem;
-  height: 0.875rem;
-  position: relative;
-  display: inline-block;
-  -webkit-transform: rotate(0);
-  transform: rotate(0); }
-  .top-bar .off-canvas-button .hamburger span {
-    display: block;
-    position: absolute;
-    height: 2px;
-    width: 100%;
-    background-color: #fefefe;
-    opacity: 1;
-    left: 0;
-    -webkit-transform: rotate(0);
-    transform: rotate(0);
-    transition: -webkit-transform 125ms linear;
-    transition: transform 125ms linear; }
-    .top-bar .off-canvas-button .hamburger span:nth-child(1) {
-      top: 0; }
-    .top-bar .off-canvas-button .hamburger span:nth-child(2) {
-      top: 0.4375rem; }
-    .top-bar .off-canvas-button .hamburger span:nth-child(3) {
-      top: 0.875rem; }
-  .top-bar .off-canvas-button .hamburger.is-active span:nth-child(1) {
-    top: 0.5rem;
-    -webkit-transform: rotate(135deg);
-    transform: rotate(135deg); }
-  .top-bar .off-canvas-button .hamburger.is-active span:nth-child(2) {
-    top: 0.4375rem;
-    opacity: 0; }
-  .top-bar .off-canvas-button .hamburger.is-active span:nth-child(3) {
-    top: 0.5rem;
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg); }
+.top-bar .off-canvas-button {
+  text-align: right; }
+  .top-bar .off-canvas-button > a {
+    padding: 1rem;
+    display: inline-block; }
+    .top-bar .off-canvas-button > a .hamburger {
+      width: 1.5rem;
+      height: 0.875rem;
+      position: relative;
+      display: inline-block;
+      -webkit-transform: rotate(0);
+      transform: rotate(0); }
+      .top-bar .off-canvas-button > a .hamburger span {
+        display: block;
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        background-color: #fefefe;
+        opacity: 1;
+        left: 0;
+        -webkit-transform: rotate(0);
+        transform: rotate(0);
+        transition: -webkit-transform 125ms linear;
+        transition: transform 125ms linear; }
+        .top-bar .off-canvas-button > a .hamburger span:nth-child(1) {
+          top: 0; }
+        .top-bar .off-canvas-button > a .hamburger span:nth-child(2) {
+          top: 0.4375rem; }
+        .top-bar .off-canvas-button > a .hamburger span:nth-child(3) {
+          top: 0.875rem; }
+      .top-bar .off-canvas-button > a .hamburger.is-active span:nth-child(1) {
+        top: 0.5rem;
+        -webkit-transform: rotate(135deg);
+        transform: rotate(135deg); }
+      .top-bar .off-canvas-button > a .hamburger.is-active span:nth-child(2) {
+        top: 0.4375rem;
+        opacity: 0; }
+      .top-bar .off-canvas-button > a .hamburger.is-active span:nth-child(3) {
+        top: 0.5rem;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg); }
 
 .off-canvas-menu {
   background-color: #0a0a0a; }
@@ -5080,7 +5144,7 @@ ul.site-navigation {
  * Sticky Elements
  *
  * (The following goes in _top-bar because we generally just make the top bar sticky, not the whole
- * site-header, though we could) 
+ * site-header, though we could, and you can move this all over there if you'd like) 
  *
  * Notes: Generally we called anything less than mlarge "mobile" as this incompasses
  * smaller tablets, tablets held in portrait and cell phones. This is where we switch
@@ -5100,40 +5164,26 @@ ul.site-navigation {
  * You can of course load a whole new top-bar once you scroll past the main one, and that can have its 
  * own style, but then you don't need the sticky functionality. 
  * 
+ *
+ * Check out the header 'slide-hero' for a stick example!
+ *
  */
-/** #wpadminbar { position: fixed; } // keep fixed so we dont have a gap
-.admin-bar .site-header .sticky.is-stuck { 
-	margin-top: 32px !important;
+#wpadminbar {
+  position: fixed; }
 
-		@include breakpoint(782px down) { // only relevant if sticky turned on for mobile
-			& {
-				margin-top: 46px !important;
-			}	
-		}	
-}
+.admin-bar .site-header .sticky.is-stuck {
+  margin-top: 32px !important; }
+  @media screen and (max-width: 48.875em) {
+    .admin-bar .site-header .sticky.is-stuck {
+      margin-top: 46px !important; } }
 
-// Sticky styles
 .site-header .sticky.is-stuck {
-	z-index: 6;
+  z-index: 6; }
 
-		.top-bar { }
-
-		// Force display the mobile banner logo when the menu is sticky
-		@include breakpoint(medium up) {
-			//.mobile-banner { display: block !important; }
-		}
-
- }
-
-// Styles needed to keep things in line
 .site-header .sticky {
-	max-width: none !important;
-	width: 100%;	
+  max-width: none !important;
+  width: 100%; }
 
-		@include breakpoint(medium down) { // only relevant if sticky turned on for mobile
-				.top-bar { }
-		}	
-}*/
 /******************************************************************
 
 Stylesheet: Breadcrumbs

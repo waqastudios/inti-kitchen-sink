@@ -9,10 +9,13 @@ normally includes a logo, or a full width hero image.
 
 ******************************************************************/
 
+$slide-hero-overlap: 110px;
+
+
 .site-header {
+	position: relative;
 
 	.site-banner {
-		overflow: auto;
 
 			.row {}
 
@@ -49,8 +52,7 @@ normally includes a logo, or a full width hero image.
 		padding: ($global-padding * 6) 0;
 		background-color: $light-gray; 
 	}
-
-
+	// end business hero header
 
 
 	/**
@@ -72,4 +74,105 @@ normally includes a logo, or a full width hero image.
 		padding: ($global-padding * 6) 0;
 	}
 
+
+	/**
+	 * Slide Hero header
+	 */
+	.site-banner.slide-hero {
+		background-color: transparent;
+		height: $slide-hero-overlap;
+		
+			.top-bar { background-color: transparent; }
+	}
+	.main-slider {
+		.slide {
+			position: relative;
+			height: 100vh; background-position: 50%; 
+			background-size: cover; background-color: $light-gray;
+
+				//
+				.site-scroll {
+					position: absolute;
+					bottom: 3rem;
+					left: 0;
+					right: 0;
+					text-align: center;
+
+						a { font-size: 2rem; color: $white; }
+				}
+
+
+				.unexpanded {
+					max-width: $global-width;
+				}
+				.slide-entry {
+					width: 100%;
+					position: absolute; top: 20%; left: 0; 
+					text-align: center;
+					color: $white; font-family: $header-font-family;
+
+					// Change your font sizes based on breakpoints
+
+					// h1 { font-size: 2.2rem; line-height: 1.1; }
+					// h2 { font-size: 2.2rem; line-height: 1.1; }
+					// h3 { font-size: 2.2rem; line-height: 1.1; }
+					// h4 { font-size: 2.2rem; line-height: 1.1; }
+					// p { font-size: 2.2rem; line-height: 1.1; }
+					// p { font-size: 2.2rem; line-height: 1.1; font-weight: 100; }
+
+					// @include breakpoint(medium up) {
+					// 	top: 30%;
+					// 		h1 { font-size: 3.2rem; line-height: 1.1; }
+					// 		h2 { font-size: 3.2rem; line-height: 1.1; }
+					// 		h3 { font-size: 3.2rem; line-height: 1.1; }
+					// 		h4 { font-size: 3.2rem; line-height: 1.1; }
+					// 		p { font-size: 3.2rem; line-height: 1.1; }
+					// }
+					// @include breakpoint(mlarge up) {
+					// 	top: 32.5%;
+					// 		h1 { font-size: 3.8rem; line-height: 1.1; }
+					// 		h2 { font-size: 3.8rem; line-height: 1.1; }
+					// 		h3 { font-size: 3.8rem; line-height: 1.1; }
+					// 		h4 { font-size: 3.8rem; line-height: 1.1; }
+					// 		p { font-size: 3.8rem; line-height: 1.1; }
+					// }
+					// @include breakpoint(large up) {
+					// 	top: 30%;
+					// 		.show-for-medium { width: 70%; }
+					// 		h1 { font-size: 4rem; line-height: 1.1; }
+					// 		h2 { font-size: 4rem; line-height: 1.1; }
+					// 		h3 { font-size: 4rem; line-height: 1.1; }
+					// 		h4 { font-size: 4rem; line-height: 1.1; }
+					// 		p { font-size: 4rem; line-height: 1.1; }
+					// }
+				}
+		}
+	}
+	.internal-banner {
+		min-height: 180px;
+		background-color: $primary-color;
+		//background-image: url('../img/header_nosotros.jpg');
+		background-size: cover;
+		background-position: 50%;
+
+		@include breakpoint(large up) {
+			min-height: 200px;
+		}
+		@include breakpoint(xlarge up) {
+			min-height: 320px;
+		}
+
+		&.small {
+			height: 200px; min-height: auto;
+		}
+	}
+
 }
+
+
+ // For slide-hero: make the site .site-banner appear over the top of a slider when 
+ // it isn't sticky (anchored to top)
+ .slide-hero-container.sticky-container { margin-bottom: -$slide-hero-overlap; z-index: 9999; }
+ .site-header .sticky.is-stuck { background-color: $black; transition: background-color .5s ease-in; }
+ .site-header .sticky.is-anchored { position: absolute; }
+

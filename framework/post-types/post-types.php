@@ -35,6 +35,54 @@ function change_post_type_titles( $title ){
 
 
 /**
+ * Post Type - Slide
+ * @since 1.1.0
+ * Related Taxonomy: None
+ * Related Metaboxes: None
+ */
+if (inti_current_theme_supports('inti-post-types', 'slide') ) {
+	add_action('init', 'slide_post_type_init');
+	function slide_post_type_init() {
+		$labels = array(
+			'name' => _x('Slides', 'post type general name', 'inti-child'),
+			'singular_name' => _x('Slide', 'post type singular name', 'inti-child'),
+			'add_new' => __('Add New', 'Slide', 'inti-child'),
+			'add_new_item' => __('Add New Slide', 'inti-child'),
+			'edit_item' => __('Edit Slide', 'inti-child'),
+			'new_item' => __('New Slide', 'inti-child'),
+			'view_item' => __('View Slide', 'inti-child'),
+			'search_items' => __('Search Slides', 'inti-child'),
+			'not_found' =>  __('No Slide found', 'inti-child'),
+			'not_found_in_trash' => __('No Slide found in Trash', 'inti-child'), 
+			'parent_item_colon' => '',
+			'menu_name' => _x('Slides', '', 'inti-child')
+		);
+		$args = array(
+			'labels' => $labels,
+			'public' => true,
+			'publicly_queryable' => false,
+			'show_ui' => true, 
+			'rewrite'   => true,
+			'has_archive' => false,
+			'query_var' => true,
+			'capability_type' => 'page',
+			'hierarchical' => true,
+			'show_in_nav_menus' => false,
+			'menu_position' => 35,
+			'menu_icon' => 'dashicons-images-alt2', 
+			'supports' => array(
+				'title',
+				'thumbnail',
+				'editor',
+				'page-attributes'
+			)
+		);
+		register_post_type('inti-slide',$args);
+	}
+}
+
+
+/**
  * Post Type - Brand
  * @since 1.0.3
  * Related Taxonomy: None

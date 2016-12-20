@@ -63,6 +63,9 @@ ul.site-navigation {
 		.top-bar-left {}
 		.top-bar-right {}
 
+		.site-logo {}
+		.site-title { color: $white; }
+
 
 			ul.dropdown.menu {
 				li {}
@@ -74,34 +77,41 @@ ul.site-navigation {
 
 // Trigger for off-canvas menu 
 .top-bar .off-canvas-button {
-	.hamburger {
-		width: 1.5rem; height: 0.875rem;
-		position: relative;
-		display: inline-block;
-		transform: rotate(0);
+	text-align: right;
+	> a { 
+		padding: $global-padding; 
+		display: inline-block; 
 
-			span {
-				display: block;
-				position: absolute;
-				height: 2px;
-				width: 100%;
-				background-color: $global-menu-color;
-				opacity: 1;
-				left: 0;
+			.hamburger {
+				width: 1.5rem; height: 0.875rem;
+				position: relative;
+				display: inline-block;
 				transform: rotate(0);
-				transition: transform 125ms linear;
-					&:nth-child(1) { top: 0; }
-					&:nth-child(2) { top: 0.4375rem; }
-					&:nth-child(3) { top: 0.875rem; }
-			}
-		&.is-active {
-			span {
 
-						&:nth-child(1) { top: 0.5rem; transform: rotate(135deg); }
-						&:nth-child(2) { top: 0.4375rem; opacity: 0; }
-						&:nth-child(3) { top: 0.5rem; transform: rotate(45deg); }
+					span {
+						display: block;
+						position: absolute;
+						height: 2px;
+						width: 100%;
+						background-color: $global-menu-color;
+						opacity: 1;
+						left: 0;
+						transform: rotate(0);
+						transition: transform 125ms linear;
+							&:nth-child(1) { top: 0; }
+							&:nth-child(2) { top: 0.4375rem; }
+							&:nth-child(3) { top: 0.875rem; }
+					}
+				&.is-active {
+					span {
+
+								&:nth-child(1) { top: 0.5rem; transform: rotate(135deg); }
+								&:nth-child(2) { top: 0.4375rem; opacity: 0; }
+								&:nth-child(3) { top: 0.5rem; transform: rotate(45deg); }
+					}
+				}
 			}
-		}
+
 	}
 }
 
@@ -134,7 +144,7 @@ ul.site-navigation {
  * Sticky Elements
  *
  * (The following goes in _top-bar because we generally just make the top bar sticky, not the whole
- * site-header, though we could) 
+ * site-header, though we could, and you can move this all over there if you'd like) 
  *
  * Notes: Generally we called anything less than mlarge "mobile" as this incompasses
  * smaller tablets, tablets held in portrait and cell phones. This is where we switch
@@ -154,10 +164,13 @@ ul.site-navigation {
  * You can of course load a whole new top-bar once you scroll past the main one, and that can have its 
  * own style, but then you don't need the sticky functionality. 
  * 
+ *
+ * Check out the header 'slide-hero' for a stick example!
+ *
  */
 
 // Sticky top bar needs to have extra top margin if admin-bar is visible
-/** #wpadminbar { position: fixed; } // keep fixed so we dont have a gap
+#wpadminbar { position: fixed; } // keep fixed so we dont have a gap
 .admin-bar .site-header .sticky.is-stuck { 
 	margin-top: 32px !important;
 
@@ -189,5 +202,5 @@ ul.site-navigation {
 		@include breakpoint(medium down) { // only relevant if sticky turned on for mobile
 				.top-bar { }
 		}	
-}*/
+}
 
