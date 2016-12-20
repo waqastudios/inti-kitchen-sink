@@ -5427,6 +5427,16 @@ Stylesheet: Opt Ins
 Styles for the opt in forms site wide.
 
 ******************************************************************/
+.opt-in form fieldset {
+  padding: 0.5rem 0; }
+
+.opt-in form .column, .opt-in form .columns, .opt-in form .columns {
+  padding-left: 5px;
+  padding-right: 5px; }
+
+.opt-in form input {
+  margin-bottom: 0.5rem; }
+
 .opt-in.header {
   background-color: #e6e6e6;
   padding: 1rem 0; }
