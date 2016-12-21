@@ -40,27 +40,29 @@ section.block {
 
 		// Shows logos that a Featured Images of the Brand custom type
 		&.featured-in {
-			header.block-header {
-				h3 {}
-				p {}
-			}
-			.inti-brand-carousel {
-				position: relative; display: none;
+			overflow: hidden;
+				header.block-header {
+					h3 {}
+					p {}
+				}
+				.inti-brand-carousel {
+					position: relative; display: none;
 
-					&.slick-initialized { display: block; }
-			}
+						&.slick-initialized { display: block; }
+				}
 		}
 
 		&.testimonials {
-			header.block-header {
-				h3 {}
-				p {}
-			}
-			.inti-testimonial-slider {
-				position: relative; display: none;
+			overflow: hidden;
+				header.block-header {
+					h3 {}
+					p {}
+				}
+				.inti-testimonial-slider {
+					position: relative; display: none;
 
-					&.slick-initialized { display: block; }
-			}
+						&.slick-initialized { display: block; }
+				}
 		}
 
 		&.services {

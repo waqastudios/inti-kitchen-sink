@@ -5233,16 +5233,20 @@ section.block {
     section.block.slogan h2 {
       font-weight: 100;
       text-align: center; }
-  section.block.featured-in .inti-brand-carousel {
-    position: relative;
-    display: none; }
-    section.block.featured-in .inti-brand-carousel.slick-initialized {
-      display: block; }
-  section.block.testimonials .inti-testimonial-slider {
-    position: relative;
-    display: none; }
-    section.block.testimonials .inti-testimonial-slider.slick-initialized {
-      display: block; }
+  section.block.featured-in {
+    overflow: hidden; }
+    section.block.featured-in .inti-brand-carousel {
+      position: relative;
+      display: none; }
+      section.block.featured-in .inti-brand-carousel.slick-initialized {
+        display: block; }
+  section.block.testimonials {
+    overflow: hidden; }
+    section.block.testimonials .inti-testimonial-slider {
+      position: relative;
+      display: none; }
+      section.block.testimonials .inti-testimonial-slider.slick-initialized {
+        display: block; }
   section.block.services.variant-1 article {
     position: relative;
     padding: 0 0 2rem; }
