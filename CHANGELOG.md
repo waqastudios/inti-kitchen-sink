@@ -1,6 +1,6 @@
 ### HEAD
 
-### 1.0.0 (January 7, 2015)
+### 1.0.0 (January 7, 2016)
 
 ### 1.0.1 (January 11, 2016)
 
@@ -39,3 +39,17 @@
 - Added template for front page block of 'page'
 - Added the ability to add Google Fonts to the child theme faster
 - Minor bugs
+
+### 1.1.0 (Dec 21, 2016)
+#### Note: This child theme now needs Inti Foundation 1.3.0+
+- Happy Holidays!
+- Upgraded to Foundation for Sites 6.3.0, with support for new off-canvas
+- Combined _off-canvas and _top-bar into _navigation.scss
+- Fixed bug with remove_action priorities in child-content-header.php and child-content-footer.php
+- Added some default styles for opt-in forms
+- Completely revised the way headers are added. Hopefully for the better especially where quick theme builds are concerned [24569f895a640de0a7b6a9e80574e61afba011c6]
+- Added new slide-hero header format, includes F6 sticky functionality
+- Added and included smooth-scroll for internal page linking
+- Fixed bug with carousel overflows in two front page blocks
+- Added scroll-to-top button that appears when you start to scroll down, can be turned off with a switch in functions.php
+- [#4](https://github.com/waqastudios/inti-foundation/issues/4) Added LiveReload by default, as requested by @pablopaul
