@@ -9,6 +9,9 @@
 		$('.hamburger').removeClass('is-active');
 	});
 
+	// If using internal page scrolling a lot, activate this
+	// smoothScroll.init();
+
 })(jQuery);	
 
 // Carousels
