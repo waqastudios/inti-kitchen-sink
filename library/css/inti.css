@@ -5581,6 +5581,22 @@ footer can be wide or contained.
 .footer-info {
   background-color: #e6e6e6; }
 
+a#inti-scroll-to-top {
+  display: none;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  padding: .5rem;
+  background-color: #0a0a0a;
+  color: #fefefe;
+  text-align: center;
+  font-size: 3rem;
+  line-height: .5;
+  width: 3rem;
+  height: 3rem; }
+  a#inti-scroll-to-top i.fa {
+    line-height: .5; }
+
 /* Slider */
 .slick-loading .slick-list {
   background: #fff url("./../vendor/slick-carousel/slick/ajax-loader.gif") center center no-repeat; }

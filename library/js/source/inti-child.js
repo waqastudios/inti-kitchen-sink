@@ -10,7 +10,22 @@
 	});
 
 	// If using internal page scrolling a lot, activate this
-	// smoothScroll.init();
+	smoothScroll.init();
+
+	// scroll to back top button
+	$(window).scroll(function() {
+			var sd = $(window).scrollTop();
+			if(typeof document.body.style.maxHeight === "undefined") {
+				$('#inti-scroll-to-top').css({
+					'position': 'absolute',
+					'top': sd + $(window).height() - 50
+				});
+			}
+			if ( sd > 200 ) 
+				$('#inti-scroll-to-top').fadeIn(600);
+			else 
+				$('#inti-scroll-to-top').fadeOut(400);
+	});
 
 })(jQuery);	
 

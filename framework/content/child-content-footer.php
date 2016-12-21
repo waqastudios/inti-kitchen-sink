@@ -103,4 +103,22 @@ function child_do_footer_social() {
 }
 add_action('inti_hook_footer_inside', 'child_do_footer_social', 3);
 
+
+/**
+ * Scroll to Top floating button
+ * 
+ * 
+ * @since 1.1.0
+ */
+function child_do_scroll_to_top() { 
+	if ( current_theme_supports( 'inti-scroll-to-top' ) ) { ?>
+	<a href="#page" id="inti-scroll-to-top" data-scroll>
+		<i class="fa fa-angle-up"></i>
+	</a>
+<?php 
+	}
+}
+// add_action('inti_hook_footer_inside', 'child_do_scroll_to_top');
+add_action('inti_hook_site_after', 'child_do_scroll_to_top');
+
 ?>

@@ -76,6 +76,8 @@ function childtheme_override_setup() {
 	add_theme_support('inti-sticky-sidebars');
 	
 	add_theme_support('inti-custom-login');
+
+	add_theme_support('inti-scroll-to-top');
 	
 	/**
 	 * WordPress features
