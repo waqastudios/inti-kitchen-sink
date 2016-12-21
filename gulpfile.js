@@ -12,7 +12,8 @@ var gulp  = require('gulp'),
     rename = require('gulp-rename'),
     plumber = require('gulp-plumber'),
     bower = require('gulp-bower'),
-    babel = require('gulp-babel');
+    babel = require('gulp-babel'),
+    livereload = require('gulp-livereload');
 
     
 // Compile Sass, Autoprefix and minify
@@ -34,6 +35,7 @@ gulp.task('styles', function() {
     .pipe(minifycss())
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./library/css/'))
+    .pipe(livereload())
 });    
     
 // JSHint, concat, and minify JavaScript
@@ -52,6 +54,7 @@ gulp.task('site-js', function() {
     .pipe(rename({suffix: '-min'}))
     .pipe(uglify())
     .pipe(gulp.dest('./library/js'))
+    .pipe(livereload())
 });    
 
 // JSHint, concat, and minify Foundation JavaScript
@@ -136,6 +139,9 @@ gulp.task('default', function() {
 
 // Watch files for changes
 gulp.task('watch', function() {
+
+  // livereloader (install accompanying browser plugin)
+  livereload.listen();
 
   // Watch .scss files
   gulp.watch('./library/scss/**/*.scss', ['styles']);
