@@ -35,7 +35,6 @@ gulp.task('styles', function() {
     .pipe(minifycss())
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./library/css/'))
-    .pipe(livereload())
 });    
     
 // JSHint, concat, and minify JavaScript
@@ -54,7 +53,6 @@ gulp.task('site-js', function() {
     .pipe(rename({suffix: '-min'}))
     .pipe(uglify())
     .pipe(gulp.dest('./library/js'))
-    .pipe(livereload())
 });    
 
 // JSHint, concat, and minify Foundation JavaScript
@@ -144,12 +142,20 @@ gulp.task('watch', function() {
   livereload.listen();
 
   // Watch .scss files
-  gulp.watch('./library/scss/**/*.scss', ['styles']);
+  gulp.watch('./library/scss/**/*.scss', ['styles', 'reload-css']);
 
   // Watch site-js files
-  gulp.watch('./library/js/source/*.js', ['site-js']);
+  gulp.watch('./library/js/source/*.js', ['site-js', 'reload-js']);
   
   // Watch foundation-js files
   gulp.watch('./library/vendor/foundation-sites/js/*.js', ['foundation-js']);
 
+});
+
+// Reload the website AFTER everything else is completed
+gulp.task("reload-css", ["styles"], function(){
+  livereload.changed('LiveReload triggered, CSS files');
+});
+gulp.task("reload-js", ["site-js"], function(){
+  livereload.changed('LiveReload triggered, JS files');
 });
