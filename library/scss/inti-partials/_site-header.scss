@@ -81,6 +81,10 @@ $slide-hero-overlap: 110px;
 	.site-banner.slide-hero {
 		background-color: transparent;
 		height: $slide-hero-overlap;
+
+		@include breakpoint(mlarge up) {
+			padding: $global-padding*2 0;
+		}
 		
 			.top-bar { background-color: transparent; }
 	}
@@ -175,4 +179,5 @@ $slide-hero-overlap: 110px;
  .slide-hero-container.sticky-container { margin-bottom: -$slide-hero-overlap; z-index: 9999; }
  .site-header .sticky.is-stuck { background-color: $black; transition: background-color .5s ease-in; }
  .site-header .sticky.is-anchored { position: absolute; }
+ .site-header .sticky { position: absolute; }
 

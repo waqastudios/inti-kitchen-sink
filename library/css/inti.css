@@ -4993,6 +4993,9 @@ normally includes a logo, or a full width hero image.
   .site-header .site-banner.slide-hero {
     background-color: transparent;
     height: 110px; }
+    @media screen and (min-width: 48em) {
+      .site-header .site-banner.slide-hero {
+        padding: 2rem 0; } }
     .site-header .site-banner.slide-hero .top-bar {
       background-color: transparent; }
   .site-header .main-slider .slide {
@@ -5044,6 +5047,9 @@ normally includes a logo, or a full width hero image.
   transition: background-color .5s ease-in; }
 
 .site-header .sticky.is-anchored {
+  position: absolute; }
+
+.site-header .sticky {
   position: absolute; }
 
 /******************************************************************

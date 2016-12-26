@@ -81,7 +81,7 @@
 		</div>
 	</div>
 
-	<?php if ( is_front_page() && inti_current_theme_supports('inti-post-types', 'brand') ): ?>
+	<?php if ( is_front_page() && inti_current_theme_supports('inti-post-types', 'slide') ): ?>
 		<?php
 			$slides = new WP_Query(array(
 				'post_type' => 'inti-slide',
@@ -164,7 +164,7 @@
 					<?php endif; ?>		
 			</div>
 		</header>
-	<?php elseif ('inti-sector' == get_post_type()) : ?>
+	<?php elseif ('inti-post-type-example' == get_post_type()) : ?>
 
 
 	<?php elseif (is_page()) : ?>
