@@ -53,3 +53,7 @@
 - Fixed bug with carousel overflows in two front page blocks
 - Added scroll-to-top button that appears when you start to scroll down, can be turned off with a switch in functions.php
 - [#4](https://github.com/waqastudios/inti-foundation/issues/4) Added LiveReload by default, as requested by @pablopaul
+
+### 1.1.1 (Dec 26, 2016)
+- Few styles added to slide-hero header for quirks that appear in some situations
+- LiveReload forced to work after CSS files are generated from SCSS
