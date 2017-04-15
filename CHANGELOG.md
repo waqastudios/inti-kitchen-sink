@@ -57,3 +57,6 @@
 ### 1.1.1 (Dec 26, 2016)
 - Few styles added to slide-hero header for quirks that appear in some situations
 - LiveReload forced to work after CSS files are generated from SCSS
+
+### 1.1.2 (Apr 15, 2017)
+- Upgraded to Foundation for Sites 6.3.1
