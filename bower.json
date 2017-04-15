@@ -1,0 +1,12 @@
+{
+  "name": "inti-kitchen-sink",
+  "private": true,
+  "ignore": [],
+  "dependencies": {
+    "foundation-sites": "~6.3.1"
+  },
+  "resolutions": {
+    "what-input": "~4.0.3",
+    "jquery": "~2.2.0"
+  }
+}
