@@ -115,8 +115,8 @@ function childtheme_override_setup() {
 	// load parent translations
 	load_theme_textdomain( 'inti' , get_template_directory() . '/languages');
 
-	// load parent translations
-	load_theme_textdomain( 'inti-child' , get_stylesheet_directory() . '/languages');
+	// load child theme translations
+	load_child_theme_textdomain( 'inti-child' , get_stylesheet_directory() . '/languages');
 
 		
 	/**

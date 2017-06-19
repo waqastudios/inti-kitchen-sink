@@ -1,0 +1,1110 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Inti Kitchen Sink\n"
+"POT-Creation-Date: 2017-06-19 21:52+0200\n"
+"PO-Revision-Date: 2017-06-19 21:52+0200\n"
+"Last-Translator: \n"
+"Language-Team: Waqa Studios <team@waqa.pe>\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr__;esc_attr_e;_x\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: library\n"
+"X-Poedit-SearchPathExcluded-1: node_modules\n"
+
+#: framework/content/child-content-footer.php:73
+msgid "Powered by"
+msgstr "Con Tecnología de"
+
+#: framework/content/child-content-footer.php:73
+msgid "Personal Publishing Platform"
+msgstr "Plataforma de publicación personal"
+
+#: framework/content/child-content-footer.php:73
+msgid "Foundation 6 WordPress Framework"
+msgstr "Foundation 6 WordPress Framework"
+
+#: framework/customizer/child-customize.php:78
+#: framework/customizer/child-customize.php:109
+#: framework/customizer/child-customize.php:140
+#: framework/shortcodes/shortcode-testimonials.php:273
+#: framework/theme-options/child-theme-options.php:453
+msgid "All Categories"
+msgstr "Todas las Categorías"
+
+#: framework/customizer/child-customize.php:232
+msgid "Select Page"
+msgstr "Seleccionar Página"
+
+#: framework/customizer/child-customize.php:276
+msgid "Select Opt-In"
+msgstr "Seleccionar Formulario de Suscripción"
+
+#: framework/customizer/child-customize.php:307
+msgid "Front Page: Blog Posts"
+msgstr "Página Principal: Entradas Blog"
+
+#: framework/customizer/child-customize.php:308
+msgid "Configure the settings for the blog posts block"
+msgstr "Configurar la sección de entradas"
+
+#: framework/customizer/child-customize.php:317
+#: framework/customizer/child-customize.php:449
+#: framework/customizer/child-customize.php:490
+#: framework/customizer/child-customize.php:534
+#: framework/customizer/child-customize.php:681
+#: framework/customizer/child-customize.php:765
+#: framework/customizer/child-customize.php:870
+#: framework/customizer/child-customize.php:978
+msgid "Show this block"
+msgstr "Mostrar esta sección"
+
+#: framework/customizer/child-customize.php:334
+msgid "Post Category to display"
+msgstr "Categoría de Entradas a mostrar"
+
+#: framework/customizer/child-customize.php:348
+msgid "Number of Posts to display"
+msgstr "Cantidad de Entradas a mostrar"
+
+#: framework/customizer/child-customize.php:360
+#: framework/customizer/child-customize.php:828
+#: framework/theme-options/child-theme-options.php:402
+msgid "Number of columns"
+msgstr "Cantidad de columnas"
+
+#: framework/customizer/child-customize.php:377
+#: framework/customizer/child-customize.php:597
+#: framework/customizer/child-customize.php:846
+#: framework/shortcodes/shortcode-testimonials.php:301
+msgid "Order"
+msgstr "Orden"
+
+#: framework/customizer/child-customize.php:382
+#: framework/customizer/child-customize.php:601
+#: framework/customizer/child-customize.php:850
+#: framework/shortcodes/shortcode-testimonials.php:307
+msgid "Ascending"
+msgstr "Ascendente"
+
+#: framework/customizer/child-customize.php:383
+#: framework/customizer/child-customize.php:602
+#: framework/customizer/child-customize.php:851
+#: framework/shortcodes/shortcode-testimonials.php:308
+msgid "Descending"
+msgstr "Descendente"
+
+#: framework/customizer/child-customize.php:394
+msgid "Exclude front page category"
+msgstr "Excluir categoría de la página principal"
+
+#: framework/customizer/child-customize.php:396
+msgid "Hide the posts shown on the front page in the blog index"
+msgstr ""
+"Esconder entradas en el ídice del blog que ya han sido mostradas en la "
+"página principal"
+
+#: framework/customizer/child-customize.php:406
+msgid "Show link to blog index"
+msgstr "Mostrar enlace al índice del blog"
+
+#: framework/customizer/child-customize.php:408
+msgid ""
+"Display a link to the posts index below the small subset of posts displayed "
+"in this block"
+msgstr "Mostrar enlace al índice del blog debajo de la lista de entradas"
+
+#: framework/customizer/child-customize.php:418
+msgid "URL of page for posts"
+msgstr "Enlace de la página de las entradas"
+
+#: framework/customizer/child-customize.php:424
+#: template-parts/part-block-blog-posts-variant-1.php:19
+#: template-parts/part-block-blog-posts.php:20
+msgid "View All Posts"
+msgstr "Ver Todas las Entradas"
+
+#: framework/customizer/child-customize.php:429
+msgid "Text for the button to view page for posts"
+msgstr "Texto del botón que lleva al índice del blog"
+
+#: framework/customizer/child-customize.php:439
+msgid "Front Page: Slogan"
+msgstr "Página Principal: Eslogan"
+
+#: framework/customizer/child-customize.php:440
+msgid "Modify front page slogan"
+msgstr "Modificar eslogan en página principal"
+
+#: framework/customizer/child-customize.php:466
+msgid "Slogan"
+msgstr "Eslogan"
+
+#: framework/customizer/child-customize.php:480
+msgid "Front Page: Featured In"
+msgstr "Página Principal: Descatado En"
+
+#: framework/customizer/child-customize.php:481
+msgid "Configure the settings for the featured in block"
+msgstr "Configurar la sección de brands destacados"
+
+#: framework/customizer/child-customize.php:502
+#: framework/customizer/child-customize.php:546
+#: framework/customizer/child-customize.php:693
+#: framework/customizer/child-customize.php:777
+#: framework/customizer/child-customize.php:882
+msgid "Title (Optional)"
+msgstr "Título (Opcional)"
+
+#: framework/customizer/child-customize.php:513
+#: framework/customizer/child-customize.php:557
+#: framework/customizer/child-customize.php:788
+msgid "Description (Optional)"
+msgstr "Descripción (Opcional)"
+
+#: framework/customizer/child-customize.php:524
+msgid "Front Page: Testimonials"
+msgstr "Pagina Principal: Recomendaciones"
+
+#: framework/customizer/child-customize.php:525
+msgid "Configure the settings for the testimonial block"
+msgstr "Configuración de sección de Recomendaciones"
+
+#: framework/customizer/child-customize.php:572
+msgid "Testimonial Category to display"
+msgstr "Categoría de Recomendaciones a mostrar"
+
+#: framework/customizer/child-customize.php:585
+msgid "Number of Testimonials to display"
+msgstr "Cantidad de Recomendaciones a mostrar"
+
+#: framework/customizer/child-customize.php:613
+msgid "What to display"
+msgstr "Que mostar"
+
+#: framework/customizer/child-customize.php:617
+msgid "Excerpt Only"
+msgstr "Solo Extracto"
+
+#: framework/customizer/child-customize.php:618
+msgid "Full Content"
+msgstr "Contenido Completo"
+
+#: framework/customizer/child-customize.php:628
+msgid "Force hide testimonial photos"
+msgstr "Esconder fotos de las Recomendaciones"
+
+#: framework/customizer/child-customize.php:639
+msgid "Link Slides To"
+msgstr "Enlazar diapositivas a"
+
+#: framework/customizer/child-customize.php:643
+msgid "No Link"
+msgstr "Sin Enlance"
+
+#: framework/customizer/child-customize.php:644
+msgid "Testimonial Single (if theme supports)"
+msgstr "Recomendación Individual (si el tema soporta)"
+
+#: framework/customizer/child-customize.php:645
+msgid "Praise Page (with a testimonials shortcode)"
+msgstr "Página de Recomendaciones"
+
+#: framework/customizer/child-customize.php:659
+msgid "Page to link to (if selected above)"
+msgstr "Página a enlazar (si es selecionada)"
+
+#: framework/customizer/child-customize.php:671
+msgid "Front Page: Personal Bio"
+msgstr "Página Principal: Biografía"
+
+#: framework/customizer/child-customize.php:672
+#: framework/customizer/child-customize.php:861
+msgid "Modify front page content"
+msgstr "Modificar contenido de página principal"
+
+#: framework/customizer/child-customize.php:710
+msgid "Personal Bio"
+msgstr "Biografía"
+
+#: framework/customizer/child-customize.php:730
+msgid "Bio Photo"
+msgstr "Foto para Biografía"
+
+#: framework/customizer/child-customize.php:744
+msgid "URL for Image or Button (Optional)"
+msgstr "Enlace de Imagen o Botón (Opcional)"
+
+#: framework/customizer/child-customize.php:746
+msgid "Adding a URL here will link the bio image or button to that URL."
+msgstr "Agrega un enlace aquí"
+
+#: framework/customizer/child-customize.php:755
+msgid "Front Page: Services"
+msgstr "Página Principal: Servicios"
+
+#: framework/customizer/child-customize.php:756
+msgid "Configure the settings for the services block"
+msgstr "Configuración de sección de Servicios"
+
+#: framework/customizer/child-customize.php:803
+msgid "Service Category to display"
+msgstr "Categoría de Servicios a mostrar"
+
+#: framework/customizer/child-customize.php:816
+msgid "Number of Services to display"
+msgstr "Cantidad de Servicios a mostrar"
+
+#: framework/customizer/child-customize.php:860
+msgid "Front Page: Video"
+msgstr "Pagina Principal: Video"
+
+#: framework/customizer/child-customize.php:894
+msgid "Aspect Ratio"
+msgstr "Relación de Aspecto"
+
+#: framework/customizer/child-customize.php:898
+msgid "Widescreen"
+msgstr "Widescreen"
+
+#: framework/customizer/child-customize.php:899
+msgid "4:3"
+msgstr "4:3"
+
+#: framework/customizer/child-customize.php:910
+msgid "Video Source"
+msgstr "Fuente del Video"
+
+#: framework/customizer/child-customize.php:928
+msgid "Video Code/ID"
+msgstr "ID del Video (solo ID)"
+
+#: framework/customizer/child-customize.php:930
+msgid "Just the ID from the video service"
+msgstr "ID del Video (solo ID)"
+
+#: framework/customizer/child-customize.php:943
+msgid "Text for Button"
+msgstr "Texto del botón"
+
+#: framework/customizer/child-customize.php:945
+msgid "There is a button beneath the video. Add the text here."
+msgstr "Hay un botón debajo del video. Agrega el texto aquí."
+
+#: framework/customizer/child-customize.php:957
+msgid "URL for Button"
+msgstr "Enlace del botón"
+
+#: framework/customizer/child-customize.php:959
+msgid "Add a URL here for the button"
+msgstr "Agregar un enlace aquí para el botón"
+
+#: framework/customizer/child-customize.php:968
+msgid "Front Page: Google Maps"
+msgstr "Página Principal: Mapas de Google"
+
+#: framework/customizer/child-customize.php:969
+msgid "Adds a map as a front page block"
+msgstr "Agrega mapa a una sección del la página principal"
+
+#: framework/customizer/child-customize.php:991
+msgid "Source"
+msgstr "Fuente"
+
+#: framework/metaboxes/child-metaboxes.php:22
+msgid "Brand Configuration"
+msgstr "Configuración de Brand"
+
+#: framework/metaboxes/child-metaboxes.php:33
+msgid "Brand URL (optional)"
+msgstr "Enlance (opcional)"
+
+#: framework/metaboxes/child-metaboxes.php:34
+msgid "Link the brand logo (Featured Image) to an external URL"
+msgstr "Enlazar logo de brand (Imagen Destacado) a un sitio web externo"
+
+#: framework/metaboxes/child-metaboxes.php:53
+msgid "Testimonial Meta"
+msgstr "Meta para Recomendación"
+
+#: framework/metaboxes/child-metaboxes.php:64
+msgid "Role"
+msgstr "Rol"
+
+#: framework/metaboxes/child-metaboxes.php:65
+msgid "Position, Job Title"
+msgstr "Título, posición en empresa"
+
+#: framework/metaboxes/child-metaboxes.php:71
+msgid "Company/Organization"
+msgstr "Empresa/Organización"
+
+#: framework/metaboxes/child-metaboxes.php:72
+msgid "Company or organization"
+msgstr "Empresa o organización"
+
+#: framework/metaboxes/child-metaboxes.php:78
+msgid "Company URL"
+msgstr "Enlace"
+
+#: framework/metaboxes/child-metaboxes.php:79
+msgid "Link the company to an external URL"
+msgstr "Enlazar el nombre da la empresa a un sitio web externo"
+
+#: framework/metaboxes/child-metaboxes.php:87
+#: framework/metaboxes/child-metaboxes.php:132
+msgid "Open in new window"
+msgstr "Abrir enlace en una nueva página/pestaña"
+
+#: framework/metaboxes/child-metaboxes.php:88
+#: framework/metaboxes/child-metaboxes.php:133
+msgid "Open link to the company in a new window"
+msgstr "Abrir enlace en una nueva página/pestaña"
+
+#: framework/metaboxes/child-metaboxes.php:105
+msgid "Service Meta"
+msgstr "Meta para Servicio"
+
+#: framework/metaboxes/child-metaboxes.php:116
+msgid "Action Text"
+msgstr "Texto de Acción"
+
+#: framework/metaboxes/child-metaboxes.php:117
+msgid ""
+"Any call-to-action text the theme supports, possibly a button below the "
+"service description or the alt text on the service image"
+msgstr ""
+"Un texto ‘llamado-a-acción’ si el tema lo soporta, quizás mostrado debajo de "
+"la descripción del servicio o como el texto ‘alt’ del imagen del servicio"
+
+#: framework/metaboxes/child-metaboxes.php:123
+msgid "Custom URL"
+msgstr "Enlace"
+
+#: framework/metaboxes/child-metaboxes.php:124
+msgid ""
+"Alternative link to custom URL - leave blank to keep default service page"
+msgstr "Enlance alternativa - dejar en blanco para usar la página del servicio"
+
+#: framework/metaboxes/child-metaboxes.php:150
+msgid "Opt-in Configuration"
+msgstr "Configuración de Formulario Opt-in"
+
+#: framework/metaboxes/child-metaboxes.php:161
+msgid "Post action URL"
+msgstr "URL de ‘action’"
+
+#: framework/metaboxes/child-metaboxes.php:162
+msgid "URL to post the form to"
+msgstr "Dirección para propiedad ‘action’ del formulario"
+
+#: framework/metaboxes/child-metaboxes.php:169
+msgid "Target <em>_blank</em>"
+msgstr ""
+
+#: framework/metaboxes/child-metaboxes.php:170
+msgid "Post form to new tab"
+msgstr "Enviar formulario a nueva pestaña"
+
+#: framework/metaboxes/child-metaboxes.php:176
+msgid "Hidden Fields"
+msgstr "Campos escondidos"
+
+#: framework/metaboxes/child-metaboxes.php:177
+msgid ""
+"Most form embed codes come with fields that are kept hidden, paste those "
+"here."
+msgstr ""
+"La mayoría de los extractos de código para insertar formularios vienen con "
+"campos que no deben ser visibles. Agregalos aquí."
+
+#: framework/metaboxes/child-metaboxes.php:184
+msgid "First Name field"
+msgstr "Campo de Nombre"
+
+#: framework/metaboxes/child-metaboxes.php:185
+msgid "Values for the First Name field"
+msgstr "Valor para campo de Nombre"
+
+#: framework/metaboxes/child-metaboxes.php:190
+msgid "First Name element name"
+msgstr "Nombre del elemento"
+
+#: framework/metaboxes/child-metaboxes.php:195
+msgid "First Name element placeholder text"
+msgstr "Texto placeholder para elemento Nombre"
+
+#: framework/metaboxes/child-metaboxes.php:198
+msgid "First Name"
+msgstr "Nombre"
+
+#: framework/metaboxes/child-metaboxes.php:201
+msgid "First Name is required"
+msgstr "Nombre requerido"
+
+#: framework/metaboxes/child-metaboxes.php:202
+#: framework/metaboxes/child-metaboxes.php:227
+msgid "Make this field a required field"
+msgstr "Haz de este campo un campo requerido"
+
+#: framework/metaboxes/child-metaboxes.php:209
+msgid "Email Address field"
+msgstr "Campo de Correo Electrónico"
+
+#: framework/metaboxes/child-metaboxes.php:210
+msgid "Values for the Email Address field"
+msgstr "Valores para el campo de Correo Electrónico"
+
+#: framework/metaboxes/child-metaboxes.php:215
+msgid "Email element name"
+msgstr "Nombre del elemento"
+
+#: framework/metaboxes/child-metaboxes.php:220
+msgid "Email element placeholder text"
+msgstr "Texto placeholder para elemento Correo Electrónico"
+
+#: framework/metaboxes/child-metaboxes.php:223
+msgid "Email"
+msgstr "Correo electrónico"
+
+#: framework/metaboxes/child-metaboxes.php:226
+msgid "Email is required"
+msgstr "Correo requerido"
+
+#: framework/metaboxes/child-metaboxes.php:233
+msgid "Submission Settings"
+msgstr "Configuración de envio de formulario"
+
+#: framework/metaboxes/child-metaboxes.php:234
+msgid "Values for submit button and form"
+msgstr "Valores del botón de envio y del formulario para hacer el envio"
+
+#: framework/metaboxes/child-metaboxes.php:239
+msgid "Submit Button Text"
+msgstr "Texto de botón submit"
+
+#: framework/metaboxes/child-metaboxes.php:244
+msgid "Submit Button element name"
+msgstr "Nombre de elemento"
+
+#: framework/metaboxes/child-metaboxes.php:245
+#: framework/metaboxes/child-metaboxes.php:252
+msgid ""
+"(only needed if your particular list service looks for a specific element "
+"name)"
+msgstr ""
+"(solo se necesita si tu servicio de suscripción pide que el elemento tenga "
+"un nombre específico)"
+
+#: framework/metaboxes/child-metaboxes.php:251
+msgid "Form element name"
+msgstr "Nombre del elemento ‘form’"
+
+#: framework/post-types/post-types.php:22
+msgid "Enter brand name"
+msgstr "Nombre de brand"
+
+#: framework/post-types/post-types.php:26
+msgid "Enter person's name"
+msgstr "Nombre de persona"
+
+#: framework/post-types/post-types.php:30
+msgid "Purpose/Name"
+msgstr "Propósito/Nombre"
+
+#: framework/post-types/post-types.php:47
+#: framework/post-types/post-types.php:58
+msgid "Slides"
+msgstr "Diapositivas"
+
+#: framework/post-types/post-types.php:48
+msgid "Slide"
+msgstr "Diapositiva"
+
+#: framework/post-types/post-types.php:49
+#: framework/post-types/post-types.php:97
+#: framework/post-types/post-types.php:145
+#: framework/post-types/post-types.php:193
+#: framework/post-types/post-types.php:242
+msgid "Add New"
+msgstr "Nueva"
+
+#: framework/post-types/post-types.php:50
+msgid "Add New Slide"
+msgstr "Agregar Nueva Diapositiva"
+
+#: framework/post-types/post-types.php:51
+msgid "Edit Slide"
+msgstr "Editar Diapositiva"
+
+#: framework/post-types/post-types.php:52
+msgid "New Slide"
+msgstr "Nueva Diapositiva"
+
+#: framework/post-types/post-types.php:53
+msgid "View Slide"
+msgstr "Ver Diapositiva"
+
+#: framework/post-types/post-types.php:54
+msgid "Search Slides"
+msgstr "Buscar en Diapositivas"
+
+#: framework/post-types/post-types.php:55
+msgid "No Slide found"
+msgstr "No Diapositivas encontrada"
+
+#: framework/post-types/post-types.php:56
+msgid "No Slide found in Trash"
+msgstr "No Diapositiva encontrada en la basura"
+
+#: framework/post-types/post-types.php:95
+#: framework/post-types/post-types.php:106
+msgid "Brands"
+msgstr "Brands"
+
+#: framework/post-types/post-types.php:96
+msgid "Brand"
+msgstr "Brand"
+
+#: framework/post-types/post-types.php:98
+msgid "Add New Brand"
+msgstr "Agregar Nueva Brand"
+
+#: framework/post-types/post-types.php:99
+msgid "Edit Brand"
+msgstr "Editar Brand"
+
+#: framework/post-types/post-types.php:100
+msgid "New Brand"
+msgstr "Nueva Brand"
+
+#: framework/post-types/post-types.php:101
+msgid "View Brand"
+msgstr "Ver Brand"
+
+#: framework/post-types/post-types.php:102
+msgid "Search Brands"
+msgstr "Buscar en Brand"
+
+#: framework/post-types/post-types.php:103
+msgid "No Brand found"
+msgstr "No Brand econtrado"
+
+#: framework/post-types/post-types.php:104
+msgid "No Brand found in Trash"
+msgstr "No Brand encontrado el la basura"
+
+#: framework/post-types/post-types.php:143
+#: framework/post-types/post-types.php:154
+#: framework/shortcodes/shortcode-testimonials.php:243
+msgid "Testimonials"
+msgstr "Recomendaciones"
+
+#: framework/post-types/post-types.php:144
+msgid "Testimonial"
+msgstr "Recomendación"
+
+#: framework/post-types/post-types.php:146
+msgid "Add New Testimonial"
+msgstr "Agregar Nueva Recomendación"
+
+#: framework/post-types/post-types.php:147
+msgid "Edit Testimonial"
+msgstr "Editar Recomendación"
+
+#: framework/post-types/post-types.php:148
+msgid "New Testimonial"
+msgstr "Nueva Recomendación"
+
+#: framework/post-types/post-types.php:149
+msgid "View Testimonial"
+msgstr "Ver Recomendación"
+
+#: framework/post-types/post-types.php:150
+msgid "Search Testimonials"
+msgstr "Buscar en Recomendaciones"
+
+#: framework/post-types/post-types.php:151
+msgid "No Testimonial found"
+msgstr "No Recomendación encontrado"
+
+#: framework/post-types/post-types.php:152
+msgid "No Testimonial found in Trash"
+msgstr "No Recomendación encontrado en la basura"
+
+#: framework/post-types/post-types.php:191
+#: framework/post-types/post-types.php:202
+msgid "Services"
+msgstr "Servicios"
+
+#: framework/post-types/post-types.php:192
+msgid "Service"
+msgstr "Servicio"
+
+#: framework/post-types/post-types.php:194
+msgid "Add New Service"
+msgstr "Agrega Nueva Servicio"
+
+#: framework/post-types/post-types.php:195
+msgid "Edit Service"
+msgstr "Editar Servicio"
+
+#: framework/post-types/post-types.php:196
+msgid "New Service"
+msgstr "Nuevo Servicio"
+
+#: framework/post-types/post-types.php:197
+msgid "View Service"
+msgstr "Ver Servicio"
+
+#: framework/post-types/post-types.php:198
+msgid "Search Services"
+msgstr "Buscar en Servicios"
+
+#: framework/post-types/post-types.php:199
+msgid "No Service found"
+msgstr "No Servicio encontrado"
+
+#: framework/post-types/post-types.php:200
+msgid "No Service found in Trash"
+msgstr "No Servicio encontrado en la basura"
+
+#: framework/post-types/post-types.php:240
+#: framework/post-types/post-types.php:251
+msgid "Opt-in Forms"
+msgstr "Formularios Opt-In"
+
+#: framework/post-types/post-types.php:241 framework/widgets/opt-in.php:63
+msgid "Opt-in Form"
+msgstr "Formulario Opt-in"
+
+#: framework/post-types/post-types.php:243
+msgid "Add New Opt-in Form"
+msgstr "Agregar Nuevo Opt-in"
+
+#: framework/post-types/post-types.php:244
+msgid "Edit Opt-in Form"
+msgstr "Editar Opt-in"
+
+#: framework/post-types/post-types.php:245
+msgid "New Opt-in Form"
+msgstr "Nuevo Opt-in"
+
+#: framework/post-types/post-types.php:246
+msgid "View Opt-in Form"
+msgstr "View Opt-in"
+
+#: framework/post-types/post-types.php:247
+msgid "Search Opt-ins"
+msgstr "Buscar en Opt-ins"
+
+#: framework/post-types/post-types.php:248
+msgid "No Opt-in Form found"
+msgstr "No Formulario Opt-in encontrado"
+
+#: framework/post-types/post-types.php:249
+msgid "No Opt-in Form found in Trash"
+msgstr "No Formulario Opt-in encontrado en la basura"
+
+#: framework/post-types/taxonomies.php:25
+#: framework/post-types/taxonomies.php:35
+#: framework/post-types/taxonomies.php:64
+#: framework/post-types/taxonomies.php:74
+msgid "Categories"
+msgstr "Categorias"
+
+#: framework/post-types/taxonomies.php:26
+#: framework/post-types/taxonomies.php:65
+msgid "Category"
+msgstr "Categoría"
+
+#: framework/post-types/taxonomies.php:27
+msgid "Search Testimonial Categories"
+msgstr "Buscar en Categorías de Recomendaciónes"
+
+#: framework/post-types/taxonomies.php:28
+msgid "All Testimonial Categories"
+msgstr "Todas las Categorías"
+
+#: framework/post-types/taxonomies.php:29
+#: framework/post-types/taxonomies.php:30
+#: framework/post-types/taxonomies.php:68
+#: framework/post-types/taxonomies.php:69
+msgid "Parent Category"
+msgstr "Categoría Superior"
+
+#: framework/post-types/taxonomies.php:31
+#: framework/post-types/taxonomies.php:70
+msgid "Edit Category"
+msgstr "Editar Categoría"
+
+#: framework/post-types/taxonomies.php:32
+#: framework/post-types/taxonomies.php:71
+msgid "Update Category"
+msgstr "Actualizar Categoría"
+
+#: framework/post-types/taxonomies.php:33
+msgid "Add New Testimonial Category"
+msgstr "Agregar Nuevo Categoría de Recomendación"
+
+#: framework/post-types/taxonomies.php:34
+#: framework/post-types/taxonomies.php:73
+msgid "New Category Name"
+msgstr "Nombre de Nueva Categoría"
+
+#: framework/post-types/taxonomies.php:66
+msgid "Search Service Categories"
+msgstr "Buscar en Categorías de Servicios"
+
+#: framework/post-types/taxonomies.php:67
+msgid "All Service Categories"
+msgstr "Todas las Categorías"
+
+#: framework/post-types/taxonomies.php:72
+msgid "Add New Service Category"
+msgstr "Agregar Nueva Categoría de Servicio"
+
+#: framework/shortcodes/shortcode-opt-in.php:30 framework/widgets/opt-in.php:25
+msgid "Opt-In Form"
+msgstr "Formulario Opt-In"
+
+#: framework/shortcodes/shortcode-opt-in.php:55
+msgid "Choose an Opt-In Form"
+msgstr "Seleccionar Formulario Opt-in"
+
+#: framework/shortcodes/shortcode-opt-in.php:72 framework/widgets/opt-in.php:79
+msgid "Select a Form"
+msgstr "Seleccionar un Formulario"
+
+#: framework/shortcodes/shortcode-testimonial-single.php:139
+#: framework/shortcodes/shortcode-testimonial-single.php:154
+msgid ""
+"No testimonial was found with this ID, you may need to re-insert this "
+"shortcode."
+msgstr ""
+"No se ha encontrado una Recomendación con este número de ID, intenta "
+"insertar este shortcode nuevamente."
+
+#: framework/shortcodes/shortcode-testimonial-single.php:172
+msgid "Testimonial (Single)"
+msgstr "Recomendación (Individual)"
+
+#: framework/shortcodes/shortcode-testimonial-single.php:197
+msgid "Choose a Testimonial"
+msgstr "Seleccionar una Recomendación"
+
+#: framework/shortcodes/shortcode-testimonial-single.php:202
+msgid "Select a testimonial by name"
+msgstr "Seleccionar una Recomendación por nombre"
+
+#: framework/shortcodes/shortcode-testimonial-single.php:214
+#: framework/shortcodes/shortcode-testimonials.php:284
+msgid "Photo Align"
+msgstr "Alinear foto"
+
+#: framework/shortcodes/shortcode-testimonial-single.php:220
+msgid "Left"
+msgstr "Izquierda"
+
+#: framework/shortcodes/shortcode-testimonial-single.php:221
+msgid "Right"
+msgstr "Derecha"
+
+#: framework/shortcodes/shortcode-testimonial-single.php:222
+#: framework/shortcodes/shortcode-testimonials.php:293
+msgid "Photo above"
+msgstr "Foto arriba"
+
+#: framework/shortcodes/shortcode-testimonials.php:218
+msgid "Alignment not recognized"
+msgstr "Alinamiento no reconocido"
+
+#: framework/shortcodes/shortcode-testimonials.php:268
+msgid "Choose a Testimonials Category"
+msgstr "Seleccionar una Categoría de Recomendaciones"
+
+#: framework/shortcodes/shortcode-testimonials.php:290
+msgid "All Left"
+msgstr "Todas a la izquierda"
+
+#: framework/shortcodes/shortcode-testimonials.php:291
+msgid "All Right"
+msgstr "Todas a la derecha"
+
+#: framework/shortcodes/shortcode-testimonials.php:292
+msgid "Left Right Left"
+msgstr "Izquierda Derecha Izquierda"
+
+#: framework/theme-options/child-theme-options.php:36
+#: framework/theme-options/child-theme-options.php:37
+#: framework/theme-options/child-theme-options.php:44
+#: framework/theme-options/child-theme-options.php:45
+msgid "Inti Options"
+msgstr "Opciones de Inti"
+
+#: framework/theme-options/child-theme-options.php:53
+#: framework/theme-options/child-theme-options.php:54
+msgid "General Options"
+msgstr "Opciones Generales"
+
+#: framework/theme-options/child-theme-options.php:63
+#: framework/theme-options/child-theme-options.php:64
+msgid "Front Page"
+msgstr "Página Principal"
+
+#: framework/theme-options/child-theme-options.php:72
+#: framework/theme-options/child-theme-options.php:73
+#: framework/theme-options/child-theme-options.php:116
+msgid "Header/Navigation"
+msgstr "Encabezado de Página/Navegación"
+
+#: framework/theme-options/child-theme-options.php:81
+#: framework/theme-options/child-theme-options.php:82
+#: framework/theme-options/child-theme-options.php:117
+msgid "Footer/Analytics"
+msgstr "Pie de Página/Analytics"
+
+#: framework/theme-options/child-theme-options.php:90
+#: framework/theme-options/child-theme-options.php:91
+#: framework/theme-options/child-theme-options.php:118
+msgid "Social Media Profiles"
+msgstr "Redes Sociales"
+
+#: framework/theme-options/child-theme-options.php:99
+#: framework/theme-options/child-theme-options.php:100
+#: framework/theme-options/child-theme-options.php:119
+msgid "Commenting"
+msgstr "Comentarios"
+
+#: framework/theme-options/child-theme-options.php:114
+msgid "General"
+msgstr "General"
+
+#: framework/theme-options/child-theme-options.php:115
+msgid "Child Example"
+msgstr ""
+
+#: framework/theme-options/child-theme-options.php:160
+msgid "Posts and Pages"
+msgstr "Entradas y Páginas"
+
+#: framework/theme-options/child-theme-options.php:168
+msgid "Excerpt Limit"
+msgstr "Límite de extracto de texto"
+
+#: framework/theme-options/child-theme-options.php:173
+msgid "How many characters do you want to display for excerpts?"
+msgstr "¿Cuántos caracteres quieres mostrar en el extracto de texto?"
+
+#: framework/theme-options/child-theme-options.php:179
+msgid "Read More text"
+msgstr "Texto de ‘Leer Más’"
+
+#: framework/theme-options/child-theme-options.php:184
+msgid ""
+"After the excerpt there's a button or link with this text to continue "
+"reading."
+msgstr ""
+"Debajo del extracto hay un botón o enlace con este texto para continuar "
+"leyendo."
+
+#: framework/theme-options/child-theme-options.php:190
+msgid "Blog Index Style"
+msgstr "Estilo de índice de las entradas del Blog"
+
+#: framework/theme-options/child-theme-options.php:195
+msgid ""
+"You can display posts in a classic blog style as in option one, or shorts "
+"style as in option two."
+msgstr ""
+"Puedes mostrar entradas del blog en un estilo clásico como la opción uno o "
+"escoger el estilo corto como la opción dos."
+
+#: framework/theme-options/child-theme-options.php:201
+msgid "Show Breadcrumbs"
+msgstr "Mostrar Rastro de Migas"
+
+#: framework/theme-options/child-theme-options.php:206
+msgid "They can be displayed before and after the content, or not at all."
+msgstr "Se pueden mostrar antes y después del contenido, o no mostrar nada."
+
+#: framework/theme-options/child-theme-options.php:212
+msgid "Hide breadcrumbs on front page"
+msgstr "No mostrar Rastro de Migas en la página principal"
+
+#: framework/theme-options/child-theme-options.php:220
+msgid "Pagination Style"
+msgstr "Estilo de paginación"
+
+#: framework/theme-options/child-theme-options.php:225
+msgid ""
+"Move between lists of posts in archives with number or Next/Previous links"
+msgstr ""
+"Navegar entre las listas de entradas en los archivos por medio de enlaces "
+"numerados o de Siguiente/Anterior"
+
+#: framework/theme-options/child-theme-options.php:231
+msgid "Links to Next/Previous posts on single posts"
+msgstr "Enlaces a la entrada siguiente/anterior en entradas individuales"
+
+#: framework/theme-options/child-theme-options.php:236
+msgid ""
+"Move from one post to the next or previous post directly with Next/Previous "
+"links"
+msgstr ""
+"Pasa de una entrada a la siguiente o la anterior directamente con los "
+"enlaces de Siguiente/Anterior"
+
+#: framework/theme-options/child-theme-options.php:288
+msgid "Sharing"
+msgstr "Compartir"
+
+#: framework/theme-options/child-theme-options.php:295
+msgid "Enable sharing on Posts"
+msgstr "Habilitar el compartir en las Entradas"
+
+#: framework/theme-options/child-theme-options.php:303
+msgid "Enable sharing on Pages"
+msgstr "Habilitar el compartir en las Páginas"
+
+#: framework/theme-options/child-theme-options.php:311
+msgid "Display these sharing platforms"
+msgstr "Mostrar estas redes sociales"
+
+#: framework/theme-options/child-theme-options.php:332
+msgid "404"
+msgstr "404"
+
+#: framework/theme-options/child-theme-options.php:339
+msgid "Message to display when page not found"
+msgstr "Mensaje a mostrar cuando una página no es encontrada"
+
+#: framework/theme-options/child-theme-options.php:379
+msgid "Example Child Options"
+msgstr ""
+
+#: framework/theme-options/child-theme-options.php:386
+msgid "Blog post categories"
+msgstr "Categorías de entradas"
+
+#: framework/theme-options/child-theme-options.php:394
+msgid "Number of posts"
+msgstr "Cantidad de entradas"
+
+#: framework/theme-options/child-theme-options.php:410
+msgid "Checkbox"
+msgstr "Checkbox"
+
+#: framework/theme-options/child-theme-options.php:440
+msgid ""
+"Doesn't really do anything, this is just an example of how you'd expand the "
+"theme options in a child theme"
+msgstr ""
+
+#: framework/theme-options/child-theme-options.php:514
+msgid "Exclude the front page post category from the rest of the blog"
+msgstr "Excluir la categoría usada en la página principal del índice del blog"
+
+#: framework/widgets/opt-in.php:26
+msgid "Displays an opt-in form in the sidebar"
+msgstr "Mostrar un Formulario Opt-in en el sidebar"
+
+#: template-parts/part-block-blog-posts-variant-1.php:75
+#: template-parts/part-block-blog-posts.php:81
+#: template-parts/part-block-services-variant-1.php:126
+#: template-parts/part-block-services.php:129
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: template-parts/part-block-blog-posts-variant-1.php:128
+#: template-parts/part-block-blog-posts.php:136
+msgid "There are currently no published blog posts in this category."
+msgstr "No hay entradas publicadas en esta categoría."
+
+#: template-parts/part-block-blog-posts.php:107
+msgid "Read more >"
+msgstr ""
+
+#: template-parts/part-block-featured-in.php:65
+msgid "There are currently no published brands"
+msgstr "No hay brands publicados"
+
+#: template-parts/part-block-services-variant-1.php:163
+#: template-parts/part-block-services.php:165
+msgid "There are currently no published services in this category"
+msgstr "No hay servicios publicadas en esta categoría"
+
+#: template-parts/part-block-testimonials.php:161
+msgid "There are currently no published testimonials in this category"
+msgstr "No hay recomendaciones publicadas en esta categoría"
+
+#: template-parts/part-header-business-hero.php:39
+msgid "Call now!"
+msgstr ""
+
+#: template-parts/part-header-business-hero.php:48
+msgid "Visit us!"
+msgstr ""
+
+#: template-parts/part-header-business-hero.php:49
+msgid "100 Your Address"
+msgstr ""
+
+#: template-parts/part-header-business-hero.php:57
+msgid "Email Us"
+msgstr ""
+
+#: template-parts/part-header-business-hero.php:121
+msgid "Example text"
+msgstr ""
+
+#: template-parts/part-header-business-hero.php:122
+msgid "Could be made editable in customizer"
+msgstr ""
+
+#: template-parts/part-header-business-hero.php:123
+msgid "More Info"
+msgstr ""
+
+#: template-parts/part-header-business-hero.php:128
+msgid "Replace this with something important"
+msgstr ""
+
+#: template-parts/part-header-business-hero.php:129
+msgid "Perhaps an image of a product or an opt-in."
+msgstr ""
+
+#: template-parts/part-header-slide-hero.php:128
+msgid "You'll need to add some slides, friend."
+msgstr ""
+
+#: template-parts/part-header-slide-hero.php:140
+msgid "I'm not your friend, buddy!"
+msgstr ""
+
+#: template-parts/part-header-slide-hero.php:152
+msgid "Hey, relax guy!"
+msgstr ""
+
+#: template-parts/part-opt-in-widget.php:64
+msgid "No ID specified or no longer exists"
+msgstr "No ID espécificado o ya no existe"
+
+#~ msgid "Value for the name property"
+#~ msgstr "El valor para propiedad Nombre"
+
+#~ msgid "First Name required"
+#~ msgstr "Obligar a proporcionar nombre"
+
+#~ msgid "This field is required"
+#~ msgstr "Campo requerido"
+
+#~ msgid "Email required"
+#~ msgstr "Obligar a proporcionar correo electrónico"

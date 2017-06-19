@@ -60,7 +60,7 @@ class inti_widget_opt_in extends WP_Widget {
 		$optin_id = $instance['optin_id'];
 	?>
 		<p>
-			<label for="<?php echo $this->get_field_id('optin_id'); ?>"><?php _e('Opt-In Form:', 'inti-child'); ?></label>
+			<label for="<?php echo $this->get_field_id('optin_id'); ?>"><?php _e('Opt-in Form', 'inti-child'); ?>:</label>
 		</p>
 
 	<?php 

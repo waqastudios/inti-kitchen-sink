@@ -927,7 +927,7 @@ function child_new_section($wp_customize) {
 				$wp_customize->add_control('inti_customizer_options[fpb_video_code]', array( 
 					'label'    => __('Video Code/ID', 'inti-child'),
 					'section'  => 'inti_customizer_front_page_block_video',
-					'description' => __('', 'inti-child'),
+					'description' => __('Just the ID from the video service', 'inti-child'),
 					'type'     => 'text',
 					'priority' => 5,
 				 ) );

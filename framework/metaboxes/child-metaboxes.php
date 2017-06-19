@@ -68,7 +68,7 @@ function inti_register_testimonial_metabox() {
 	) );	
 
 	$cmb_testimonial->add_field( array(
-		'name'    => __( 'Company/ Organization', 'inti-child' ),
+		'name'    => __( 'Company/Organization', 'inti-child' ),
 		'desc'    => __( 'Company or organization', 'inti-child' ),
 		'id'      => $prefix . 'company',
 		'type'    => 'text'
@@ -188,20 +188,18 @@ function inti_register_opt_in_metabox() {
 	) );
 	$cmb_opt_in->add_field( array(
 		'name'    => __( 'First Name element name', 'inti-child' ),
-		'desc'    => __( 'Value for the name property', 'inti-child' ),
 		'id'      => $prefix . 'first_name_name',
 		'type'    => 'text_medium',
 	) );
 	$cmb_opt_in->add_field( array(
 		'name'    => __( 'First Name element placeholder text', 'inti-child' ),
-		'desc'    => __( 'Value for the placeholder property', 'inti-child' ),
 		'id'      => $prefix . 'first_name_placeholder',
 		'type'    => 'text_medium',
 		'default' => __('First Name', 'inti-child'),
 	) );
 	$cmb_opt_in->add_field( array(
-		'name'    => __( 'First Name required', 'inti-child' ),
-		'desc'    => __( 'This field is required', 'inti-child' ),
+		'name'    => __( 'First Name is required', 'inti-child' ),
+		'desc'    => __( 'Make this field a required field', 'inti-child' ),
 		'id'      => $prefix . 'first_name_required',
 		'type'    => 'checkbox',
 	) );
@@ -215,46 +213,43 @@ function inti_register_opt_in_metabox() {
 	) );
 	$cmb_opt_in->add_field( array(
 		'name'    => __( 'Email element name', 'inti-child' ),
-		'desc'    => __( 'Value for the name property', 'inti-child' ),
 		'id'      => $prefix . 'email_name',
 		'type'    => 'text_medium',
 	) );
 	$cmb_opt_in->add_field( array(
 		'name'    => __( 'Email element placeholder text', 'inti-child' ),
-		'desc'    => __( 'Value for the placeholder property', 'inti-child' ),
 		'id'      => $prefix . 'email_placeholder',
 		'type'    => 'text_medium',
 		'default' => __('Email', 'inti-child'),
 	) );
 	$cmb_opt_in->add_field( array(
-		'name'    => __( 'Email required', 'inti-child' ),
-		'desc'    => __( 'This field is required', 'inti-child' ),
+		'name'    => __( 'Email is required', 'inti-child' ),
+		'desc'    => __( 'Make this field a required field', 'inti-child' ),
 		'id'      => $prefix . 'email_required',
 		'type'    => 'checkbox',
 	) );
 
 	$cmb_opt_in->add_field( array(
 		'name' => __( 'Submission Settings', 'inti-child' ),
-		'desc' => __( 'Values for submit button, form', 'inti-child' ),
+		'desc' => __( 'Values for submit button and form', 'inti-child' ),
 		'id'   => $prefix . 'submission_title',
 		'type' => 'title',
 	) );
 	$cmb_opt_in->add_field( array(
 		'name'    => __( 'Submit Button Text', 'inti-child' ),
-		'desc'    => __( 'Text for submit button', 'inti-child' ),
 		'id'      => $prefix . 'button_text',
 		'type'    => 'text_small',
 	) );	
 	$cmb_opt_in->add_field( array(
 		'name'    => __( 'Submit Button element name', 'inti-child' ),
-		'desc'    => __( 'Element name (only needed if your particular service checks for the button\'s existence by looking for a specific element name', 'inti-child' ),
+		'desc'    => '<br><small>' . __( '(only needed if your particular list service looks for a specific element name)', 'inti-child' ) . '</small>',
 		'default' => 'submit',
 		'id'      => $prefix . 'button_name',
 		'type'    => 'text_small',
 	) );
 	$cmb_opt_in->add_field( array(
 		'name'    => __( 'Form element name', 'inti-child' ),
-		'desc'    => __( 'Element name (as above)', 'inti-child' ),
+		'desc'    => '<br><small>' . __( '(only needed if your particular list service looks for a specific element name)', 'inti-child' ) . '</small>',
 		'id'      => $prefix . 'form_name',
 		'type'    => 'text_small',
 	) );
