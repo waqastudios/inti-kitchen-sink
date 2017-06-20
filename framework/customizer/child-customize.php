@@ -475,43 +475,43 @@ function child_new_section($wp_customize) {
 
 
 	// Featured In Block
-	if (inti_current_theme_supports( 'inti-front-page-blocks', 'brands' )) {
-		$wp_customize->add_section('inti_customizer_front_page_block_featured_in', array( 
-			'title'    => __('Front Page: Featured In', 'inti-child'),
-			'description' => __('Configure the settings for the featured in block', 'inti-child'),
+	if (inti_current_theme_supports( 'inti-front-page-blocks', 'logos' )) {
+		$wp_customize->add_section('inti_customizer_front_page_block_logos', array( 
+			'title'    => __('Front Page: Logos/Brands', 'inti-child'),
+			'description' => __('Configure the settings for the logos carousel', 'inti-child'),
 			'priority' => 1,
 		 ) );
-			$wp_customize->add_setting('inti_customizer_options[fpb_featured_in_show]', array( 
+			$wp_customize->add_setting('inti_customizer_options[fpb_logos_show]', array( 
 				'default'    => 1,
 				'type'       => 'option',
 				'capability' => 'manage_options',
 			 ) );	
-				$wp_customize->add_control('inti_customizer_options[fpb_featured_in_show]', array( 
+				$wp_customize->add_control('inti_customizer_options[fpb_logos_show]', array( 
 					'label'    => __('Show this block', 'inti-child'),
-					'section'  => 'inti_customizer_front_page_block_featured_in',
+					'section'  => 'inti_customizer_front_page_block_logos',
 					'description' => '',
 					'type'     => 'checkbox',
 					'priority' => 1,
 				 ) );
-			$wp_customize->add_setting('inti_customizer_options[fpb_featuredinblock_title]', array( 
+			$wp_customize->add_setting('inti_customizer_options[fpb_logos_title]', array( 
 				'default'        => '',
 				'type'           => 'option',
 				'capability'     => 'manage_options',
 			 ) );
-				$wp_customize->add_control('inti_customizer_options[fpb_featuredinblock_title]', array( 
+				$wp_customize->add_control('inti_customizer_options[fpb_logos_title]', array( 
 					'label'    => __('Title (Optional)', 'inti-child'),
-					'section'  => 'inti_customizer_front_page_block_featured_in',
+					'section'  => 'inti_customizer_front_page_block_logos',
 					'type'     => 'text',
 					'priority' => 2,
 				 ) );
-			$wp_customize->add_setting('inti_customizer_options[fpb_featuredinblock_description]', array( 
+			$wp_customize->add_setting('inti_customizer_options[fpb_logos_description]', array( 
 				'default'        => '',
 				'type'           => 'option',
 				'capability'     => 'manage_options',
 			 ) );
-				$wp_customize->add_control('inti_customizer_options[fpb_featuredinblock_description]', array( 
+				$wp_customize->add_control('inti_customizer_options[fpb_logos_description]', array( 
 					'label'    => __('Description (Optional)', 'inti-child'),
-					'section'  => 'inti_customizer_front_page_block_featured_in',
+					'section'  => 'inti_customizer_front_page_block_logos',
 					'type'     => 'textarea',
 					'priority' => 3,
 				 ) );

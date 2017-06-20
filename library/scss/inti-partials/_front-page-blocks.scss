@@ -39,13 +39,13 @@ section.block {
 		}
 
 		// Shows logos that a Featured Images of the Brand custom type
-		&.featured-in {
+		&.logos {
 			overflow: hidden;
 				header.block-header {
 					h3 {}
 					p {}
 				}
-				.inti-brand-carousel {
+				.inti-logos-carousel {
 					position: relative; display: none;
 
 						&.slick-initialized { display: block; }

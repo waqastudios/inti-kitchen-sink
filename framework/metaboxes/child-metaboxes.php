@@ -10,17 +10,17 @@
 
 
 /**
- * Brand metabox
+ * Logo metabox
  */
-add_action( 'cmb2_init', 'inti_register_brand_metabox' );
-function inti_register_brand_metabox() {
+add_action( 'cmb2_init', 'inti_register_logo_metabox' );
+function inti_register_logo_metabox() {
 	// Start with an underscore to hide fields from custom fields list
-	$prefix = '_inti_brand_';
+	$prefix = '_inti_logo_';
 
-	$cmb_brand = new_cmb2_box( array(
+	$cmb_logo = new_cmb2_box( array(
 		'id'            => $prefix . 'metabox',
-		'title'         => __( 'Brand Configuration', 'inti-child' ),
-		'object_types'  => array( 'inti-brand' ), // Post type
+		'title'         => __( 'Logo Configuration', 'inti-child' ),
+		'object_types'  => array( 'inti-logo' ), // Post type
 		// 'show_on_cb' => 'inti_hide_if_front_page', // function should return a bool value
 		'context'    => 'side',
 		'priority'   => 'core',
@@ -29,8 +29,8 @@ function inti_register_brand_metabox() {
 		// 'closed'     => true, // true to keep the metabox closed by default
 	) );	
 
-	$cmb_brand->add_field( array(
-		'name'    => __( 'Brand URL (optional)', 'inti-child' ),
+	$cmb_logo->add_field( array(
+		'name'    => __( 'Logo URL (optional)', 'inti-child' ),
 		'desc'    => __( 'Link the brand logo (Featured Image) to an external URL', 'inti-child' ),
 		'id'      => $prefix . 'url',
 		'type'    => 'text_url',

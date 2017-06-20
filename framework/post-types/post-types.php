@@ -18,8 +18,8 @@ add_filter( 'enter_title_here', 'change_post_type_titles' );
 function change_post_type_titles( $title ){
     $screen = get_current_screen();
      
-    if  ( 'inti-brand' == $screen->post_type && inti_current_theme_supports('inti-post-types', 'brand') ) {
-        $title = __('Enter brand name', 'inti-child');
+    if  ( 'inti-logo' == $screen->post_type && inti_current_theme_supports('inti-post-types', 'logo') ) {
+        $title = __('Enter logo name', 'inti-child');
      }
 
     if  ( 'inti-testimonial' == $screen->post_type && inti_current_theme_supports('inti-post-types', 'testimonial') ) {
@@ -83,49 +83,48 @@ if (inti_current_theme_supports('inti-post-types', 'slide') ) {
 
 
 /**
- * Post Type - Brand
+ * Post Type - Logo
  * @since 1.0.3
  * Related Taxonomy: None
- * Related Metaboxes: inti_register_brand_metabox
+ * Related Metaboxes: inti_register_logo_metabox
  */
-if (inti_current_theme_supports('inti-post-types', 'brand') ) {
-	add_action('init', 'brand_post_type_init');
-	function brand_post_type_init() {
+if (inti_current_theme_supports('inti-post-types', 'logo') ) {
+	add_action('init', 'logo_post_type_init');
+	function logo_post_type_init() {
 		$labels = array(
-			'name' => _x('Brands', 'post type general name', 'inti-child'),
-			'singular_name' => _x('Brand', 'post type singular name', 'inti-child'),
-			'add_new' => __('Add New', 'Brand', 'inti-child'),
-			'add_new_item' => __('Add New Brand', 'inti-child'),
-			'edit_item' => __('Edit Brand', 'inti-child'),
-			'new_item' => __('New Brand', 'inti-child'),
-			'view_item' => __('View Brand', 'inti-child'),
-			'search_items' => __('Search Brands', 'inti-child'),
-			'not_found' =>  __('No Brand found', 'inti-child'),
-			'not_found_in_trash' => __('No Brand found in Trash', 'inti-child'), 
+			'name' => _x('Logos', 'post type general name', 'inti-child'),
+			'singular_name' => _x('Logo', 'post type singular name', 'inti-child'),
+			'add_new' => __('Add New', 'Logo', 'inti-child'),
+			'add_new_item' => __('Add New Logo', 'inti-child'),
+			'edit_item' => __('Edit Logo', 'inti-child'),
+			'new_item' => __('New Logo', 'inti-child'),
+			'view_item' => __('View Logo', 'inti-child'),
+			'search_items' => __('Search Logos', 'inti-child'),
+			'not_found' =>  __('No Logo found', 'inti-child'),
+			'not_found_in_trash' => __('No Logo found in Trash', 'inti-child'), 
 			'parent_item_colon' => '',
-			'menu_name' => _x('Brands', '', 'inti-child')
+			'menu_name' => _x('Logos/Brands', '', 'inti-child')
 		);
 		$args = array(
 			'labels' => $labels,
 			'public' => true,
 			'publicly_queryable' => false,
 			'show_ui' => true, 
-			'rewrite'   => true,
+			'rewrite'   => false,
 			'has_archive' => false,
 			'query_var' => true,
 			'capability_type' => 'page',
 			'hierarchical' => true,
 			'show_in_nav_menus' => false,
 			'menu_position' => 35,
-			'menu_icon' => 'dashicons-images-alt2', 
+			'menu_icon' => 'dashicons-images-alt', 
 			'supports' => array(
 				'title',
 				'thumbnail',
-				'editor',
 				'page-attributes'
 			)
 		);
-		register_post_type('inti-brand',$args);
+		register_post_type('inti-logo',$args);
 	}
 }
 

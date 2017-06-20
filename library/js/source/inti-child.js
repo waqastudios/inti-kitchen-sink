@@ -30,7 +30,8 @@
 })(jQuery);	
 
 // Carousels
-(function($) {
+(function($) { 
+	//default example carousel
 	$('.inti-carousel').slick({
 		accessibility: true,
 		adaptiveHeight: false,
@@ -74,10 +75,7 @@
 	});
 	
 	
-})(jQuery);	
-
-
-(function($) {
+	// default example slider
 	$('.inti-slider').slick({
 		accessibility: true,
 		adaptiveHeight: false,
@@ -112,11 +110,7 @@
 		],
 	});
 	
-	
-})(jQuery);	
-
-
-(function($) {
+	// main slider JS for part-header-slide-hero.php
 	$('.inti-main-slider').slick({
 		accessibility: true,
 		adaptiveHeight: false,
@@ -151,5 +145,37 @@
 		],
 	});
 	
-	
+	$('.inti-testimonial-widget').slick({
+		accessibility: true,
+		adaptiveHeight: false,
+		autoplay: true,
+		autoplaySpeed: 9000,
+		arrows: false,
+		asNavFor: null,
+		centerMode: true,
+		centerPadding: '0px',
+		cssEase: 'ease',
+		dots: true,
+		draggable: true,
+		fade: true,
+		infinite: true,
+		initialSlide: 0,
+		pauseOnHover: true,
+		pauseOnDotsHover: false,
+  		variableWidth: false,
+		slidesToShow: 1, 
+		slidesToScroll: 1,
+		speed: 600,
+		swipe: true,
+		// prevArrow: '<button type="button" class="slick-prev arrows"><i class="fa fa-chevron-left"></i></button>',
+		// nextArrow: '<button type="button" class="slick-next arrows"><i class="fa fa-chevron-right"></i></button>',
+		responsive: [
+			{
+				breakpoint: 1024,
+				settings: {
+					arrows: false,
+				}
+			}
+		]
+	});	
 })(jQuery);	

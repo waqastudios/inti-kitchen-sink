@@ -6,7 +6,7 @@
  * You can easily turn on and off the front page blocks in functions.php with:-
  * 	add_theme_support(
  *		'inti-front-page-blocks',
- *		array('page', 'posts', 'services', 'testimonials', 'brands', 'bio')
+ *		array('page', 'posts', 'services', 'testimonials', 'logos', 'bio')
  *	);
  *
  * @package Inti
@@ -69,18 +69,18 @@ add_action('child_hook_front_page_blocks', 'child_block_slogan', 3);
 
 
 /**
- * Featured in/As Seen in carousel
+ * Featured in/As Seen in logo carousel
  * This block would show logos from media companies where the client's business was
  * featured in a report or article
  * 
  * @since 1.0.2
  */
-function child_block_featured_in() {
-	if (inti_current_theme_supports( 'inti-front-page-blocks', 'brands' )) {
-		get_template_part('template-parts/part-block', 'featured-in');
+function child_block_logos_carousel() {
+	if (inti_current_theme_supports( 'inti-front-page-blocks', 'logos' )) {
+		get_template_part('template-parts/part-block', 'logos-carousel');
 	}
 }
-add_action('child_hook_front_page_blocks', 'child_block_featured_in', 4);
+add_action('child_hook_front_page_blocks', 'child_block_logos_carousel', 4);
 
 
 /**

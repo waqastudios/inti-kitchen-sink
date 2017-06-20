@@ -26,12 +26,12 @@ function childtheme_override_setup() {
 	 */ 
 	add_theme_support(
 		'inti-front-page-blocks',
-		array('page', 'posts', 'services', 'testimonials', 'brands', 'bio', 'video', 'gmap', 'slogan')
+		array('page', 'posts', 'services', 'testimonials', 'logos', 'bio', 'video', 'gmap', 'slogan')
 	);
 	
 	add_theme_support(
 		'inti-post-types',
-		array('slide', 'service', 'testimonial', 'brand', 'opt-in')
+		array('slide', 'service', 'testimonial', 'logo', 'opt-in')
 	);
 	
 	add_theme_support(
@@ -97,11 +97,11 @@ function childtheme_override_setup() {
 	
 	add_theme_support('post-thumbnails');
 	
-	add_image_size('thumb-300', 300, 250, true);
-	add_image_size('thumb-200', 200, 150, true);
+	// add_image_size('thumb-300', 300, 250, true);
+	// add_image_size('thumb-200', 200, 150, true);
 
 	add_image_size('blog-thumbnail', 800, 600, true);
-	add_image_size('brand-thumbnail', 200, 150, true);
+	add_image_size('logo-thumbnail', 200, 150, true);
 	add_image_size('testimonial-thumbnail', 800, 800, true);
 	add_image_size('service-thumbnail', 800, 800, true);
 	
@@ -145,6 +145,7 @@ function childtheme_override_setup() {
 	if (inti_current_theme_supports( 'inti-post-types', 'testimonial' )) {
 		require_once locate_template('/framework/shortcodes/shortcode-testimonials.php');
 		require_once locate_template('/framework/shortcodes/shortcode-testimonial-single.php');
+		require_once locate_template('/framework/widgets/testimonials.php');
 	}
 	if (inti_current_theme_supports( 'inti-post-types', 'opt-in' )) {
 		require_once locate_template('/framework/shortcodes/shortcode-opt-in.php');
