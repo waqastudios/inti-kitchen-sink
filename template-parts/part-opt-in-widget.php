@@ -67,5 +67,5 @@
 				</button>
 			</div>
 		</section>
-<?
+<?php
 	endif; ?>
