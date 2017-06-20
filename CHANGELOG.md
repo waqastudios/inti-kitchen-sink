@@ -60,3 +60,8 @@
 
 ### 1.1.2 (Apr 15, 2017)
 - Upgraded to Foundation for Sites 6.3.1
+
+### 1.1.3 (Jun 20, 2017)
+- Added widget to display testimonials in sidebars
+- Improved translations in es_ES after a bit of a cleanup
+- Renamed all references to "Featured In/Brands", which is a post type, template, carousel for displaying logos of magazines, partners etc to "Logos"
