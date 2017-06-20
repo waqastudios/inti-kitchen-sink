@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Inti Kitchen Sink\n"
-"POT-Creation-Date: 2017-06-19 21:52+0200\n"
-"PO-Revision-Date: 2017-06-19 21:52+0200\n"
+"POT-Creation-Date: 2017-06-20 19:58+0200\n"
+"PO-Revision-Date: 2017-06-20 20:04+0200\n"
 "Last-Translator: \n"
 "Language-Team: Waqa Studios <team@waqa.pe>\n"
 "Language: es_ES\n"
@@ -35,10 +35,12 @@ msgstr "Foundation 6 WordPress Framework"
 #: framework/customizer/child-customize.php:140
 #: framework/shortcodes/shortcode-testimonials.php:273
 #: framework/theme-options/child-theme-options.php:453
+#: framework/widgets/testimonials.php:210
 msgid "All Categories"
 msgstr "Todas las Categorías"
 
 #: framework/customizer/child-customize.php:232
+#: framework/widgets/testimonials.php:264
 msgid "Select Page"
 msgstr "Seleccionar Página"
 
@@ -83,6 +85,7 @@ msgstr "Cantidad de columnas"
 #: framework/customizer/child-customize.php:597
 #: framework/customizer/child-customize.php:846
 #: framework/shortcodes/shortcode-testimonials.php:301
+#: framework/widgets/testimonials.php:224
 msgid "Order"
 msgstr "Orden"
 
@@ -90,6 +93,7 @@ msgstr "Orden"
 #: framework/customizer/child-customize.php:601
 #: framework/customizer/child-customize.php:850
 #: framework/shortcodes/shortcode-testimonials.php:307
+#: framework/widgets/testimonials.php:226
 msgid "Ascending"
 msgstr "Ascendente"
 
@@ -97,6 +101,7 @@ msgstr "Ascendente"
 #: framework/customizer/child-customize.php:602
 #: framework/customizer/child-customize.php:851
 #: framework/shortcodes/shortcode-testimonials.php:308
+#: framework/widgets/testimonials.php:227
 msgid "Descending"
 msgstr "Descendente"
 
@@ -147,12 +152,12 @@ msgid "Slogan"
 msgstr "Eslogan"
 
 #: framework/customizer/child-customize.php:480
-msgid "Front Page: Featured In"
-msgstr "Página Principal: Descatado En"
+msgid "Front Page: Logos/Brands"
+msgstr "Pagina Principal: Logos/Marcas"
 
 #: framework/customizer/child-customize.php:481
-msgid "Configure the settings for the featured in block"
-msgstr "Configurar la sección de brands destacados"
+msgid "Configure the settings for the logos carousel"
+msgstr "Configuración de sección de logos/marcas"
 
 #: framework/customizer/child-customize.php:502
 #: framework/customizer/child-customize.php:546
@@ -185,14 +190,17 @@ msgid "Number of Testimonials to display"
 msgstr "Cantidad de Recomendaciones a mostrar"
 
 #: framework/customizer/child-customize.php:613
+#: framework/widgets/testimonials.php:232
 msgid "What to display"
 msgstr "Que mostar"
 
 #: framework/customizer/child-customize.php:617
+#: framework/widgets/testimonials.php:234
 msgid "Excerpt Only"
 msgstr "Solo Extracto"
 
 #: framework/customizer/child-customize.php:618
+#: framework/widgets/testimonials.php:235
 msgid "Full Content"
 msgstr "Contenido Completo"
 
@@ -201,22 +209,27 @@ msgid "Force hide testimonial photos"
 msgstr "Esconder fotos de las Recomendaciones"
 
 #: framework/customizer/child-customize.php:639
+#: framework/widgets/testimonials.php:240
 msgid "Link Slides To"
 msgstr "Enlazar diapositivas a"
 
 #: framework/customizer/child-customize.php:643
+#: framework/widgets/testimonials.php:242
 msgid "No Link"
 msgstr "Sin Enlance"
 
 #: framework/customizer/child-customize.php:644
+#: framework/widgets/testimonials.php:243
 msgid "Testimonial Single (if theme supports)"
 msgstr "Recomendación Individual (si el tema soporta)"
 
 #: framework/customizer/child-customize.php:645
+#: framework/widgets/testimonials.php:244
 msgid "Praise Page (with a testimonials shortcode)"
 msgstr "Página de Recomendaciones"
 
 #: framework/customizer/child-customize.php:659
+#: framework/widgets/testimonials.php:249
 msgid "Page to link to (if selected above)"
 msgstr "Página a enlazar (si es selecionada)"
 
@@ -318,12 +331,12 @@ msgid "Source"
 msgstr "Fuente"
 
 #: framework/metaboxes/child-metaboxes.php:22
-msgid "Brand Configuration"
-msgstr "Configuración de Brand"
+msgid "Logo Configuration"
+msgstr "Configuración de Logo"
 
 #: framework/metaboxes/child-metaboxes.php:33
-msgid "Brand URL (optional)"
-msgstr "Enlance (opcional)"
+msgid "Logo URL (optional)"
+msgstr "Enlace URL (opcional)"
 
 #: framework/metaboxes/child-metaboxes.php:34
 msgid "Link the brand logo (Featured Image) to an external URL"
@@ -507,8 +520,8 @@ msgid "Form element name"
 msgstr "Nombre del elemento ‘form’"
 
 #: framework/post-types/post-types.php:22
-msgid "Enter brand name"
-msgstr "Nombre de brand"
+msgid "Enter logo name"
+msgstr "Nombre de Logo"
 
 #: framework/post-types/post-types.php:26
 msgid "Enter person's name"
@@ -529,9 +542,9 @@ msgstr "Diapositiva"
 
 #: framework/post-types/post-types.php:49
 #: framework/post-types/post-types.php:97
-#: framework/post-types/post-types.php:145
-#: framework/post-types/post-types.php:193
-#: framework/post-types/post-types.php:242
+#: framework/post-types/post-types.php:144
+#: framework/post-types/post-types.php:192
+#: framework/post-types/post-types.php:241
 msgid "Add New"
 msgstr "Nueva"
 
@@ -564,151 +577,154 @@ msgid "No Slide found in Trash"
 msgstr "No Diapositiva encontrada en la basura"
 
 #: framework/post-types/post-types.php:95
-#: framework/post-types/post-types.php:106
-msgid "Brands"
-msgstr "Brands"
+msgid "Logos"
+msgstr "Logos"
 
 #: framework/post-types/post-types.php:96
-msgid "Brand"
-msgstr "Brand"
+msgid "Logo"
+msgstr "Logo"
 
 #: framework/post-types/post-types.php:98
-msgid "Add New Brand"
-msgstr "Agregar Nueva Brand"
+msgid "Add New Logo"
+msgstr "Agrega Logo"
 
 #: framework/post-types/post-types.php:99
-msgid "Edit Brand"
-msgstr "Editar Brand"
+msgid "Edit Logo"
+msgstr "Editar Logo"
 
 #: framework/post-types/post-types.php:100
-msgid "New Brand"
-msgstr "Nueva Brand"
+msgid "New Logo"
+msgstr "Nuevo Logo"
 
 #: framework/post-types/post-types.php:101
-msgid "View Brand"
-msgstr "Ver Brand"
+msgid "View Logo"
+msgstr "Ver Logo"
 
 #: framework/post-types/post-types.php:102
-msgid "Search Brands"
-msgstr "Buscar en Brand"
+msgid "Search Logos"
+msgstr "Buscar en Logos"
 
 #: framework/post-types/post-types.php:103
-msgid "No Brand found"
-msgstr "No Brand econtrado"
+msgid "No Logo found"
+msgstr "No Logo Encontrado"
 
 #: framework/post-types/post-types.php:104
-msgid "No Brand found in Trash"
-msgstr "No Brand encontrado el la basura"
+msgid "No Logo found in Trash"
+msgstr "No Logo encontrado en la basura"
 
-#: framework/post-types/post-types.php:143
-#: framework/post-types/post-types.php:154
+#: framework/post-types/post-types.php:106
+msgid "Logos/Brands"
+msgstr "Logos/Marcas"
+
+#: framework/post-types/post-types.php:142
+#: framework/post-types/post-types.php:153
 #: framework/shortcodes/shortcode-testimonials.php:243
 msgid "Testimonials"
 msgstr "Recomendaciones"
 
-#: framework/post-types/post-types.php:144
+#: framework/post-types/post-types.php:143
 msgid "Testimonial"
 msgstr "Recomendación"
 
-#: framework/post-types/post-types.php:146
+#: framework/post-types/post-types.php:145
 msgid "Add New Testimonial"
 msgstr "Agregar Nueva Recomendación"
 
-#: framework/post-types/post-types.php:147
+#: framework/post-types/post-types.php:146
 msgid "Edit Testimonial"
 msgstr "Editar Recomendación"
 
-#: framework/post-types/post-types.php:148
+#: framework/post-types/post-types.php:147
 msgid "New Testimonial"
 msgstr "Nueva Recomendación"
 
-#: framework/post-types/post-types.php:149
+#: framework/post-types/post-types.php:148
 msgid "View Testimonial"
 msgstr "Ver Recomendación"
 
-#: framework/post-types/post-types.php:150
+#: framework/post-types/post-types.php:149
 msgid "Search Testimonials"
 msgstr "Buscar en Recomendaciones"
 
-#: framework/post-types/post-types.php:151
+#: framework/post-types/post-types.php:150
 msgid "No Testimonial found"
 msgstr "No Recomendación encontrado"
 
-#: framework/post-types/post-types.php:152
+#: framework/post-types/post-types.php:151
 msgid "No Testimonial found in Trash"
 msgstr "No Recomendación encontrado en la basura"
 
-#: framework/post-types/post-types.php:191
-#: framework/post-types/post-types.php:202
+#: framework/post-types/post-types.php:190
+#: framework/post-types/post-types.php:201
 msgid "Services"
 msgstr "Servicios"
 
-#: framework/post-types/post-types.php:192
+#: framework/post-types/post-types.php:191
 msgid "Service"
 msgstr "Servicio"
 
-#: framework/post-types/post-types.php:194
+#: framework/post-types/post-types.php:193
 msgid "Add New Service"
 msgstr "Agrega Nueva Servicio"
 
-#: framework/post-types/post-types.php:195
+#: framework/post-types/post-types.php:194
 msgid "Edit Service"
 msgstr "Editar Servicio"
 
-#: framework/post-types/post-types.php:196
+#: framework/post-types/post-types.php:195
 msgid "New Service"
 msgstr "Nuevo Servicio"
 
-#: framework/post-types/post-types.php:197
+#: framework/post-types/post-types.php:196
 msgid "View Service"
 msgstr "Ver Servicio"
 
-#: framework/post-types/post-types.php:198
+#: framework/post-types/post-types.php:197
 msgid "Search Services"
 msgstr "Buscar en Servicios"
 
-#: framework/post-types/post-types.php:199
+#: framework/post-types/post-types.php:198
 msgid "No Service found"
 msgstr "No Servicio encontrado"
 
-#: framework/post-types/post-types.php:200
+#: framework/post-types/post-types.php:199
 msgid "No Service found in Trash"
 msgstr "No Servicio encontrado en la basura"
 
-#: framework/post-types/post-types.php:240
-#: framework/post-types/post-types.php:251
+#: framework/post-types/post-types.php:239
+#: framework/post-types/post-types.php:250
 msgid "Opt-in Forms"
 msgstr "Formularios Opt-In"
 
-#: framework/post-types/post-types.php:241 framework/widgets/opt-in.php:63
+#: framework/post-types/post-types.php:240 framework/widgets/opt-in.php:63
 msgid "Opt-in Form"
 msgstr "Formulario Opt-in"
 
-#: framework/post-types/post-types.php:243
+#: framework/post-types/post-types.php:242
 msgid "Add New Opt-in Form"
 msgstr "Agregar Nuevo Opt-in"
 
-#: framework/post-types/post-types.php:244
+#: framework/post-types/post-types.php:243
 msgid "Edit Opt-in Form"
 msgstr "Editar Opt-in"
 
-#: framework/post-types/post-types.php:245
+#: framework/post-types/post-types.php:244
 msgid "New Opt-in Form"
 msgstr "Nuevo Opt-in"
 
-#: framework/post-types/post-types.php:246
+#: framework/post-types/post-types.php:245
 msgid "View Opt-in Form"
 msgstr "View Opt-in"
 
-#: framework/post-types/post-types.php:247
+#: framework/post-types/post-types.php:246
 msgid "Search Opt-ins"
 msgstr "Buscar en Opt-ins"
 
-#: framework/post-types/post-types.php:248
+#: framework/post-types/post-types.php:247
 msgid "No Opt-in Form found"
 msgstr "No Formulario Opt-in encontrado"
 
-#: framework/post-types/post-types.php:249
+#: framework/post-types/post-types.php:248
 msgid "No Opt-in Form found in Trash"
 msgstr "No Formulario Opt-in encontrado en la basura"
 
@@ -1015,6 +1031,31 @@ msgstr "Excluir la categoría usada en la página principal del índice del blog
 msgid "Displays an opt-in form in the sidebar"
 msgstr "Mostrar un Formulario Opt-in en el sidebar"
 
+#: framework/widgets/testimonials.php:19
+msgid "Testimonials Carousel"
+msgstr "Carrusel de Recomendaciones"
+
+#: framework/widgets/testimonials.php:20
+msgid "Displays an testimonial slider in the sidebar"
+msgstr "Muestra un carrusel de recomendaciones en el sidebar"
+
+#: framework/widgets/testimonials.php:166
+#: template-parts/part-block-testimonials.php:161
+msgid "There are currently no published testimonials in this category"
+msgstr "No hay recomendaciones publicadas en esta categoría"
+
+#: framework/widgets/testimonials.php:198
+msgid "Title"
+msgstr "Título"
+
+#: framework/widgets/testimonials.php:201
+msgid "Testimonials Category"
+msgstr "Categoría de Recomendaciones"
+
+#: framework/widgets/testimonials.php:220
+msgid "Number of testimonials to display"
+msgstr "Cantidad de Recomendaciones a mostrar"
+
 #: template-parts/part-block-blog-posts-variant-1.php:75
 #: template-parts/part-block-blog-posts.php:81
 #: template-parts/part-block-services-variant-1.php:126
@@ -1032,18 +1073,14 @@ msgstr "No hay entradas publicadas en esta categoría."
 msgid "Read more >"
 msgstr ""
 
-#: template-parts/part-block-featured-in.php:65
-msgid "There are currently no published brands"
-msgstr "No hay brands publicados"
+#: template-parts/part-block-logos-carousel.php:65
+msgid "There are currently no published logos"
+msgstr ""
 
 #: template-parts/part-block-services-variant-1.php:163
 #: template-parts/part-block-services.php:165
 msgid "There are currently no published services in this category"
 msgstr "No hay servicios publicadas en esta categoría"
-
-#: template-parts/part-block-testimonials.php:161
-msgid "There are currently no published testimonials in this category"
-msgstr "No hay recomendaciones publicadas en esta categoría"
 
 #: template-parts/part-header-business-hero.php:39
 msgid "Call now!"
@@ -1096,6 +1133,51 @@ msgstr ""
 #: template-parts/part-opt-in-widget.php:64
 msgid "No ID specified or no longer exists"
 msgstr "No ID espécificado o ya no existe"
+
+#~ msgid "Front Page: Featured In"
+#~ msgstr "Página Principal: Descatado En"
+
+#~ msgid "Configure the settings for the featured in block"
+#~ msgstr "Configurar la sección de brands destacados"
+
+#~ msgid "Brand Configuration"
+#~ msgstr "Configuración de Brand"
+
+#~ msgid "Brand URL (optional)"
+#~ msgstr "Enlance (opcional)"
+
+#~ msgid "Enter brand name"
+#~ msgstr "Nombre de brand"
+
+#~ msgid "Brands"
+#~ msgstr "Brands"
+
+#~ msgid "Brand"
+#~ msgstr "Brand"
+
+#~ msgid "Add New Brand"
+#~ msgstr "Agregar Nueva Brand"
+
+#~ msgid "Edit Brand"
+#~ msgstr "Editar Brand"
+
+#~ msgid "New Brand"
+#~ msgstr "Nueva Brand"
+
+#~ msgid "View Brand"
+#~ msgstr "Ver Brand"
+
+#~ msgid "Search Brands"
+#~ msgstr "Buscar en Brand"
+
+#~ msgid "No Brand found"
+#~ msgstr "No Brand econtrado"
+
+#~ msgid "No Brand found in Trash"
+#~ msgstr "No Brand encontrado el la basura"
+
+#~ msgid "There are currently no published brands"
+#~ msgstr "No hay brands publicados"
 
 #~ msgid "Value for the name property"
 #~ msgstr "El valor para propiedad Nombre"
