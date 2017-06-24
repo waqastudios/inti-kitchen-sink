@@ -23,8 +23,7 @@
 		
 			<?php 
 			// Uncomment the header type you want, then probably remove the files for the others
-			get_template_part('template-parts/part', 'header-simple');
+			// get_template_part('template-parts/part', 'header-simple');
 			// get_template_part('template-parts/part', 'header-business-hero'); 
-			// get_template_part('template-parts/part', 'header-modern-hero'); 
-			// get_template_part('template-parts/part', 'header-slide-hero');
+			get_template_part('template-parts/part', 'header-modern-hero'); 
 			?>

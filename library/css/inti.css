@@ -4981,111 +4981,105 @@ anything else that has been added to one of the hooks alongside them.
 The site banner comes before or after the main navigation menu, it
 normally includes a logo, or a full width hero image.
 
+
+//   1. Default site-header & site-banner styles
+//   2. Template Part: Header example 'Business Hero'
+//   3. Template Part: Header example 'Modern Hero'
+//   4. Sticky styles
+
 ******************************************************************/
 .site-header {
-  position: relative;
-  /**
-	 * Business Hero header
-	 */
-  /**
-	 * Modern Hero header
-	 */
-  /**
-	 * Slide Hero header
-	 */ }
-  .site-header .site-banner.business-hero {
+  position: relative; }
+  .site-header.business-hero .site-banner {
     padding: 1rem 0; }
-    .site-header .site-banner.business-hero .contact-area .contact-icon {
+    .site-header.business-hero .site-banner .contact-area .contact-icon {
       display: inline-block;
       vertical-align: top; }
-    .site-header .site-banner.business-hero .contact-area .contact-text {
+    .site-header.business-hero .site-banner .contact-area .contact-text {
       display: inline-block; }
-    .site-header .site-banner.business-hero .contact-area p {
+    .site-header.business-hero .site-banner .contact-area p {
       margin: 0; }
-  .site-header .site-hero.business-hero {
-    padding: 6rem 0;
-    background-color: #e6e6e6; }
-  .site-header .site-banner.modern-hero {
-    padding: 1rem 0;
-    background-color: #cacaca; }
-    .site-header .site-banner.modern-hero nav.top-bar .row {
-      margin-right: 0;
-      margin-left: 0; }
-      @media print, screen and (min-width: 32em) {
-        .site-header .site-banner.modern-hero nav.top-bar .row {
-          margin-right: 0;
-          margin-left: 0; } }
-      @media print, screen and (min-width: 48em) {
-        .site-header .site-banner.modern-hero nav.top-bar .row {
-          margin-right: 0;
-          margin-left: 0; } }
-      @media print, screen and (min-width: 64em) {
-        .site-header .site-banner.modern-hero nav.top-bar .row {
-          margin-right: 0;
-          margin-left: 0; } }
-  .site-header .site-hero.modern-hero {
-    padding: 6rem 0; }
-  .site-header .site-banner.slide-hero {
-    background-color: transparent;
-    height: 110px; }
+  .site-header.business-hero .site-hero {
+    padding: 3rem 0;
+    background-color: #e6e6e6;
+    background-size: cover; }
     @media screen and (min-width: 48em) {
-      .site-header .site-banner.slide-hero {
-        padding: 2rem 0; } }
-    .site-header .site-banner.slide-hero .top-bar {
-      background-color: transparent; }
-  .site-header .main-slider .slide {
-    position: relative;
-    height: 100vh;
-    background-position: 50%;
-    background-size: cover;
-    background-color: #e6e6e6; }
-    .site-header .main-slider .slide .site-scroll {
-      position: absolute;
-      bottom: 3rem;
-      left: 0;
-      right: 0;
-      text-align: center; }
-      .site-header .main-slider .slide .site-scroll a {
-        font-size: 2rem;
-        color: #fefefe; }
-    .site-header .main-slider .slide .unexpanded {
-      max-width: 75rem; }
-    .site-header .main-slider .slide .slide-entry {
-      width: 100%;
-      position: absolute;
-      top: 20%;
-      left: 0;
-      text-align: center;
-      color: #fefefe;
-      font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; }
-  .site-header .internal-banner {
-    min-height: 180px;
-    background-color: #2199e8;
-    background-size: cover;
-    background-position: 50%; }
-    @media screen and (min-width: 64em) {
-      .site-header .internal-banner {
-        min-height: 200px; } }
-    @media screen and (min-width: 75em) {
-      .site-header .internal-banner {
-        min-height: 320px; } }
-    .site-header .internal-banner.small {
-      height: 200px;
-      min-height: auto; }
+      .site-header.business-hero .site-hero {
+        padding: 6rem 0; } }
+  .site-header.modern-hero {
+    background-color: #cacaca;
+    background-size: cover; }
+    .site-header.modern-hero .site-banner {
+      padding: 1rem 0; }
+      .site-header.modern-hero .site-banner nav.top-bar {
+        background-color: transparent; }
+        .site-header.modern-hero .site-banner nav.top-bar .row {
+          margin-right: 0;
+          margin-left: 0; }
+          @media print, screen and (min-width: 32em) {
+            .site-header.modern-hero .site-banner nav.top-bar .row {
+              margin-right: 0;
+              margin-left: 0; } }
+          @media print, screen and (min-width: 48em) {
+            .site-header.modern-hero .site-banner nav.top-bar .row {
+              margin-right: 0;
+              margin-left: 0; } }
+          @media print, screen and (min-width: 64em) {
+            .site-header.modern-hero .site-banner nav.top-bar .row {
+              margin-right: 0;
+              margin-left: 0; } }
+    .site-header.modern-hero .site-hero {
+      padding: 3rem 0; }
+      @media screen and (min-width: 48em) {
+        .site-header.modern-hero .site-hero {
+          padding: 6rem 0; } }
 
-.slide-hero-container.sticky-container {
-  margin-bottom: -110px;
-  z-index: 9999; }
+/**
+ * 3. Sticky Styles
+ * ---------
+ *
+ *
+ * Notes: Generally we call anything less than mlarge "mobile" as this incompasses
+ * smaller tablets, tablets held in portrait and cell phones. This is where we switch
+ * to the off-canvas menu by default.
+ * 782px is the screen width that the Admin Bar in WordPress changes height from 32px to 46px
+ *
+ * This makes the existing top-bar sticky. If you have a sticky sidebar too, this will interfere,
+ * you'll have to add more top margin to the sidebar when both are sticky. Users are given the option
+ * to make sidebars sticky in Customize, in Page Options. You may want to hide that for your user.
+ *
+ * Foundation's Sticky feature makes the existing top-bar with the main navigation menu appear to stick
+ * to the top of the page. It would generaly have the same design. If in your design you are displaying
+ * the logo alongside the menu, you probably wrapped the sticky div around that too. If not, you might
+ * want to add a logo into the top-bar when it is sticky - the mobile banner logo is already there - you
+ * could show that.
+ *
+ * You can of course load a whole new top-bar once you scroll past the main one, and that can have its 
+ * own style, but then you don't need the sticky functionality. 
+ * 
+ * i. Positioning for Admin users who see the Admin Bar
+ * ii. Default sticky styles, including important width: 100%
+ */
+#wpadminbar {
+  position: fixed; }
 
-.site-header .sticky.is-stuck {
-  background-color: #0a0a0a;
-  transition: background-color .5s ease-in; }
-
-.site-header .sticky.is-anchored {
-  position: absolute; }
+.admin-bar .site-header .sticky.is-stuck {
+  margin-top: 32px !important; }
+  @media screen and (max-width: 48.875em) {
+    .admin-bar .site-header .sticky.is-stuck {
+      margin-top: 46px !important; } }
 
 .site-header .sticky {
-  position: absolute; }
+  max-width: none !important;
+  width: 100%;
+  z-index: 6; }
+
+.site-header .sticky.is-stuck {
+  z-index: 6;
+  background-color: #cacaca; }
+  .site-header .sticky.is-stuck .site-banner {
+    transition: padding-bottom .25s ease;
+    padding: 0; }
 
 /******************************************************************
 
@@ -5123,6 +5117,12 @@ ul.site-navigation {
   background-color: #0a0a0a; }
   .top-bar .site-title {
     color: #fefefe; }
+  .top-bar .sticky-logo {
+    display: none; }
+  .is-stuck .top-bar .sticky-logo {
+    display: block; }
+    .is-stuck .top-bar .sticky-logo .site-logo {
+      width: 150px; }
   .top-bar ul.dropdown.menu ul {
     display: none; }
   .top-bar ul.dropdown.menu ul.js-dropdown-active {
@@ -5134,8 +5134,8 @@ ul.site-navigation {
     padding: 1rem;
     display: inline-block; }
     .top-bar .off-canvas-button > a .hamburger {
-      width: 1.5rem;
-      height: 0.875rem;
+      width: 2.25rem;
+      height: 1.3125rem;
       position: relative;
       display: inline-block;
       -webkit-transform: rotate(0);
@@ -5143,7 +5143,7 @@ ul.site-navigation {
       .top-bar .off-canvas-button > a .hamburger span {
         display: block;
         position: absolute;
-        height: 2px;
+        height: 3px;
         width: 100%;
         background-color: #fefefe;
         opacity: 1;
@@ -5155,18 +5155,18 @@ ul.site-navigation {
         .top-bar .off-canvas-button > a .hamburger span:nth-child(1) {
           top: 0; }
         .top-bar .off-canvas-button > a .hamburger span:nth-child(2) {
-          top: 0.4375rem; }
+          top: 0.65625rem; }
         .top-bar .off-canvas-button > a .hamburger span:nth-child(3) {
-          top: 0.875rem; }
+          top: 1.3125rem; }
       .top-bar .off-canvas-button > a .hamburger.is-active span:nth-child(1) {
-        top: 0.5rem;
+        top: 0.75rem;
         -webkit-transform: rotate(135deg);
         transform: rotate(135deg); }
       .top-bar .off-canvas-button > a .hamburger.is-active span:nth-child(2) {
-        top: 0.4375rem;
+        top: 0.65625rem;
         opacity: 0; }
       .top-bar .off-canvas-button > a .hamburger.is-active span:nth-child(3) {
-        top: 0.5rem;
+        top: 0.75rem;
         -webkit-transform: rotate(45deg);
         transform: rotate(45deg); }
 
@@ -5180,50 +5180,6 @@ ul.site-navigation {
   @media screen and (max-width: 48.875em) {
     .admin-bar > .off-canvas-menu {
       padding-top: 46px !important; } }
-
-/**
- * Sticky Elements
- *
- * (The following goes in _top-bar because we generally just make the top bar sticky, not the whole
- * site-header, though we could, and you can move this all over there if you'd like) 
- *
- * Notes: Generally we called anything less than mlarge "mobile" as this incompasses
- * smaller tablets, tablets held in portrait and cell phones. This is where we switch
- * to the off-canvas menu by default.
- * 782px is the screen width that the Admin Bar in WordPress changes height from 32px to 46px
- *
- * This makes the existing top-bar sticky. If you have a sticky sidebar too, this will interfere,
- * you'll have to add more top margin to the sidebar when both are sticky. Users are given the option
- * to make sidebars sticky in Customize, in Page Options. You may want to hide that for your user.
- *
- * Foundation's Sticky feature makes the existing top-bar with the main navigation menu appear to stick
- * to the top of the page. It would generaly have the same design. If in your design you are displaying
- * the logo alongside the menu, you probably wrapped the sticky div around that too. If not, you might
- * want to add a logo into the top-bar when it is sticky - the mobile banner logo is already there - you
- * could show that.
- *
- * You can of course load a whole new top-bar once you scroll past the main one, and that can have its 
- * own style, but then you don't need the sticky functionality. 
- * 
- *
- * Check out the header 'slide-hero' for a stick example!
- *
- */
-#wpadminbar {
-  position: fixed; }
-
-.admin-bar .site-header .sticky.is-stuck {
-  margin-top: 32px !important; }
-  @media screen and (max-width: 48.875em) {
-    .admin-bar .site-header .sticky.is-stuck {
-      margin-top: 46px !important; } }
-
-.site-header .sticky.is-stuck {
-  z-index: 6; }
-
-.site-header .sticky {
-  max-width: none !important;
-  width: 100%; }
 
 /******************************************************************
 

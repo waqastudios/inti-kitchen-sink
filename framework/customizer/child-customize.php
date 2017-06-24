@@ -1000,6 +1000,25 @@ function child_new_section($wp_customize) {
 	 * General/Header section exists in parent theme, let's add to it here
 	 * Section: inti_customizer_general
 	 */
+		$wp_customize->add_setting('inti_customizer_options[header_hero_bg]', array( 
+			'default'    => 1,
+			'type'       => 'option',
+			'capability' => 'manage_options',
+		 ) );	
+			$wp_customize->add_control(
+				new WP_Customize_Image_Control(
+					$wp_customize, 
+					'inti_customizer_options[header_hero_bg]', 
+					array( 
+						'label'    => __('Hero Background Image', 'inti-child'),
+						'description' => __('Background image for the hero area (if applicable). Also the default background image for the internal page hero areas (if applicable)', 'inti-child'),
+						'section'  => 'inti_customizer_general',
+						'settings' => 'inti_customizer_options[header_hero_bg]',
+						'priority' => 15,
+					)
+				)
+			);	
+
 	if (inti_current_theme_supports( 'inti-post-types', 'opt-in' )) {
 			$wp_customize->add_setting('inti_customizer_options[header_opt_in]', array( 
 				'default'    => 1,
@@ -1014,7 +1033,7 @@ function child_new_section($wp_customize) {
 							'label'    => "Opt-In Form to display",
 							'settings' => 'inti_customizer_options[header_opt_in]',
 							'section'  => 'inti_customizer_general',
-							'priority' => 8,
+							'priority' => 22,
 						)
 					)
 				);
