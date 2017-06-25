@@ -5452,6 +5452,33 @@ Styles for the shortcodes
 ******************************************************************/
 ul.accordion {
   margin: 0 0 1rem; }
+  ul.accordion li.accordion-item {
+    background-color: #fefefe; }
+    ul.accordion li.accordion-item a {
+      color: #2199e8; }
+      ul.accordion li.accordion-item a::before, ul.accordion li.accordion-item a::after {
+        background-color: #2199e8;
+        color: #fefefe;
+        padding: 0px;
+        text-align: center;
+        line-height: 32px;
+        position: absolute;
+        right: inherit;
+        right: 0.5rem; }
+      ul.accordion li.accordion-item a::before {
+        font-family: 'FontAwesome';
+        content: '\f054';
+        font-size: 12px;
+        line-height: 1.8;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        margin-top: -.8em; }
+    ul.accordion li.accordion-item.is-active a {
+      color: #2199e8; }
+      ul.accordion li.accordion-item.is-active a::before {
+        font-family: 'FontAwesome';
+        content: '\f078'; }
 
 ul.tabs {
   margin: 0; }
