@@ -65,3 +65,8 @@
 - Added widget to display testimonials in sidebars
 - Improved translations in es_ES after a bit of a cleanup
 - Renamed all references to "Featured In/Brands", which is a post type, template, carousel for displaying logos of magazines, partners etc to "Logos"
+
+### 1.2.0 (Jun 25, 2017)
+#### Note: This child theme now recommends Inti Foundation 1.4.0+
+- Updated site-headers - class names for different header types moved to outermost containers, Zurb's sticky added by default, new option from parent them for miniature logo for mobile and for sticky navigation logos taken into account, improved modern hero template
+- Improved Zurb accordion defaults styles for easier theming
