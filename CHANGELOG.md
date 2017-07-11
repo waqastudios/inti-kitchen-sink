@@ -70,3 +70,6 @@
 #### Note: This child theme now recommends Inti Foundation 1.4.0+
 - Updated site-headers - class names for different header types moved to outermost containers, Zurb's sticky added by default, new option from parent them for miniature logo for mobile and for sticky navigation logos taken into account, improved modern hero template
 - Improved Zurb accordion defaults styles for easier theming
+
+### 1.2.1 (Jul 11, 2017)
+- Small bug fix on modern hero header
