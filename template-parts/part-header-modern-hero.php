@@ -8,7 +8,7 @@
 	<?php inti_hook_site_banner_before(); ?>
 	
 	<div id="site-banner-sticky-container" class="sticky-container" data-sticky-container>
-		<div class="sticky" data-sticky data-sticky-on="small" data-top-anchor="page" data-margin-top="0">	
+		<div class="sticky" data-sticky data-sticky-on="small" data-margin-top="0">	
 
 
 			<div class="site-banner" role="banner">
