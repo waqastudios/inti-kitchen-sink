@@ -3,7 +3,7 @@
 <?php 
 	$hero_bg = get_inti_option('header_hero_bg', 'inti_customizer_options', false);
 ?>
-<div id="site-header" class="site-header modern-hero"<?php if ( $hero_bg ) echo ' style="background-image: url('. $hero_bg .');"'; ?>>
+<div id="site-header-modern-hero" class="site-header modern-hero"<?php if ( $hero_bg ) echo ' style="background-image: url('. $hero_bg .');"'; ?>>
 
 	<?php inti_hook_site_banner_before(); ?>
 	
@@ -12,9 +12,9 @@
 
 
 			<div class="site-banner" role="banner">
-				<div class="row expanded collapse"  data-equalizer data-equalize-on="small">
+				<div class="grid-x">
 					
-					<div class="mlarge-4 large-3 columns show-for-mlarge">
+					<div class="mlarge-4 large-3 cell show-for-mlarge">
 						<?php inti_hook_site_banner_site_logo_before(); ?>
 						<?php  
 						/**
@@ -23,7 +23,7 @@
 						$logo = get_inti_option('logo_image', 'inti_customizer_options');
 
 						if ( $logo ) : ?>
-						<div class="site-logo" data-equalizer-watch>
+						<div class="site-logo">
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 								<?php inti_do_srcset_image(get_inti_option('logo_image', 'inti_customizer_options'), esc_attr( get_bloginfo('name', 'display') . ' logo')); ?>
 							</a>
@@ -31,19 +31,18 @@
 						<?php inti_hook_site_banner_site_logo_after(); ?>
 						<?php inti_hook_site_banner_title_area_before(); ?>
 						<?php endif; // end of logo ?>
-						<div class="title-area"  data-equalizer-watch>
+						<div class="title-area" >
 							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
 							<p class="site-description"><?php bloginfo('description'); ?></p>
 						</div>
 						<div class="">
 							<?php inti_hook_site_banner_title_area_after(); ?>
 						</div>
-					</div><!-- .columns -->
-					<div class="mlarge-8 large-9 columns" >
+					</div><!-- .cell -->
+					<div class="mlarge-8 large-9 cell" >
 						<?php if ( has_nav_menu('dropdown-menu') ) : ?>
 							<nav class="top-bar" id="top-bar-menu">
-								<div class="row">
-
+								
 								<?php
 
 								/**
@@ -84,7 +83,6 @@
 										</div>
 									</div>
 
-								</div>
 							</nav>
 						<?php endif; ?>
 					</div>
@@ -96,57 +94,65 @@
 
 <?php if ( is_front_page() ) : ?>
 	<div class="site-hero frontpage">
-		<div class="row">
-			<div class="mlarge-6 columns">
-				<div class="hero-area">
-					<h1><?php _e('Example text', 'inti-child'); ?></h1>
-					<p><?php _e('Could be made editable in customizer', 'inti-child'); ?></p>
-					<p><a href="#" class="button"><?php _e('More Info', 'inti-child'); ?></a></p>
+		<div class="grid-container">
+			<div class="grid-x grid-padding-x">
+				<div class="mlarge-6 cell">
+					<div class="hero-area">
+						<h1><?php _e('Example text', 'inti-child'); ?></h1>
+						<p><?php _e('Could be made editable in customizer', 'inti-child'); ?></p>
+						<p><a href="#" class="button"><?php _e('More Info', 'inti-child'); ?></a></p>
+					</div>
 				</div>
-			</div>
-			<div class="mlarge-6 columns">
-				<div class="callout">
-					<h5><?php _e('Replace this with something important', 'inti-child'); ?></h5>
-					<p><?php _e('Perhaps an image of a product or an opt-in.', 'inti-child'); ?></p>
-					<?php if (inti_current_theme_supports( 'inti-post-types', 'opt-in' )) : 
-						// get_template_part('template-parts/part-opt-in', 'header');
-					endif; ?>
+				<div class="mlarge-6 cell">
+					<div class="callout">
+						<h5><?php _e('Replace this with something important', 'inti-child'); ?></h5>
+						<p><?php _e('Perhaps an image of a product or an opt-in.', 'inti-child'); ?></p>
+						<?php if (inti_current_theme_supports( 'inti-post-types', 'opt-in' )) : 
+							// get_template_part('template-parts/part-opt-in', 'header');
+						endif; ?>
+					</div>
 				</div>
-			</div>
-		</div>
+			</div><!-- .grid-x . grid-padding-x -->
+		</div><!-- .grid-container -->
 	</div>
 <?php elseif ( is_page() ) : ?>
 	<div class="site-hero page">
-		<div class="row">
-			<div class="mlarge-6 columns">
-				<h1><?php _e('Example text', 'inti-child'); ?></h1>
-			</div>
-			<div class="mlarge-6 columns">
-				
-			</div>
-		</div>
+		<div class="grid-container">
+			<div class="grid-x grid-padding-x">
+				<div class="mlarge-6 cell">
+					<h1><?php _e('Example text', 'inti-child'); ?></h1>
+				</div>
+				<div class="mlarge-6 cell">
+					
+				</div>
+			</div><!-- .grid-x . grid-padding-x -->
+		</div><!-- .grid-container -->
 	</div>
 <?php elseif ( is_home() || is_archive() || is_single() ) : ?>
 	<div class="site-hero post archive">
-		<div class="row">
-			<div class="mlarge-6 columns">
-				<h1><?php _e('Example text', 'inti-child'); ?></h1>
-			</div>
-			<div class="mlarge-6 columns">
-				
-			</div>
-		</div>
+		<div class="grid-container">
+			<div class="grid-x grid-padding-x">
+				<div class="mlarge-6 cell">
+					<h1><?php _e('Example text', 'inti-child'); ?></h1>
+				</div>
+				<div class="mlarge-6 cell">
+					
+				</div>
+			</div><!-- .grid-x . grid-padding-x -->
+		</div><!-- .grid-container -->
 	</div>
 <?php elseif ( 'inti-example-post-type' == get_post_type() || is_post_type_archive('inti-example-post-type') ) : ?>
 	<div class="site-hero inti-example-post-type inti-example-taxonomy">
-		<div class="row">
-			<div class="mlarge-6 columns">
-				<h1><?php _e('Example text', 'inti-child'); ?></h1>
-			</div>
-			<div class="mlarge-6 columns">
-				
-			</div>
-		</div>
+		<div class="grid-container">
+			<div class="grid-x grid-padding-x">
+				<div class="mlarge-6 cell">
+					<h1><?php _e('Example text', 'inti-child'); ?></h1>
+				</div>
+				<div class="mlarge-6 cell">
+					
+				</div>
+			</div><!-- .grid-x . grid-padding-x -->
+		</div><!-- .grid-container -->
 	</div>
 <?php endif; ?>
 

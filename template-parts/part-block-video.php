@@ -24,49 +24,53 @@ if ($show) :
 
 	<section class="block video">	
 	<?php if ($title) : ?>	
-		<div class="row">
-			<div class="column">
-				<header class="block-header">
-					<h3><?php echo $title; ?></h3>
-				</header>
+		<div class="grid-container">
+			<div class="grid-x grid-padding-x">
+				<div class="small-12 cell">
+					<header class="block-header">
+						<h3><?php echo $title; ?></h3>
+					</header>
+				</div>
 			</div>
 		</div>
 	<?php endif; ?>
-		<div class="row">
-			<div class="column">
-				
-				<article>
-					<?php if ($code) : ?>
-					<div class="flex-video <?php echo $aspect; ?>">
+		<div class="grid-container">
+			<div class="grid-x grid-padding-x">
+				<div class="small-12 cell">
+					
+					<article>
+						<?php if ($code) : ?>
+						<div class="flex-video <?php echo $aspect; ?>">
 
-					<?php 
-						switch ($source) {
-							case 'YouTube':
-								?> 
-									<iframe src="http://www.youtube.com/embed/<?php echo $code; ?>?wmode=opaque&showsearch=0&rel=0&modestbranding=1&showinfo=0&controls=2" frameborder="0"></iframe>
-								<?php
-								break;
-							case 'Vimeo':
-								?> 
-									<iframe src="http://player.vimeo.com/video/<?php echo $code; ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=ff0179" width="300" height="169" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-								<?php
-								break;
-							case 'Wistia':
-								?> 
-									<iframe src="http://fast.wistia.net/embed/iframe/<?php echo $code; ?>?plugin%5Bsocialbar-v1%5D%5Bon%5D=false" frameborder="0" allowtransparency="true" allowfullscreen scrolling="no"></iframe>
-								<?php
-								break;
-						}
-					 ?>
-					</div>
-					<?php endif; ?>
-					<?php if ($button_text) : ?>
-					<a href="<?php echo $button_link; ?>" class="button"><?php echo $button_text; ?></a>
-					<?php endif; ?>
-				</article>
+						<?php 
+							switch ($source) {
+								case 'YouTube':
+									?> 
+										<iframe src="http://www.youtube.com/embed/<?php echo $code; ?>?wmode=opaque&showsearch=0&rel=0&modestbranding=1&showinfo=0&controls=2" frameborder="0"></iframe>
+									<?php
+									break;
+								case 'Vimeo':
+									?> 
+										<iframe src="http://player.vimeo.com/video/<?php echo $code; ?>?title=0&amp;byline=0&amp;portrait=0&amp;color=ff0179" width="300" height="169" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+									<?php
+									break;
+								case 'Wistia':
+									?> 
+										<iframe src="http://fast.wistia.net/embed/iframe/<?php echo $code; ?>?plugin%5Bsocialbar-v1%5D%5Bon%5D=false" frameborder="0" allowtransparency="true" allowfullscreen scrolling="no"></iframe>
+									<?php
+									break;
+							}
+						 ?>
+						</div>
+						<?php endif; ?>
+						<?php if ($button_text) : ?>
+						<a href="<?php echo $button_link; ?>" class="button"><?php echo $button_text; ?></a>
+						<?php endif; ?>
+					</article>
 
-			</div>
-		</div>
+				</div><!-- .cell -->
+			</div><!-- .grid-x .grid-padding-x -->
+		</div><!-- .grid-container -->
 	</section>
 <?php 
 endif;

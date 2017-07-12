@@ -24,34 +24,37 @@
 
 ?>
 		<section class="opt-in shortcode">
-			<div class="row">
-				<div class="small-12 column">
-					<div class="opt-in-lead-in">
-						<?php echo wpautop(do_shortcode($optin_object->post_content)); ?>
+			<div class="grid-container">
+				<div class="grid-x grid-padding-x">
+					<div class="small-12 cell">
+						<div class="opt-in-lead-in">
+							<?php echo wpautop(do_shortcode($optin_object->post_content)); ?>
+						</div>
 					</div>
 				</div>
-			</div>
-			<div class="row">
-				<div class="small-12 column">
+				<div class="grid-x grid-padding-x">
+					<div class="small-12 cell">
 
-					<form action="<?php echo $action; ?>" method="post" id="shortcode-opt-in-<?php echo rand(0,999); ?>" name="<?php if ($form_name) : echo $form_name; else : echo "form-" . $optin_object->ID; endif; ?>" <?php if ($target) echo 'target="_blank"'; ?>>
-						<div class="hide">
-							<?php echo stripslashes($hidden); ?>
-						</div>
+						<form action="<?php echo $action; ?>" method="post" id="shortcode-opt-in-<?php echo rand(0,999); ?>" name="<?php if ($form_name) : echo $form_name; else : echo "form-" . $optin_object->ID; endif; ?>" <?php if ($target) echo 'target="_blank"'; ?>>
+							<div class="hide">
+								<?php echo stripslashes($hidden); ?>
+							</div>
 
-						<fieldset>
-							<div class="medium-6 mlarge-4 columns">
-								<input type="text" name="<?php echo $first_name_name; ?>" id="shortcode-opt-in-<?php echo $first_name_name; ?>" placeholder="<?php echo $first_name_placeholder; ?>" class=""<?php if ($first_name_required) echo ' required'; ?>>
-							</div>
-							<div class="medium-6 mlarge-4 columns">
-								<input type="email" name="<?php echo $email_name; ?>" id="shortcode-opt-in-<?php echo $email_name; ?>" placeholder="<?php echo $email_placeholder; ?>" class=""<?php if ($email_required) echo ' required'; ?>>
-							</div>
-							<div class="medium-12 mlarge-4 columns">
-								<input type="submit" value="<?php echo $button_text ?>" name="submit" id="submit" class="button expanded">
-							</div>
-						</fieldset>
-					</form>
-					
+							<fieldset>
+								<div class="grid-x grid-padding-x">
+									<div class="medium-6 mlarge-4 cell">
+										<input type="text" name="<?php echo $first_name_name; ?>" id="shortcode-opt-in-<?php echo $first_name_name; ?>" placeholder="<?php echo $first_name_placeholder; ?>" class=""<?php if ($first_name_required) echo ' required'; ?>>
+									</div>
+									<div class="medium-6 mlarge-4 cell">
+										<input type="email" name="<?php echo $email_name; ?>" id="shortcode-opt-in-<?php echo $email_name; ?>" placeholder="<?php echo $email_placeholder; ?>" class=""<?php if ($email_required) echo ' required'; ?>>
+									</div>
+									<div class="medium-12 mlarge-4 cell">
+										<input type="submit" value="<?php echo $button_text ?>" name="submit" id="submit" class="button expanded">
+									</div>
+								</div>
+							</fieldset>
+						</form>
+					</div>
 				</div>
 			</div>
 		</section>

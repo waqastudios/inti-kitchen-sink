@@ -21,24 +21,28 @@ if ($show):
 ?>
 	<section class="block personal-bio">	
 	<?php if ($title) : ?>	
-		<div class="row">
-			<div class="column">
-				<header class="block-header">
-					<h3><?php echo $title; ?></h3>
-				</header>
-			</div>
-		</div>
+		<div class="grid-container">
+			<div class="grid-x grid-padding-x">
+				<div class="small-12 cell">
+					<header class="block-header">
+						<h3><?php echo $title; ?></h3>
+					</header>
+				</div><!-- .cell -->
+			</div><!-- .grid-x .grid-container-x -->
+		</div><!-- .grid-container -->
 	<?php endif; ?>
-		<div class="row">
-			<div class="mlarge-8 columns">
-				<?php echo do_shortcode(wpautop($bio_text)); ?>
-			</div>
-			<div class="mlarge-4 columns">
-				<?php if ($bio_link): ?><a href="<?php echo $bio_link; ?>"><?php endif; ?>
-				<img src="<?php echo $bio_image; ?>" alt="">
-				<?php if ($bio_link): ?></a><?php endif ?>
-			</div>
-		</div>
+		<div class="grid-container">
+			<div class="grid-x grid-padding-x">
+				<div class="small-12 mlarge-8 cell">
+					<?php echo do_shortcode(wpautop($bio_text)); ?>
+				</div>
+				<div class="small-12 mlarge-4 cell">
+					<?php if ($bio_link): ?><a href="<?php echo $bio_link; ?>"><?php endif; ?>
+					<img src="<?php echo $bio_image; ?>" alt="">
+					<?php if ($bio_link): ?></a><?php endif ?>
+				</div><!-- .cell -->
+			</div><!-- .grid-x .grid-container-x -->
+		</div><!-- .grid-container -->
 	</section>
 
 <?php endif; ?>

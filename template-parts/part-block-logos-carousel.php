@@ -29,47 +29,47 @@ if ($show) :
 
 ?>
 	<section class="block logos">
-		<div class="row">
-			<div class="column">
-				<?php if ($title || $description) : ?>
-				<header>
-					<?php if ($title) : ?><h3><?php echo $title; ?></h3><?php endif; ?>
-					<?php if ($description) : ?><p><?php echo $description; ?></p><?php endif; ?>
-				</header>
-				<?php endif; ?>
-				<?php if ($logos->have_posts()): ?>
-					<div class="inti-carousel inti-logos-carousel clearfix">
-					<?php while ( $logos->have_posts() ) : $logos->the_post(); global $post; ?>
+		<div class="grid-container">
+			<div class="grid-x grid-padding-x">
+				<div class="small-12 cell">
+					<?php if ($title || $description) : ?>
+					<header>
+						<?php if ($title) : ?><h3><?php echo $title; ?></h3><?php endif; ?>
+						<?php if ($description) : ?><p><?php echo $description; ?></p><?php endif; ?>
+					</header>
+					<?php endif; ?>
+					<?php if ($logos->have_posts()): ?>
+						<div class="inti-carousel inti-logos-carousel clearfix">
+						<?php while ( $logos->have_posts() ) : $logos->the_post(); global $post; ?>
 
-						<div class="slide">
-						<?php 
-							if ( has_post_thumbnail($post->ID) ) :
+							<div class="slide">
+							<?php 
+								if ( has_post_thumbnail($post->ID) ) :
 
-								// Get the meta data 
-								$logo_url = get_post_meta( $post->ID, "_inti_logo_url", true );
-								if ( $logo_url ) : ?>
-									<a href="<?php echo esc_url($logo_url); ?>" target="_blank">
+									// Get the meta data 
+									$logo_url = get_post_meta( $post->ID, "_inti_logo_url", true );
+									if ( $logo_url ) : ?>
+										<a href="<?php echo esc_url($logo_url); ?>" target="_blank">
+											<?php the_post_thumbnail( 'logo-thumbnail', array( 'class'	=> 'logo-thumbnail', 'alt' => get_the_title() ) ); ?>
+										</a>
+									<?php else : ?>
 										<?php the_post_thumbnail( 'logo-thumbnail', array( 'class'	=> 'logo-thumbnail', 'alt' => get_the_title() ) ); ?>
-									</a>
-								<?php else : ?>
-									<?php the_post_thumbnail( 'logo-thumbnail', array( 'class'	=> 'logo-thumbnail', 'alt' => get_the_title() ) ); ?>
+									<?php endif; ?>
 								<?php endif; ?>
-							<?php endif; ?>
-						</div>
+							</div>
 
-					<?php endwhile; wp_reset_query(); ?>
-					</div>
-				<?php else: ?>
-					<div class="row">
+						<?php endwhile; wp_reset_query(); ?>
+						</div>
+					<?php else: ?>
 						<div class="callout warning" data-closable>
 							<p><?php _e('There are currently no published logos', 'inti-child'); ?></p>
 							<button class="close-button" aria-label="Dismiss alert" type="button" data-close>
 								<span aria-hidden="true">&times;</span>
 							</button>
 						</div>
-					</div>
-				<?php endif; ?>		
-			</div>
-		</div>
+					<?php endif; ?>		
+				</div><!-- .cell -->
+			</div><!-- .grid-x .grid-container-x -->
+		</div><!-- .grid-container -->
 	</section>
 <?php endif; ?>

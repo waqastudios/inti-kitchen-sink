@@ -7,8 +7,6 @@
  * @since 1.0.0
  */
 
-$layout = inti_get_layout(get_inti_option('', '', '', '_inti_layout_radio'));
-
 get_header(); ?>
 
 

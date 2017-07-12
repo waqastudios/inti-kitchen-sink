@@ -41,11 +41,13 @@ add_action('inti_hook_footer_inside', 'child_do_footer_opt_in', 1);
 function child_do_footer_menu() { 
 	if ( has_nav_menu('footer-menu') ) : ?>
 		<div class="footer-menu">
-			<div class="row">
-				<div class="large-12 columns">
+
+			<div class="grid-x grid-padding-x">
+				<div class="small-12 cell">
 					<?php echo inti_get_footer_menu();	?>
-				</div><!-- .columns -->
-			</div><!-- .row -->
+				</div><!-- .cell -->
+			</div><!-- .grid-x -->
+
 		</div><!-- .footer-menu -->
 <?php
 	endif;
@@ -62,9 +64,9 @@ add_action('inti_hook_footer_inside', 'child_do_footer_menu', 2);
  */
 function child_do_footer_info() { ?>
 	<div class="footer-info">
-		<div class="row small-uncollapse">
-			<div class="large-12 columns">
-								
+
+		<div class="grid-x grid-padding-x">
+			<div class="small-12 cell">		
 					<?php 
 					if ( get_inti_option('custom_copyright', 'inti_customizer_options') ) : 
 						echo get_inti_option('custom_copyright', 'inti_customizer_options'); 
@@ -72,10 +74,9 @@ function child_do_footer_info() { ?>
 						<p><span class="copyright">Copyright &copy; <?php echo date_i18n('Y'); ?> <?php bloginfo('name'); ?> | </span>
 						<span class="site-credits"><?php _e('Powered by', 'inti'); ?> <a href="<?php echo esc_url('http://wordpress.org/'); ?>" title="<?php esc_attr_e('Personal Publishing Platform', 'inti'); ?>">WordPress</a> &amp; <a href="<?php echo esc_url('http://inti.waqastudios.com/') ?>" title="<?php esc_attr_e('Foundation 6 WordPress Framework', 'inti'); ?>" rel="nofollow">Inti Foundation</a></span></p>
 					<?php endif; ?>
-			
-			</div><!-- .columns -->
-			
-		</div><!-- .row -->
+			</div><!-- .cell -->
+		</div><!-- .grid-x .grid-padding-x -->
+
 	</div><!-- .footer-info -->
 <?php 
 }
@@ -91,12 +92,14 @@ add_action('inti_hook_footer_inside', 'child_do_footer_info', 4);
 function child_do_footer_social() { 
 	if ( get_inti_option('footer_social', 'inti_footer_options') ) { ?>
 		<div class="footer-social">
-			<div class="row">
-				<div class="large-12 columns">
-					<?php echo inti_get_footer_social_links(); ?>
-				</div><!-- .columns -->
-				
-			</div><!-- .row -->
+
+				<div class="grid-x grid-padding-x">
+					<div class="small-12 cell">
+						<?php echo inti_get_footer_social_links(); ?>
+					</div><!-- .cell -->
+					
+				</div><!-- .grid-x .grid-padding-x -->
+
 		</div><!-- .footer-social -->
 <?php 
 	}
@@ -112,7 +115,7 @@ add_action('inti_hook_footer_inside', 'child_do_footer_social', 3);
  */
 function child_do_scroll_to_top() { 
 	if ( current_theme_supports( 'inti-scroll-to-top' ) ) { ?>
-	<a href="#page" id="inti-scroll-to-top" data-scroll>
+	<a href="#page" id="inti-scroll-to-top" data-smooth-scroll>
 		<i class="fa fa-angle-up"></i>
 	</a>
 <?php 

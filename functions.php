@@ -110,7 +110,7 @@ function childtheme_override_setup() {
 	add_theme_support('automatic-feed-links');
 	
 	// editor stylesheet for TinyMCE
-	add_editor_style('/library/css/editor.css');
+	add_editor_style('/library/dist/css/editor.css');
 
 	// load parent translations
 	load_theme_textdomain( 'inti' , get_template_directory() . '/languages');

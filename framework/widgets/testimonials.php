@@ -105,16 +105,16 @@ class inti_widget_testimonial extends WP_Widget {
 							 ?>
 
 							<blockquote class="testimonial" data-equalizer-watch>
-								<div class="row collapse">
+								<div class="grid-x">
 									
-									<?php // if it has a thumbnail, create two columns with real photo
+									<?php // if it has a thumbnail, create two cells with real photo
 									if ( has_post_thumbnail(get_the_ID()) && $hide_photos == 0 ) : ?>
-									<div class="small-12 columns">
+									<div class="small-12 cell">
 										<div class="testimonial-image">
 											<?php the_post_thumbnail('thumbnail'); ?>
 										</div>
 									</div>
-									<div class="small-12 columns">
+									<div class="small-12 cell">
 										
 										<div class="testimonial-text">
 											<?php
@@ -131,7 +131,7 @@ class inti_widget_testimonial extends WP_Widget {
 										
 									</div>
 									<?php else :  ?>
-									<div class="small-12 columns">
+									<div class="small-12 cell">
 										
 										<div class="testimonial-text">
 											<?php 

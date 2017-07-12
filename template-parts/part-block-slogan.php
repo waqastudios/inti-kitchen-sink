@@ -20,9 +20,11 @@ $slogan = get_inti_option('fpb_slogan', 'inti_customizer_options', 'Inti Foundat
 
 	<section class="block slogan">	
 
-		<div class="row">
-			<div class="column">
-				<h2><?php echo $slogan; ?></h2>
+		<div class="grid-container">
+			<div class="grid-x grid-padding-x">
+				<div class="small-12 cell">
+					<h2><?php echo $slogan; ?></h2>
+				</div>
 			</div>
 		</div>
 

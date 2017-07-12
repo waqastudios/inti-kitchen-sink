@@ -32,13 +32,13 @@ function inti_shortcode_testimonial_single( $atts, $content = null ) {
 
 					<blockquote class="testimonial">
 						<?php if ($has_image) : ?>
-							<div class="row">
-								<div class="medium-5 mlarge-4 columns">
+							<div class="grid-x grid-padding-x">
+								<div class="medium-5 mlarge-4 cell">
 									<div class="testimonial-image">
 										<?php echo $image_html; ?>
 									</div>
 								</div>
-								<div class="medium-7 mlarge-8 columns">
+								<div class="medium-7 mlarge-8 cell">
 									<div class="testimonial-text">
 										<?php echo wpautop($testimonial_object->post_content); ?>
 										<cite class="testimonial-owner">
@@ -48,8 +48,8 @@ function inti_shortcode_testimonial_single( $atts, $content = null ) {
 								</div>
 							</div>
 						<?php else : ?>
-							<div class="row">
-								<div class="column">
+							<div class="grid-x grid-padding-x">
+								<div class="cell">
 									<div class="testimonial-text">
 										<?php echo wpautop($testimonial_object->post_content); ?>
 										<cite class="testimonial-owner">
@@ -67,13 +67,13 @@ function inti_shortcode_testimonial_single( $atts, $content = null ) {
 
 					<blockquote class="testimonial right callout">
 						<?php if ($has_image) : ?>
-							<div class="row">
-								<div class="medium-5 medium-push-7 mlarge-4 mlarge-push-8 columns">
+							<div class="grid-x grid-padding-x">
+								<div class="medium-5 medium-order-2 mlarge-4 cell">
 									<div class="testimonial-image">
 										<?php echo $image_html; ?>
 									</div>
 								</div>
-								<div class="medium-7 medium-pull-5 mlarge-8 mlarge-pull-4 columns">
+								<div class="medium-7 medium-order-1 mlarge-8 cell">
 									<div class="testimonial-text">
 										<?php echo wpautop($testimonial_object->post_content); ?>
 										<cite class="testimonial-owner">
@@ -83,8 +83,8 @@ function inti_shortcode_testimonial_single( $atts, $content = null ) {
 								</div>
 							</div>
 						<?php else : ?>
-							<div class="row">
-								<div class="column">
+							<div class="grid-x grid-padding-x">
+								<div class="cell">
 									<div class="testimonial-text">
 										<?php echo wpautop($testimonial_object->post_content); ?>
 										<cite class="testimonial-owner">
@@ -102,13 +102,13 @@ function inti_shortcode_testimonial_single( $atts, $content = null ) {
 
 					<blockquote class="testimonial vertical callout">
 						<?php if ($has_image) : ?>
-							<div class="row">
-								<div class="column">
+							<div class="grid-x grid-padding-x">
+								<div class="cell">
 									<div class="testimonial-image">
 										<?php echo $image_html; ?>
 									</div>
 								</div>
-								<div class="column">
+								<div class="cell">
 									<div class="testimonial-text">
 										<?php echo wpautop($testimonial_object->post_content); ?>
 										<cite class="testimonial-owner">
@@ -118,8 +118,8 @@ function inti_shortcode_testimonial_single( $atts, $content = null ) {
 								</div>
 							</div>
 						<?php else : ?>
-							<div class="row">
-								<div class="column">
+							<div class="grid-x grid-padding-x">
+								<div class="cell">
 									<div class="testimonial-text">
 										<?php echo wpautop($testimonial_object->post_content); ?>
 										<cite class="testimonial-owner">

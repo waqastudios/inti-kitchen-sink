@@ -44,13 +44,13 @@ function inti_shortcode_testimonials( $atts, $content = null ) {
 
 				<blockquote class="testimonial left">
 					<?php if ($has_image) : ?>
-						<div class="row">
-							<div class="medium-5 mlarge-4 columns">
+						<div class="grid-x grid-padding-x">
+							<div class="medium-5 mlarge-4 cell">
 								<div class="testimonial-image">
 									<?php the_post_thumbnail('testimonial-thumbnail'); ?>
 								</div>
 							</div>
-							<div class="medium-7 mlarge-8 columns">
+							<div class="medium-7 mlarge-8 cell">
 								<div class="testimonial-text">
 									<?php the_content(); ?>
 									<cite class="testimonial-owner">
@@ -60,8 +60,8 @@ function inti_shortcode_testimonials( $atts, $content = null ) {
 							</div>
 						</div>
 					<?php else : ?>
-						<div class="row">
-							<div class="column">
+						<div class="grid-x grid-padding-x">
+							<div class="cell">
 								<div class="testimonial-text">
 									<?php the_content(); ?>
 									<cite class="testimonial-owner">
@@ -79,13 +79,13 @@ function inti_shortcode_testimonials( $atts, $content = null ) {
 
 				<blockquote class="testimonial right">
 					<?php if ($has_image) : ?>
-						<div class="row">
-							<div class="medium-5 medium-push-7 mlarge-4 mlarge-push-8 columns">
+						<div class="grid-x grid-padding-x">
+							<div class="medium-5 medium-order-2 mlarge-4 cell">
 								<div class="testimonial-image">
 									<?php the_post_thumbnail('testimonial-thumbnail'); ?>
 								</div>
 							</div>
-							<div class="medium-7 medium-pull-5 mlarge-8 mlarge-pull-4 columns">
+							<div class="medium-7 medium-order-1 mlarge-8 cell">
 								<div class="testimonial-text">
 									<?php the_content(); ?>
 									<cite class="testimonial-owner">
@@ -95,8 +95,8 @@ function inti_shortcode_testimonials( $atts, $content = null ) {
 							</div>
 						</div>
 					<?php else : ?>
-						<div class="row">
-							<div class="column">
+						<div class="grid-x grid-padding-x">
+							<div class="cell">
 								<div class="testimonial-text">
 									<?php the_content(); ?>
 									<cite class="testimonial-owner">
@@ -114,13 +114,13 @@ function inti_shortcode_testimonials( $atts, $content = null ) {
 					<?php if ($right) : ?>
 						<blockquote class="testimonial mixed right">
 							<?php if ($has_image) : ?>
-								<div class="row">
-									<div class="medium-5 medium-push-7 mlarge-4 mlarge-push-8 columns">
+								<div class="grid-x grid-padding-x">
+									<div class="medium-5 medium-order-2 mlarge-4 cell">
 										<div class="testimonial-image">
 											<?php the_post_thumbnail('testimonial-thumbnail'); ?>
 										</div>
 									</div>
-									<div class="medium-7 medium-pull-5 mlarge-8 mlarge-pull-4 columns">
+									<div class="medium-7 medium-order-1 mlarge-8 cell">
 										<div class="testimonial-text">
 											<?php the_content(); ?>
 											<cite class="testimonial-owner">
@@ -130,8 +130,8 @@ function inti_shortcode_testimonials( $atts, $content = null ) {
 									</div>
 								</div>
 							<?php else : ?>
-								<div class="row">
-									<div class="column">
+								<div class="grid-x grid-padding-x">
+									<div class="cell">
 										<div class="testimonial-text">
 											<?php the_content(); ?>
 											<cite class="testimonial-owner">
@@ -145,13 +145,13 @@ function inti_shortcode_testimonials( $atts, $content = null ) {
 					<?php $right = false; else : ?>
 						<blockquote class="testimonial mixed left">
 						<?php if ($has_image) : ?>
-							<div class="row">
-								<div class="medium-5 mlarge-4 columns">
+							<div class="grid-x grid-padding-x">
+								<div class="medium-5 mlarge-4 cell">
 									<div class="testimonial-image">
 										<?php the_post_thumbnail('testimonial-thumbnail'); ?>
 									</div>
 								</div>
-								<div class="medium-7 mlarge-8 columns">
+								<div class="medium-7 mlarge-8 cell">
 									<div class="testimonial-text">
 										<?php the_content(); ?>
 										<cite class="testimonial-owner">
@@ -161,8 +161,8 @@ function inti_shortcode_testimonials( $atts, $content = null ) {
 								</div>
 							</div>
 						<?php else : ?>
-							<div class="row">
-								<div class="column">
+							<div class="grid-x grid-padding-x">
+								<div class="cell">
 									<div class="testimonial-text">
 										<?php the_content(); ?>
 										<cite class="testimonial-owner">
@@ -182,13 +182,13 @@ function inti_shortcode_testimonials( $atts, $content = null ) {
 
 				<blockquote class="testimonial vertical">
 					<?php if ($has_image) : ?>
-						<div class="row">
-							<div class="column">
+						<div class="grid-x grid-padding-x">
+							<div class="cell">
 								<div class="testimonial-image">
 									<?php the_post_thumbnail('testimonial-thumbnail'); ?>
 								</div>
 							</div>
-							<div class="column">
+							<div class="cell">
 								<div class="testimonial-text">
 									<?php the_content(); ?>
 									<cite class="testimonial-owner">
@@ -198,8 +198,8 @@ function inti_shortcode_testimonials( $atts, $content = null ) {
 							</div>
 						</div>
 					<?php else : ?>
-						<div class="row">
-							<div class="column">
+						<div class="grid-x grid-padding-x">
+							<div class="cell">
 								<div class="testimonial-text">
 									<?php the_content(); ?>
 									<cite class="testimonial-owner">

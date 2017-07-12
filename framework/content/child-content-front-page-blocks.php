@@ -25,10 +25,12 @@ function child_block_page_content() {
 	if (inti_current_theme_supports( 'inti-front-page-blocks', 'page' )) {
 	?>
 	<section class="block page-content">
-		<div class="row">
-			<div class="small-12 columns">
-				<?php // get the page loop
-				get_template_part('loops/loop', 'frontpage-page'); ?>
+		<div class="grid-container">
+			<div class="grid-x grid-padding-x">
+				<div class="small-12 cell">
+					<?php // get the page loop
+					get_template_part('loops/loop', 'frontpage-page'); ?>
+				</div>
 			</div>
 		</div>
 	</section><!-- .block page-content -->
