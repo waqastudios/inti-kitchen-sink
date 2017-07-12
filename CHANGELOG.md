@@ -73,3 +73,9 @@
 
 ### 1.2.1 (Jul 11, 2017)
 - Small bug fix on modern hero header
+
+### 1.3.0 (July 12, 2017)
+- Updated for Foundation 6.4.1
+- All template files updated for XY Grid
+- Completely reworked gulp file and build process
+- Vendor files come from and are managed by npm
