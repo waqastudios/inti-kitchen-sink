@@ -23,8 +23,6 @@ normally includes a logo, or a full width hero image.
 
 	.site-banner {
 
-			.row {}
-
 			.site-logo {
 				img {}
 			}
@@ -88,9 +86,6 @@ normally includes a logo, or a full width hero image.
 			
 			nav.top-bar  {
 				background-color: transparent;
-					.row {
-						@include grid-row-nest(0);
-					}
 			}
 	}
 
