@@ -47,29 +47,3 @@ function inti_enqueue_scripts() {
 		}
 	}
 }
-
-add_action('wp_enqueue_scripts', 'child_register_scripts', 1);
-add_action('wp_enqueue_scripts', 'child_enqueue_scripts');
- 
-function child_register_scripts() {
-
-}
-
-function child_enqueue_scripts() {
-	if ( !is_admin() ) { 
-		// enqueued scripts from parent...
-		// wp_enqueue_script('jquery');
-		// wp_enqueue_script('toastr-js');
-		// wp_enqueue_script('slick-js');
-		// wp_enqueue_script('jquery-cookie-js');
-		// wp_enqueue_script('inti-js');
-
-		// enqueue scripts for child
-
-
-		// comment reply script for threaded comments
-		if ( is_singular() && comments_open() && get_option('thread_comments') ) {
-			wp_enqueue_script('comment-reply'); 
-		}
-	}
-}
