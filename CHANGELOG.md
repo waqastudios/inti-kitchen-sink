@@ -79,3 +79,6 @@
 - All template files updated for XY Grid
 - Completely reworked gulp file and build process
 - Vendor files come from and are managed by npm
+
+### 1.3.1 (July 23, 2017)
+- Minor bug fixes 
