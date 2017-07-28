@@ -134,7 +134,7 @@
 							</div>
 						</div>
 					</nav>
-				</nav>
+				</div>
 			</div>
 		</div>
 	<?php endif; ?>
