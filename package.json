@@ -12,11 +12,11 @@
   "dependencies": {
     "foundation-sites": "~6.4.1",
     "jquery": ">=3.0.0",
-    "what-input": "^4.1.3",
-    "motion-ui": "~1.2.2"
+    "motion-ui": "~1.2.2",
+    "what-input": "^4.1.3"
   },
   "devDependencies": {
-    "animate.css": "^3.5.2",
+    "animatewithsass": "^3.2.1",
     "babel-core": "^6.24.1",
     "babel-loader": "^6.4.1",
     "babel-preset-es2015": "^6.3.13",

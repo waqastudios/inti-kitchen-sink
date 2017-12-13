@@ -84,7 +84,7 @@ new styles, or the minimized inti-min.css file can be unqueued
 /**
  * We can import 3rd Party styles here
  */
-@import "../../../node_modules/animate.css/animate";
+@import "../../../node_modules/animatewithsass/animate.scss";
 
 /**
  * We'll want to enqueue font-awesome separately in WP so that

@@ -69,7 +69,7 @@
 
 					// logo on nav when sticky (needs CSS _navigation.scss)
 					if ('none' != $sticky_logo) : ?>
-						<div class="top-bar-left show-for-mlarge sticky-logo animated fadeInLeft">
+						<div class="top-bar-left show-for-mlarge fadeInLeft">
 							<div class="site-logo">
 								<?php if ( get_inti_option('nav_logo_image', 'inti_customizer_options') ) : ?>
 									<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">

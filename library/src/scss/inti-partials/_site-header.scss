@@ -22,7 +22,7 @@ normally includes a logo, or a full width hero image.
 	position: relative;
 
 	.site-banner {
-
+		@include slideInDown();
 			.site-logo {
 				img {}
 			}
