@@ -82,3 +82,6 @@
 
 ### 1.3.1 (July 23, 2017)
 - Minor bug fixes 
+
+### 1.3.2 (December 13, 2017)
+- Switched from animate.css to animatewithsass
