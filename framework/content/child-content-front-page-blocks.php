@@ -26,7 +26,7 @@ function child_block_page_content() {
 	?>
 	<section class="block page-content">
 		<div class="grid-container">
-			<div class="grid-x grid-padding-x">
+			<div class="grid-x grid-margin-x">
 				<div class="small-12 cell">
 					<?php // get the page loop
 					get_template_part('loops/loop', 'frontpage-page'); ?>

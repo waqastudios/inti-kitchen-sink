@@ -45,7 +45,7 @@ if ($show) :
 							<article id="post-<?php the_ID(); ?>" <?php post_class(''); ?> data-equalizer-watch>
 								<div class="entry-body">
 
-									<div class="grid-x grid-padding-x">
+									<div class="grid-x grid-margin-x">
 
 										<div class="mlarge-6 cell <?php if (false == $odd) echo 'mlarge-order-2'; ?>">
 											<div class="entry-thumbnail">
@@ -73,7 +73,7 @@ if ($show) :
 												?>
 
 												<h3 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __('%s', 'inti'), the_title_attribute('echo=0') ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
-												<div class="grid-x grid-padding-x">
+												<div class="grid-x grid-margin-x">
 													<div class="medium-6 cell">
 														<?php 
 															$args = array( 
@@ -135,7 +135,7 @@ if ($show) :
 				<?php if ($showlinktoblog) : ?>
 					<div class="grid-container">
 						<nav class="content-navigation block-blog-posts-navigation" role="navigation">
-							<div class="grid-x grid-padding-x">
+							<div class="grid-x grid-margin-x">
 								<div class="small-12 cell">
 									<a href="<?php echo $bloglinkurl; ?>" class="button"><?php echo $bloglinktext; ?></a>
 								</div>

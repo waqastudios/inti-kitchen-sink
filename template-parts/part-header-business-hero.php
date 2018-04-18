@@ -6,7 +6,7 @@
 
 	<div class="site-banner<?php if ( !get_inti_option('show_site_banner_mobile', 'inti_customizer_options') ) echo " show-for-mlarge"; ?>" role="banner">
 		<div class="grid-container">
-			<div class="grid-x grid-padding-x">
+			<div class="grid-x grid-margin-x">
 				<div class="mlarge-4 large-3 cell">
 					<?php inti_hook_site_banner_site_logo_before(); ?>
 					<?php  
@@ -32,7 +32,7 @@
 				</div><!-- .cell -->
 				<div class="mlarge-8 large-9 cell">
 					<div class="contact-area">
-						<div class="grid-x grid-padding-x medium-up-1 mlarge-up-3">
+						<div class="grid-x grid-margin-x medium-up-1 mlarge-up-3">
 							<div class="cell">
 								<div class="contact-method phone">
 									<div class="contact-icon"><i class="fa fa-phone"></i></div>
@@ -63,7 +63,7 @@
 						</div>
 					</div>
 				</div>
-			</div><!-- .grid-x . grid-padding-x -->
+			</div><!-- .grid-x . grid-margin-x -->
 		</div><!-- .grid-container -->
 	</div><!-- .site-banner -->
 
@@ -145,7 +145,7 @@
 <?php if ( is_front_page() ) : ?>
 	<div class="site-hero frontpage"<?php if ( $hero_bg ) echo ' style="background-image: url('. $hero_bg .');"'; ?>>
 		<div class="grid-container">
-			<div class="grid-x grid-padding-x">
+			<div class="grid-x grid-margin-x">
 				<div class="mlarge-6 cell">
 					<div class="hero-area">
 						<h1><?php _e('Example text', 'inti-child'); ?></h1>
@@ -162,47 +162,47 @@
 						endif; ?>
 					</div>
 				</div>
-			</div><!-- .grid-x . grid-padding-x -->
+			</div><!-- .grid-x . grid-margin-x -->
 		</div><!-- .grid-container -->
 	</div>
 <?php elseif ( is_page() ) : ?>
 	<div class="site-hero page"<?php if ( $hero_bg ) echo ' style="background-image: url('. $hero_bg .');"'; ?>>
 		<div class="grid-container">
-			<div class="grid-x grid-padding-x">
+			<div class="grid-x grid-margin-x">
 				<div class="mlarge-6 cell">
 					<h1><?php _e('Example text', 'inti-child'); ?></h1>
 				</div>
 				<div class="mlarge-6 cell">
 					
 				</div>
-			</div><!-- .grid-x . grid-padding-x -->
+			</div><!-- .grid-x . grid-margin-x -->
 		</div><!-- .grid-container -->
 	</div>
 
 <?php elseif ( is_home() || is_archive() || is_single() ) : ?>
 	<div class="site-hero post archive"<?php if ( $hero_bg ) echo ' style="background-image: url('. $hero_bg .');"'; ?>>
 		<div class="grid-container">
-			<div class="grid-x grid-padding-x">
+			<div class="grid-x grid-margin-x">
 				<div class="mlarge-6 cell">
 					<h1><?php _e('Example text', 'inti-child'); ?></h1>
 				</div>
 				<div class="mlarge-6 cell">
 					
 				</div>
-			</div><!-- .grid-x . grid-padding-x -->
+			</div><!-- .grid-x . grid-margin-x -->
 		</div><!-- .grid-container -->
 	</div>
 <?php elseif ( 'inti-example-post-type' == get_post_type() || is_post_type_archive('inti-example-post-type') ) : ?>
 	<div class="site-hero inti-example-post-type inti-example-taxonomy"<?php if ( $hero_bg ) echo ' style="background-image: url('. $hero_bg .');"'; ?>>
 		<div class="grid-container">
-			<div class="grid-x grid-padding-x">
+			<div class="grid-x grid-margin-x">
 				<div class="mlarge-6 cell">
 					<h1><?php _e('Example text', 'inti-child'); ?></h1>
 				</div>
 				<div class="mlarge-6 cell">
 					
 				</div>
-			</div><!-- .grid-x . grid-padding-x -->
+			</div><!-- .grid-x . grid-margin-x -->
 		</div><!-- .grid-container -->
 	</div>
 <?php endif; ?>

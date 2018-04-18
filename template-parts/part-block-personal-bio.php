@@ -22,7 +22,7 @@ if ($show):
 	<section class="block personal-bio">	
 	<?php if ($title) : ?>	
 		<div class="grid-container">
-			<div class="grid-x grid-padding-x">
+			<div class="grid-x grid-margin-x">
 				<div class="small-12 cell">
 					<header class="block-header">
 						<h3><?php echo $title; ?></h3>
@@ -32,7 +32,7 @@ if ($show):
 		</div><!-- .grid-container -->
 	<?php endif; ?>
 		<div class="grid-container">
-			<div class="grid-x grid-padding-x">
+			<div class="grid-x grid-margin-x">
 				<div class="small-12 mlarge-8 cell">
 					<?php echo do_shortcode(wpautop($bio_text)); ?>
 				</div>

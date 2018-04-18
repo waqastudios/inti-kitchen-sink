@@ -25,14 +25,14 @@
 ?>
 		<section class="opt-in shortcode">
 			<div class="grid-container">
-				<div class="grid-x grid-padding-x">
+				<div class="grid-x grid-margin-x">
 					<div class="small-12 cell">
 						<div class="opt-in-lead-in">
 							<?php echo wpautop(do_shortcode($optin_object->post_content)); ?>
 						</div>
 					</div>
 				</div>
-				<div class="grid-x grid-padding-x">
+				<div class="grid-x grid-margin-x">
 					<div class="small-12 cell">
 
 						<form action="<?php echo $action; ?>" method="post" id="shortcode-opt-in-<?php echo rand(0,999); ?>" name="<?php if ($form_name) : echo $form_name; else : echo "form-" . $optin_object->ID; endif; ?>" <?php if ($target) echo 'target="_blank"'; ?>>
@@ -41,7 +41,7 @@
 							</div>
 
 							<fieldset>
-								<div class="grid-x grid-padding-x">
+								<div class="grid-x grid-margin-x">
 									<div class="medium-6 mlarge-4 cell">
 										<input type="text" name="<?php echo $first_name_name; ?>" id="shortcode-opt-in-<?php echo $first_name_name; ?>" placeholder="<?php echo $first_name_placeholder; ?>" class=""<?php if ($first_name_required) echo ' required'; ?>>
 									</div>

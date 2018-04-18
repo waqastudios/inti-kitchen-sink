@@ -25,7 +25,7 @@ if ($show) :
 	<section class="block video">	
 	<?php if ($title) : ?>	
 		<div class="grid-container">
-			<div class="grid-x grid-padding-x">
+			<div class="grid-x grid-margin-x">
 				<div class="small-12 cell">
 					<header class="block-header">
 						<h3><?php echo $title; ?></h3>
@@ -35,7 +35,7 @@ if ($show) :
 		</div>
 	<?php endif; ?>
 		<div class="grid-container">
-			<div class="grid-x grid-padding-x">
+			<div class="grid-x grid-margin-x">
 				<div class="small-12 cell">
 					
 					<article>
@@ -69,7 +69,7 @@ if ($show) :
 					</article>
 
 				</div><!-- .cell -->
-			</div><!-- .grid-x .grid-padding-x -->
+			</div><!-- .grid-x .grid-margin-x -->
 		</div><!-- .grid-container -->
 	</section>
 <?php 

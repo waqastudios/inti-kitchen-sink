@@ -30,7 +30,7 @@ if ($show) :
 ?>
 	<section class="block logos">
 		<div class="grid-container">
-			<div class="grid-x grid-padding-x">
+			<div class="grid-x grid-margin-x">
 				<div class="small-12 cell">
 					<?php if ($title || $description) : ?>
 					<header>

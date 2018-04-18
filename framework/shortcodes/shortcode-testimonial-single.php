@@ -32,7 +32,7 @@ function inti_shortcode_testimonial_single( $atts, $content = null ) {
 
 					<blockquote class="testimonial">
 						<?php if ($has_image) : ?>
-							<div class="grid-x grid-padding-x">
+							<div class="grid-x grid-margin-x">
 								<div class="medium-5 mlarge-4 cell">
 									<div class="testimonial-image">
 										<?php echo $image_html; ?>
@@ -48,7 +48,7 @@ function inti_shortcode_testimonial_single( $atts, $content = null ) {
 								</div>
 							</div>
 						<?php else : ?>
-							<div class="grid-x grid-padding-x">
+							<div class="grid-x grid-margin-x">
 								<div class="cell">
 									<div class="testimonial-text">
 										<?php echo wpautop($testimonial_object->post_content); ?>
@@ -67,7 +67,7 @@ function inti_shortcode_testimonial_single( $atts, $content = null ) {
 
 					<blockquote class="testimonial right callout">
 						<?php if ($has_image) : ?>
-							<div class="grid-x grid-padding-x">
+							<div class="grid-x grid-margin-x">
 								<div class="medium-5 medium-order-2 mlarge-4 cell">
 									<div class="testimonial-image">
 										<?php echo $image_html; ?>
@@ -83,7 +83,7 @@ function inti_shortcode_testimonial_single( $atts, $content = null ) {
 								</div>
 							</div>
 						<?php else : ?>
-							<div class="grid-x grid-padding-x">
+							<div class="grid-x grid-margin-x">
 								<div class="cell">
 									<div class="testimonial-text">
 										<?php echo wpautop($testimonial_object->post_content); ?>
@@ -102,7 +102,7 @@ function inti_shortcode_testimonial_single( $atts, $content = null ) {
 
 					<blockquote class="testimonial vertical callout">
 						<?php if ($has_image) : ?>
-							<div class="grid-x grid-padding-x">
+							<div class="grid-x grid-margin-x">
 								<div class="cell">
 									<div class="testimonial-image">
 										<?php echo $image_html; ?>
@@ -118,7 +118,7 @@ function inti_shortcode_testimonial_single( $atts, $content = null ) {
 								</div>
 							</div>
 						<?php else : ?>
-							<div class="grid-x grid-padding-x">
+							<div class="grid-x grid-margin-x">
 								<div class="cell">
 									<div class="testimonial-text">
 										<?php echo wpautop($testimonial_object->post_content); ?>

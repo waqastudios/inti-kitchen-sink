@@ -39,7 +39,7 @@ if ($show) :
 			
 			
 				<?php // if more than one cell use block-grid
-				if ( $post_columns != 1 ) echo '<div class="grid-x grid-padding-x small-up-1 medium-up-1 mlarge-up-' . $post_columns . '">'; ?>
+				if ( $post_columns != 1 ) echo '<div class="grid-x grid-margin-x small-up-1 medium-up-1 mlarge-up-' . $post_columns . '">'; ?>
 				
 					<?php while ( $frontpage_query->have_posts() ) : $frontpage_query->the_post(); global $more; $more = 0; ?>
 						
@@ -50,7 +50,7 @@ if ($show) :
 							<article id="post-<?php the_ID(); ?>" <?php post_class(''); ?>>
 								<div class="entry-body">
 									<?php  if ( has_post_thumbnail() ) : ?>
-									<div class="grid-x grid-padding-x">
+									<div class="grid-x grid-margin-x">
 										<div class="cell">
 											<div class="entry-thumbnail">
 												<a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>">
@@ -60,7 +60,7 @@ if ($show) :
 										</div>
 									</div>
 									<?php endif; ?>
-									<div class="grid-x grid-padding-x">
+									<div class="grid-x grid-margin-x">
 										<div class="cell"> 
 
 											
@@ -79,7 +79,7 @@ if ($show) :
 												?>
 												
 												<h3 class="entry-title"><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __('%s', 'inti'), the_title_attribute('echo=0') ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
-												<div class="grid-x grid-padding-x">
+												<div class="grid-x grid-margin-x">
 													<div class="medium-6 cell">
 														<?php 
 															$args = array( 
@@ -143,7 +143,7 @@ if ($show) :
 			<?php if ($showlinktoblog) : ?>
 				<div class="grid-container">
 					<nav class="content-navigation block-blog-posts-navigation" role="navigation">
-						<div class="grid-x grid-padding-x">
+						<div class="grid-x grid-margin-x">
 							<div class="small-12 cell">
 								<a href="<?php echo $bloglinkurl; ?>" class="button"><?php echo $bloglinktext; ?></a>
 							</div>

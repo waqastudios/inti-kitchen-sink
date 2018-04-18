@@ -26,7 +26,7 @@
 ?>
 		<section class="opt-in footer">
 			<div class="grid-container">
-				<div class="grid-x grid-padding-x">
+				<div class="grid-x grid-margin-x">
 					<div class="small-12 medium-6 mlarge-5 cell">
 						<div class="opt-in-lead-in">
 							<?php echo wpautop(do_shortcode($optin_object->post_content)); ?>
@@ -40,7 +40,7 @@
 							</div>
 
 							<fieldset>
-								<div class="grid-x grid-padding-x">
+								<div class="grid-x grid-margin-x">
 									<div class="medium-6 mlarge-4 cell">
 										<input type="text" name="<?php echo $first_name_name; ?>" id="footer-opt-in-<?php echo $first_name_name; ?>" placeholder="<?php echo $first_name_placeholder; ?>" class=""<?php if ($first_name_required) echo ' required'; ?>>
 									</div>

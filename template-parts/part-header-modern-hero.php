@@ -95,7 +95,7 @@
 <?php if ( is_front_page() ) : ?>
 	<div class="site-hero frontpage">
 		<div class="grid-container">
-			<div class="grid-x grid-padding-x">
+			<div class="grid-x grid-margin-x">
 				<div class="mlarge-6 cell">
 					<div class="hero-area">
 						<h1><?php _e('Example text', 'inti-child'); ?></h1>
@@ -112,46 +112,46 @@
 						endif; ?>
 					</div>
 				</div>
-			</div><!-- .grid-x . grid-padding-x -->
+			</div><!-- .grid-x . grid-margin-x -->
 		</div><!-- .grid-container -->
 	</div>
 <?php elseif ( is_page() ) : ?>
 	<div class="site-hero page">
 		<div class="grid-container">
-			<div class="grid-x grid-padding-x">
+			<div class="grid-x grid-margin-x">
 				<div class="mlarge-6 cell">
 					<h1><?php _e('Example text', 'inti-child'); ?></h1>
 				</div>
 				<div class="mlarge-6 cell">
 					
 				</div>
-			</div><!-- .grid-x . grid-padding-x -->
+			</div><!-- .grid-x . grid-margin-x -->
 		</div><!-- .grid-container -->
 	</div>
 <?php elseif ( is_home() || is_archive() || is_single() ) : ?>
 	<div class="site-hero post archive">
 		<div class="grid-container">
-			<div class="grid-x grid-padding-x">
+			<div class="grid-x grid-margin-x">
 				<div class="mlarge-6 cell">
 					<h1><?php _e('Example text', 'inti-child'); ?></h1>
 				</div>
 				<div class="mlarge-6 cell">
 					
 				</div>
-			</div><!-- .grid-x . grid-padding-x -->
+			</div><!-- .grid-x . grid-margin-x -->
 		</div><!-- .grid-container -->
 	</div>
 <?php elseif ( 'inti-example-post-type' == get_post_type() || is_post_type_archive('inti-example-post-type') ) : ?>
 	<div class="site-hero inti-example-post-type inti-example-taxonomy">
 		<div class="grid-container">
-			<div class="grid-x grid-padding-x">
+			<div class="grid-x grid-margin-x">
 				<div class="mlarge-6 cell">
 					<h1><?php _e('Example text', 'inti-child'); ?></h1>
 				</div>
 				<div class="mlarge-6 cell">
 					
 				</div>
-			</div><!-- .grid-x . grid-padding-x -->
+			</div><!-- .grid-x . grid-margin-x -->
 		</div><!-- .grid-container -->
 	</div>
 <?php endif; ?>

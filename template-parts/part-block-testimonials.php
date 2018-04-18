@@ -62,7 +62,7 @@ if ($show) :
 ?>
 	<section class="block testimonials">
 		<div class="grid-container">
-			<div class="grid-x grid-padding-x">
+			<div class="grid-x grid-margin-x">
 				<div class="small-12 cell">
 					<?php if ($title || $description) : ?>
 					<header class="block-header">
@@ -72,7 +72,7 @@ if ($show) :
 					<?php endif; ?>
 				</div>
 			</div>
-			<div class="grid-x grid-padding-x">
+			<div class="grid-x grid-margin-x">
 				<div class="small-12 cell">
 					<div class="inti-slider inti-testimonial-slider clearfix" data-equalizer data-equalize-on="small">
 						<?php if ($testimonials->have_posts()) : ?>
@@ -101,7 +101,7 @@ if ($show) :
 									 ?>
 
 									<blockquote class="testimonial" data-equalizer-watch>
-										<div class="grid-x grid-padding-x">
+										<div class="grid-x grid-margin-x">
 											
 											<?php // if it has a thumbnail, create two cells, else just one
 											if ( has_post_thumbnail(get_the_ID()) && $hide_photos == 0 ) : ?>
@@ -167,7 +167,7 @@ if ($show) :
 						<?php endif; ?>		
 					</div>
 				</div><!-- .cell -->
-			</div><!-- .grid-x .grid-padding-x -->
+			</div><!-- .grid-x .grid-margin-x -->
 		</div><!-- .grid-container -->
 	</section>
 <?php endif; ?>

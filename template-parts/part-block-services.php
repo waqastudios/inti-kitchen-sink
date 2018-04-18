@@ -62,7 +62,7 @@ if ($show) :
 ?>
 	<section class="block services">
 		<div class="grid-container">
-			<div class="grid-x grid-padding-x">
+			<div class="grid-x grid-margin-x">
 				<div class="cell">
 					<?php if ($title || $description) : ?>
 					<header class="block-header">
@@ -77,7 +77,7 @@ if ($show) :
 			
 			
 				<?php // if more than one column use block-grid
-				if ( $post_columns != 1 ) echo '<div class="grid-x grid-padding-x small-up-1 medium-up-1 mlarge-up-' . $post_columns . '">'; ?>
+				if ( $post_columns != 1 ) echo '<div class="grid-x grid-margin-x small-up-1 medium-up-1 mlarge-up-' . $post_columns . '">'; ?>
 				
 					<?php while ( $services_query->have_posts() ) : $services_query->the_post(); global $more; $more = 0; ?>
 						
@@ -108,7 +108,7 @@ if ($show) :
 							<article id="post-<?php the_ID(); ?>" <?php post_class(''); ?>>
 								<div class="entry-body">
 									<?php  if ( has_post_thumbnail() ) : ?>
-									<div class="grid-x grid-padding-x">
+									<div class="grid-x grid-margin-x">
 										<div class="cell">
 											<div class="entry-thumbnail">
 												<a href="<?php echo $final_url; ?>" 
@@ -121,7 +121,7 @@ if ($show) :
 										</div>
 									</div>
 									<?php endif; ?>
-									<div class="grid-x grid-padding-x">
+									<div class="grid-x grid-margin-x">
 										<div class="cell"> 
 
 											
