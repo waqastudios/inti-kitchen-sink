@@ -58,14 +58,14 @@ function inti_options_setup() {
 	);
 
 	// our child theme addition
-	add_submenu_page(
-		'inti_theme_options',
-		__( 'Front Page', 'inti' ),
-		__( 'Front Page', 'inti' ),
-		'manage_options',
-		'inti_theme_options&tab=childexample_options',
-		create_function( null, 'inti_options_interface( "childexample_options" );' )
-	);	
+	// add_submenu_page(
+	// 	'inti_theme_options',
+	// 	__( 'Child Example', 'inti' ),
+	// 	__( 'Child Example', 'inti' ),
+	// 	'manage_options',
+	// 	'inti_theme_options&tab=childexample_options',
+	// 	create_function( null, 'inti_options_interface( "childexample_options" );' )
+	// );	
 
 	add_submenu_page(
 		'inti_theme_options',
@@ -112,7 +112,7 @@ add_action( 'admin_menu', 'inti_options_setup' );
 function child_options_interface( $tabs ) {
 	$tabs = array(
 		'general_options' => __('General', 'inti'),
-		'childexample_options' => __('Child Example', 'inti-child'),
+		// 'childexample_options' => __('Child Example', 'inti-child'),
 		'headernav_options' => __('Header/Navigation', 'inti'),
 		'footer_options' => __('Footer/Analytics', 'inti'),
 		'social_options' => __('Social Media Profiles', 'inti'),
