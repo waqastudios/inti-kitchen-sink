@@ -2,7 +2,7 @@
 
 [![GitHub version](https://badge.fury.io/gh/waqastudios%2Finti-kitchen-sink.svg)](https://badge.fury.io/gh/waqastudios%2Finti-kitchen-sink)
 
-An everything-and-the-kitchen-sink theme for the Inti Foundation WordPress parent theme 1.5
+An everything-and-the-kitchen-sink theme for the Inti Foundation WordPress parent theme 1.6
 
 ## Updated for Foundation 6.4.x and the XY Grid
 [Inti Foundation](https://github.com/waqastudios/inti-foundation) is a WordPress parent theme that uses Foundation for Sites 6.4, the most advanced responsive front-end framework in the world. Foundation for Sites 6.4, unlike earlier versions, uses a flexbox based grid system called [XY Grid](http://foundation.zurb.com/sites/docs/xy-grid.html)
