@@ -89,3 +89,6 @@
 ### 1.4.0 (Apr 19, 2018)
 – Updated Foundation for Sites to 6.4.3
 - Transitioned from grid-padding to grid-margin layouts as per (https://github.com/zurb/foundation-sites/pull/10371)
+
+### 1.4.1 (Jun 1, 2018)
+- Added basic tool for GDPR cookie compliance. Allows overall setting and removing of cookies by the visitor, for the site owner to categorize cookie-setting JS into one of three (or more) types and the visitor to allow/disallow each cookie category individually.
