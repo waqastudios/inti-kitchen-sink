@@ -103,6 +103,17 @@ function inti_options_setup() {
 		create_function( null, 'inti_options_interface( "commenting_options" );' )
 	);
 
+if ( current_theme_supports('inti-cookies') ) {
+		add_submenu_page(
+			'inti_theme_options',
+			__( 'Privacy/Cookies', 'inti' ),
+			__( 'Privacy/Cookies', 'inti' ),
+			'manage_options',
+			'inti_theme_options&tab=privacy_options',
+			create_function( null, 'inti_options_interface( "privacy_options" );' )
+		);
+}
+
 
 } // end inti_options_setup
 add_action( 'admin_menu', 'inti_options_setup' );
@@ -118,6 +129,11 @@ function child_options_interface( $tabs ) {
 		'social_options' => __('Social Media Profiles', 'inti'),
 		'commenting_options' => __('Commenting', 'inti')
 		);
+
+	if ( current_theme_supports('inti-cookies') ) {
+		$tabs['privacy_options'] = __('Privacy/Cookies', 'inti');
+	}
+
 	return $tabs;
 }
 add_filter('inti_options_interface_filter_tabs', 'child_options_interface');

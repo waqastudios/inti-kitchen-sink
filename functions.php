@@ -77,7 +77,12 @@ function childtheme_override_setup() {
 	
 	add_theme_support('inti-custom-login');
 
-	add_theme_support('inti-scroll-to-top');
+	add_theme_support('inti-scroll-to-top');	
+
+	add_theme_support(
+		'inti-cookies',
+		array('NEEDED', 'FUNCTIONAL', 'OPTIONAL')
+	);
 	
 	/**
 	 * WordPress features
