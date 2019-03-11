@@ -64,7 +64,7 @@ function inti_options_setup() {
 	// 	__( 'Child Example', 'inti' ),
 	// 	'manage_options',
 	// 	'inti_theme_options&tab=childexample_options',
-	// 	create_function( null, 'inti_options_interface( "childexample_options" );' )
+	// 	function() { inti_options_interface( "childexample_options" ); }
 	// );	
 
 	add_submenu_page(
@@ -73,7 +73,7 @@ function inti_options_setup() {
 		__( 'Header/Navigation', 'inti' ),
 		'manage_options',
 		'inti_theme_options&tab=headernav_options',
-		create_function( null, 'inti_options_interface( "headernav_options" );' )
+		function() { inti_options_interface( "headernav_options" ); }
 	);
 
 	add_submenu_page(
@@ -82,7 +82,7 @@ function inti_options_setup() {
 		__( 'Footer/Analytics', 'inti' ),
 		'manage_options',
 		'inti_theme_options&tab=footer_options',
-		create_function( null, 'inti_options_interface( "footer_options" );' )
+		function() { inti_options_interface( "footer_options" ); }
 	);
 
 	add_submenu_page(
@@ -91,7 +91,7 @@ function inti_options_setup() {
 		__( 'Social Media Profiles', 'inti' ),
 		'manage_options',
 		'inti_theme_options&tab=social_options',
-		create_function( null, 'inti_options_interface( "social_options" );' )
+		function() { inti_options_interface( "social_options" ); }
 	);
 	
 	add_submenu_page(
@@ -100,18 +100,18 @@ function inti_options_setup() {
 		__( 'Commenting', 'inti' ),
 		'manage_options',
 		'inti_theme_options&tab=commenting_options',
-		create_function( null, 'inti_options_interface( "commenting_options" );' )
+		function() { inti_options_interface( "commenting_options" ); }
 	);
 
 if ( current_theme_supports('inti-cookies') ) {
-		add_submenu_page(
-			'inti_theme_options',
-			__( 'Privacy/Cookies', 'inti' ),
-			__( 'Privacy/Cookies', 'inti' ),
-			'manage_options',
-			'inti_theme_options&tab=privacy_options',
-			create_function( null, 'inti_options_interface( "privacy_options" );' )
-		);
+	add_submenu_page(
+		'inti_theme_options',
+		__( 'Privacy/Cookies', 'inti' ),
+		__( 'Privacy/Cookies', 'inti' ),
+		'manage_options',
+		'inti_theme_options&tab=privacy_options',
+		function() { inti_options_interface( "privacy_options" ); }
+	);
 }
 
 
