@@ -117,7 +117,7 @@ if ($show) :
 														if ($content == "excerpt") {
 															the_excerpt();
 														} else {
-															the_content();
+															echo apply_filters('the_content', get_the_content());
 														}
 													 ?>
 													<cite class="testimonial-owner">	
@@ -134,7 +134,7 @@ if ($show) :
 														if ($content == "excerpt") {
 															the_excerpt();
 														} else {
-															the_content();
+															echo apply_filters('the_content', get_the_content());
 														}
 													 ?>
 													<cite class="testimonial-owner">	
