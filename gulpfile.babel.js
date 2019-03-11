@@ -45,7 +45,7 @@ function clean(done) {
 // Copies webfonts from the font src to dist
 function copyFonts() {
   return gulp.src(PATHS.staticfonts)
-    .pipe(gulp.dest(PATHS.dist + '/fonts'));
+    .pipe(gulp.dest(PATHS.dist + '/webfonts'));
 }
 // Copies vendor CSS files that we don't want to parse or combine( for individual enqueue in styles.php)
 function copyStaticCss() {
@@ -161,7 +161,8 @@ function reload(done) {
 
 // Watch for changes to static, Sass, and JavaScript
 function watch() {
-  gulp.watch(PATHS.static, copyFonts, copyStaticCss);
+  gulp.watch(PATHS.staticfonts, copyFonts);
+  gulp.watch(PATHS.staticcss, copyStaticCss);
   gulp.watch('library/src/scss/**/*.scss').on('all', sass);
   gulp.watch('library/src/js/**/*.js').on('all', gulp.series(foundationjs, browser.reload));
   gulp.watch('library/src/img/**/*').on('all', gulp.series(images, browser.reload));
