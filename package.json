@@ -10,6 +10,7 @@
   "license": "GPL-2.0",
   "homepage": "https://github.com/waqastudios/inti-kitchen-sink",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.7.2",
     "animatewithsass": "^3.2.1",
     "font-awesome": "^4.7.0",
     "foundation-sites": "~6.5.3",

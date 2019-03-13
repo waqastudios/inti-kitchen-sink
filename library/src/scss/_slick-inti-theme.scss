@@ -9,13 +9,13 @@
 // "\f105" outputs ascii character ">"
 // "\f111" outputs ascii character "•"
 
-$slick-font-family: "FontAwesome" !default;
+$slick-font-family: "Font Awesome 5 Free" !default;
 $slick-loader-path: "./" !default;
 $slick-arrow-color: $black !default;
 $slick-dot-color: $black !default;
 $slick-dot-color-active: $slick-dot-color !default;
-$slick-prev-character: "\f104" !default;
-$slick-next-character: "\f105" !default;
+$slick-prev-character: "\f053" !default;
+$slick-next-character: "\f054" !default;
 $slick-dot-character: "\f111" !default;
 $slick-dot-size: 16px !default;
 $slick-opacity-default: 0.75 !default;
@@ -84,6 +84,7 @@ $slick-opacity-not-active: 0.25 !default;
 	}
 	&:before {
 		font-family: $slick-font-family;
+		font-weight: 600;
 		font-size: 64px;
 		line-height: 1;
 		color: $slick-arrow-color;
