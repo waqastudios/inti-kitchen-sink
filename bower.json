@@ -3,7 +3,7 @@
   "private": true,
   "ignore": [],
   "dependencies": {
-    "foundation-sites": "~6.4.1"
+    "foundation-sites": "~6.5.3"
   },
   "resolutions": {
     "what-input": "~4.0.3",

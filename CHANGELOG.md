@@ -92,3 +92,11 @@
 
 ### 1.4.1 (Jun 1, 2018)
 - Added basic tool for GDPR cookie compliance. Allows overall setting and removing of cookies by the visitor, for the site owner to categorize cookie-setting JS into one of three (or more) types and the visitor to allow/disallow each cookie category individually.
+
+### 1.5.0 (Mar 13, 2018)
+– Updated Foundation for Sites to 6.5.3
+- Upgraded to FontAwesome 5
+- Bug fixes for PHP 7.2
+- Tweaks for image captions
+- Fixed bug that changes focus on Cookie Manager link
+- [#9](https://github.com/waqastudios/inti-foundation/pull/9) Fix npm gulp dependency, since there is no longer a 4.0 branch of gulpjs
