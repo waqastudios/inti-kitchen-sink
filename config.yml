@@ -63,4 +63,16 @@ PATHS:
     - "node_modules/slick-carousel/slick/slick.js"
     - "node_modules/js-cookie/src/js.cookie.js"
 
+  # Paths for the package task tae include/exclude in .zip archive, captain
+  package:
+    - "**/*"
+    - "!**/node_modules/**"
+    - "!**/packaged/**"
+    - "!**/library/src/**"
+    - "!**/bower.json"
+    - "!**/gulpfile.babel.js"
+    - "!**/package.json"
+    - "!**/package-lock.json"
+    - "!**/config.yml"
+
   # "She canna take any more, captain.  She's gonna blow!"

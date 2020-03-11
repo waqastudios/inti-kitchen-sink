@@ -100,3 +100,6 @@
 - Tweaks for image captions
 - Fixed bug that changes focus on Cookie Manager link
 - [#9](https://github.com/waqastudios/inti-foundation/pull/9) Fix npm gulp dependency, since there is no longer a 4.0 branch of gulpjs
+
+### 1.6.0 (Mar 11, 2020)
+- Updated Foundation for Sites to 6.6.1
