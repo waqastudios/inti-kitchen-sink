@@ -1,12 +1,12 @@
 (function($) {
 
-	$('#shortcode-picker').live('change', function() {
+	$('body').on('change', '#shortcode-picker', function() {
 		var $currentShortcode = $('#shortcode-picker').val();
 		if( $currentShortcode === 'inti-opt-in' ) {
 			$('#yourshortcode').text('[opt-in id=""]');
 		}
 	});
-	$('#shortcode-insert').live('click', function() {
+	$('body').on('click', '#shortcode-insert', function() {
 		var $currentShortcode = $('#shortcode-picker').val();
 		if( $currentShortcode === 'inti-opt-in' ) {
 				var id     = $('#opt-in-id').val();
